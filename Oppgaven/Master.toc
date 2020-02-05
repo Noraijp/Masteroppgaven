@@ -1,0 +1,42 @@
+\contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.1}
+\contentsline {paragraph}{A short introduction to nuclear medicine}{11}{section*.1}
+\contentsline {chapter}{\numberline {2}Nucleosynthesis beyond the iron peak}{13}{chapter.2}
+\contentsline {paragraph}{Nuclear reactions in the stellar plasma}{14}{section*.2}
+\contentsline {section}{\numberline {2.1}The s-process}{16}{section.2.1}
+\contentsline {section}{\numberline {2.2}The r-process}{18}{section.2.2}
+\contentsline {section}{\numberline {2.3}The p-process}{19}{section.2.3}
+\contentsline {section}{\numberline {2.4}The i-process}{20}{section.2.4}
+\contentsline {section}{\numberline {2.5}Reaction networks}{20}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Stellar input}{21}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Nuclear input}{21}{subsection.2.5.2}
+\contentsline {chapter}{\numberline {3}Experimental setup and data calibration}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Berkeley National Laboratory (BNL)}{27}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}The experiment}{28}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}The Germanium detector}{28}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Detector calibration}{30}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Particle calibration and identification}{31}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Selecting the data from the ${}^{192}$Os$(\alpha $, $\alpha ' \gamma ){}^{192}$Os\\ reaction}{33}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}$\gamma $-calibration}{33}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Treatment of the time signals}{33}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}The coincidence matrix}{34}{subsection.3.2.5}
+\contentsline {chapter}{\numberline {4}The Oslo method}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Unfolding the $\gamma $-ray spectra}{37}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The folding iteration method}{39}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}The Compton subtraction method}{40}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Extracting the first-generation $\gamma $-rays}{42}{section.4.2}
+\contentsline {paragraph}{b) Multiplicity normalization.}{43}{section*.6}
+\contentsline {section}{\numberline {4.3}Determining the nuclear level density and the $\gamma $-strength function}{45}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}The $\chi ^2$-minimization iteration method}{45}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}The normalization procedure}{47}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Results and discussion}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Obtaining the normalization parameters}{51}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The level density parameters}{52}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}The $\gamma $-ray transmission coefficient parameters}{53}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Systematic error estimate}{54}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}The level density}{56}{section.5.2}
+\contentsline {section}{\numberline {5.3}The $\gamma $-strength function}{56}{section.5.3}
+\contentsline {section}{\numberline {5.4}The radiative neutron capture cross section}{58}{section.5.4}
+\contentsline {chapter}{\numberline {6}Summary and outlook}{63}{chapter.6}
+\contentsline {section}{\numberline {6.1}Summary of the results}{63}{section.6.1}
+\contentsline {section}{\numberline {6.2}Upgrade of the experimental setup: \\OSCAR}{64}{section.6.2}
+\contentsline {section}{\numberline {6.3}Outlook}{64}{section.6.3}

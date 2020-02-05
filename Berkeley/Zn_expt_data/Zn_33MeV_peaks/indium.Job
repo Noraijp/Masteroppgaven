@@ -1,0 +1,9 @@
+SET_DETECTOR 2
+SET_PRESET_LIVE 1200
+LOOP 500
+START
+WAIT
+SAVE "C:\User\Bernstein_Aug2018\Zn_expt_data\Zn_33MeV\AH081418_5cm_Zn02_???.Chn"
+SAVE "C:\User\Bernstein_Aug2018\Zn_expt_data\Zn_33MeV\AH081418_5cm_Zn02_???.Spe"
+CLEAR
+END_LOOP

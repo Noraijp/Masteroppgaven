@@ -1,0 +1,37 @@
+
+                       be used for evaluation purposes
+                                                            17-Apr-2019 17:14
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: CI080818_Ba133_05cm.Chn          
+ Sample Title : Eu152                                            
+
+ Spectrum saved on 21-Aug-2018 at 17:21    Collected on  8-Aug-2018 at 16:06
+ Sample  Taken  on  8-Aug-2018 at 16:06    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     4
+            Energy     Calibration Performed on 17-Apr-2019 at 17:04
+            Peak Shape Calibration Performed on 17-Apr-2019 at 17:06
+
+
+   Datetime:   8-Aug-2018 16:06
+   Live:       415.00 
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   53.1   283.3   0.91    27.6    1.00      7733    3.1   1.8633e+01    3.1     2242
+   80      0        0      0       0      130645    0.6     0           0       0
+  160.6   857.4   1.05     9.9    0.70      2059    8.9   4.9612e+00    8.9     2772
+  223.3  1191.8   1.12     9.4    1.26      1027   12.0   2.4758e+00   12.0     1077
+  276.4  1475.6   1.22    38.6    1.14     13245    1.6   3.1916e+01    1.6      355
+  302.9  1616.8   1.24    61.5    1.70     32074    1.0   7.7287e+01    1.0      291
+  356.1  1900.6   1.30   106.0    2.71     96828    0.7   2.3332e+02    0.7      319
+  383.9  2049.1   1.37    41.1    1.39     14138    1.7   3.4067e+01    1.7      205
+ 

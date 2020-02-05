@@ -1,0 +1,434 @@
+\documentclass[twoside,english]{uiofysmaster/uiofysmaster}
+
+\usepackage[toc,titletoc,title,page]{appendix} %to add appendices (and have them in toc)
+%\usepackage{mhchem} %latex chemistry symbols
+\usepackage{blindtext} %to fill in dummy text
+%\usepackage{cite} %to have multiple citations in one \cite{key1,key2,..} -do not use with natbib!!
+\usepackage{tcolorbox} %to have boxes w color around text and math mode
+\usepackage{enumitem} %to reduce vertical spacing in enumerate
+\usepackage{tabu} % to set tables to page width
+%\usepackage{aas_macros}
+
+\usepackage[sort&compress,square,comma,numbers]{natbib} %to use \citet, now mixed with [nr]
+\usepackage[nottoc]{tocbibind}
+
+\interfootnotelinepenalty=10000 % to force footnotes to NOT run over to the next page
+
+%---
+% to reduce space around table of contents (to fit everything into one page): 
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{0pt}
+%---
+
+\usepackage{epigraph}
+\setlength\epigraphwidth{11cm}
+\setlength\epigraphrule{0pt}
+
+%---
+\newcommand{\Cu}{${}^{64}$Cu} % making it faster to write Os192
+\newcommand{\Osreac}{${}^{192}$Os$(\alpha$, $\alpha ' \gamma){}^{192}$Os}
+\newcommand{\Osreacto}{${}^{191}$Os$(n$, $\gamma){}^{192}$Os}
+\newcommand{\betadecay}{$\beta$-decay} % making it faster to write 
+\newcommand{\bref}{B$^2$FH} % making it faster to write 
+\newcommand{\gsf}{$\gamma$-strength function}
+\newcommand{\ga}{$\gamma$}
+
+%---
+% modifying color in code listings and some style
+\usepackage{color}
+ 
+%\definecolor{codegreen}{rgb}{0,0.6,0} % too flashy
+\definecolor{codegreen}{rgb}{0.0, 0.42, 0.24} % less flashy so comments not take all attention
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{codepurple}{rgb}{1.0, 0.0, 0.22} %carminered, could try it 
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92} % original suggestion
+\definecolor{backcolour}{rgb}{0.94, 0.97, 1.0}% aliceblue, not so flashy and not as ugly
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    %commentstyle=\color{codegray},    
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    %numbers=left,     %removing line numbers in the code snippets               
+    %numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    %float=tp,
+    %floatplacement=tbp
+}
+ 
+\lstset{style=mystyle}
+\renewcommand{\lstlistingname}{Code}
+%---
+
+%---
+% new tcolorbox environment
+% #1: tcolorbox options
+% #2: color
+% #3: box title
+\newtcolorbox{mybox}[3][]
+{
+  colframe = #2!25,
+  colback  = #2!10,
+  coltitle = #2!20!black,  
+  title    = #3,
+  #1,
+}
+
+%---
+
+
+%\bibliography{references}
+
+\author{Nora Irene Jensen Pettersen}
+\title{Cross-section meassurements for  $^{nat}Zn(n,p)64,67Cu$ reaction
+%\title{Nuclear impact on astronomical processes: a first experimental constraint on the s-process $^{191}$Os$(n,\gamma)$ reaction rate %for the s-process in AGB stars
+%\title{Nuclear impact on astronomical processes: benchmarking indirect measurements of s-process reaction rates for \Os 
+}
+\date{May 2020}
+ 
+% ----------------------------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------
+%Equations
+%
+%The command \eqref{} works exactly like \ref{}, but it adds parantheses to a plain number.
+%
+%Figures and tables
+%
+%\autoref{} is a usefull command when refering to to figures and tables. The command creates a reference with additional text corresponding to the target's type. For example, the command \autoref{fig:myfigure} would create a hyperlink to the \label{fig:myfigure} command, wherever it is. Assuming that this label is pointing to a figure, the hyperlink would contain the text "Figure 1.1", or similar.
+
+%Two basic citation commands, \citet and \citep for textual and parenthetical citations, respectively. …
+%\citet{jon90} --> Jones et al. (1990)
+%\citep{jon90} --> (Jones et al., 1990)
+%\citet*{jon90} --> Jones, Baker, and Williams (1990)
+%\citep*{jon90} --> (Jones, Baker, and Williams, 1990)
+
+
+\begin{document}
+
+% set space around equations
+\setlength{\belowdisplayskip}{12pt} \setlength{\belowdisplayshortskip}{12pt}
+\setlength{\abovedisplayskip}{12pt} \setlength{\abovedisplayshortskip}{12pt}
+
+\maketitle
+
+%Centering the front page, see: https://github.com/ComputationalPhysics/uiofysmaster
+
+\begin{abstract}
+%An abstract summarizes, usually in one paragraph of 300 words or less, the major aspects of the entire paper in a prescribed sequence that includes: 1) the overall purpose of the study and the research problem(s) you investigated; 2) the basic design of the study; 3) major findings or trends found as a result of your analysis; and, 4) a brief summary of your interpretations and conclusions.
+
+
+%However, it is difficult to conclude on the significance of the result.
+
+
+\end{abstract}
+
+\begin{dedication}
+  %Til min kjære
+  hola
+  \\\vspace{12pt}
+  %This is in dedication to 
+This is for me.     % To my dear oppvaskmaskin. Du vet hvem du er. 
+    
+  
+
+  
+\end{dedication}
+
+\begin{acknowledgements}
+THANKS
+
+
+Thank you grandmother, for being my safe place, even now. 
+  \vspace{1.5cm}
+  
+  \noindent\textit{Nora Irene Jensen Pettersen}\\
+  
+  \noindent DATO
+  
+\end{acknowledgements}
+
+\tableofcontents
+
+
+% ----------------------------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------
+
+\chapter{Introduction}
+
+%heller i konklusjonen? eller?
+\epigraph{\itshape ``Count only the good days."}{--- \textup{ Irene Jensen}, Ahus 2017}
+ 
+% Abbe G. Lemaitre (Observatory, Louvain), Nature 1931
+
+
+Cancer. It can happen to us all, whether we like it or not. We all know someone or know someone who knows someone with cancer or had died of cancer. It sucks. But what if. What if there was a way to get rid of it? A tumor inside you, that grows without you knowing it. It can take years without you knowing it is there, and when you feel it, it might be too late. With regular radiation you will have that risk of radiate healthy cells and damage them, and over time they can become new cancer cells which can kill you all over again. That is why I want to look into this kind of radiation, where you radiate from the inside and out. Where you don’t damage to many healthy cells but only the bad ones. This type of radiation can reach places in the body where regular radiation will not, in the brain and deep under the skin. A patient with brain tumor can not be radiated because that will also damage other part of the brain that the person needs, so why not send the radioactive molecule into the tumor itselfs? I would.
+\\
+\\
+So i’m hoping, that this is my $"$what if$"$.
+
+
+
+
+
+
+%SEC: a short history lesson and intro to astrophys/cosmo/nuc astro
+%\section*{A short astronomical history lesson} 
+\paragraph{A short introduction to nuclear medicine} \mbox{}
+%\paragraph{A short astronomical history lesson} \mbox{}
+
+
+
+
+% ----------------------------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------
+
+\chapter{Theory}
+\label{ch: beyond}
+
+\epigraph{\itshape quote}{--- \textup{by}, }
+ 
+
+
+\section{Background of Nuclear medicine}
+\label{sec:Background}
+
+- why does it work \\
+- how how we been doing nuclear medicine	\\
+- what isotopes are we currently using in clinics\\
+- problems with is\\
+- my work\\
+
+
+\section{Radioactive decay}
+\label{sec:Radioactivedecay}
+
+- what is it
+ 
+\section{Decay modes}
+\label{sec:decaymodes}
+
+-why are these usefull for nuclear medicine (therapy and diagnstics)
+
+\subsection{$\alpha$-decay}
+
+\subsection{$\beta$-decay}
+
+
+\subsection{Electron capture, Internal convention and Auger electrons}
+
+\subsection{$\gamma$-decay and X-rays}
+
+
+
+\subsection{Theranostic}
+\label{sec:theranostic}
+
+
+
+
+% ----------------------------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------
+
+\chapter{Cu64,67} 
+\label{ch: mywork}
+
+\epigraph{\itshape ``- The idea that everyone is supposed to buy into stuff without questioning it, is the reason why we are 51 year old 16 year olds.\\ 
+- Dude, I agree. "}{--- \textup{Joe Rogan and Duncan Trussel}}
+
+
+\section{what can we do to make the nuclear medicine better?}
+\label{sec: betterwork}
+
+-medical prespecctive: we wan to introduce a new theragnostic pairs to use in hospitals\\
+- how wonderful Cu64,67 are\\
+-- properties\\
+-- papers\\
+-- better than a lot of the studff we are already using\\
+-- motivation for my work\\
+---- can adjust ratio for 64,67 Cu by tuning the energy of the beam\\
+
+
+
+\subsection{My motivation}
+\label{sec: my_motivation}
+
+
+
+
+\subsection{Physics motivation}
+\label{sec: physics_motivation}
+
+- cu64,67 are amazin but now, we have not a good way for making them. tell about my way of create them\\
+-- deuterium breakup (n,-) way\\
+-- how we are doing it\\
+
+
+% ----------------------------------------------------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------------------------------------------------
+
+\chapter{The experiment}
+\label{ch: experiment}
+
+\epigraph{\itshape quote}{--- \textup{by}}
+
+
+
+\section{The facility}
+\label{sec: facility}
+
+- tuning of beam
+
+\section{Cyclotron}
+\label{sec: cyclotron}
+
+- k-value (descuss energies for hospital cyclotrons and what energies for Cu64,67), what is it, how does it work\\
+- no more than a page or two (look at other theses o se how deep you should go)
+
+\section{Deuterium breakup prosess}
+\label{sec: D_breakup}
+
+- and how it is usefull for creating neutrons (brought energy spectrum that we can tune in terms of energy, inntense neutron source (makes a lot of neutrons) focused beam of neutrons \\
+- moulders paper and other
+
+
+
+\section{Stack design}
+\label{sec: stack_design}
+
+- photos and stuff\\
+- monitor foils
+
+
+
+\subsection{Radiation}
+\label{sec:radiation}
+
+- how long time\\
+- beam current\\
+- beam monitor to meassure the  \\
+-- plot the beam current  as a function of time to justefy thet we can make the math that we do
+
+
+\subsection{Counting}
+\label{sec:counting}
+
+- after each radiation, we removed the foils to the counting room (how long did this take?) hvor lang ti tok det før vi begynte å telle etter EOB?
+
+\section{Gamma spectroscopy}
+\label{sec: gamma_spectro}
+
+- Detector\\
+-- forklare hvor dypt jeg skal gå inn i physics (doping, n-p junktion)\\
+-- pari production, comptopn og photoelectric effect
+
+
+\section{Gamma spectra}
+\label{sec: gamma_spectra}
+
+- deadtime, og alt det der
+
+\section{Calibrating}
+\label{sec: calibrating}
+
+- detectror efficincy\\
+- curves at different position
+
+
+% ----------------------------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------
+
+\chapter{Analyse}
+\label{ch:analyse}
+
+\epigraph{\itshape ``If you ever start thinking too seriously, just remember that we are talking monkeys on an organic spaceship flying through the universe"}{--- \textup{Joe Rogan}}
+
+
+
+\section{Fitz peak}
+\label{sec:fitz_peak}
+
+- Data to activity ( the math). Peak counts to activity\\
+- i - Aktivity to A$\_$EOB\\
+- Production physics (Analyse eller Resultater?) - how we calculate cross-sectrtion, the work with john to use the monitor data to neutron fluxes that I’m going to use for calculate the cross section for my isotopes
+
+
+
+\subsection{Regression prosess}
+
+
+\section{Priduction physics}
+\label{sec: prod_physics}
+
+
+
+% ----------------------------------------------------------------------------------------------------------------------% ----------------------------------------------------------------------------------------------------------------------
+
+\chapter{Results and dscussion} 
+\label{ch: res_and_discussion}
+- Cross sections for all the isotopes\\
+- experimentall data with the data that has been meassured so fare
+
+
+\section{TALYS}
+\label{sec: talys}
+
+
+- tolking av resultat. Hvilke energier er best i forhold til hva vi ser?\\
+- Verdien av dette i fremtiden?\\
+- how can we  desien target for å kunne produsere mer Cu67. hvilke cyclotrons can we use for that? 
+
+
+
+
+% ----------------------------------------------------------------------------------------------------------------------% ----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+\chapter{Summary and outlook}
+\label{sum_and_outlook}
+
+\section{Future work}
+\label{sec: future_work}
+
+
+\epigraph{\itshape quote}{--- \textup by }
+
+% ----------------------------------------------------------------------------------------------------------------------% ----------------------------------------------------------------------------------------------------------------------
+
+%\begin{appendices}
+%\chapter{Some Appendix}
+%The...
+
+%\blindtext
+
+
+%\chapter{Some other appendix...}
+%\blindtext
+
+%\end{appendices}
+
+
+%\bibliographystyle{unsrtnat}
+\bibliographystyle{mybibstyle} %my own bibstyle to set first names to one letter + unsrtnat
+
+%\bibliography{/Users/ikkullma/Documents/MendeleyDesktop/Oslo_Method.bib,web_references.bib,other_ref.bib,/Users/ikkullma/Documents/MendeleyDesktop/GeneralNuclearPhysics.bib,/Users/ikkullma/Documents/MendeleyDesktop/NuclearAstro.bib}
+
+%change the user...
+\bibliography{/Users/Nora/Documents/library/library.bib}
+
+
+\end{document}

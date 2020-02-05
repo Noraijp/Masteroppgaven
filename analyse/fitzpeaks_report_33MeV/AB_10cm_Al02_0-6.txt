@@ -1,0 +1,41 @@
+13
+                       be used for evaluation purposes
+                                                            17-Mar-2019 13:21
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: Sum_Spec.dat                     
+ Sample Title : Cs137                                            
+
+ Spectrum saved on 25-Oct-2018 at 16:23    Collected on 14-Aug-2018 at 22:18
+ Sample  Taken  on 14-Aug-2018 at 21:54    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     1
+            Energy     Calibration Performed on 13-Mar-2019 at 17:27
+            Peak Shape Calibration Performed on 13-Mar-2019 at 17:31
+
+
+   Datetime:   14-Aug-2018 21:54
+   Live:       1680.00
+   Mass:       213
+   Shelf:      10  
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   72.6   388.3   0.98     9.9    1.11      1608    8.3   9.5728e-01    8.3     1244
+   74.8   399.9   0.98    15.6    1.11      2747    5.1   1.6348e+00    5.1     1244
+   84.7   452.5   0.96     7.0    1.20      1143   10.7   6.8040e-01   10.7     1050
+   87.3   466.3   0.96     4.6    1.20       398   26.4   2.3672e-01   26.4     1167
+  510.9  2727.4   2.77    11.1    1.22     12013    2.2   7.1504e+00    2.2     1188
+ 1368.3  7303.4   2.47    76.0    3.17     54007    1.0   3.2147e+01    1.0      242
+ 1731.1  9240.0   3.24    10.7    1.74      2739    5.1   1.6301e+00    5.1      382
+ 2242.2 11967.5   3.90    12.1    1.39      4526    4.3   2.6941e+00    4.3      807
+ 2753.2 14695.2   3.96    57.3    1.70     29064    1.2   1.7300e+01    1.2        8
+
+   indicates the Iterative Peak Width fitting reached a limiting value.

@@ -1,0 +1,24 @@
+set datafile separator ','
+
+filename = 'eff_10cm.csv'
+
+plot filename using 1:2:3 with yerrorbars title filename
+
+a = -1
+b = 1
+c = -1
+f1(x) = exp(a*log(x)**2+b*log(x)+c)
+
+
+fit f1(x) filename using 1:2:3 via a,b,c
+plot f1(x), filename.'' using 1:2:3 with yerrorbars title filename
+set xlabel 'Time since End of Beam (hr)'
+set ylabel 'Activity at End of Beam (Bq)'
+
+end = strlen(filename)
+set terminal png
+set output filename.'.png'
+replot
+set output
+
+set terminal x11

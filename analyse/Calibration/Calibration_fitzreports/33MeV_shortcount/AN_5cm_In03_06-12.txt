@@ -1,0 +1,44 @@
+
+                       be used for evaluation purposes
+                                                            19-Mar-2019 17:44
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: Sum_Spec.dat                     
+ Sample Title : Cs137                                            
+
+ Spectrum saved on 25-Oct-2018 at 16:32    Collected on  4-Oct-2018 at 11:26
+ Sample  Taken  on  4-Oct-2018 at 11:26    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     1
+            Energy     Calibration Performed on 13-Mar-2019 at 17:27
+            Peak Shape Calibration Performed on 13-Mar-2019 at 17:31
+
+ 
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+The Peak at Channel 128 was dropped, too near LLD Step
+
+   27.0   144.7   0.99    51.0    6.39     29766    2.9   5.9060e-01    2.9     6763
+   63.1   337.5   0.93     6.7    0.81      1262   17.7   2.5030e-02   17.7     3822
+   72.7   388.6   0.95    11.2    0.99      2748    8.3   5.4524e-02    8.3     4069
+   74.8   400.1   0.96    19.3    0.99      4957    4.8   9.8361e-02    4.8     4521
+   84.7   452.5   0.96     7.7    0.87      1990   10.0   3.9481e-02   10.0     3320
+   87.3   466.8   0.96     3.6    0.87       520   34.3   1.0316e-02   34.3     3689
+   92.5   494.5   0.97     8.2    0.73      1453   12.7   2.8824e-02   12.7     2936
+  185.8   992.1   1.06     7.5    1.40      1431   12.0   2.8400e-02   12.0     1760
+  190.3  1016.1   1.06   126.5    1.40    123981    0.5   2.4599e+00    0.5     1760
+  238.4  1273.2   1.13     3.3    1.05       209   55.8   4.1418e-03   55.8     1418
+  510.9  2727.6   2.88     3.7    1.13      1143   17.8   2.2669e-02   17.8     2126
+  558.4  2981.1   1.49    38.8    0.90     13046    1.7   2.5885e-01    1.7      892
+  725.2  3871.3   1.71    33.7    1.43     10299    2.1   2.0435e-01    2.1      772
+ 1283.2  6849.2   2.31     4.1    0.89       147   29.7   2.9258e-03   29.7      108
+ 1299.7  6937.5   2.33     5.3    0.87       263   18.5   5.2184e-03   18.5      105
+ 1460.7  7796.7   2.51     3.9    1.00       139   24.8   2.7576e-03   24.8       47

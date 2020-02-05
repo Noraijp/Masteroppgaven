@@ -1,0 +1,22 @@
+set datafile separator ','
+
+filename = '64Cu_230.dat'
+
+plot filename using 1:2:3 with yerrorbars title filename
+
+a1 = 36000
+f1(x) = a1*2**(-x/(12.701))
+
+fit f1(x) filename using 1:2:3 via a1
+plot f1(x), filename.'' using 1:2:3 with yerrorbars title filename
+set xrange [0:]
+set xlabel 'Time since End of Beam (hr)'
+set ylabel 'Activity at End of Beam (Bq)'
+
+end = strlen(filename)
+set terminal pdfcairo
+set output filename[*:(end-4)].'.pdf'
+replot
+set output
+
+set terminal qt 0

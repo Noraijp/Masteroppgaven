@@ -1,0 +1,46 @@
+
+                       be used for evaluation purposes
+                                                            14-Mar-2019 11:20
+                       _________________________________
+
+                       P E A K     F I T     R E P O R T
+                       _________________________________
+
+ Spectrum file Analysed: AG0811118_5cm_Zn01.Chn           
+ Sample Title : Cs137                                            
+
+ Spectrum saved on 25-Oct-2018 at 16:15    Collected on 12-Aug-2018 at 14:48
+ Sample  Taken  on 12-Aug-2018 at 14:48    Decayed      0 Days,     0 mins.
+
+            Detector file number used:     1
+            Energy     Calibration Performed on 13-Mar-2019 at 17:27
+            Peak Shape Calibration Performed on 13-Mar-2019 at 17:31
+
+ 
+
+   Reported Activity values were rounded     
+   FitzPeaks Version: 3.71 23rd January 2014           
+
+ Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
+Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
+
+   72.7   388.5   0.96    16.9    0.51      4432    6.3   5.2454e-01    6.3     5588
+   74.8   400.1   0.96    23.3    0.51      7562    3.9   8.9496e-01    3.9     6209
+   84.7   452.6   1.10!   10.3    1.05      3546    6.8   4.1959e-01    6.8     6131
+   87.2   466.2   1.11!    4.5    1.05      1183   18.6   1.4000e-01   18.6     6131
+   91.3   487.7   1.11!    3.9    1.05       440   51.2   5.2066e-02   51.2     6131
+   93.2   498.1   1.11!    4.7    1.05      1429   15.9   1.6909e-01   15.9     6131
+  184.6   985.8   1.04    11.2    0.96      2759   11.1   3.2652e-01   11.1     8464
+  366.3  1955.8   1.28     3.3    1.02       447   44.3   5.2957e-02   44.3     3775
+  438.6  2341.7   1.35    39.9    1.27     13514    1.9   1.5992e+00    1.9     1180
+  511.0  2727.8   2.98    64.1   65.41    525885    0.8   6.2235e+01    0.8    21578
+  596.0  3181.8   1.54     3.6    0.75        96   45.3   1.1325e-02   45.3      158
+  620.2  3310.5   1.56     3.5    1.11       139   36.0   1.6508e-02   36.0      159
+  846.6  4519.1   1.82     3.5    0.88       106   36.4   1.2541e-02   36.4       99
+ 1115.4  5953.6   2.12     9.3    1.14       798    8.5   9.4437e-02    8.5      141
+ 1345.7  7182.7   2.45    18.8    0.90      3503    3.2   4.1457e-01    3.2       31
+ 1368.5  7304.4   2.40     8.8    0.77       495    9.3   5.8544e-02    9.3       19
+ 1481.5  7907.6   2.53     8.0    0.63       607    7.7   7.1858e-02    7.7       16
+ 2753.4 14696.0   3.96     6.1    0.55       248   14.7   2.9363e-02   14.7        4
+
+ ! indicates the Iterative Peak Width fitting reached a limiting value.

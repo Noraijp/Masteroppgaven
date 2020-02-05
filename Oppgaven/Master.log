@@ -1,0 +1,2351 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  17 JAN 2019 17:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Master.tex
+(./Master.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./uiofysmaster/uiofysmaster.cls
+
+LaTeX Warning: You have requested document class `uiofysmaster/uiofysmaster',
+               but the document class provides `uiofysmaster'.
+
+Document Class: uiofysmaster 2012/08/22 v1.0 LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(./uiofysmaster/packages.tex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count88
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count89
+\lst@currlwidth=\dimen103
+\lst@column=\count90
+\lst@pos=\count91
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count92
+\lst@lineno=\count93
+\lst@maxwidth=\dimen106
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
+\lst@framebox=\box27
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count96
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+))
+(./uiofysmaster/package-config/listings.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+)
+(./uiofysmaster/package-config/listings-qmake.tex)
+(./uiofysmaster/package-config/listings-glsl.tex)
+(./uiofysmaster/package-config/listings-std.tex)
+(./uiofysmaster/package-config/listings-arma.tex)
+(./uiofysmaster/package-config/listings-qt.tex)
+(./uiofysmaster/package-config/listings-qml.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count97
+\calc@Bcount=\count98
+\calc@Adimen=\dimen107
+\calc@Bdimen=\dimen108
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count99
+\calc@Cskip=\skip45
+)
+\DepthReference=\skip46
+\HeightReference=\skip47
+\Width=\skip48
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen109
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen110
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count100
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count101
+\leftroot@=\count102
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count103
+\DOTSCASE@=\count104
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen111
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count105
+\c@MaxMatrixCols=\count106
+\dotsspace@=\muskip10
+\c@parentequation=\count107
+\dspbrk@lvl=\count108
+\tag@help=\toks17
+\row@=\count109
+\column@=\count110
+\maxfields@=\count111
+\andhelp@=\toks18
+\eqnshift@=\dimen112
+\alignsep@=\dimen113
+\tagshift@=\dimen114
+\tagwidth@=\dimen115
+\totwidth@=\dimen116
+\lineht@=\dimen117
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks26
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen118
+\Hy@linkcounter=\count112
+\Hy@pagecounter=\count113
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count114
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count115
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen119
+\Fld@menulength=\count116
+\Field@Width=\dimen120
+\Fld@charsize=\dimen121
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count117
+\c@Item=\count118
+\c@Hfootnote=\count119
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count120
+\c@bookmark@seq@number=\count121
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip55
+)
+(./uiofysmaster/package-config/hyperref.tex
+Package hyperref Info: Option `colorlinks' set `true' on input line 7.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count122
+\Gm@cntv=\count123
+\c@Gm@tempcnt=\count124
+\Gm@bindingoffset=\dimen122
+\Gm@wd@mp=\dimen123
+\Gm@odd@mp=\dimen124
+\Gm@even@mp=\dimen125
+\Gm@layoutwidth=\dimen126
+\Gm@layoutheight=\dimen127
+\Gm@layouthoffset=\dimen128
+\Gm@layoutvoffset=\dimen129
+\Gm@dimlist=\toks27
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip56
+\f@ncyO@elh=\skip57
+\f@ncyO@erh=\skip58
+\f@ncyO@olh=\skip59
+\f@ncyO@orh=\skip60
+\f@ncyO@elf=\skip61
+\f@ncyO@erf=\skip62
+\f@ncyO@olf=\skip63
+\f@ncyO@orf=\skip64
+)
+(./uiofysmaster/package-config/fancyhdr.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen130
+\captionmargin@=\dimen131
+\captionwidth=\dimen132
+\caption@tempdima=\dimen133
+\caption@indent=\dimen134
+\caption@parindent=\dimen135
+\caption@hangindent=\dimen136
+)
+\c@ContinuedFloat=\count125
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@theorem=\count126
+
+(./uiofysmaster/commands.tex
+\seccount=\count127
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+)
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count128
+\c@@ppsavesec=\count129
+\c@@ppsaveapp=\count130
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count131
+\c@Blindtext=\count132
+\c@blind@countparstart=\count133
+\blind@countxx=\count134
+\blindtext@numBlindtext=\count135
+\blind@countyy=\count136
+\c@blindlist=\count137
+\c@blindlistlevel=\count138
+\c@blindlist@level=\count139
+\blind@listitem=\count140
+\c@blind@listcount=\count141
+\c@blind@levelcount=\count142
+\blind@mathformula=\count143
+\blind@Mathformula=\count144
+\c@blind@randomcount=\count145
+\c@blind@randommax=\count146
+\c@blind@pangramcount=\count147
+\c@blind@pangrammax=\count148
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2015/05/07 version 3.60 text color boxes
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen139
+\pgfutil@tempdimb=\dimen140
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box30
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
+))
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks31
+))
+\pgf@x=\dimen141
+\pgf@y=\dimen142
+\pgf@xa=\dimen143
+\pgf@ya=\dimen144
+\pgf@xb=\dimen145
+\pgf@yb=\dimen146
+\pgf@xc=\dimen147
+\pgf@yc=\dimen148
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count149
+\c@pgf@countb=\count150
+\c@pgf@countc=\count151
+\c@pgf@countd=\count152
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count153
+\pgfsyssoftpath@bigbuffer@items=\count154
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen149
+\pgfmath@count=\count155
+\pgfmath@box=\box31
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count156
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen150
+\pgf@picmaxx=\dimen151
+\pgf@picminy=\dimen152
+\pgf@picmaxy=\dimen153
+\pgf@pathminx=\dimen154
+\pgf@pathmaxx=\dimen155
+\pgf@pathminy=\dimen156
+\pgf@pathmaxy=\dimen157
+\pgf@xx=\dimen158
+\pgf@xy=\dimen159
+\pgf@yx=\dimen160
+\pgf@yy=\dimen161
+\pgf@zx=\dimen162
+\pgf@zy=\dimen163
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen164
+\pgf@path@lasty=\dimen165
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen166
+\pgf@shorten@start@additional=\dimen167
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count157
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen168
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen169
+\pgf@pt@y=\dimen170
+\pgf@pt@temp=\dimen171
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen172
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen173
+\pgf@sys@shading@range@num=\count158
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
+\pgfexternal@startupbox=\box35
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
+\pgfnodeparttextbox=\box36
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen174
+\pgf@nodesepend=\dimen175
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks38
+\verbatim@line=\toks39
+\verbatim@in@stream=\read2
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count159
+)
+\tcb@titlebox=\box37
+\tcb@upperbox=\box38
+\tcb@lowerbox=\box39
+\tcb@phantombox=\box40
+\c@tcbbreakpart=\count160
+\c@tcblayer=\count161
+\tcb@temp=\box41
+\tcb@temp=\box42
+\tcb@temp=\box43
+\tcb@temp=\box44
+\tcb@out=\write4
+\tcb@record@out=\write5
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip65
+\enit@outerparindent=\dimen176
+\enit@toks=\toks40
+\enit@inbox=\box45
+\enitdp@description=\count162
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen177
+\extrarowheight=\dimen178
+\NC@list=\toks41
+\extratabsurround=\skip66
+\backup@length=\skip67
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box46
+\sift@deathcycles=\count163
+\@vwid@loff=\dimen179
+\@vwid@roff=\dimen180
+)
+\c@taburow=\count164
+\tabu@nbcols=\count165
+\tabu@cnt=\count166
+\tabu@Xcol=\count167
+\tabu@alloc=\count168
+\tabu@nested=\count169
+\tabu@target=\dimen181
+\tabu@spreadtarget=\dimen182
+\tabu@naturalX=\dimen183
+\tabucolX=\dimen184
+\tabu@Xsum=\dimen185
+\extrarowdepth=\dimen186
+\abovetabulinesep=\dimen187
+\belowtabulinesep=\dimen188
+\tabustrutrule=\dimen189
+\tabu@thebody=\toks42
+\tabu@footnotes=\toks43
+\tabu@box=\box47
+\tabu@arstrutbox=\box48
+\tabu@hleads=\box49
+\tabu@vleads=\box50
+\tabu@cellskip=\skip68
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip69
+\bibsep=\skip70
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count170
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 44.
+\cftparskip=\skip71
+\cftbeforetoctitleskip=\skip72
+\cftaftertoctitleskip=\skip73
+\cftbeforepartskip=\skip74
+\cftpartnumwidth=\skip75
+\cftpartindent=\skip76
+\cftbeforechapskip=\skip77
+\cftchapindent=\skip78
+\cftchapnumwidth=\skip79
+\cftbeforesecskip=\skip80
+\cftsecindent=\skip81
+\cftsecnumwidth=\skip82
+\cftbeforesubsecskip=\skip83
+\cftsubsecindent=\skip84
+\cftsubsecnumwidth=\skip85
+\cftbeforesubsubsecskip=\skip86
+\cftsubsubsecindent=\skip87
+\cftsubsubsecnumwidth=\skip88
+\cftbeforeparaskip=\skip89
+\cftparaindent=\skip90
+\cftparanumwidth=\skip91
+\cftbeforesubparaskip=\skip92
+\cftsubparaindent=\skip93
+\cftsubparanumwidth=\skip94
+\cftbeforeloftitleskip=\skip95
+\cftafterloftitleskip=\skip96
+\cftbeforefigskip=\skip97
+\cftfigindent=\skip98
+\cftfignumwidth=\skip99
+\c@lofdepth=\count171
+\c@lotdepth=\count172
+\cftbeforelottitleskip=\skip100
+\cftafterlottitleskip=\skip101
+\cftbeforetabskip=\skip102
+\cfttabindent=\skip103
+\cfttabnumwidth=\skip104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
+\beforeepigraphskip=\skip105
+\afterepigraphskip=\skip106
+\epigraphwidth=\skip107
+\epigraphrule=\skip108
+)
+(./Master.aux)
+\openout1 = `Master.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
+LaTeX Font Info:    ... okay on input line 118.
+\c@lstlisting=\count173
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count174
+\scratchdimen=\dimen190
+\scratchbox=\box51
+\nofMPsegments=\count175
+\nofMParguments=\count176
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count177
+\MPscratchDim=\dimen191
+\MPnumerator=\count178
+\makeMPintoPDFobject=\count179
+\everyMPtoPDFconversion=\toks45
+)
+\AtBeginShipoutBox=\box52
+Package hyperref Info: Link coloring ON on input line 118.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count180
+)
+LaTeX Info: Redefining \ref on input line 118.
+LaTeX Info: Redefining \pageref on input line 118.
+LaTeX Info: Redefining \nameref on input line 118.
+
+(./Master.out) (./Master.out)
+\@outlinefile=\write6
+\openout6 = `Master.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(79.6678pt, 411.14224pt, 106.69783pt)
+* v-part:(T,H,B)=(113.81102pt, 617.4248pt, 113.81102pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=411.14224pt
+* \textheight=617.4248pt
+* \oddsidemargin=7.39781pt
+* \evensidemargin=34.42784pt
+* \topmargin=9.66724pt
+* \headheight=15.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=88.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-21.78552pt
+* \headheight=15.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=88.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=163, 14
+0.94772pt x 140.95068pt>
+File: uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf Graphi
+c file (type pdf)
+
+<use uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf>
+Package pdftex.def Info: uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_S
+egl_cmyk.pdf used on input line 124.
+(pdftex.def)             Requested size: 142.27217pt x 142.27518pt.
+
+[1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./uiofy
+smaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf>] [2
+
+
+] [3
+
+]
+[4
+
+
+] [5] [6
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+[7] [8
+
+
+] (./Master.toc [9])
+\tf@toc=\write7
+\openout7 = `Master.toc'.
+
+ [10]
+Chapter 1.
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
+
+ []
+
+[11
+
+] [12
+
+]
+Chapter 2.
+
+Package natbib Warning: Citation `Iliadis2015' on page 13 undefined on input li
+ne 211.
+
+
+LaTeX Warning: Reference `fig: chart_nuclides' on page 13 undefined on input li
+ne 214.
+
+
+LaTeX Warning: Reference `fig: chart_nuclides' on page 13 undefined on input li
+ne 216.
+
+[13]
+
+Package natbib Warning: Citation `Iliadis2015' on page 14 undefined on input li
+ne 231.
+
+
+Underfull \vbox (badness 6910) has occurred while \output is active []
+
+ [14]
+
+Package natbib Warning: Citation `Iliadis2015' on page 15 undefined on input li
+ne 238.
+
+[15]
+
+Package natbib Warning: Citation `Cyburt2016' on page 16 undefined on input lin
+e 265.
+
+
+Package natbib Warning: Citation `Merrill1952' on page 16 undefined on input li
+ne 272.
+
+
+LaTeX Warning: Reference `fig: cats_eye' on page 16 undefined on input line 272
+.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 16 undefined on input l
+ine 275.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 16 undefined on input l
+ine 276.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 16 undefined on input l
+ine 276.
+
+
+Package natbib Warning: Citation `Karakas2014' on page 16 undefined on input li
+ne 276.
+
+
+Package natbib Warning: Citation `Karakas2014' on page 16 undefined on input li
+ne 278.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 16 undefined on input l
+ine 278.
+
+
+LaTeX Warning: Reference `fig: Os_chart_nuclides' on page 16 undefined on input
+ line 283.
+
+[16]
+
+Package natbib Warning: Citation `Iliadis2015' on page 17 undefined on input li
+ne 285.
+
+
+LaTeX Warning: Reference `fig: chart_nuclides' on page 17 undefined on input li
+ne 285.
+
+
+Package natbib Warning: Citation `Iliadis2015' on page 17 undefined on input li
+ne 285.
+
+
+LaTeX Warning: Reference `fig: chart_nuclides' on page 17 undefined on input li
+ne 285.
+
+
+LaTeX Warning: Reference `fig: Os_chart_nuclides' on page 17 undefined on input
+ line 300.
+
+
+LaTeX Warning: Reference `fig: Os_chart_nuclides' on page 17 undefined on input
+ line 305.
+
+
+LaTeX Warning: Reference `fig: Os_chart_nuclides' on page 17 undefined on input
+ line 305.
+
+[17]
+
+Package natbib Warning: Citation `KadonisWeb' on page 18 undefined on input lin
+e 307.
+
+
+Package natbib Warning: Citation `KadonisWeb' on page 18 undefined on input lin
+e 307.
+
+
+LaTeX Warning: Reference `fig: chart_nuclides' on page 18 undefined on input li
+ne 313.
+
+
+Package natbib Warning: Citation `Lippuner2017' on page 18 undefined on input l
+ine 322.
+
+
+Package natbib Warning: Citation `Arnould2007' on page 18 undefined on input li
+ne 324.
+
+
+Package natbib Warning: Citation `Thielemann2011' on page 18 undefined on input
+ line 324.
+
+
+Package natbib Warning: Citation `Abbott2017' on page 18 undefined on input lin
+e 324.
+
+
+Package natbib Warning: Citation `Goldstein2017' on page 18 undefined on input 
+line 324.
+
+
+Package natbib Warning: Citation `Savchenko2017' on page 18 undefined on input 
+line 324.
+
+
+Package natbib Warning: Citation `Kasen2017' on page 18 undefined on input line
+ 326.
+
+
+Package natbib Warning: Citation `Goriely2016' on page 18 undefined on input li
+ne 326.
+
+[18]
+
+LaTeX Warning: Reference `fig: Os_chart_nuclides' on page 19 undefined on input
+ line 331.
+
+
+Package natbib Warning: Citation `Iliadis2015' on page 19 undefined on input li
+ne 337.
+
+
+Package natbib Warning: Citation `Arnould2003' on page 19 undefined on input li
+ne 345.
+
+
+Package natbib Warning: Citation `Arnould2003' on page 19 undefined on input li
+ne 346.
+
+
+Package natbib Warning: Citation `Burbidge1957' on page 19 undefined on input l
+ine 348.
+
+
+Package natbib Warning: Citation `Kheswa2015' on page 19 undefined on input lin
+e 348.
+
+[19]
+
+Package natbib Warning: Citation `Arnould2003' on page 20 undefined on input li
+ne 350.
+
+
+Package natbib Warning: Citation `Cowan1977' on page 20 undefined on input line
+ 356.
+
+
+Package natbib Warning: Citation `Herwig2011' on page 20 undefined on input lin
+e 358.
+
+
+Package natbib Warning: Citation `Denissenkov2018' on page 20 undefined on inpu
+t line 358.
+
+
+Package natbib Warning: Citation `Karakas2014' on page 20 undefined on input li
+ne 373.
+
+[20]
+
+Package natbib Warning: Citation `Karakas2014' on page 21 undefined on input li
+ne 375.
+
+
+Package natbib Warning: Citation `Iliadis2015' on page 21 undefined on input li
+ne 382.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 21 undefined on input l
+ine 382.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 21 undefined on input l
+ine 382.
+
+
+Package natbib Warning: Citation `Kappeler2011' on page 21 undefined on input l
+ine 384.
+
+
+Package natbib Warning: Citation `FRIB' on page 21 undefined on input line 385.
+
+
+
+Package natbib Warning: Citation `FAIR' on page 21 undefined on input line 385.
+
+
+
+Package natbib Warning: Citation `ISOLDE' on page 21 undefined on input line 38
+5.
+
+[21]
+
+Package natbib Warning: Citation `Bao2000' on page 22 undefined on input line 3
+95.
+
+
+Package natbib Warning: Citation `Dillmann2006' on page 22 undefined on input l
+ine 395.
+
+
+Package natbib Warning: Citation `Dillmann2014' on page 22 undefined on input l
+ine 397.
+
+
+Package natbib Warning: Citation `KadonisWeb' on page 22 undefined on input lin
+e 398.
+
+
+Package natbib Warning: Citation `Arnould2007' on page 22 undefined on input li
+ne 408.
+
+
+LaTeX Warning: Reference `fig: quasi-cont' on page 22 undefined on input line 4
+10.
+
+
+Package natbib Warning: Citation `NUDAT2' on page 22 undefined on input line 41
+4.
+
+[22]
+
+Package natbib Warning: Citation `Hilaire2006' on page 23 undefined on input li
+ne 419.
+
+
+Package natbib Warning: Citation `Ericson1960' on page 23 undefined on input li
+ne 419.
+
+
+Package natbib Warning: Citation `Gilbert1965' on page 23 undefined on input li
+ne 419.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 23 undefined on input li
+ne 428.
+
+
+Package natbib Warning: Citation `Bartholomew1973' on page 23 undefined on inpu
+t line 430.
+
+
+Package natbib Warning: Citation `Capote2009' on page 23 undefined on input lin
+e 435.
+
+
+Package natbib Warning: Citation `Kopecky2017' on page 23 undefined on input li
+ne 443.
+
+
+Package natbib Warning: Citation `Capote2009' on page 23 undefined on input lin
+e 451.
+
+[23]
+
+Package natbib Warning: Citation `Capote2009' on page 24 undefined on input lin
+e 460.
+
+
+Package natbib Warning: Citation `Capote2009' on page 24 undefined on input lin
+e 465.
+
+
+Package natbib Warning: Citation `Blatt_Weisskopf' on page 24 undefined on inpu
+t line 470.
+
+
+Package natbib Warning: Citation `Capote2009' on page 24 undefined on input lin
+e 470.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 24 undefined on input li
+ne 489.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 24 undefined on input li
+ne 489.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 24 undefined on input li
+ne 489.
+
+[24]
+
+Package natbib Warning: Citation `Goriely2008' on page 25 undefined on input li
+ne 493.
+
+[25] [26
+
+]
+Chapter 3.
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ú in font cmti10!
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ¶ in font cmti10!
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ù in font cmti10!
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ú in font cmti10!
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ¶ in font cmti10!
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ù in font cmti10!
+
+LaTeX Warning: Reference `sec: OCL' on page 27 undefined on input line 520.
+
+
+Package natbib Warning: Citation `OCLweb' on page 27 undefined on input line 52
+4.
+
+
+LaTeX Warning: Reference `fig:OLC_exp_hall' on page 27 undefined on input line 
+526.
+
+
+LaTeX Warning: Reference `fig:OLC_exp_hall' on page 27 undefined on input line 
+526.
+
+[27]
+
+LaTeX Warning: Reference `sec: CACTUS_SiRi' on page 28 undefined on input line 
+534.
+
+
+Package natbib Warning: Citation `Nenoff1998' on page 28 undefined on input lin
+e 536.
+
+
+LaTeX Warning: Reference `fig:cactus' on page 28 undefined on input line 538.
+
+
+Package natbib Warning: Citation `Nenoff1998' on page 28 undefined on input lin
+e 538.
+
+
+LaTeX Warning: Reference `fig: reaction_cactus_siri' on page 28 undefined on in
+put line 546.
+
+
+LaTeX Warning: Reference `fig: siri' on page 28 undefined on input line 550.
+
+
+Package natbib Warning: Citation `Leo1994' on page 28 undefined on input line 5
+50.
+
+[28]
+
+LaTeX Warning: Reference `fig: reaction_cactus_siri' on page 29 undefined on in
+put line 555.
+
+
+LaTeX Warning: Reference `fig: siri' on page 29 undefined on input line 555.
+
+
+Package natbib Warning: Citation `Guttormsen2011' on page 29 undefined on input
+ line 555.
+
+
+Package natbib Warning: Citation `CrespoCampo2016' on page 29 undefined on inpu
+t line 555.
+
+
+Package natbib Warning: Citation `qkinz' on page 29 undefined on input line 557
+.
+
+
+LaTeX Warning: Reference `fig: banana_nim' on page 29 undefined on input line 5
+59.
+
+
+Package natbib Warning: Citation `Leo1994' on page 29 undefined on input line 5
+59.
+
+
+LaTeX Warning: Reference `fig:cactus' on page 29 undefined on input line 563.
+
+
+Package natbib Warning: Citation `Leo1994' on page 29 undefined on input line 5
+63.
+
+
+Package natbib Warning: Citation `CrespoCampo2016' on page 29 undefined on inpu
+t line 583.
+
+
+Package natbib Warning: Citation `Leo1994' on page 29 undefined on input line 5
+84.
+
+
+Package natbib Warning: Citation `Larsen2008' on page 29 undefined on input lin
+e 584.
+
+
+Package natbib Warning: Citation `Guttormsen2011' on page 29 undefined on input
+ line 584.
+
+
+Package natbib Warning: Citation `Guttormsen1990' on page 29 undefined on input
+ line 584.
+
+
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [29]
+
+Package natbib Warning: Citation `OCL-GitHub' on page 30 undefined on input lin
+e 607.
+
+
+Package natbib Warning: Citation `oslo-method-software' on page 30 undefined on
+ input line 607.
+
+
+LaTeX Warning: Reference `fig: banana_192Os_qkinz' on page 30 undefined on inpu
+t line 622.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+
+LaTeX Warning: Reference `fig: banana_192Os_qkinz' on page 31 undefined on inpu
+t line 624.
+
+
+LaTeX Warning: Reference `fig: banana_192Os_qkinz' on page 31 undefined on inpu
+t line 624.
+
+
+LaTeX Warning: Reference `fig: banana_192Os_qkinz' on page 31 undefined on inpu
+t line 632.
+
+
+LaTeX Warning: Reference `sec: CACTUS_SiRi' on page 31 undefined on input line 
+637.
+
+
+Package natbib Warning: Citation `Bethe1953' on page 31 undefined on input line
+ 639.
+
+
+Package natbib Warning: Citation `Leo1994' on page 31 undefined on input line 6
+45.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+
+Package natbib Warning: Citation `Ziegler1985' on page 32 undefined on input li
+ne 656.
+
+
+LaTeX Warning: Reference `fig: my_special' on page 32 undefined on input line 6
+58.
+
+
+LaTeX Warning: Reference `fig: h_ex' on page 32 undefined on input line 658.
+
+
+LaTeX Warning: Reference `fig: h_ex' on page 32 undefined on input line 662.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\alpha' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\alpha' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 678.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 678.
+
+
+LaTeX Warning: Reference `fig: h_thick' on page 32 undefined on input line 681.
+
+
+
+LaTeX Warning: Reference `fig: h_thick' on page 32 undefined on input line 681.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 693.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 693.
+
+
+LaTeX Warning: Reference `fig: gamma_kalib' on page 33 undefined on input line 
+699.
+
+
+Package natbib Warning: Citation `Borg1976' on page 33 undefined on input line 
+699.
+
+
+Package natbib Warning: Citation `NUDAT2' on page 33 undefined on input line 69
+9.
+
+[33]
+
+LaTeX Warning: Reference `fig: time_gates' on page 34 undefined on input line 7
+08.
+
+
+LaTeX Warning: Reference `fig: time_gates' on page 34 undefined on input line 7
+08.
+
+
+LaTeX Warning: Reference `fig: time_corr' on page 34 undefined on input line 73
+2.
+
+
+Package natbib Warning: Citation `Guttormsen2011' on page 34 undefined on input
+ line 732.
+
+
+LaTeX Warning: Reference `fig: time_corr' on page 34 undefined on input line 73
+2.
+
+
+LaTeX Warning: Reference `fig: coincidence' on page 34 undefined on input line 
+737.
+
+[34]
+
+LaTeX Warning: Reference `fig: coincidence' on page 35 undefined on input line 
+740.
+
+
+LaTeX Warning: Reference `fig: coincidence' on page 35 undefined on input line 
+742.
+
+[35] [36
+
+]
+Chapter 4.
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ô in font cmti10!
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 784.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 784.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 784.
+
+
+Package natbib Warning: Citation `Leo1994' on page 37 undefined on input line 7
+89.
+
+[37]
+
+Package natbib Warning: Citation `CrespoCampo2016' on page 38 undefined on inpu
+t line 801.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 38 undefined on input
+ line 814.
+
+
+Package natbib Warning: Citation `Lay2014' on page 38 undefined on input line 8
+49.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 38 undefined on input
+ line 849.
+
+[38] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 872.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 872.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 39 undefined on input
+ line 881.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 39 undefined on input
+ line 881.
+
+[39]
+
+Package natbib Warning: Citation `oslo-method-software' on page 40 undefined on
+ input line 883.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 40 undefined on input
+ line 888.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 40 undefined on input
+ line 890.
+
+[40]
+
+Package natbib Warning: Citation `Guttormsen1996' on page 41 undefined on input
+ line 906.
+
+
+Package natbib Warning: Citation `Geant4' on page 41 undefined on input line 90
+9.
+
+
+Package natbib Warning: Citation `Guttormsen1996' on page 41 undefined on input
+ line 919.
+
+
+Package natbib Warning: Citation `Larsen2011' on page 41 undefined on input lin
+e 919.
+
+
+LaTeX Warning: Reference `fig: un_fg' on page 41 undefined on input line 921.
+
+
+LaTeX Warning: Reference `fig: coincidence' on page 41 undefined on input line 
+921.
+
+
+LaTeX Warning: Reference `fig: un_fg' on page 41 undefined on input line 921.
+
+[41]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 933.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 933.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 933.
+
+
+Package natbib Warning: Citation `Guttormsen1987' on page 42 undefined on input
+ line 942.
+
+
+LaTeX Warning: Reference `fig: gamma_decay' on page 42 undefined on input line 
+945.
+
+
+Package natbib Warning: Citation `Larsen2011' on page 42 undefined on input lin
+e 960.
+
+
+Package natbib Warning: Citation `Guttormsen1987' on page 42 undefined on input
+ line 960.
+
+
+Underfull \vbox (badness 1721) has occurred while \output is active []
+
+ [42]
+
+Package natbib Warning: Citation `Larsen2011' on page 43 undefined on input lin
+e 973.
+
+
+Package natbib Warning: Citation `Guttormsen1987' on page 43 undefined on input
+ line 975.
+
+
+Package natbib Warning: Citation `Larsen2011' on page 43 undefined on input lin
+e 975.
+
+[43]
+
+Package natbib Warning: Citation `Larsen2011' on page 44 undefined on input lin
+e 997.
+
+
+Package natbib Warning: Citation `Larsen2011' on page 44 undefined on input lin
+e 1020.
+
+
+Package natbib Warning: Citation `Guttormsen1987' on page 44 undefined on input
+ line 1020.
+
+
+Package natbib Warning: Citation `Larsen2011' on page 44 undefined on input lin
+e 1020.
+
+
+LaTeX Warning: Reference `fig: un_fg' on page 44 undefined on input line 1022.
+
+
+Package natbib Warning: Citation `Guttormsen1987' on page 44 undefined on input
+ line 1024.
+
+[44]
+
+Package natbib Warning: Citation `Larsen2011' on page 45 undefined on input lin
+e 1037.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1040.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 1040.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1040.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1045.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\chi' on input line 1045.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 1045.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1045.
+
+
+Package natbib Warning: Citation `Fermi1950' on page 45 undefined on input line
+ 1048.
+
+
+Package natbib Warning: Citation `Dirac1927' on page 45 undefined on input line
+ 1048.
+
+
+Package natbib Warning: Citation `Guttormsen2011b' on page 45 undefined on inpu
+t line 1055.
+
+[45]
+
+Package natbib Warning: Citation `Brink1955vto' on page 46 undefined on input l
+ine 1062.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 46 undefined on input l
+ine 1062.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 46 undefined on input l
+ine 1073.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 46 undefined on input l
+ine 1082.
+
+
+Underfull \vbox (badness 1303) has occurred while \output is active []
+
+ [46]
+
+Package natbib Warning: Citation `Schiller2000' on page 47 undefined on input l
+ine 1088.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 47 undefined on input l
+ine 1094.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 47 undefined on input l
+ine 1094.
+
+
+Package natbib Warning: Citation `OCL-GitHub' on page 47 undefined on input lin
+e 1094.
+
+
+Package natbib Warning: Citation `oslo-method-software' on page 47 undefined on
+ input line 1094.
+
+
+LaTeX Warning: Reference `fig: un_fg' on page 47 undefined on input line 1096.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 47 undefined on input l
+ine 1105.
+
+[47]
+
+Package natbib Warning: Citation `Ericson1960' on page 48 undefined on input li
+ne 1137.
+
+
+Package natbib Warning: Citation `Guttormsen2017' on page 48 undefined on input
+ line 1141.
+
+
+Package natbib Warning: Citation `VonEgidy2005' on page 48 undefined on input l
+ine 1146.
+
+
+Package natbib Warning: Citation `VonEgidy2005' on page 48 undefined on input l
+ine 1151.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 48 undefined on input l
+ine 1153.
+
+[48] [49] [50
+
+]
+Chapter 5.
+[51]
+Overfull \hbox (3.82011pt too wide) in paragraph at lines 1218--1219
+[]\OT1/cmr/m/n/12 As men-tioned pre-vi-ously, no ex-per-i-men-tal nor-mal-iza-t
+ion pa-ram-e-ters are known
+ []
+
+
+Package natbib Warning: Citation `VonEgidy2005' on page 52 undefined on input l
+ine 1257.
+
+
+Package natbib Warning: Citation `VonEgidy2005' on page 52 undefined on input l
+ine 1257.
+
+
+LaTeX Warning: Reference `fig:D0_sys' on page 52 undefined on input line 1277.
+
+
+Package natbib Warning: Citation `Mughabghab2006' on page 52 undefined on input
+ line 1277.
+
+
+Package natbib Warning: Citation `Mughabghab2018' on page 52 undefined on input
+ line 1277.
+
+
+Package natbib Warning: Citation `Capote2009' on page 52 undefined on input lin
+e 1278.
+
+
+Package natbib Warning: Citation `oslo-method-software' on page 52 undefined on
+ input line 1278.
+
+
+Package natbib Warning: Citation `VonEgidy2005' on page 52 undefined on input l
+ine 1278.
+
+
+Package natbib Warning: Citation `VonEgidy2009' on page 52 undefined on input l
+ine 1278.
+
+
+Package natbib Warning: Citation `Mughabghab2006' on page 52 undefined on input
+ line 1280.
+
+
+Package natbib Warning: Citation `Mughabghab2006' on page 52 undefined on input
+ line 1280.
+
+
+Package natbib Warning: Citation `Mughabghab2006' on page 52 undefined on input
+ line 1284.
+
+
+LaTeX Warning: Reference `fig:D0_sys' on page 52 undefined on input line 1286.
+
+
+Package natbib Warning: Citation `Mughabghab2006' on page 52 undefined on input
+ line 1286.
+
+[52]
+
+Package natbib Warning: Citation `Guttormsen2017' on page 53 undefined on input
+ line 1290.
+
+
+LaTeX Warning: Reference `fig:rho_norm' on page 53 undefined on input line 1292
+.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 53 undefined on input l
+ine 1295.
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1334.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 1334.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1334.
+
+
+LaTeX Warning: Reference `fig: Gg_systematics' on page 53 undefined on input li
+ne 1361.
+
+[53]
+
+Package natbib Warning: Citation `Capote2009' on page 54 undefined on input lin
+e 1363.
+
+
+Package natbib Warning: Citation `Fujii2010' on page 54 undefined on input line
+ 1363.
+
+
+Package natbib Warning: Citation `Mughabghab2006' on page 54 undefined on input
+ line 1363.
+
+
+LaTeX Warning: Reference `fig: Gg_systematics' on page 54 undefined on input li
+ne 1363.
+
+
+LaTeX Warning: Reference `fig: Gg_systematics' on page 54 undefined on input li
+ne 1365.
+
+
+LaTeX Warning: Reference `fig: strength_pretty' on page 54 undefined on input l
+ine 1368.
+
+
+Package natbib Warning: Citation `Berman1979' on page 54 undefined on input lin
+e 1368.
+
+
+Package natbib Warning: Citation `Schiller2000' on page 54 undefined on input l
+ine 1368.
+
+
+Package natbib Warning: Citation `oslo-method-software' on page 54 undefined on
+ input line 1403.
+
+[54]
+
+LaTeX Warning: Reference `fig: rho_errorband' on page 55 undefined on input lin
+e 1450.
+
+
+LaTeX Warning: Reference `fig: strength_errorband' on page 55 undefined on inpu
+t line 1450.
+
+
+Package natbib Warning: Citation `Larsen2011' on page 55 undefined on input lin
+e 1450.
+
+
+LaTeX Warning: Reference `fig: nld_result' on page 55 undefined on input line 1
+456.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+
+LaTeX Warning: Reference `fig: rho_errorband' on page 56 undefined on input lin
+e 1458.
+
+
+LaTeX Warning: Reference `fig: nld_result' on page 56 undefined on input line 1
+458.
+
+
+LaTeX Warning: Reference `fig: nld_result' on page 56 undefined on input line 1
+462.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 1475.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1475.
+
+
+Package natbib Warning: Citation `Berman1979' on page 56 undefined on input lin
+e 1490.
+
+
+Package natbib Warning: Citation `Berman1979' on page 56 undefined on input lin
+e 1490.
+
+
+LaTeX Warning: Reference `fig: gsf_errorband' on page 56 undefined on input lin
+e 1504.
+
+
+Package natbib Warning: Citation `Kopecky2017' on page 56 undefined on input li
+ne 1504.
+
+
+Package natbib Warning: Citation `Capote2009' on page 56 undefined on input lin
+e 1504.
+
+
+Package natbib Warning: Citation `Berman1979' on page 56 undefined on input lin
+e 1504.
+
+
+Package natbib Warning: Citation `Shizuma2005' on page 56 undefined on input li
+ne 1504.
+
+
+LaTeX Warning: Reference `fig: strength_errorband' on page 56 undefined on inpu
+t line 1506.
+
+
+LaTeX Warning: Reference `fig: gsf_errorband' on page 56 undefined on input lin
+e 1506.
+
+[56]
+
+Package natbib Warning: Citation `Berman1979' on page 57 undefined on input lin
+e 1508.
+
+
+Package natbib Warning: Citation `Shizuma2005' on page 57 undefined on input li
+ne 1508.
+
+
+Package natbib Warning: Citation `Berman1979' on page 57 undefined on input lin
+e 1510.
+
+
+LaTeX Warning: Reference `fig: gsf_errorband' on page 57 undefined on input lin
+e 1510.
+
+
+Package natbib Warning: Citation `Capote2009' on page 57 undefined on input lin
+e 1510.
+
+
+LaTeX Warning: Reference `fig: gsf_errorband' on page 57 undefined on input lin
+e 1512.
+
+
+Package natbib Warning: Citation `Kopecky2017' on page 57 undefined on input li
+ne 1512.
+
+
+Package natbib Warning: Citation `Kopecky2017' on page 57 undefined on input li
+ne 1514.
+
+
+Package natbib Warning: Citation `Capote2009' on page 57 undefined on input lin
+e 1514.
+
+
+Package natbib Warning: Citation `Kopecky2017' on page 57 undefined on input li
+ne 1514.
+
+
+Package natbib Warning: Citation `Savran2013' on page 57 undefined on input lin
+e 1523.
+
+
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [57]
+
+Package natbib Warning: Citation `Goriely2008' on page 58 undefined on input li
+ne 1532.
+
+
+Package natbib Warning: Citation `NNDC' on page 58 undefined on input line 1536
+.
+
+
+LaTeX Warning: Reference `fig: nld_result' on page 58 undefined on input line 1
+536.
+
+
+Overfull \hbox (4.46535pt too wide) in paragraph at lines 1538--1539
+\OT1/cmtt/m/n/12 TALYS[]M1[]rec[]strength.txt \OT1/cmr/m/n/12 con-tain ta-bles 
+of the es-ti-mated $\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 1$ and $\OML/cmm/m/it/12 
+M\OT1/cmr/m/n/12 1$ strengths
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58]
+[59]
+
+Package natbib Warning: Citation `oslo-method-software' on page 60 undefined on
+ input line 1605.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 60 undefined on input li
+ne 1607.
+
+[60]
+
+Package natbib Warning: Citation `KadonisWeb' on page 61 undefined on input lin
+e 1663.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 61 undefined on input li
+ne 1663.
+
+
+Package natbib Warning: Citation `RaT99' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `HWF76' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `Gor02' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `Gor05' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `KadonisWeb' on page 61 undefined on input lin
+e 1663.
+
+
+Package natbib Warning: Citation `Goriely2008' on page 61 undefined on input li
+ne 1663.
+
+
+Package natbib Warning: Citation `RaT99' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `HWF76' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `Gor02' on page 61 undefined on input line 166
+3.
+
+
+Package natbib Warning: Citation `Gor05' on page 61 undefined on input line 166
+3.
+
+
+Overfull \hbox (0.90543pt too wide) in paragraph at lines 1671--1671
+ []\OT1/cmr/m/n/12 HWF76| 
+ []
+
+
+Package natbib Warning: Citation `Goriely2008' on page 61 undefined on input li
+ne 1690.
+
+
+LaTeX Warning: Reference `fig: macs' on page 61 undefined on input line 1690.
+
+
+Underfull \vbox (badness 1924) has occurred while \output is active []
+
+ [61]
+
+Package natbib Warning: Citation `KadonisWeb' on page 62 undefined on input lin
+e 1692.
+
+
+Package natbib Warning: Citation `KadonisWeb' on page 62 undefined on input lin
+e 1692.
+
+
+Package natbib Warning: Citation `Bao2000' on page 62 undefined on input line 1
+692.
+
+
+LaTeX Warning: Reference `fig: macs' on page 62 undefined on input line 1694.
+
+
+Package natbib Warning: Citation `KadonisWeb' on page 62 undefined on input lin
+e 1694.
+
+
+Package natbib Warning: Citation `RaT99' on page 62 undefined on input line 169
+6.
+
+
+Package natbib Warning: Citation `HWF76' on page 62 undefined on input line 169
+6.
+
+
+Package natbib Warning: Citation `Gor02' on page 62 undefined on input line 169
+6.
+
+
+Package natbib Warning: Citation `Gor05' on page 62 undefined on input line 169
+6.
+
+
+Package natbib Warning: Citation `KadonisWeb' on page 62 undefined on input lin
+e 1696.
+
+
+Package natbib Warning: Citation `Gor02' on page 62 undefined on input line 169
+6.
+
+
+Package natbib Warning: Citation `Gor02' on page 62 undefined on input line 169
+6.
+
+[62]
+Chapter 6.
+[63
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1741.
+
+
+LaTeX Warning: Reference `fig: OSCAR' on page 64 undefined on input line 1751.
+
+[64]
+No file Master.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[65]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1824.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1824.
+ (./Master.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1824.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1824.
+
+Package rerunfilecheck Info: File `Master.out' has not changed.
+(rerunfilecheck)             Checksum: C165C7DE4B8CC7F93E8E8BF588EC0183;2890.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1824.
+ ) 
+Here is how much of TeX's memory you used:
+ 20721 strings out of 493089
+ 366000 string characters out of 6134843
+ 582248 words of memory out of 5000000
+ 23591 multiletter control sequences out of 15000+600000
+ 17377 words of font info for 62 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 54i,18n,73p,1198b,1466s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Master.pdf (65 pages, 468913 bytes).
+PDF statistics:
+ 896 PDF objects out of 1000 (max. 8388607)
+ 797 compressed objects within 8 object streams
+ 251 named destinations out of 1000 (max. 500000)
+ 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,15 @@
+AD_5cm_Y02_00-05.txt
+AD_5cm_Y02_06-12.txt
+AG_5cm_Y02_00-05.txt
+AG_5cm_Y02_06-12.txt
+AG_5cm_Y02_13-22.txt
+AK_10cm_Y02.txt
+AO_5cm_Y02_00-01.txt
+AO_5cm_Y02_02-04.txt
+AP_5cm_Y02_00-01.txt
+AP_5cm_Y02_02-03.txt
+AP_5cm_Y02_04-05.txt
+AP_5cm_Y02_06-07.txt
+AP_5cm_Y02_08-09.txt
+AP_5cm_Y02_10-11.txt
+AP_5cm_Y02_all.txt
