@@ -13,6 +13,8 @@ m = 60; h = m*60; d = h*24; y = d*356  #converters to seconds
 path = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/csv/'
 
 
+#comment for testing git
+
 ####Zink foils########
 def Zn_62Zn(): #check,  #mon, single
     foil1 = path + '62Zn_zn16MeV_130.dat'
