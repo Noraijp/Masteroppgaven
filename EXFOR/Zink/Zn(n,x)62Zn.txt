@@ -1,0 +1,14 @@
+#ZVView-data-copy:   6-Feb-2020 08:21:07
+#=======================================
+#
+#name:   30-ZN-0(N,X)30-ZN-62,,SIG
+#X.axis: Incident Energy
+#Y.axis: Cross Section
+#wdata:  4
+#ldata:  1
+#data...
+#            X         +-dX            Y         +-dY  # Comments...
+#          MeV          MeV        barns        barns  # Year,Author(s)           ## EXFOR-ID
+          30.4          0.4       0.0139       0.0016  # 2013,J.Vrzalova+         ## 31714026  #dY:11.5%  
+//
+#-------------------------------------------------------------------------------

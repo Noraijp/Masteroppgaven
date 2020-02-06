@@ -1,0 +1,14 @@
+#ZVView-data-copy:   6-Feb-2020 08:32:51
+#=======================================
+#
+#name:   30-ZN-66(N,G)30-ZN-67,,SIG
+#X.axis: Incident Energy
+#Y.axis: Cross Section
+#wdata:  3
+#ldata:  1
+#data...
+#            X            Y         +-dY  # Comments...
+#          MeV        barns        barns  # Year,Author(s)           ## EXFOR-ID
+       2.53e-8            0         0.62         0.06  # 1985,L.Koester+          ## 21980009  #dY:9.7%   
+//
+#-------------------------------------------------------------------------------

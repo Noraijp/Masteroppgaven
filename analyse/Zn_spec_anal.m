@@ -54,8 +54,8 @@ y_rhodrs =  [0.402     0.426];
 
 
 % select which foils to analyze
-fn = in_fn;
-energies = in_energies;
+fn = zn_fn;
+energies = zn_energies;
 % rhodrs = zn_rhodrs;
 % mu_attenuation = load('../zn_xcom.txt');
 
@@ -195,12 +195,12 @@ clc;
 
 
 % Select foils to analyze
-fn = in_fn;
-key_energies = in_key_energies;
-glines = in_glines;
+fn = zn_fn;
+key_energies = zn_key_energies;
+glines = zn_glines;
 %glines = zn_key_energies1; for in_glines
-rhodrs = in_rhodrs;
-mu_attenuation = load('../in_xcom.txt');
+rhodrs = zn_rhodrs;
+mu_attenuation = load('../zn_xcom.txt');
 
 pp2 = pchip(mu_attenuation(:,1).*1e3,mu_attenuation(:,2)); %peacewise polynomial
 
@@ -234,7 +234,7 @@ for i=1:number_of_files
     
     % Parse column data to cell structure
     %   '37' refers to the number of header lines in the report file 
-    C3 = textscan(fid,'%f %f %f %f %f %d %f %f %f %d','headerlines',30); %textscan, the giant block of the data for the current file.
+    C3 = textscan(raw_str,'%f %f %f %f %f %d %f %f %f %d','headerlines',30); %textscan, the giant block of the data for the current file.
     %C3 is a cellarray, C3{1,1} = 
     fclose(fid);
     
@@ -252,16 +252,16 @@ for i=1:number_of_files
 %     if detector==1
         if shelf==5
             %effcal = eff_5;
-            effcal = 'eff_room131_5.mat';
+            effcal = 'eff_room131_old_5.mat';
         elseif shelf==10
             %effcal = eff_10;
-            effcal = 'eff_room131_10.mat';
+            effcal = 'eff_room131_old_10.mat';
         elseif shelf==18
             %effcal = eff_18;
-            effcal = 'eff_room131_18.mat';
+            effcal = 'eff_room131_old_18.mat';
         elseif shelf==22
             %effcal = eff_22;
-            effcal = 'eff_room131_22.mat';
+            effcal = 'eff_room131_old_22.mat';
 %         elseif shelf==14
 %             effcal = eff_14;
 %         elseif shelf==15
@@ -336,7 +336,10 @@ for i=1:number_of_files
     
     % Pull out gamma-ray energies and net counts
 %                     energy        net counts (efficiency and attenuation corrected)                                      %error
-    sto_mat(:,1:3) = [C3{1,1}      double(C3{1,6})./(effcal(C3{1,1}).*exp(-ppval(pp2,C3{1,1}).* 0.5 .* rhodrs(foil_id)) )       C3{1,7}];
+    % this is correct version!
+    sto_mat(:,1:3) = [C3{1,1}      double(C3{1,6})./(eff.*exp(-ppval(pp2,C3{1,1}).* 0.5 .* rhodrs(foil_id)) )       C3{1,7}];
+    % this is wrong version!
+%     sto_mat(:,1:3) = [C3{1,1}      double(C3{1,6})      C3{1,7}];
 % C3{1,1} = E_gamma. 
 % C3{1,7}= unc in number of counts, 
 % C3{1,6} = net number of cunts (corrected for efficiency and gammarays

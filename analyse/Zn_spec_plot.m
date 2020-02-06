@@ -229,7 +229,7 @@ ylabel('Activity [Bq]')
 
 outfile = [reshape(delta_ts,[1 numel(delta_ts)])' ,reshape(activities,[1 numel(activities)])', reshape(errors,[1 numel(errors)])'];
 % Turn this line on to write files out!
-csvwrite([outName '_' num2str(energy) '.dat'],outfile);
+% csvwrite([outName '_' num2str(energy) '.dat'],outfile);
 
 end
 
