@@ -24,7 +24,11 @@ All info should be in reaction functions, ie Cu_62Zn, however, guesses are assig
 def A0_single_decay(filename_activity_time, lambda_, makePlot=False):
     ID = filename_activity_time[-8:-4]
     Nucleus = filename_activity_time[-12:-8]
-    print('foil{}_{}'.format(ID, Nucleus))
+    name = filename_activity_time[-20:-4]
+    if name[0]=='/':
+        name=name[1:]
+    #print("*",name)
+    #print('foil{}_{}'.format(ID, Nucleus))
     time = np.genfromtxt(filename_activity_time, delimiter=',', usecols=[0]) #hours since e.o.b
     A = np.genfromtxt(filename_activity_time, delimiter=',', usecols=[1])
     sigma_A = np.genfromtxt(filename_activity_time, delimiter=',', usecols=[2])
@@ -57,12 +61,15 @@ def A0_single_decay(filename_activity_time, lambda_, makePlot=False):
         plt.plot(xplot,direct_decay(xplot*3600,*(popt-sigma_activity_estimated)), color='green', linewidth=0.4)
         plt.plot(time[index],A[index], '.')
         plt.errorbar(time[index], A[index], color='green', linewidth=0.001,yerr=sigma_A[index], elinewidth=0.5, ecolor='k', capthick=0.5)   # cap thickness for error bar color='blue')
-        plt.title('Activity for foil {} nucleus {}'.format(ID, Nucleus) )
+        #plt.title('Activity for foil {} nucleus {}'.format(ID, Nucleus) )
+        plt.title('Activity for {}'.format(name) )
         plt.xlabel('time since eob, hours')
         plt.ylabel('Activity, Bq')
         save_results_to = os.getcwd()+'/activity_curves/'
+        print(save_results_to, name)
         #np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
-        plt.savefig('{}foil_{}.png'.format(save_results_to, Nucleus+ID), dpi=300)
+        plt.savefig('{}foil_{}.png'.format(save_results_to, name), dpi=300)
+        #plt.savefig('{}foil_{}.png'.format(save_results_to, Nucleus+ID), dpi=300)
         plt.show()
 
 
@@ -185,7 +192,7 @@ def single_decay_data(func, reaction, n, Save_csv=False):  #function, string
             np.savetxt("{}.csv".format(save_results_to +  reaction), np.array((A0, sigma_A0)), delimiter=",")
         print("A0: {}, sigmaA0: {}".format(A0_estimated, sigma_A0_estimated))
         print("*****************************************")
-def two_step_kp_data(func_parent, func_daughter, reaction, n, Save_csv=False):
+def two_step_kp_data(func_parent, func_daughter, reaction, n, BR=1, Save_csv=False):
     list_parent, lambda_parent = func_parent
     A0 = np.zeros(n); sigma_A0 = np.zeros(n)
     A0_list = []
@@ -194,7 +201,7 @@ def two_step_kp_data(func_parent, func_daughter, reaction, n, Save_csv=False):
         A0_list.append(A0_estimated_parent)  #add is all A0's for Ni56 from single decay function.
     list_daughter, lambda_parent, lambda_daughter = func_daughter
     for i,e in enumerate(list_daughter):
-        A0_estimated_daughter, sigma_A0_estimated_daughter = A0_double_decay_known_parent(e, A0_list[i], lambda_parent, lambda_daughter, makePlot=True)
+        A0_estimated_daughter, sigma_A0_estimated_daughter = A0_double_decay_known_parent(e, BR*A0_list[i], lambda_parent, lambda_daughter, makePlot=True)
         A0[i] = A0_estimated_daughter; sigma_A0[i] = sigma_A0_estimated_daughter
         if Save_csv == True:
             save_results_to = os.getcwd()+'/activity_csv/'
@@ -257,7 +264,9 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 
 #single_decay_data(Zn_65Ni(), "Zn_65Ni", 2, Save_csv=True)
 
-single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
+#single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
+
+#single_decay_data(Zn_65Zn(), 'Zn_65Zn', 1, Save_csv=True)
 
 
 ### Zirconium ###
@@ -268,25 +277,30 @@ single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
 
 #single_decay_data(Zr_92Y(), "Zr_92Y", 1, Save_csv=True)
 
-#two_step_kp_data(Zr_91Sr() ,Zr_91mY(), 'Zr_91mY', 1, Save_csv=True)
 
-#two_step_kp_data(Zr_97Nb() ,Zr_97Zr(), 'Zr_97Nb', 2, Save_csv=True)
+##single_decay_data(Zr_91mY(), "Zr_91mY", 1, Save_csv=True)
+#two_step_kp_data(Zr_91Sr() ,Zr_91mY(), 'Zr_91mY', 1, BR=0.714, Save_csv=True)
 
-#two_step_kp_data(Zr_97Zr() ,Zr_97Nb(), 'Zr_97Nb', 1, Save_csv=False)
+#two_step_kp_data(Zr_97Zr(), Zr_97Nb(), 'Zr_97Nb', 2, Save_csv=True)
+
+#single_decay_data(Zr_97Nb_33(), 'Zr_97Nb', 1, Save_csv=True)
+
+#single_decay_data(Zr_97Nb_33(), 'Zr_97Nb_33', 1, Save_csv=True)
+#Zr_97Nb_33
 
 #single_decay_data(Zr_95Zr(), "Zr_95Zr", 2, Save_csv=True)
 
 #single_decay_data(Zr_97Zr(), "Zr_97Zr", 1, Save_csv=True)
 
-#single_decay_data(Zr_98Zr(), "Zr_98Zr", 1, Save_csv=True)
+#single_decay_data(Zr_98Zr(), "Zr_98Zr", 1, Save_csv=True) IKKE BRUK
 
 #single_decay_data(Zr_91Sr(), "Zr_91Sr", 1, Save_csv=True)
 
-#single_decay_data(Zr_89Zr(), "Zr_89Zr", 1, Save_csv=True)
+#single_decay_data(Zr_89Zr(), "Zr_89Zr", 2, Save_csv=True)
 
 #single_decay_data(Zr_24Na(), "Zr_24Na", 1, Save_csv=True)
 
-#two_step_kp_data(Zr_95Nb() ,Zr_95Zr(), 'Zr_95Nb', 1, Save_csv=False)
+#two_step_kp_data(Zr_95Zr(), Zr_95Nb(), 'Zr_95Nb', 1, Save_csv=True)
 
 
 ### Yttrium ###
@@ -295,7 +309,7 @@ single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
 
 #single_decay_data(Y_87mY(), "Y_87mY", 1, Save_csv=True)
 
-#two_step_kp_data(Y_87mY(), Y_87Y(), "Y_87Y", 1, save_csv=True)
+two_step_kp_data(Y_87mY(), Y_87Y(), "Y_87Y", 1, Save_csv=True)
 
 #single_decay_data(Y_88Y(), "Y_88Y", 2, Save_csv=True)
 
@@ -304,23 +318,24 @@ single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
 
 ### Indium ###
 
-# single_decay_data(In_116mIn(), "In_116mIn", 2, Save_csv=True)
+#single_decay_data(In_116mIn(), "In_116mIn", 2, Save_csv=True)
 
-# single_decay_data(In_112mIn(), "In_112mIn", 1, Save_csv=True)
+#single_decay_data(In_112mIn(), "In_112mIn", 1, Save_csv=True)
 
-#two_step_kp_data(In_112mIn(), In_112In(), "In_112mIn", 2, Seva_csv=True)
+#DO THIS IN JONS CODE
+#two_step_kp_data(In_112mIn(), In_112In(), "In_112In", 1, Save_csv=True)
 
-# single_decay_data(In_111In(), "In_111In", 1, Save_csv=True)
+#single_decay_data(In_111In(), "In_111In", 1, Save_csv=True)
 
-# single_decay_data(In_115mIn(), "In_115mIn", 2, Save_csv=True)
+#single_decay_data(In_115mIn(), "In_115mIn", 2, Save_csv=True)
 
-# single_decay_data(In_113mIn(), "In_113mIn", 2, Save_csv=True)
+#single_decay_data(In_113mIn(), "In_113mIn", 2, Save_csv=True)
 
-# single_decay_data(In_114mIn(), "In_114mIn", 2, Save_csv=True)
+#single_decay_data(In_114mIn(), "In_114mIn", 2, Save_csv=True)
 
-# single_decay_data(In_24Na(), "In_24Na", 1, Save_csv=True)
+#single_decay_data(In_24Na(), "In_24Na", 1, Save_csv=True)
 
 
 ### Aluminum ###
 
-# single_decay_data(Al_24Na(), "Al_24Na", 2, Save_csv=True)
+#single_decay_data(Al_24Na(), "Al_24Na", 2, Save_csv=True)

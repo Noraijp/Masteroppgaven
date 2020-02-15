@@ -2,7 +2,7 @@ import numpy as np, matplotlib.pyplot as plt
 from scipy import interpolate
 from scipy.optimize import curve_fit
 
-m = 60; h = m*60; d = h*24; y = d*356  #converters to seconds
+s = 1; m = 60; h = m*60; d = h*24; y = d*356  #converters to seconds
 
 #fnames = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/csv/fnames.txt'
 #with open (fnames, "r") as myfile:#
@@ -16,9 +16,10 @@ path = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/csv/'
 #comment for testing git
 
 ####Zink foils########
+
 def Zn_62Zn(): #check,  #mon, single
     foil1 = path + '62Zn_zn16MeV_130.dat'
-    foil2 = path + '62Zn_33MeV_230.dat'
+    foil2 = path + '62Zn_zn33MeV_230.dat'
     #foil3 = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/Data_analysis/csv/62Zn_329.dat'
     #foil4 = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/Data_analysis/csv/62Zn_429.dat'
     #foil5 = '/Users/hannah/Documents/UIO/Masteroppgaven/Data/Data_analysis/csv/62Zn_529.dat'
@@ -33,7 +34,7 @@ def Zn_62Zn(): #check,  #mon, single
 
 def Zn_67Cu(): #check
     foil1 = path + '67Cu_zn16MeV_130.dat'
-    foil2 = path + '67Cu_33MeV_230.dat'
+    foil2 = path + '67Cu_zn33MeV_230.dat'
     list = [foil1, foil2] #, foil3, foil4, foil5, foil6, foil7, foil8, foil9, foil10]
     lambda_ = np.log(2)/(61.83*h)
     return list, lambda_    #mon, single
@@ -111,6 +112,16 @@ def Zn_40K():
     return list, lambda_
 
 
+#FEIL?????,
+def Zn_65Zn():
+    foil1 = path + '65Zn_zn16MeV_130.dat'
+    list = [foil1]
+    lambda_ = np.log(2)/(243.93*d)
+    return list, lambda_
+
+
+
+
 #####Zirconium FOILS######
 #Lacking: 60Co
 
@@ -139,6 +150,12 @@ def Zr_92Y(): #non-mon, single
 #    lambda_ = np.log(2)/(49.71*m)
 #    return list, lambda_
 
+#def Zr_91mY():
+#    foil1 = path + '91mY_zr33MeV_240.dat'
+#    list = [foil1]
+#    lambda_ = np.log(2)/(49.71*m) #91mY
+#    return list, lambda_
+
 
 def Zr_91mY(): #two steps decay #Den kjernen du ser på
     foil1 = path + '91mY_zr33MeV_240.dat'
@@ -150,12 +167,17 @@ def Zr_91mY(): #two steps decay #Den kjernen du ser på
 
 def Zr_97Nb(): #two step decay
     foil1 = path + '97Nb_zr16MeV_140.dat'
-    foil2 = path + '97Nb_zr33MeV_240.dat'
-    list = [foil1, foil2]
+    #foil2 = path + '97Nb_zr33MeV_240.dat'
+    list = [foil1]#, foil2]
     lambda_parent = np.log(2)/(16.749*h) #97Zr
     lambda_daughter = np.log(2)/(72.1*m)
     return list, lambda_parent, lambda_daughter
 
+def Zr_97Nb_33():
+    foil1 = path + '97Nb_zr33MeV_240.dat'
+    list = [foil1]
+    lambda_ = np.log(2)/(72.1*m)
+    return list, lambda_
 
 def Zr_95Zr(): #non-mon, single
     foil1 = path + '95Zr_zr16MeV_140.dat'
@@ -171,11 +193,11 @@ def Zr_97Zr(): #non-mon, single
     lambda_ = np.log(2)/(16.749*h)
     return list, lambda_
 
-def Zr_98Zr(): #non-mon, single
-    foil1 = path + '98Zr_zr16MeV_140.dat'
-    list = [foil1]
-    lambda_ = np.log(2)/(30.7*s)
-    return list, lambda_
+#def Zr_98Zr(): #non-mon, single
+#    foil1 = path + '98Zr_zr16MeV_140.dat'
+#    list = [foil1]
+#    lambda_ = np.log(2)/(30.7*s)
+#    return list, lambda_
 
 def Zr_91Sr(): #non-mon, single
     foil1 = path + '91Sr_zr33MeV_240.dat'
@@ -184,8 +206,9 @@ def Zr_91Sr(): #non-mon, single
     return list, lambda_
 
 def Zr_89Zr(): #non-mon, single
-    foil1 = path + '89Zr_zr33MeV_240.dat'
-    list = [foil1]
+    foil1 = path + '89Zr_zr16MeV_140.dat'
+    foil2 = path + '89Zr_zr33MeV_240.dat'
+    list = [foil1, foil2]
     lambda_ = np.log(2)/(78.41*h)
     return list, lambda_
 
@@ -214,22 +237,21 @@ def Y_90mY(): #non-mon, single
 
 
 def Y_87mY(): #non-mon, single
-    foil1 = path + '87mY_Y33MeV_239.dat'
+    foil1 = path + '87mY_y33MeV_239.dat'
     list = [foil1]
     lambda_ = np.log(2)/(13.37*h)
     return list, lambda_
 
-
 def Y_87Y(): #double decay
-    foil1 = path + '87Y_Y33MeV_239.dat'
+    foil1 = path + '87Y_y33MeV_239.dat'
     list = [foil1]
-    lambda_parent = np.log(2)/(3.19*h) # 87mY
+    lambda_parent = np.log(2)/(13.37*h) # 87mY
     lambda_daughter = np.log(2)/(79.8*h)
     return list, lambda_parent, lambda_daughter
 
 def Y_88Y(): #non-mon, single
-    foil1 = path + '88Y_Y16MeV_139.dat'
-    foil2 = path + '88Y_Y33MeV_239.dat'
+    foil1 = path + '88Y_y16MeV_139.dat'
+    foil2 = path + '88Y_y33MeV_239.dat'
     list = [foil1, foil2]
     lambda_ = np.log(2)/(106.626*d)
     return list, lambda_
@@ -259,12 +281,11 @@ def In_112mIn(): #non-mon, single
     return list, lambda_
 
 
-def In_112In(): #double decay # LEGG INN CSV FILEN
-    foil1 = path + '112In_In16MeV_349.dat'
-    foil2 = path + '112In_In33MeV_149.dat'
-    list = [foil1, foil2]
-    lambda_parent = np.log(2)/(20.67*m)
-    lambda_daughter = np.log(2)/(49.51*d)
+def In_112In(): #double decay
+    foil1 = path + '112In_in33MeV_349.dat'
+    list = [foil1]
+    lambda_parent = np.log(2)/(20.67*m) #112mIn
+    lambda_daughter = np.log(2)/(14.88*m)
     return list, lambda_parent, lambda_daughter
 
 
