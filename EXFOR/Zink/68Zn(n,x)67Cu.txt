@@ -1,0 +1,14 @@
+#ZVView-data-copy:  18-Feb-2020 05:41:58
+#=======================================
+#
+#name:   30-ZN-68(N,X)29-CU-67,,SIG
+#X.axis: Incident Energy
+#Y.axis: Cross Section
+#wdata:  4
+#ldata:  1
+#data...
+#            X         +-dX            Y         +-dY  # Comments...
+#          MeV          MeV        barns        barns  # Year,Author(s)           ## EXFOR-ID
+          14.7         0.15       0.0021       0.0003  # 1982,S.M.Qaim            ## 21784006  #dY:14.3%  
+//
+#-------------------------------------------------------------------------------

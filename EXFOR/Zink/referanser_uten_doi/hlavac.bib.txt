@@ -1,0 +1,8 @@
+@article{hlavac1976cross,
+  title={Cross-section measurements of some (n, 2n) and (n, p) reactions at 14.7 MeV},
+  author={Hlavac, S and Kristiak, J and Oblozinsky, P and Turzo, I},
+  journal={Acta Phys. Slovaca},
+  volume={26},
+  pages={64},
+  year={1976}
+}
