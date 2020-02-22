@@ -280,72 +280,168 @@ print('approximate_average_flux_16MeV: ',approximate_average_flux_16MeV)
 # plt.show()
 
 
+# def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV):
+def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV):
+
+	### for zinc
+	# product_name='67CU'
+	# itp = npat.Isotope(target_name[j])
+	xs_array_16MeV = []
+	xs_array_33MeV = []
 
 
-### for zinc
-product_name='67CU'
-itp = npat.Isotope('67ZN')
+	# product_activity_data = read_csv('Zn_67Cu.csv')
+	#print('CSV data: \n',product_activity_data)
+	for j in range(len(product_name)):
+		itp = npat.Isotope(target_name[j])
+		product_activity_data = read_csv(csv_list[j])
+		product_activity_16MeV = product_activity_data[:,0]
+		product_activity_33MeV = product_activity_data[:,1]
+		# print('product_activity_16MeV', product_activity_16MeV[0])
+
+		product_dc_33MeV =      DecayChain(product_name[j], R=1, time=530.0)
+		product_dc_33MeV.append(DecayChain(product_name[j],      time=((5.0*60.0)+40.0)))
+		product_dc_33MeV.append(DecayChain(product_name[j], R=1, time=6750.0))
+
+		product_dc_16MeV =      DecayChain(product_name[j], R=1, time= (7*3600) + (57*60))
+
+		#dc = npat.DecayChain(product_name, R=1, time=irr_time)
+		product_dc_33MeV.append(npat.DecayChain(product_name[j], time=1E6))
+		product_dc_16MeV.append(npat.DecayChain(product_name[j], time=1E6))
+
+		count_start_time = 0.0 # h
+		#measured_A0_67ZN_activity = 3.7E3 # bq
+
+		R_33MeV = product_activity_33MeV[0]/product_dc_33MeV.activity(product_name[j], t=count_start_time, units='h')
+		R_16MeV = product_activity_16MeV[0]/product_dc_16MeV.activity(product_name[j], t=count_start_time, units='h')
+		# R_33MeV = product_activity_33MeV[0]
+		# R_16MeV = product_activity_16MeV[0]
 
 
-product_activity_data = read_csv('Zn_67Cu.csv')
-#print('CSV data: \n',product_activity_data)
+		# itp = npat.Isotope('natZN')
+		if str(itp)[0:3] == 'nat':
+			ab = 1.0
+		else:
+			ab = 1E-2*itp.abundance()
 
-product_activity_16MeV = product_activity_data[:,0]
-product_activity_33MeV = product_activity_data[:,1]
-print('product_activity_16MeV', product_activity_16MeV[0])
+		if str(itp) == 'natIN':
+			isotope_mass = 114.818
+		elif str(itp) == 'natY':
+			isotope_mass = 88.90584
+		elif str(itp) == 'natAL':
+			isotope_mass = 26.9815384
+		elif str(itp) == 'natZR':
+			isotope_mass = 91.224
+		elif str(itp) == 'natZN':
+			isotope_mass = 65.38
+		else:
+			isotope_mass = itp.mass
 
-product_dc_33MeV =      DecayChain(product_name, R=1, time=530.0)
-product_dc_33MeV.append(DecayChain(product_name,      time=((5.0*60.0)+40.0)))
-product_dc_33MeV.append(DecayChain(product_name, R=1, time=6750.0))
+		n_atoms_33MeV = (ab*mass_33MeV*6.022E-1)/isotope_mass
+		n_atoms_16MeV = (ab*mass_16MeV*6.022E-1)/isotope_mass
 
-product_dc_16MeV =      DecayChain(product_name, R=1, time= (7*3600) + (57*60))
 
-#dc = npat.DecayChain(product_name, R=1, time=irr_time)
-product_dc_33MeV.append(npat.DecayChain(product_name, time=1E6))
-product_dc_16MeV.append(npat.DecayChain(product_name, time=1E6))
+		xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV)
+		xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV)
+		print('\n************************************************\n')
+		print('For reaction ',target_name[j],'(n,x)',product_name[j],':')
+		print('Our measured 33MeV cross section (mb); ', xs_33MeV)
+		print('Our measured 16MeV cross section (mb); ', xs_16MeV)
 
-count_start_time = 0.0 # h
-#measured_A0_67ZN_activity = 3.7E3 # bq
+		xs_array_33MeV.append(xs_33MeV)
+		xs_array_16MeV.append(xs_16MeV)
 
-R_33MeV = product_activity_33MeV[0]/product_dc_33MeV.activity(product_name, t=count_start_time, units='h')
-R_16MeV = product_activity_16MeV[0]/product_dc_16MeV.activity(product_name, t=count_start_time, units='h')
-# R_33MeV = product_activity_33MeV[0]
-# R_16MeV = product_activity_16MeV[0]
+		lb = Library('IRDFF')
+		#print(lb.search(target='113IN'))
+		IRDFF_reactions_found = lb.search(product=product_name[j])
+		for rxn in IRDFF_reactions_found:
+			# print(rxn)
+			length_target_string  = len(target_name[j])
+			length_product_string = len(product_name[j])
+			# print(rxn[:length_target_string])
+			if rxn[:length_target_string] == target_name[j]:
+				if rxn[-length_product_string:] == product_name[j]:
+					# print(rxn[:length_target_string])
+					# print(rxn[-length_product_string:])
+					# we are looking at the correct reaction channel for IRDFF!
 
+					rx = npat.Reaction(rxn, library='IRDFF')
+					meulders_33MeV_xs_avg = rx.average(meulders_33MeV[:,0], meulders_33MeV[:,1])
+					meulders_16MeV_xs_avg = rx.average(meulders_16MeV[:,0], meulders_16MeV[:,1])
+					print('meulders_33MeV_xs_avg: ',meulders_33MeV_xs_avg)
+					print('meulders_16MeV_xs_avg: ',meulders_16MeV_xs_avg)
+
+	return xs_array_16MeV, xs_array_33MeV
+
+
+
+### zink
+
+product_name  = ['67CU', '67CU', '64CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
+target_name  = ['natZN','67ZN', 'natZN', '64ZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
+csv_list = ['Zn_67Cu.csv', 'Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
+            'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
 mass_33MeV = 0.8427 #g
+unc_mass_33MeV = 0.0006
 mass_16MeV = 0.8463 #g
-# itp = npat.Isotope('natZN')
-if str(itp)[0:3] == 'nat':
-	ab = 1.0
-else:
-	ab = 1E-2*itp.abundance()
-if str(itp) == 'natIN':
-	isotope_mass = 114.818
-elif str(itp) == 'natY':
-	isotope_mass = 88.90584
-elif str(itp) == 'natAL':
-	isotope_mass = 26.9815384
-elif str(itp) == 'natZR':
-	isotope_mass = 91.224
-elif str(itp) == 'natZN':
-	isotope_mass = 65.38
-else:
-	isotope_mass = itp.mass
+unc_mass_16MeV = 0.0015
 
-n_atoms_33MeV = (ab*mass_33MeV*6.022E-1)/isotope_mass
-n_atoms_16MeV = (ab*mass_16MeV*6.022E-1)/isotope_mass
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
 
 
-xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV)
-xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV)
-print('Our measured 33MeV cross section (mb); ', xs_33MeV)
-print('Our measured 16MeV cross section (mb); ', xs_16MeV)
 
-lb = Library('IRDFF')
-#print(lb.search(target='113IN'))
-print(lb.search(product=product_name))
-rx = npat.Reaction('67ZN(n,p)67CU', library='IRDFF')
-meulders_33MeV_xs_avg = rx.average(meulders_33MeV[:,0], meulders_33MeV[:,1])
-meulders_16MeV_xs_avg = rx.average(meulders_16MeV[:,0], meulders_16MeV[:,1])
-print('meulders_33MeV_xs_avg: ',meulders_33MeV_xs_avg)
-print('meulders_16MeV_xs_avg: ',meulders_16MeV_xs_avg)
+
+### Zirconium
+
+product_name = ['90Ym', '91Ym', '91SR', '92Y', '93Y', '95NB', '95ZR', '97NB', '97NB', '97ZR', '98ZR']
+target_name = ['natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR']
+csv_list = ['Zr_90mY.csv', 'Zr_91mY.csv', 'Zr_91Sr.csv', 'Zr_92Y.csv', 'Zr_93Y.csv', 'Zr_95Nb.csv',
+            'Zr_95Zr.csv', 'Zr_97Nb_33.csv', 'Zr_97Nb.csv', 'Zr_97Zr.csv', 'Zr_98Zr.csv']
+mass_33MeV = 0.7557 #g
+unc_mass_33MeV = 0.0012  #g
+mass_16MeV = 0.7560 #g
+unc_mass_16MeV = 0.0010 #g
+
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+
+
+
+# ### for indium
+
+product_name = ['111IN', '112IN', '112INm', ]
+target_lname = ['natIN', 'natIN', 'natIN']
+csv_list = ['In_111In.csv', 'In_112In.csv', 'In_112mIn.csv']
+mass_33MeV = 0.5443 #g
+unc_mass_33MeV = 0.0013  #g
+mass_16MeV = 0.5530 #g
+unc_mass_16MeV = 0.0035  #g
+
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+
+
+
+# ## for yttrium
+csv_list      = ['Y_88Y.csv']
+product_name = ['87SRm', '87Ym', '87Y', '90Ym']
+target_name = ['natY', 'natY', 'natY', 'natY']
+csv_list = ['Y_87mSr.csv', 'Y_87mY.csv', 'Y_87Y.csv', 'Y_90mY.csv']
+mass_33MeV = 0.4657 #g
+mass_16MeV = 0.5053
+unc_mass_33MeV = 0.0006  #g
+unc_mass_16MeV = 0.0021
+
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+
+
+
+### Aluminum
+#
+# product_name = ['24NA', '24NA']
+# target_name = ['27AL', '27AL']
+# csv_list = ['Al_24Na.csv', 'Al_24Na.csv']
+# mass_33MeV = 0.2563 #g
+# unc_mass_33MeV = 0.0015  #g
+# mass_16MeV = 0.2573 #g
+# unc_mass_16MeV = 0.0006 #g
+#
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
