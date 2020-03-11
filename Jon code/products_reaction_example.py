@@ -33,7 +33,19 @@ def read_csv(name_of_csv_file):
 
 	return np.asarray(results, dtype=float)
 
-true_neutron_fluxes =  read_csv('./averaged_fluxes.csv')
+
+def read_flux_csv(name_of_csv_file):
+	results = []
+	with open(name_of_csv_file) as csvfile:
+	    reader = csv.reader(decomment(csvfile))
+	    for row in reader:
+	        results.append(row)
+
+	return np.asarray(results, dtype=float)
+
+
+
+true_neutron_fluxes =  read_flux_csv('./averaged_fluxes.csv')
 neutron_flux_16MeV = true_neutron_fluxes[0,:]
 neutron_flux_33MeV = true_neutron_fluxes[1,:]
 approximate_average_flux_16MeV = neutron_flux_16MeV[1]
@@ -147,9 +159,9 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 
 # ### zink
 
-product_name  = ['67CU', '67CU', '64CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
-target_name  = ['natZN','67ZN', 'natZN', '64ZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
-csv_list = ['Zn_67Cu.csv', 'Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
+product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
+target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
+csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
             'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
 mass_33MeV = 0.8427 #g
 unc_mass_33MeV = 0.0006

@@ -7,6 +7,9 @@ from npat import *
 
 from weighted_average import *
 
+from solid_angle import calc_SA
+
+
 with open('meulders_33MeV.csv') as f:
 	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
 
@@ -34,8 +37,27 @@ def read_csv(name_of_csv_file):
 
 	return np.asarray(results, dtype=float)
 
+def calc_SA(R_beam=0.5, R_sample=0.05, dist=5.0, N=1E6):
+	#### Solid angle between two concentric circles
+	N = int(N)
+	r = np.sqrt(np.random.uniform(size=N))*R_beam
+	ang = np.pi*2.0*np.random.uniform(size=N)
 
-def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV):
+	x0 = r*np.cos(ang)
+	y0 = r*np.sin(ang)
+
+	tht = np.arccos(2.0*np.random.uniform(size=N)-1.0)
+	phi = 2.0*np.pi*np.random.uniform(size=N)
+
+	xf = x0 + dist*np.tan(tht)*np.cos(phi)
+	yf = y0 + dist*np.tan(tht)*np.sin(phi)
+
+	return 2.0*np.pi*float(len(np.where(np.sqrt(xf**2+yf**2)<=R_sample)[0]))/float(N)
+
+
+
+
+def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_16MeV, R_sample_33MeV, dist_16MeV, dist_33MeV):
 	flux_array_33MeV  =  []
 	unc_flux_array_33MeV  =  []
 	flux_array_16MeV  =  []
@@ -124,11 +146,22 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 		#print('target_mass: ', isotope_mass)
 		n_atoms_16MeV = (ab*mass_16MeV*6.022E-1)/isotope_mass
 
-		avg_flux_33MeV = R_33MeV/(n_atoms_33MeV*xs_avg_33MeV)
-		avg_flux_16MeV = R_16MeV/(n_atoms_16MeV*xs_avg_16MeV)
+		#REDIGER det skal være radiusen til beamen som ble kjørt før eksperimentet
+		#the radius (in cm) of the deuteron beam, which we know teh size of from your gafchromic films
+		R_beam_16MeV = .5 #apporox
+		R_beam_33MeV = .75 #approx
+
+
+		calc_solid_angle_16MeV = calc_SA(R_beam_16MeV, R_sample_16MeV, dist_16MeV)
+		calc_solid_angle_33MeV = calc_SA(R_beam_33MeV, R_sample_33MeV, dist_33MeV)
+
+		avg_flux_33MeV = R_33MeV/(n_atoms_33MeV*xs_avg_33MeV*calc_solid_angle_33MeV)
+		avg_flux_16MeV = R_16MeV/(n_atoms_16MeV*xs_avg_16MeV*calc_solid_angle_16MeV)
 		#unc_avg_flux_33MeV = np.sqrt(  (unc_R_33MeV/R_33MeV)**2  + (unc_xs_avg_33MeV/xs_avg_33MeV)**2 + (unc_mass_33MeV/mass_33MeV)**2   )
 		unc_avg_flux_33MeV = avg_flux_33MeV*np.sqrt(  (activity_33MeV[1]/activity_33MeV[0])**2  + (unc_xs_avg_33MeV/xs_avg_33MeV)**2 + (unc_mass_33MeV/mass_33MeV)**2   )
 		unc_avg_flux_16MeV = avg_flux_16MeV*np.sqrt(  (activity_16MeV[1]/activity_16MeV[0])**2  + (unc_xs_avg_16MeV/xs_avg_16MeV)**2 + (unc_mass_16MeV/mass_16MeV)**2   )
+
+
 
 		# print('% uncertainty in R: ', 100*activity_33MeV[1]/activity_33MeV[0])
 		# print('% uncertainty in N_atoms: ', 100*unc_mass_33MeV/mass_33MeV)
@@ -151,14 +184,10 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 		unc_number_of_atoms[:,i] = np.array((n_atoms_16MeV*(unc_mass_16MeV/mass_16MeV), n_atoms_33MeV*(unc_mass_33MeV/mass_33MeV)))
 		unc_flux_avg_cross_section[:,i] = np.array((unc_xs_avg_16MeV, unc_xs_avg_33MeV))
 
+
+
 	# print('\n************************************************\n')
 	return flux_array_33MeV, unc_flux_array_33MeV, flux_array_16MeV, unc_flux_array_16MeV, production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section
-
-
-# def Average_BeamCurrent(production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, csv_filename='averaged_currents.csv'):
-
-
-
 
 
 
@@ -172,8 +201,12 @@ mass_33MeV = 0.4657 #g
 mass_16MeV = 0.5053
 unc_mass_33MeV = 0.0006  #g
 unc_mass_16MeV = 0.0021
+R_sample_y_16MeV = 0.633 #cm
+R_sample_y_33MeV = 0.590
+dist_to_y_16MeV = 10.7 #cm
+dist_to_y_33MeV = 11.1
 
-y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, y_production_rate, y_number_of_atoms, y_flux_avg_cross_section, y_unc_production_rate, y_unc_number_of_atoms, y_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV)
+y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, y_production_rate, y_number_of_atoms, y_flux_avg_cross_section, y_unc_production_rate, y_unc_number_of_atoms, y_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_y_16MeV, R_sample_y_33MeV, dist_to_y_16MeV, dist_to_y_33MeV)
 # print('Y flux at 33MeV           : ', y_avg_flux_33MeV)
 # print('Y flux uncertinty_33MeV : ', y_unc_avg_flux_33MeV)
 # print('Y flux at 16MeV           : ', y_avg_flux_16MeV)
@@ -182,21 +215,21 @@ y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, 
 
 
 ### for indium
-
-csv_list      = ['In_114mIn.csv','In_114mIn.csv', 'In_113mIn.csv',  'In_115mIn.csv']
-#reaction_list = ['113IN(n,g)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm', '115IN(n,g)116INm']
-reaction_list = ['natIN(n,x)114INm',  '115IN(n,2n)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm']
-target_list   = ['natIN',  '115IN', '113IN', '115IN']
-product_list  = ['114INm',  '114INm','113INm', '115INm']
-# csv_list      = ['In_114mIn.csv','In_114mIn.csv' ,'In_114mIn.csv', 'In_113mIn.csv',  'In_115mIn.csv',  'In_116mIn.csv']
+#
+# csv_list      = ['In_114mIn.csv','In_114mIn.csv', 'In_113mIn.csv',  'In_115mIn.csv']
 # #reaction_list = ['113IN(n,g)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm', '115IN(n,g)116INm']
-# reaction_list = ['natIN(n,x)114INm', '113IN(n,g)114INm', '115IN(n,2n)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm', '115IN(n,g)116INm']
-# target_list   = ['natIN', '113IN', '115IN', '113IN', '115IN', '115IN']
-# product_list  = ['114INm', '114INm', '114INm','113INm', '115INm', '116INm']
-mass_33MeV = 0.5443 #g
-unc_mass_33MeV = 0.0013  #g
-mass_16MeV = 0.5530 #g
-unc_mass_16MeV = 0.0035  #g
+# reaction_list = ['natIN(n,x)114INm',  '115IN(n,2n)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm']
+# target_list   = ['natIN',  '115IN', '113IN', '115IN']
+# product_list  = ['114INm',  '114INm','113INm', '115INm']
+# # csv_list      = ['In_114mIn.csv','In_114mIn.csv' ,'In_114mIn.csv', 'In_113mIn.csv',  'In_115mIn.csv',  'In_116mIn.csv']
+# # #reaction_list = ['113IN(n,g)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm', '115IN(n,g)116INm']
+# # reaction_list = ['natIN(n,x)114INm', '113IN(n,g)114INm', '115IN(n,2n)114INm', '113IN(n,inl)113INm', '115IN(n,inl)115INm', '115IN(n,g)116INm']
+# # target_list   = ['natIN', '113IN', '115IN', '113IN', '115IN', '115IN']
+# # product_list  = ['114INm', '114INm', '114INm','113INm', '115INm', '116INm']
+# mass_33MeV = 0.5443 #g
+# unc_mass_33MeV = 0.0013  #g
+# mass_16MeV = 0.5530 #g
+# unc_mass_16MeV = 0.0035  #g
 
 # ## Search the IRDFF neutron library for reactions
 # lb = Library('IRDFF')
@@ -204,7 +237,7 @@ unc_mass_16MeV = 0.0035  #g
 # print(lb.search(product='114INm'))
 # #print(lb.search(target='113IN',product='114INm1'))
 
-in_avg_flux_33MeV, in_unc_avg_flux_33MeV, in_avg_flux_16MeV, in_unc_avg_flux_16MeV, in_production_rate, in_number_of_atoms, in_flux_avg_cross_section, in_unc_production_rate, in_unc_number_of_atoms, in_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV)
+#in_avg_flux_33MeV, in_unc_avg_flux_33MeV, in_avg_flux_16MeV, in_unc_avg_flux_16MeV, in_production_rate, in_number_of_atoms, in_flux_avg_cross_section, in_unc_production_rate, in_unc_number_of_atoms, in_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV)
 # print('In flux at 33MeV           : ', in_avg_flux_33MeV)
 # print('In flux uncertinty_33MeV : ', in_unc_avg_flux_33MeV)
 # print('In flux at 16MeV           : ', in_avg_flux_16MeV)
@@ -223,6 +256,10 @@ mass_33MeV = 0.2563 #g
 unc_mass_33MeV = 0.0015  #g
 mass_16MeV = 0.2573 #g
 unc_mass_16MeV = 0.0006 #g
+R_sample_al_16MeV = 0.6442 #cm
+R_sample_al_33MeV = 0.646
+dist_to_al_16MeV = 10.5 #cm
+dist_to_al_33MeV = 10.5
 
 # ### Search the IRDFF neutron library for reactions
 # lb = Library('IRDFF')
@@ -230,7 +267,7 @@ unc_mass_16MeV = 0.0006 #g
 # print(lb.search(product='24Na'))
 # # print(lb.search(target='113IN',product='114INm1'))
 
-al_avg_flux_33MeV, al_unc_avg_flux_33MeV, al_avg_flux_16MeV, al_unc_avg_flux_16MeV, al_production_rate, al_number_of_atoms, al_flux_avg_cross_section, al_unc_production_rate, al_unc_number_of_atoms, al_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV)
+al_avg_flux_33MeV, al_unc_avg_flux_33MeV, al_avg_flux_16MeV, al_unc_avg_flux_16MeV, al_production_rate, al_number_of_atoms, al_flux_avg_cross_section, al_unc_production_rate, al_unc_number_of_atoms, al_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_al_16MeV, R_sample_al_33MeV, dist_to_al_16MeV, dist_to_al_33MeV)
 # print('Al flux at 33MeV           : ', al_avg_flux_33MeV)
 # print('Al flux uncertinty_33MeV : ', al_unc_avg_flux_33MeV)
 # print('Al flux at 16MeV           : ', al_avg_flux_16MeV)
@@ -249,6 +286,10 @@ mass_33MeV = 0.7557 #g
 unc_mass_33MeV = 0.0012  #g
 mass_16MeV = 0.7560 #g
 unc_mass_16MeV = 0.0010 #g
+R_sample_zr_16MeV = 0.615 #cm
+R_sample_zr_33MeV = 0.615
+dist_to_zr_16MeV = 10.9 #cm
+dist_to_zr_33MeV = 10.8
 
 # ## Search the IRDFF neutron library for reactions
 # lb = Library('IRDFF')
@@ -256,7 +297,7 @@ unc_mass_16MeV = 0.0010 #g
 # print(lb.search(product='89Zr'))
 # # print(lb.search(target='113IN',product='114INm1'))
 
-zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16MeV, zr_production_rate, zr_number_of_atoms, zr_flux_avg_cross_section, zr_unc_production_rate, zr_unc_number_of_atoms, zr_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV)
+zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16MeV, zr_production_rate, zr_number_of_atoms, zr_flux_avg_cross_section, zr_unc_production_rate, zr_unc_number_of_atoms, zr_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_zr_16MeV, R_sample_zr_33MeV, dist_to_zr_16MeV, dist_to_zr_33MeV)
 # print('Zr flux at 33MeV           : ', zr_avg_flux_33MeV)
 # print('Zr flux uncertinty_33MeV : ', zr_unc_avg_flux_33MeV)
 # print('Zr flux at 16MeV           : ', zr_avg_flux_16MeV)
@@ -266,9 +307,9 @@ zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16M
 all_fluxes_33MeV = []
 all_unc_fluxes_33MeV = []
 
-for i in (y_avg_flux_33MeV, in_avg_flux_33MeV, al_avg_flux_33MeV, zr_avg_flux_33MeV):
+for i in (y_avg_flux_33MeV, al_avg_flux_33MeV, zr_avg_flux_33MeV):
 	all_fluxes_33MeV.extend(i[:])
-for i in (y_unc_avg_flux_33MeV, in_unc_avg_flux_33MeV, al_unc_avg_flux_33MeV, zr_unc_avg_flux_33MeV):
+for i in (y_unc_avg_flux_33MeV, al_unc_avg_flux_33MeV, zr_unc_avg_flux_33MeV):
 	all_unc_fluxes_33MeV.extend(i[:])
 # print(all_fluxes_33MeV)
 # print(all_fluxes[3])
@@ -282,9 +323,9 @@ unc_approximate_average_flux_33MeV = np.average(all_unc_fluxes_33MeV)
 all_fluxes_16MeV = []
 all_unc_fluxes_16MeV = []
 
-for i in (y_avg_flux_16MeV, in_avg_flux_16MeV, al_avg_flux_16MeV, zr_avg_flux_16MeV):
+for i in (y_avg_flux_16MeV, al_avg_flux_16MeV, zr_avg_flux_16MeV):
 	all_fluxes_16MeV.extend(i[:])
-for i in (y_unc_avg_flux_16MeV, in_unc_avg_flux_16MeV, al_unc_avg_flux_16MeV, zr_unc_avg_flux_16MeV):
+for i in (y_unc_avg_flux_16MeV, al_unc_avg_flux_16MeV, zr_unc_avg_flux_16MeV):
 	all_unc_fluxes_16MeV.extend(i[:])
 # print(all_fluxes_16MeV)
 # print(all_fluxes[3])
@@ -300,12 +341,21 @@ unc_approximate_average_flux_16MeV = np.average(all_unc_fluxes_16MeV)
 # print(al_number_of_atoms)
 # print(zr_number_of_atoms)
 
-production_rate = np.hstack((y_production_rate, in_production_rate, al_production_rate, zr_production_rate))
-number_of_atoms = np.hstack((y_number_of_atoms, in_number_of_atoms, al_number_of_atoms, zr_number_of_atoms))
-flux_avg_cross_section = np.hstack((y_flux_avg_cross_section, in_flux_avg_cross_section, al_flux_avg_cross_section, zr_flux_avg_cross_section))
-unc_production_rate = np.hstack((y_unc_production_rate, in_unc_production_rate, al_unc_production_rate, zr_unc_production_rate))
-unc_number_of_atoms = np.hstack((y_unc_number_of_atoms, in_unc_number_of_atoms, al_unc_number_of_atoms, zr_unc_number_of_atoms))
-unc_flux_avg_cross_section = np.hstack((y_unc_flux_avg_cross_section, in_unc_flux_avg_cross_section, al_unc_flux_avg_cross_section, zr_unc_flux_avg_cross_section))
+# production_rate = np.hstack((y_production_rate, in_production_rate, al_production_rate, zr_production_rate))
+# number_of_atoms = np.hstack((y_number_of_atoms, in_number_of_atoms, al_number_of_atoms, zr_number_of_atoms))
+# flux_avg_cross_section = np.hstack((y_flux_avg_cross_section, in_flux_avg_cross_section, al_flux_avg_cross_section, zr_flux_avg_cross_section))
+# unc_production_rate = np.hstack((y_unc_production_rate, in_unc_production_rate, al_unc_production_rate, zr_unc_production_rate))
+# unc_number_of_atoms = np.hstack((y_unc_number_of_atoms, in_unc_number_of_atoms, al_unc_number_of_atoms, zr_unc_number_of_atoms))
+# unc_flux_avg_cross_section = np.hstack((y_unc_flux_avg_cross_section, in_unc_flux_avg_cross_section, al_unc_flux_avg_cross_section, zr_unc_flux_avg_cross_section))
+
+
+production_rate = np.hstack((y_production_rate, al_production_rate, zr_production_rate))
+number_of_atoms = np.hstack((y_number_of_atoms, al_number_of_atoms, zr_number_of_atoms))
+flux_avg_cross_section = np.hstack((y_flux_avg_cross_section, al_flux_avg_cross_section, zr_flux_avg_cross_section))
+unc_production_rate = np.hstack((y_unc_production_rate, al_unc_production_rate, zr_unc_production_rate))
+unc_number_of_atoms = np.hstack((y_unc_number_of_atoms, al_unc_number_of_atoms, zr_unc_number_of_atoms))
+unc_flux_avg_cross_section = np.hstack((y_unc_flux_avg_cross_section, al_unc_flux_avg_cross_section, zr_unc_flux_avg_cross_section))
+
 
 print('production_rate',production_rate)
 print('number_of_atoms',number_of_atoms)

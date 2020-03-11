@@ -11,8 +11,8 @@ from scipy.constants import elementary_charge
 
 
 # Nora:
-number_of_monitor_foils = 4
-monitor_reactions_per_foil = np.array([1, 4, 2, 2])
+number_of_monitor_foils = 3
+monitor_reactions_per_foil = np.array([1, 2, 2])
 # Me:
 # number_of_monitor_foils = 2
 #monitor_reactions_per_foil = np.array([2, 2])
