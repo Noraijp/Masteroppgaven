@@ -1,0 +1,11 @@
+For reaction  natZN (n,x) 64CU :
+product_activity_16MeV: 20156.70 Bq
+product_activity_33MeV: 35761.58 Bq
+Our measured 16MeV cross section: 231.36 +/- 11.41 mb (4.93%)
+Our measured 33MeV cross section: 112.62 +/- 4.37 mb (3.88%)
+meulders_16MeV_xs_avg: 97.37 mb
+meulders_33MeV_xs_avg: 73.60 mb
+
+E(MeV)  CS      dCS
+16      231.36 11.41
+33      112.62 4.37

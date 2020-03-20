@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import npat
 import csv
-import os
 
 from npat import *
 
@@ -138,10 +137,10 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 
 		#save to file
 		csv_save_array = np.vstack((E, CS, dCS)).T
-		#print(csv_save_array)
+		print(csv_save_array)
 
-		path_to_cs_csv = os.getcwd() + '/../analyse/find activity/Cross_sections_csv/'
-		np.savetxt(path_to_cs_csv  + product_name[j], csv_save_array, delimiter=',', header='E, CS, dCS', fmt="%s"  )#, %.6f, %.6f")
+		#path_to_cs_csv = os.getcwd() + '/CrossSections/CrossSections_csv/'
+        #np.savetxt(path_to_cs_csv  + reaction, csv_save_array, delimiter=',', header='E, dE, CS, dCS', fmt="%s"  )#, %.6f, %.6f")
 
 		#gaar inn i moulders
 		xs_array_33MeV.append(xs_33MeV)
@@ -173,16 +172,16 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 
 # ### zink
 
-# product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
-# target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
-# csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
-#             'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
-# mass_33MeV = 0.8427 #g
-# unc_mass_33MeV = 0.0006
-# mass_16MeV = 0.8463 #g
-# unc_mass_16MeV = 0.0015
-#
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
+target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
+csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
+            'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
+mass_33MeV = 0.8427 #g
+unc_mass_33MeV = 0.0006
+mass_16MeV = 0.8463 #g
+unc_mass_16MeV = 0.0015
+
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
 
 #
 #
