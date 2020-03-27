@@ -157,7 +157,7 @@ def Zr_92Y(): #non-mon, single
 #    return list, lambda_
 
 
-def Zr_91mY(): #two steps decay #Den kjernen du ser på
+def Zr_91mY(): #two steps decay #Den kjernen du ser paa
     foil1 = path + '91mY_zr33MeV_240.dat'
     list = [foil1] #, foil3, foil4, foil5, foil6, foil7, foil8, foil9, foil10]
     lambda_parent = np.log(2)/(9.63*h) #91Sr
@@ -165,26 +165,26 @@ def Zr_91mY(): #two steps decay #Den kjernen du ser på
     return list, lambda_parent, lambda_daughter
 
 
-def Zr_97Nb(): #two step decay
-    foil1 = path + '97Nb_zr16MeV_140.dat'
-    #foil2 = path + '97Nb_zr33MeV_240.dat'
-    list = [foil1]#, foil2]
-    lambda_parent = np.log(2)/(16.749*h) #97Zr
-    lambda_daughter = np.log(2)/(72.1*m)
-    return list, lambda_parent, lambda_daughter
+#def Zr_97Nb(): #two step decay
+#    foil1 = path + '97Nb_zr16MeV_140.dat'
+#    #foil2 = path + '97Nb_zr33MeV_240.dat'
+#    list = [foil1]#, foil2]
+#    lambda_parent = np.log(2)/(16.749*h) #97Zr
+#    lambda_daughter = np.log(2)/(72.1*m)
+#    return list, lambda_parent, lambda_daughter
 
-def Zr_97Nb_33():
-    foil1 = path + '97Nb_zr33MeV_240.dat'
-    list = [foil1]
-    lambda_ = np.log(2)/(72.1*m)
-    return list, lambda_
+#def Zr_97Nb_33():
+#    foil1 = path + '97Nb_zr33MeV_240.dat'
+#    list = [foil1]
+#    lambda_ = np.log(2)/(72.1*m)
+#    return list, lambda_
 
-def Zr_95Zr(): #non-mon, single
-    foil1 = path + '95Zr_zr16MeV_140.dat'
-    foil2 = path + '95Zr_zr33MeV_240.dat'
-    list = [foil1, foil2]
-    lambda_ = np.log(2)/(64.032*d)
-    return list, lambda_
+#def Zr_95Zr(): #non-mon, single
+#    foil1 = path + '95Zr_zr16MeV_140.dat'
+#    foil2 = path + '95Zr_zr33MeV_240.dat'
+#    list = [foil1, foil2]
+#    lambda_ = np.log(2)/(64.032*d)
+#    return list, lambda_
 
 
 def Zr_97Zr(): #non-mon, single

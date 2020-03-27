@@ -30,7 +30,7 @@ def ALICE(foil, A, Z):
         #A_  = np.genfromtxt(filename, delimiter=' ', usecols=[2], skip_header=56, skip_footer=(len(content_full)-len(content)))
         #print(E)
         CS = np.genfromtxt(filename, delimiter=' ', usecols=[5], skip_header=59, skip_footer=(len(content_full)-len(content)))
-        print(CS)
+        #print(CS)
         E_new = []; CS_new = []
         Z = ' ' + Z + ' '
         A = ' ' + A + ' '
@@ -66,7 +66,11 @@ path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/'
 def TALYS(foil, Z, A, file_ending='.tot'):
     # Z = 0XX, A=0XX
 
-    filename = path + '../Talys/' +foil+ '/rp'+Z+A+ file_ending #'.tot'
+    #Zn
+    filename = path + '../Talys/' +foil+ '/rp'+ Z + A + file_ending #'.tot'
+    #zr
+    #filename = path + '../Talys/' +foil+ '/rp0'+ Z + '0' + A + file_ending #'.tot'
+
     #filename = self.path + '/../Talys/' +foil+ '/rp'+Z+A+'.L02'
     E  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
     CS = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
@@ -131,51 +135,84 @@ def EXFOR(foil, reaction):
     #     return 0, 0, 0, 0, '0'
 
 
-def Tendl(self, foil, A, Z, file_ending='.tot'):
+def Tendl(foil, A, Z, file_ending='.tot'):
 
     #print("foil: ",foil )
     #print("Z: ", Z )
     #print("A: ", A  )
 
-    if foil == 'Ir':
+    if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_191Ir = 0.373 ; abund_193Ir = 0.627
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
-        f_191Ir = self.path + '/../Tendl/' + foil + '/rp077191_' + Z+ A + file_ending + '.txt'
-        f_193Ir = self.path + '/../Tendl/' + foil + '/rp077193_' + Z +A + file_ending + '.txt'
+        f_64Zn = path + '/../Tendl/' + foil + '/rp030064_' + Z+ A + file_ending + '.txt'
+        f_66Zn = path + '/../Tendl/' + foil + '/rp030066_' + Z +A + file_ending + '.txt'
+        f_67Zn = path + '/../Tendl/' + foil + '/rp030067_' + Z +A + file_ending + '.txt'
+        f_68Zn = path + '/../Tendl/' + foil + '/rp030068_' + Z +A + file_ending + '.txt'
+        f_70Zn = path + '/../Tendl/' + foil + '/rp030070_' + Z +A + file_ending + '.txt'
+
 
         #print("Ir 193 file: ",f_193Ir)
         #print("Ir 191 file: ",f_191Ir)
-        if os.path.isfile(f_191Ir):
+        if os.path.isfile(f_64Zn):
             #print("Ir 191 file: ",f_191Ir)
             #print("f_191Ir exists")
-            CS_191Ir = np.genfromtxt(f_191Ir, delimiter=' ', usecols=[1],skip_header=5)
-            E_191Ir = np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+            CS_64Zn = np.genfromtxt(f_64Zn, delimiter=' ', usecols=[1],skip_header=5)
+            E_64Zn = np.genfromtxt(f_64Zn, delimiter=' ', usecols=[0],skip_header=5)
         else:
             #print("Ir 191 file does not exist")
-            CS_191Ir = 0
-            E_191Ir =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+            CS_64Zn = 0
+            E_64Zn =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-        if os.path.isfile(f_193Ir):
-            #print("f_193Ir exists")
-            CS_193Ir = np.genfromtxt(f_193Ir, delimiter=' ', usecols=[1],skip_header=5)
-            E_193Ir = np.genfromtxt(f_193Ir, delimiter=' ', usecols=[0],skip_header=5)
 
+        if os.path.isfile(f_66Zn):
+            #print("Ir 191 file: ",f_191Ir)
+            #print("f_191Ir exists")
+            CS_66Zn = np.genfromtxt(f_66Zn, delimiter=' ', usecols=[1],skip_header=5)
+            E_66Zn = np.genfromtxt(f_66Zn, delimiter=' ', usecols=[0],skip_header=5)
         else:
-            #print("Ir 193 file does not exist")
-            CS_193Ir = 0
-            E_193Ir = 0#np.genfromtxt(f_193Ir, delimiter=' ', usecols=[0],skip_header=5)
+            #print("Ir 191 file does not exist")
+            CS_66Zn = 0
+            E_66Zn =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-        E = E_191Ir*abund_191Ir + E_193Ir*abund_193Ir
-        CS = CS_191Ir*abund_191Ir + CS_193Ir*abund_193Ir
+        if os.path.isfile(f_67Zn):
+            #print("Ir 191 file: ",f_191Ir)
+            #print("f_191Ir exists")
+            CS_67Zn = np.genfromtxt(f_67Zn, delimiter=' ', usecols=[1],skip_header=5)
+            E_67Zn = np.genfromtxt(f_67Zn, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            #print("Ir 191 file does not exist")
+            CS_67Zn = 0
+            E_67Zn =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
 
-        #plt.plot(E, CS, label='tendl')
+        if os.path.isfile(f_68Zn):
+            #print("Ir 191 file: ",f_191Ir)
+            #print("f_191Ir exists")
+            CS_68Zn = np.genfromtxt(f_68Zn, delimiter=' ', usecols=[1],skip_header=5)
+            E_68Zn = np.genfromtxt(f_68Zn, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            #print("Ir 191 file does not exist")
+            CS_68Zn = 0
+            E_68Zn =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
 
+        if os.path.isfile(f_70Zn):
+            #print("Ir 191 file: ",f_191Ir)
+            #print("f_191Ir exists")
+            CS_70Zn = np.genfromtxt(f_70Zn, delimiter=' ', usecols=[1],skip_header=5)
+            E_70Zn = np.genfromtxt(f_70Zn, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            #print("Ir 191 file does not exist")
+            CS_70Zn = 0
+            E_70Zn =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+        E = E_64Zn*abund_64Zn + E_66Zn*abund_66Zn + E_67Zn*abund_67Zn + E_68Zn*abund_68Zn + E_70Zn*abund_70Zn
+        CS = CS_64Zn*abund_64Zn + CS_66Zn*abund_66Zn + CS_67Zn*abund_67Zn + CS_68Zn*abund_68Zn + CS_70Zn*abund_70Zn
 
 
+        plt.plot(E, CS, label='tendl')
         #plt.plot(E_191Ir,CS_191Ir, label='191Ir')
         #plt.plot(E_193Ir,CS_193Ir, label='193Ir')
         #plt.plot(E, CS, label='tot')
@@ -183,127 +220,194 @@ def Tendl(self, foil, A, Z, file_ending='.tot'):
         #plt.show()
         return E, CS
 
-        #except:
-            #print("files not exist or file ending is wrong. ")
 
 
-        #plt.legend()
-        #plt.show()
-
-        #E = E_191Ir*abund_191Ir + E_193Ir*abund_193Ir
-        #CS = CS_191Ir*abund_191Ir + CS_193Ir*abund_193Ir
-
-    elif foil == 'Ni':
+    elif foil == 'Zr':
         #finn abundance til hvert isotop fra nndc
-        abund_58Ni = 0.68077; abund_60Ni = 0.26233; abund_61Ni = 0.011399; abund_62Ni = 0.036346; abund_64Ni = 0.009255;
+        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280 ;
 
 
-        f_58Ni = self.path + '/../Tendl/' + foil + '/rp028058_' + Z + A + file_ending + '.txt'
-        f_60Ni = self.path + '/../Tendl/' + foil + '/rp028060_' + Z + A + file_ending + '.txt'
-        f_61Ni = self.path + '/../Tendl/' + foil + '/rp028061_' + Z + A + file_ending + '.txt'
-        f_62Ni = self.path + '/../Tendl/' + foil + '/rp028062_' + Z + A + file_ending + '.txt'
-        f_64Ni = self.path + '/../Tendl/' + foil + '/rp028064_' + Z + A + file_ending + '.txt'
+        f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z  + A + file_ending + '.txt'
+        #f_90Zr = path + '/../Tendl/' + foil + '/rp040090_0' + Z + '0' + A + '.L02.ave' + '.txt'
+        f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + file_ending + '.txt'
+        f_92Zr = path + '/../Tendl/' + foil + '/rp040092_' + Z  + A + file_ending + '.txt'
+        f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + file_ending + '.txt'
+        f_96Zr = path + '/../Tendl/' + foil + '/rp040096_' + Z  + A + file_ending + '.txt'
 
-        #print(f_60Ni)
+
+        print(f_90Zr)
         #print(f_61Ni)
         #print(f_62Ni)
         #print(f_64Ni)
         #E = []; CS = []
 
 
-        if os.path.isfile(f_58Ni):
+        if os.path.isfile(f_90Zr):
             #print("Ir 191 file: ",f_191Ir)
-            print("f_58Ni exists")
-            CS_58Ni = np.genfromtxt(f_58Ni, delimiter=' ', usecols=[1],skip_header=5)
-            E_58Ni = np.genfromtxt(f_58Ni, delimiter=' ', usecols=[0],skip_header=5)
+            print("f_90Zr exists")
+            CS_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_90Zr
+            #E_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
+            E_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
         else:
-            print("Ni 58 file does not exist")
-            CS_58Ni = 0
-            E_58Ni =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+            print("90Zr file does not exist")
+            CS_90Zr = 0
+            E_90Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-        if os.path.isfile(f_60Ni):
+        if os.path.isfile(f_91Zr):
             #print("Ir 191 file: ",f_191Ir)
-            print("f_60Ni exists")
-            CS_60Ni = np.genfromtxt(f_60Ni, delimiter=' ', usecols=[1],skip_header=5)
-            E_60Ni = np.genfromtxt(f_60Ni, delimiter=' ', usecols=[0],skip_header=5)
+            print("f_91Zr exists")
+            CS_91Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_91Zr
+            E_91Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[0],skip_header=5)
         else:
-            print("Ni 60 file does not exist")
-            CS_60Ni = 0
-            E_60Ni =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
-        if os.path.isfile(f_61Ni):
-            #print("Ir 191 file: ",f_191Ir)
-            print("f_61Ni exists")
-            CS_61Ni = np.genfromtxt(f_61Ni, delimiter=' ', usecols=[1],skip_header=5)
-            E_61Ni = np.genfromtxt(f_61Ni, delimiter=' ', usecols=[0],skip_header=5)
-        else:
-            print("Ni 61 file does not exist")
-            CS_61Ni = 0
-            E_61Ni =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
-        if os.path.isfile(f_62Ni):
-            #print("Ir 191 file: ",f_191Ir)
-            print("f_62Ni exists")
-            CS_62Ni = np.genfromtxt(f_62Ni, delimiter=' ', usecols=[1],skip_header=5)
-            E_62Ni = np.genfromtxt(f_62Ni, delimiter=' ', usecols=[0],skip_header=5)
-        else:
-            print("Ni 62 file does not exist")
-            CS_62Ni = 0
-            E_62Ni =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
-        if os.path.isfile(f_64Ni):
-            #print("Ir 191 file: ",f_191Ir)
-            print("f_64Ni exists")
-            CS_64Ni = np.genfromtxt(f_64Ni, delimiter=' ', usecols=[1],skip_header=5)
-            E_64Ni = np.genfromtxt(f_64Ni, delimiter=' ', usecols=[0],skip_header=5)
-        else:
-            print("Ni 64 file does not exist")
-            CS_64Ni = 0
-            E_64Ni =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+            print("91Zr file does not exist")
+            CS_91Zr = 0
+            E_91Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-        #CS_58Ni = np.genfromtxt(f_58Ni, delimiter=' ', usecols=[1],skip_header=5)
-        #E_58Ni = np.genfromtxt(f_58Ni, delimiter=' ', usecols=[0],skip_header=5)
-        #CS_60Ni = np.genfromtxt(f_60Ni, delimiter=' ', usecols=[1],skip_header=5)
-        #E_60Ni = np.genfromtxt(f_60Ni, delimiter=' ', usecols=[0],skip_header=5)
+        if os.path.isfile(f_92Zr):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_92Zr exists")
+            CS_92Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_92Zr
+            E_92Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("92Zr file does not exist")
+            CS_92Zr = 0
+            E_92Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-        #CS_61Ni = np.genfromtxt(f_61Ni, delimiter=' ', usecols=[1],skip_header=5)
-        #E_61Ni = np.genfromtxt(f_61Ni, delimiter=' ', usecols=[0],skip_header=5)
-        #CS_62Ni = np.genfromtxt(f_62Ni, delimiter=' ', usecols=[1],skip_header=5)
-        #E_62Ni = np.genfromtxt(f_62Ni, delimiter=' ', usecols=[0],skip_header=5)
-        #CS_64Ni = np.genfromtxt(f_64Ni, delimiter=' ', usecols=[1],skip_header=5)
-        #E_64Ni = np.genfromtxt(f_64Ni, delimiter=' ', usecols=[0],skip_header=5)
-        #print(E_64Ni)
+        if os.path.isfile(f_94Zr):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_94Zr exists")
+            CS_94Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_94Zr
+            E_94Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("94Zr file does not exist")
+            CS_94Zr = 0
+            E_94Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+        if os.path.isfile(f_96Zr):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_96Zr exists")
+            CS_96Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_96Zr
+            E_96Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("96Zr file does not exist")
+            CS_96Zr = 0
+            E_96Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
         #print(E_58Ni)
         #CS_193Ir = np.genfromtxt(f_193Ir, delimiter=' ', usecols=[1],skip_header=5)
         #E_193Ir = np.genfromtxt(f_193Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-        E = E_58Ni*abund_58Ni + E_60Ni*abund_60Ni + E_61Ni*abund_61Ni + E_62Ni*abund_62Ni + E_64Ni*abund_64Ni
-        CS = CS_58Ni*abund_58Ni + CS_60Ni*abund_60Ni + CS_61Ni*abund_61Ni + CS_62Ni*abund_62Ni + CS_64Ni*abund_64Ni
+        E = E_90Zr*abund_90Zr + E_91Zr*abund_91Zr + E_92Zr*abund_92Zr + E_94Zr*abund_94Zr + E_96Zr*abund_96Zr
+        #CS = CS_90Zr*abund_90Zr + CS_91Zr*abund_91Zr + CS_92Zr*abund_92Zr + CS_94Zr*abund_94Zr + CS_96Zr*abund_96Zr
+        CS = CS_90Zr + CS_91Zr + CS_92Zr + CS_94Zr + CS_96Zr
+
         #CS = CS_191Ir*abund_191Ir + CS_193Ir*abund_193Ir
 
-        #plt.plot(E_60Ni,CS_60Ni, label='60Ni', linewidth=0.5)
+        plt.plot(E, CS, label='tendl')
         #plt.plot(E_61Ni,CS_61Ni, label='61Ni', linewidth=0.5)
-        #plt.plot(E_62Ni,CS_62Ni, label='62Ni', linewidth=0.5)
-        #plt.plot(E_64Ni,CS_64Ni, label='64Ni', linewidth=0.5)
-        #plt.plot(E, CS, label='tot')
 
-        #except:
-
-            #print("files not exist or file ending is wrong. ")
-            #pass
-
-        #plt.legend()
-        #plt.show()
-
-    return E, CS
+        return E, CS
 
 
+
+    elif foil == 'Y':
+        #finn abundance til hvert isotop fra nndc
+        abund_89Y = 1.00;
+
+
+        f_89Y = path + '/../Tendl/' + foil + '/rp_039089' + Z + A + file_ending + '.txt'
+
+
+        if os.path.isfile(f_89Y):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_89Y exists")
+            CS_89Y = np.genfromtxt(f_89Y, delimiter=' ', usecols=[1],skip_header=5)
+            E_89Y = np.genfromtxt(f_89Y, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("89Y file does not exist")
+            CS_90Zr = 0
+            E_90Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+        E = E_89Y*abund_89Y
+        CS = CS_89Y*abund_89Y
+
+        plt.plot(E, CS, label='tendl')
+
+        return E, CS
+
+
+    elif foil == 'In':
+        #finn abundance til hvert isotop fra nndc
+        abund_113In = 0.429;  abund_115In = 0.9571;
+
+
+        f_abund_113In = path + '/../Tendl/' + foil + '/rp_049113' + Z + A + file_ending + '.txt'
+        f_abund_115In = path + '/../Tendl/' + foil + '/rp_049115' + Z + A + file_ending + '.txt'
+
+
+        if os.path.isfile(f_113Y):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_113Y exists")
+            CS_113Y = np.genfromtxt(f_113Y, delimiter=' ', usecols=[1],skip_header=5)
+            E_113Y = np.genfromtxt(f_113Y, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("113Y file does not exist")
+            CS_113Y = 0
+            E_113Y =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+
+        if os.path.isfile(f_115Y):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_115Y exists")
+            CS_115Y = np.genfromtxt(f_115Y, delimiter=' ', usecols=[1],skip_header=5)
+            E_115Y = np.genfromtxt(f_115Y, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("115Y file does not exist")
+            CS_115Y = 0
+            E_115Y =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+
+        E = E_113Y*abund_113Y + E_115Y*abund_115Y
+        CS = CS_113Y*abund_113Y + CS_115Y*abund_115Y
+
+        plt.plot(E, CS, label='tendl')
+
+        return E, CS
+
+
+    elif foil == 'Al':
+        #finn abundance til hvert isotop fra nndc
+        abund_27Al = 1.00;
+
+
+        f_abund_27Al = path + '/../Tendl/' + foil + '/rp_013027' + Z + A + file_ending + '.txt'
+
+
+        if os.path.isfile(f_27Al):
+            #print("Ir 191 file: ",f_191Ir)
+            print("f_27Al exists")
+            CS_27Al = np.genfromtxt(f_27Al, delimiter=' ', usecols=[1],skip_header=5)
+            E_27Al = np.genfromtxt(f_27Al, delimiter=' ', usecols=[0],skip_header=5)
+        else:
+            print("27Al file does not exist")
+            CS_27Al = 0
+            E_27Al =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+
+        E = E_27Al*abund_27Al
+        CS = CS_27Al*abund_27Al
+
+        plt.plot(E, CS, label='tendl')
+
+        return E, CS
 
 
 
 
 def mydata(filename_CS, foil):
     import os
-    print(os.getcwd())
-    print('****************')
+    #print(os.getcwd())
+    #print('****************')
     file =  './Cross_sections_csv/' + foil + '/' + filename_CS  #'.tot'
     print(file)
 
@@ -312,20 +416,12 @@ def mydata(filename_CS, foil):
         CS_energi = []; CS_zn_64Cu = []
         for line in begin:
             lines = line.split(',')
-            print(lines)
-            print('xxxxxxxxxxxxxxxxxxx')
+            #print(lines)
+            #print('xxxxxxxxxxxxxxxxxxx')
             CS_energi.append(float(lines[0]))
             CS_zn_64Cu.append(float(lines[1]))
             #print('E :', CS_energi)
             #print('CS :', CS_zn_64Cu)
-
-            #for i in range(len(begin)):
-            #    string= begin[i]
-            #    string = (string.lstrip()).split()
-            #    print(string)
-            #    print('<<<<<<<<<<<<<<<<')
-            #    CS_energi.append(string[0])
-            #    CS_zn_64Cu.append(string[1])
 
     #print(CS_energi)
         print('E :', CS_energi)
@@ -341,17 +437,22 @@ def Cross_section(foil, A, Z, reaction, filename_CS, file_ending='.tot'):
 
     ALICE(foil, A, Z)
     if len(A) == 2:
-        A = '0' + A
+       A = '0' + A
     if len(Z) == 2:
-        Z = '0' + Z
+       Z = '0' + Z
     TALYS(foil, Z, A)
     EXFOR(foil, reaction)
     mydata(filename_CS, foil)
+    Tendl(foil, A, Z)
 
     plt.legend()
     plt.title(reaction)
     plt.savefig('Cross_section_curves/'+ reaction + '.png', dpi=300)
     plt.show()
+
+
+
+#Cross_section('foil', 'A', 'Z', 'reaction', 'filename_CS')
 
 ### ZINK ###
 
@@ -366,7 +467,36 @@ def Cross_section(foil, A, Z, reaction, filename_CS, file_ending='.tot'):
 Cross_section('Zn', '69', '30', '70Zn(n,2n)69mZn', '69ZNm')
 
 
+### Zirconium ###
 
+#Cross_section('Zr', '90', '39', '90Zr(n,x)90mY', '90Ym')
+#Cross_section('Zr', '90', '39', '91Zr(n,np)90mY', '90Ym')
+#Cross_section('Zr', '91', '38', '94Zr(n,a)91Sr', '91SR')
+#Cross_section('Zr', '91', '39', '91Zr(n,p)91mY', '91Ym')
+#Cross_section('Zr', '91', '39', '91zr(n,x)91mY', '91Ym')
+#Cross_section('Zr', '92', '39', '92Zr(n,p)92Y', '92Y')
+#Cross_section('Zr', '93', '39', '94Zr(n,np)93Y', '93Y')
+#Cross_section('Zr', '93', '39', '94Zr(n,x)93Y', '93Y')
+#Cross_section('Zr', '95', '40', '94Zr(n,g)95Zr', '95Zr')
+#Cross_section('Zr', '95', '40', '96Zr(n,2n)95Zr', '95Zr')
+#Cross_section('Zr', '97', '40', '96Zr(n,g)97Zr', '97Zr')
+
+#Cross_section('Zr', '93', '39', '94Zr(n,x)93Y', '95NB') INGEN EXFOR ELLER TENDL
+#Cross_section('Zr', '93', '39', '94Zr(n,x)93Y', '97NB') INGEN EXFOR ELLER TENDL
+#Cross_section('Zr', '98', '40', '96Zr(n,g)97Zr', '98Zr') INGEN EXFOR ELLER TENDL
+
+
+### Indium ###
+
+#Cross_section('In', '62', '30', 'Zn(n,x)62Zn', '62ZN')
+
+###  Aluminum ###
+
+#Cross_section('Al', '62', '30', 'Zn(n,x)62Zn', '62ZN')
+
+### Yttrium ###
+
+#Cross_section('Y', '62', '30', 'Zn(n,x)62Zn', '62ZN')
 
 
 

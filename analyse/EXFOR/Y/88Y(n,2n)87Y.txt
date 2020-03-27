@@ -1,0 +1,15 @@
+#ZVView-data-copy:  23-Mar-2020 07:19:23
+#=======================================
+#
+#name:   39-Y-88(N,2N)39-Y-87,,SIG
+#X.axis: Incident Energy
+#Y.axis: Cross Section
+#wdata:  4
+#ldata:  2
+#data...
+#            X         +-dX            Y         +-dY  # Comments...
+#          MeV          MeV        barns        barns  # Year,Author(s)           ## EXFOR-ID
+         14.19         0.04         1.14         0.05  # 1984,R.J.Prestwood+      ## 12763004  #dY:4.4%   
+          14.8          0.1         1.18         0.05  # 1984,R.J.Prestwood+      ## 12763004  #dY:4.2%   
+//
+#-------------------------------------------------------------------------------

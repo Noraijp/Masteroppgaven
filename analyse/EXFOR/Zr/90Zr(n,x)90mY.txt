@@ -1,0 +1,14 @@
+#ZVView-data-copy:  22-Mar-2020 05:03:48
+#=======================================
+#
+#name:   40-ZR-90(N,X)39-Y-90-M,,SIG
+#X.axis: Incident Energy
+#Y.axis: Cross Section
+#wdata:  4
+#ldata:  1
+#data...
+#            X         +-dX            Y         +-dY  # Comments...
+#          MeV          MeV        barns        barns  # Year,Author(s)           ## EXFOR-ID
+          14.8         0.17        0.012       0.0002  # 1987,I.F.Goncalves+      ## 30740004  #dY:1.7%   
+//
+#-------------------------------------------------------------------------------

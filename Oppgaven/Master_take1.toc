@@ -4,11 +4,10 @@
 \contentsline {section}{\numberline {2.1}Background of Nuclear medicine}{13}{section.2.1}
 \contentsline {section}{\numberline {2.2}Radioactive decay}{13}{section.2.2}
 \contentsline {section}{\numberline {2.3}Decay modes}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}$\alpha $-decay}{13}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}$\beta $-decay}{14}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Electron capture, Internal convention and Auger electrons}{15}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}$\gamma $-decay and X-rays}{15}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Theranostic}{15}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.1}$\beta $-decay}{13}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Electron capture, Internal convention and Auger electrons}{15}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}$\gamma $-decay and X-rays}{15}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Theranostic}{15}{subsection.2.3.4}
 \contentsline {chapter}{\numberline {3}Cu64,67}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}what can we do to make the nuclear medicine better?}{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}My motivation}{17}{subsection.3.1.1}

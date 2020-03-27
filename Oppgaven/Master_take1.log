@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  9 MAR 2020 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  26 MAR 2020 12:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -914,7 +914,7 @@ ABD: EveryShipout initializing macros
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=135, 14
+<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=131, 14
 0.94772pt x 140.95068pt>
 File: uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf Graphi
 c file (type pdf)
@@ -967,90 +967,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--210
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 222.
+(hyperref)                removing `math shift' on input line 223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\alpha' on input line 222.
+(hyperref)                removing `\beta' on input line 223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 222.
+(hyperref)                removing `math shift' on input line 223.
 
 [13]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 231.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 231.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 231.
-
-
-Overfull \hbox (1.21356pt too wide) in paragraph at lines 241--248
+Overfull \hbox (1.21356pt too wide) in paragraph at lines 233--240
 \OT1/cmr/m/n/12 For ther-apy, $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 will trave
 l longer in a medium than $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 (will an-ni-hi
 -late fast).[]WHY?[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--248
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--248
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--264
+Underfull \hbox (badness 10000) in paragraph at lines 248--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--264
+Underfull \hbox (badness 10000) in paragraph at lines 248--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--264
+Underfull \hbox (badness 10000) in paragraph at lines 248--256
 
  []
-
-[14]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 267.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 267.
+(hyperref)                removing `math shift' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 267.
+(hyperref)                removing `\gamma' on input line 259.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 259.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
 [15] [16
 
 ]
 Chapter 3.
 
-Overfull \hbox (6.41753pt too wide) in paragraph at lines 287--287
+Overfull \hbox (6.41753pt too wide) in paragraph at lines 279--279
 []\OT1/cmr/bx/n/17.28 what can we do to make the nu-clear medicine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--297
+Underfull \hbox (badness 10000) in paragraph at lines 282--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--312
+Underfull \hbox (badness 10000) in paragraph at lines 301--304
 
  []
 
@@ -1071,7 +1061,7 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-Overfull \hbox (4.35994pt too wide) in paragraph at lines 399--402
+Overfull \hbox (4.35994pt too wide) in paragraph at lines 391--394
 \OT1/cmr/m/n/12 - Pro-duc-tion physics (Anal-yse eller Re-sul-tater?) - how we 
 cal-cu-late cross-sectrtion,
  []
@@ -1090,20 +1080,20 @@ Missing character: There is no ¥ in font cmr12!
 Chapter 7.
 No file Master_take1.bbl.
 [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 462.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 462.
  (./Master_take1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 462.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 462.
 Package rerunfilecheck Info: File `Master_take1.out' has not changed.
-(rerunfilecheck)             Checksum: 2326ADB2DF2714166BA7078DEDFF5379;1989.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
+(rerunfilecheck)             Checksum: 220DFABB39E1AA9CA03CB5BC3AA5E694;1929.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 462.
  ) 
 Here is how much of TeX's memory you used:
- 20078 strings out of 493089
- 358029 string characters out of 6134843
+ 20075 strings out of 493089
+ 357981 string characters out of 6134843
  475321 words of memory out of 5000000
- 23150 multiletter control sequences out of 15000+600000
+ 23149 multiletter control sequences out of 15000+600000
  13813 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,11n,73p,1045b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1119,10 +1109,10 @@ cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Master_take1.pdf (25 pages, 186862 bytes).
+Output written on Master_take1.pdf (25 pages, 183397 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 62 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 341 PDF objects out of 1000 (max. 8388607)
+ 298 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
