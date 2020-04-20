@@ -211,8 +211,10 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         E = E_64Zn*abund_64Zn + E_66Zn*abund_66Zn + E_67Zn*abund_67Zn + E_68Zn*abund_68Zn + E_70Zn*abund_70Zn
         CS = CS_64Zn*abund_64Zn + CS_66Zn*abund_66Zn + CS_67Zn*abund_67Zn + CS_68Zn*abund_68Zn + CS_70Zn*abund_70Zn
 
-
-        plt.plot(E, CS, label='tendl')
+        print(len(E))
+        print(len(CS))
+        print('...........................')
+        plt.plot(E, CS, 'y--', label='tendl')
         #plt.plot(E_191Ir,CS_191Ir, label='191Ir')
         #plt.plot(E_193Ir,CS_193Ir, label='193Ir')
         #plt.plot(E, CS, label='tot')
@@ -227,8 +229,8 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280 ;
 
 
-        f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z  + A + file_ending + '.txt'
-        #f_90Zr = path + '/../Tendl/' + foil + '/rp040090_0' + Z + '0' + A + '.L02.ave' + '.txt'
+        #f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z  + A + file_ending + '.txt'
+        f_90Zr = path + '/../Tendl/' + foil + '/rp040090_0' + Z + '0' + A + '.L02.ave' + '.txt'
         f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + file_ending + '.txt'
         f_92Zr = path + '/../Tendl/' + foil + '/rp040092_' + Z  + A + file_ending + '.txt'
         f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + file_ending + '.txt'
@@ -246,8 +248,10 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             #print("Ir 191 file: ",f_191Ir)
             print("f_90Zr exists")
             CS_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_90Zr
+            print(len(CS_90Zr))
             #E_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
             E_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print(len(E_90Zr))
         else:
             print("90Zr file does not exist")
             CS_90Zr = 0
@@ -257,7 +261,9 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             #print("Ir 191 file: ",f_191Ir)
             print("f_91Zr exists")
             CS_91Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_91Zr
+            print(len(CS_91Zr))
             E_91Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print(len(E_91Zr))
         else:
             print("91Zr file does not exist")
             CS_91Zr = 0
@@ -267,7 +273,9 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             #print("Ir 191 file: ",f_191Ir)
             print("f_92Zr exists")
             CS_92Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_92Zr
+            print(len(CS_92Zr))
             E_92Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print(len(E_92Zr))
         else:
             print("92Zr file does not exist")
             CS_92Zr = 0
@@ -277,7 +285,10 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             #print("Ir 191 file: ",f_191Ir)
             print("f_94Zr exists")
             CS_94Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_94Zr
+            print(len(CS_94Zr))
             E_94Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print(len(E_94Zr))
+
         else:
             print("94Zr file does not exist")
             CS_94Zr = 0
@@ -287,7 +298,10 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             #print("Ir 191 file: ",f_191Ir)
             print("f_96Zr exists")
             CS_96Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_96Zr
+            print(len(CS_96Zr))
             E_96Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print(len(E_96Zr))
+
         else:
             print("96Zr file does not exist")
             CS_96Zr = 0
@@ -301,9 +315,11 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         #CS = CS_90Zr*abund_90Zr + CS_91Zr*abund_91Zr + CS_92Zr*abund_92Zr + CS_94Zr*abund_94Zr + CS_96Zr*abund_96Zr
         CS = CS_90Zr + CS_91Zr + CS_92Zr + CS_94Zr + CS_96Zr
 
+        print('E_zr :', len(E))
+        print('CS_zr :', len(CS))
         #CS = CS_191Ir*abund_191Ir + CS_193Ir*abund_193Ir
 
-        plt.plot(E, CS, label='tendl')
+        plt.plot(E, CS, 'y--', label='tendl')
         #plt.plot(E_61Ni,CS_61Ni, label='61Ni', linewidth=0.5)
 
         return E, CS
@@ -331,7 +347,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         E = E_89Y*abund_89Y
         CS = CS_89Y*abund_89Y
 
-        plt.plot(E, CS, label='tendl')
+        plt.plot(E, CS, 'y--', label='tendl')
 
         return E, CS
 
@@ -370,7 +386,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         E = E_113Y*abund_113Y + E_115Y*abund_115Y
         CS = CS_113Y*abund_113Y + CS_115Y*abund_115Y
 
-        plt.plot(E, CS, label='tendl')
+        plt.plot(E, CS, 'y--', label='tendl')
 
         return E, CS
 
@@ -397,7 +413,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         E = E_27Al*abund_27Al
         CS = CS_27Al*abund_27Al
 
-        plt.plot(E, CS, label='tendl')
+        plt.plot(E, CS, 'y--', label='tendl')
 
         return E, CS
 
@@ -413,24 +429,31 @@ def mydata(filename_CS, foil):
 
     with open(file) as f:
         begin = f.readlines()[1:]
-        CS_energi = []; CS_zn_64Cu = []
+        CS_energi = []; CS_zn = []; dCS = [];
         for line in begin:
             lines = line.split(',')
             #print(lines)
             #print('xxxxxxxxxxxxxxxxxxx')
             CS_energi.append(float(lines[0]))
-            CS_zn_64Cu.append(float(lines[1]))
-            #print('E :', CS_energi)
+            CS_zn.append(float(lines[1]))
+            dCS.append(float(lines[2]))
+            #dPhidE =
+            #dE = int(CS_energi*dPhidE) / int(dPhidE)
+            dE = 0
+            #print('dE :', dE)
+            #print('--------------')
             #print('CS :', CS_zn_64Cu)
 
     #print(CS_energi)
         print('E :', CS_energi)
-        print('CS :', CS_zn_64Cu)
-        plt.plot(CS_energi, CS_zn_64Cu,'m.', label='Mydata')
+        print('CS :', CS_zn)
+        plt.plot(CS_energi, CS_zn, 'g.', label='Mydata')
+        #plt.errorbar(CS_energi, CS_zn, marker='.', linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0 )
+        plt.errorbar(CS_energi, CS_zn, marker='.', linewidth=0.001, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0 )
 
     #plt.show()
 
-    return CS_energi, CS_zn_64Cu
+    return CS_energi, CS_zn, dCS, dE
 
 
 def Cross_section(foil, A, Z, reaction, filename_CS, file_ending='.tot'):
@@ -447,24 +470,27 @@ def Cross_section(foil, A, Z, reaction, filename_CS, file_ending='.tot'):
 
     plt.legend()
     plt.title(reaction)
+    plt.xlabel('Energy [MeV]')
+    plt.ylabel('Corss section [mb]')
     plt.savefig('Cross_section_curves/'+ reaction + '.png', dpi=300)
     plt.show()
 
 
-
+#Cross_section('foil', 'A', 'Z', 'EXFOR', 'mydata')
 #Cross_section('foil', 'A', 'Z', 'reaction', 'filename_CS')
 
 ### ZINK ###
 
 #Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN')
 #Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN')
-#Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU')
+Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU')
 #Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI')
 #Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN')
 #Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU')
+#Cross_section('Zn', '67', '29', '68Zn(n,x)67Cu', '67CU')
 #Cross_section('Zn', '66', '28', '70Zn(n,na)66Ni', '66NI')
 #Cross_section('Zn', '67', '29', '67Zn(n,p)Cu67', '67CU')
-Cross_section('Zn', '69', '30', '70Zn(n,2n)69mZn', '69ZNm')
+#Cross_section('Zn', '69', '30', '70Zn(n,2n)69mZn', '69ZNm')
 
 
 ### Zirconium ###

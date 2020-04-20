@@ -2,31 +2,34 @@
 \contentsline {paragraph}{A short introduction to nuclear medicine}{11}{section*.1}
 \contentsline {chapter}{\numberline {2}Theory}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1}Background of Nuclear medicine}{13}{section.2.1}
-\contentsline {section}{\numberline {2.2}Radioactive decay}{13}{section.2.2}
-\contentsline {section}{\numberline {2.3}Decay modes}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}$\beta $-decay}{13}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Electron capture, Internal convention and Auger electrons}{15}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}$\gamma $-decay and X-rays}{15}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Theranostic}{15}{subsection.2.3.4}
-\contentsline {chapter}{\numberline {3}Cu64,67}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}what can we do to make the nuclear medicine better?}{17}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}My motivation}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Physics motivation}{17}{subsection.3.1.2}
-\contentsline {chapter}{\numberline {4}The experiment}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}The facility}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Cyclotron}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}Deuterium breakup prosess}{19}{section.4.3}
-\contentsline {section}{\numberline {4.4}Stack design}{19}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Radiation}{20}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Counting}{20}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Gamma spectroscopy}{20}{section.4.5}
-\contentsline {section}{\numberline {4.6}Gamma spectra}{20}{section.4.6}
-\contentsline {section}{\numberline {4.7}Calibrating}{20}{section.4.7}
-\contentsline {chapter}{\numberline {5}Analyse}{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}Fitz peak}{21}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Regression prosess}{21}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Priduction physics}{21}{section.5.2}
-\contentsline {chapter}{\numberline {6}Results and dscussion}{23}{chapter.6}
-\contentsline {section}{\numberline {6.1}TALYS}{23}{section.6.1}
-\contentsline {chapter}{\numberline {7}Summary and outlook}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Future work}{25}{section.7.1}
+\contentsline {section}{\numberline {2.2}Characteristics of medical radionuclides}{13}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Half-life}{14}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Stopping power}{15}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Radioactive decay}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}Decay modes}{17}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}$\beta $-decay}{17}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Electron capture, Internal convention and Auger electrons}{18}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}$\gamma $-decay and X-rays}{19}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Theranostic}{20}{section.2.5}
+\contentsline {chapter}{\numberline {3}Cu64,67}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}what can we do to make the nuclear medicine better?}{21}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}My motivation}{21}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Physics motivation}{21}{subsection.3.1.2}
+\contentsline {chapter}{\numberline {4}The experiment}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}The experimental setup}{23}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Cyclotron}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Deuterium breakup prosess}{24}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Stack design}{24}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Radiation}{26}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Counting}{26}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Gamma spectroscopy}{26}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Gamma spectra}{26}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Calibrating}{26}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Analyse}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Fitz peak}{27}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Regression prosess}{27}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Priduction physics}{27}{section.5.2}
+\contentsline {chapter}{\numberline {6}Results and dscussion}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}TALYS}{29}{section.6.1}
+\contentsline {chapter}{\numberline {7}Summary and outlook}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Future work}{31}{section.7.1}

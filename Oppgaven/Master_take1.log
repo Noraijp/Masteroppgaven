@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  26 MAR 2020 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  11 APR 2020 11:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -780,20 +780,20 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 (./Master_take1.aux)
 \openout1 = `Master_take1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
 \c@lstlisting=\count173
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -811,7 +811,7 @@ LaTeX Font Info:    ... okay on input line 118.
 \everyMPtoPDFconversion=\toks45
 )
 \AtBeginShipoutBox=\box52
-Package hyperref Info: Link coloring ON on input line 118.
+Package hyperref Info: Link coloring ON on input line 121.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -820,9 +820,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count180
 )
-LaTeX Info: Redefining \ref on input line 118.
-LaTeX Info: Redefining \pageref on input line 118.
-LaTeX Info: Redefining \nameref on input line 118.
+LaTeX Info: Redefining \ref on input line 121.
+LaTeX Info: Redefining \pageref on input line 121.
+LaTeX Info: Redefining \nameref on input line 121.
 
 (./Master_take1.out) (./Master_take1.out)
 \@outlinefile=\write6
@@ -914,14 +914,14 @@ ABD: EveryShipout initializing macros
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=131, 14
+<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=143, 14
 0.94772pt x 140.95068pt>
 File: uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf Graphi
 c file (type pdf)
 
 <use uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf>
 Package pdftex.def Info: uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_S
-egl_cmyk.pdf used on input line 124.
+egl_cmyk.pdf used on input line 127.
 (pdftex.def)             Requested size: 142.27217pt x 142.27518pt.
 
 [1
@@ -941,7 +941,7 @@ smaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf>] [2
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
@@ -961,109 +961,374 @@ Chapter 1.
 ]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--210
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 223.
+Package natbib Warning: Citation `invivo' on page 13 undefined on input line 21
+7.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 223.
+Package natbib Warning: Citation `Yeong' on page 13 undefined on input line 218
+.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 223.
+Package natbib Warning: Citation `Yeong' on page 13 undefined on input line 219
+.
+
+
+Package natbib Warning: Citation `Krane' on page 13 undefined on input line 221
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--222
+
+ []
 
 [13]
-Overfull \hbox (1.21356pt too wide) in paragraph at lines 233--240
+
+Package natbib Warning: Citation `Yeong' on page 14 undefined on input line 232
+.
+
+
+Package natbib Warning: Citation `Yeong' on page 14 undefined on input line 232
+.
+
+
+Package natbib Warning: Citation `Yeong' on page 14 undefined on input line 233
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--238
+
+ []
+
+
+Underfull \vbox (badness 5832) has occurred while \output is active []
+
+ [14]
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 15 undefined on inp
+ut line 239.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 15 undefined on input li
+ne 241.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--242
+
+ []
+
+
+Package natbib Warning: Citation `nuclearchem' on page 15 undefined on input li
+ne 255.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 15 undefined on input li
+ne 256.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 15 undefined on input li
+ne 258.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 15 undefined on input li
+ne 259.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 15 undefined on input li
+ne 261.
+
+
+Overfull \hbox (104.86488pt too wide) in paragraph at lines 244--266
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--266
+
+ []
+
+[15]
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 16 undefined on inp
+ut line 270.
+
+
+LaTeX Warning: Reference `fig:higvslowLET' on page 16 undefined on input line 2
+85.
+
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 16 undefined on inp
+ut line 288.
+
+
+LaTeX Warning: Reference `fig:braggcurve' on page 16 undefined on input line 28
+8.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--289
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 310.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\beta' on input line 310.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 310.
+
+
+Overfull \hbox (1.21356pt too wide) in paragraph at lines 320--327
 \OT1/cmr/m/n/12 For ther-apy, $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 will trave
 l longer in a medium than $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 (will an-ni-hi
 -late fast).[]WHY?[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--240
+Underfull \hbox (badness 10000) in paragraph at lines 320--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--240
+Underfull \hbox (badness 10000) in paragraph at lines 320--327
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 335--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--256
+Underfull \hbox (badness 10000) in paragraph at lines 335--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--256
+Underfull \hbox (badness 10000) in paragraph at lines 335--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--256
+Package natbib Warning: Citation `medical' on page 18 undefined on input line 3
+46.
+
+
+Package natbib Warning: Citation `augerelectrons' on page 18 undefined on input
+ line 346.
+
+
+LaTeX Warning: Reference `fig:auger' on page 18 undefined on input line 346.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--369
+
+ []
+
+[18]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 371.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 259.
+(hyperref)                removing `\gamma' on input line 371.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 259.
+(hyperref)                removing `math shift' on input line 371.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 259.
+Package natbib Warning: Citation `nuclearchem' on page 19 undefined on input li
+ne 376.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 373--376
 
- [14]
-[15] [16
+ []
 
-]
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
+
+ []
+
+
+Package natbib Warning: Citation `nuclearchem' on page 19 undefined on input li
+ne 380.
+
+
+Package natbib Warning: Citation `toxicology' on page 19 undefined on input lin
+e 382.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 19 undefined on input li
+ne 395.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--396
+
+ []
+
+
+Package natbib Warning: Citation `Radiological_physics' on page 19 undefined on
+ input line 397.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+
+ []
+
+[19]
+
+Package natbib Warning: Citation `nuclearchem' on page 20 undefined on input li
+ne 401.
+
+
+LaTeX Warning: Reference `fig:photo-compton-pair' on page 20 undefined on input
+ line 407.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--408
+
+ []
+
+[20]
 Chapter 3.
 
-Overfull \hbox (6.41753pt too wide) in paragraph at lines 279--279
+Overfull \hbox (6.41753pt too wide) in paragraph at lines 426--426
 []\OT1/cmr/bx/n/17.28 what can we do to make the nu-clear medicine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--289
+Underfull \hbox (badness 10000) in paragraph at lines 429--436
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 448--451
 
- []
-
-[17] [18
-
-]
-Chapter 4.
-[19]
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ∏ in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no • in font cmr12!
-Missing character: There is no √ in font cmr12!
-Missing character: There is no • in font cmr12!
- [20]
-Chapter 5.
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-
-Overfull \hbox (4.35994pt too wide) in paragraph at lines 391--394
-\OT1/cmr/m/n/12 - Pro-duc-tion physics (Anal-yse eller Re-sul-tater?) - how we 
-cal-cu-late cross-sectrtion,
  []
 
 [21
@@ -1071,48 +1336,162 @@ cal-cu-late cross-sectrtion,
 ] [22
 
 ]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--473
+
+ []
+
+<88-inch_cyclotrone.jpg, id=294, 344.08194pt x 173.95964pt>
+File: 88-inch_cyclotrone.jpg Graphic file (type jpg)
+
+<use 88-inch_cyclotrone.jpg>
+Package pdftex.def Info: 88-inch_cyclotrone.jpg used on input line 476.
+(pdftex.def)             Requested size: 412.89624pt x 208.7505pt.
+
+Overfull \hbox (1.754pt too wide) in paragraph at lines 476--477
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--493
+
+ []
+
+[23]
+Overfull \hbox (27.25461pt too wide) in paragraph at lines 497--502
+\OT1/cmr/m/n/12 ex-cited states in deu-terium [https://www.nndc.bnl.gov/ensdf/E
+nsdfDispatcherServlet]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--502
+
+ []
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no • in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no • in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¶ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ∏ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no • in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ∏ in font cmr12!
+<packs-1.JPG, id=304, 1214.136pt x 910.602pt>
+File: packs-1.JPG Graphic file (type jpg)
+ <use packs-1.JPG>
+Package pdftex.def Info: packs-1.JPG used on input line 511.
+(pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
+
+<target_stack-1.JPG, id=305, 1214.136pt x 910.602pt>
+File: target_stack-1.JPG Graphic file (type jpg)
+ <use target_stack-1.JPG>
+Package pdftex.def Info: target_stack-1.JPG used on input line 520.
+(pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
+
+
+Package natbib Warning: Citation `E.Lawrence' on page 24 undefined on input lin
+e 527.
+
+[24 <./88-inch_cyclotrone.jpg>] [25 <./packs-1.JPG> <./target_stack-1.JPG>]
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ∏ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no • in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no • in font cmr12!
+
+[26]
+Chapter 5.
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+
+Overfull \hbox (4.35994pt too wide) in paragraph at lines 582--585
+\OT1/cmr/m/n/12 - Pro-duc-tion physics (Anal-yse eller Re-sul-tater?) - how we 
+cal-cu-late cross-sectrtion,
+ []
+
+[27
+
+] [28
+
+]
 Chapter 6.
 Missing character: There is no √ in font cmr12!
 Missing character: There is no • in font cmr12!
-[23] [24
+[29] [30
 
 ]
 Chapter 7.
+
+Package natbib Warning: Citation `Prasad1971a' on page 31 undefined on input li
+ne 622.
+
 No file Master_take1.bbl.
-[25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 462.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 462.
+
+Package natbib Warning: There were undefined citations.
+
+[31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 655.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 655.
  (./Master_take1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 462.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 462.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 655.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 655.
 Package rerunfilecheck Info: File `Master_take1.out' has not changed.
-(rerunfilecheck)             Checksum: 220DFABB39E1AA9CA03CB5BC3AA5E694;1929.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 462.
+(rerunfilecheck)             Checksum: 607CDA0522DF8AA2D64BDC3BCA4932D3;2178.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 655.
  ) 
 Here is how much of TeX's memory you used:
- 20075 strings out of 493089
- 357981 string characters out of 6134843
- 475321 words of memory out of 5000000
- 23149 multiletter control sequences out of 15000+600000
- 13813 words of font info for 49 fonts, out of 8000000 for 9000
+ 20132 strings out of 493089
+ 358882 string characters out of 6134843
+ 476682 words of memory out of 5000000
+ 23186 multiletter control sequences out of 15000+600000
+ 14121 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,11n,73p,1045b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Master_take1.pdf (25 pages, 183397 bytes).
+ 54i,12n,73p,1373b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Master_take1.pdf (31 pages, 2016365 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 413 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
