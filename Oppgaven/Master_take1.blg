@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Master_take1.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: /Users/Nora/Documents/UiO/Masteroppgaven/Oppgaven/library.bib.bib
+Warning--I didn't find a database entry for "invivo"
+Warning--I didn't find a database entry for "Yeong"
+Warning--I didn't find a database entry for "Krane"
+Warning--I didn't find a database entry for "Nuclear_medicine"
+Warning--I didn't find a database entry for "nuclearchem"
+Warning--I didn't find a database entry for "medical"
+Warning--I didn't find a database entry for "augerelectrons"
+Warning--I didn't find a database entry for "toxicology"
+Warning--I didn't find a database entry for "Radiological_physics"
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in E.Lawrence
+
+Done.
+You've used 2 entries,
+            4039 wiz_defined-function locations,
+            839 strings with 7715 characters,
+and the built_in function-call counts, 1689 in all, are:
+= -- 144
+> -- 25
+< -- 18
++ -- 14
+- -- 3
+* -- 100
+:= -- 286
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 2
+chr.to.int$ -- 36
+cite$ -- 3
+duplicate$ -- 111
+empty$ -- 110
+format.name$ -- 4
+if$ -- 360
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 17
+newline$ -- 31
+num.names$ -- 2
+pop$ -- 26
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 125
+stack$ -- 0
+substring$ -- 86
+swap$ -- 102
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 2
+warning$ -- 1
+while$ -- 10
+width$ -- 3
+write$ -- 46
+(There were 10 warnings)

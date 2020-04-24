@@ -1,0 +1,368 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Important note on usage                  %%
+%% -----------------------                  %%
+%% This file must be compiled with PDFLaTeX %%
+%% Using standard LaTeX will not work!      %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The '3p' and 'times' class options of elsarticle are used for Elsevier CRC
+\documentclass[3p]{elsarticle}
+% \documentclass[5p]{elsarticle}
+
+\usepackage[american]{babel}
+\usepackage{amsmath}
+\usepackage[version=3]{mhchem} 
+% \usepackage{fixltx2e}
+% \usepackage{refcount}
+% \usepackage{siunitx}
+% \usepackage{lastpage}
+% \usepackage{textcomp}
+\usepackage{mathtools}
+
+\usepackage{xfrac}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+% \usepackage{cool}
+% \usepackage{cancel}
+\usepackage{microtype}
+\usepackage{listings}
+%\usepackage{mcode}
+\usepackage[autostyle, english = american]{csquotes}
+\usepackage{longtable}
+% \usepackage{subcaption}
+\usepackage{booktabs,siunitx}
+\usepackage{gensymb}
+\usepackage[normalem]{ulem}
+
+% \usepackage{mathtools, cuted}
+\usepackage{lipsum} % for dummy text only
+
+
+% \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{color}
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+\usepackage[section]{placeins}
+% \usepackage{multirows}
+
+
+\lstset{basicstyle=\small\ttfamily,columns=fullflexible}
+
+% \usepackage{verbatim}
+
+
+
+% \usepackage{gensymb}
+% \usepackage{enumerate}
+% \usepackage{float}
+% \usepackage{bm}
+% \usepackage{csquotes}
+% \usepackage{mathtools}
+% \usepackage{natbib}
+% \usepackage{biblatex}
+
+%% The `ecrc' package must be called to make the CRC functionality available
+\usepackage{ecrc-ari}
+
+%% The ecrc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+
+%% set the volume if you know. Otherwise `00'
+\volume{00}
+
+%% set the starting page if not 1
+\firstpage{1}
+
+%% Give the name of the journal
+\journalname{Applied Radiation and Isotopes}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+\runauth{Your Name et al.}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal.
+\jid{ari}
+% \jid{yspmi}
+
+%% Give a short journal name for the dummy logo (if needed)
+% \jnltitlelogo{Nucl Instrum Meth B}
+
+%% Hereafter the template follows `elsarticle'.
+%% For more details see the existing template files elsarticle-template-harv.tex and elsarticle-template-num.tex.
+
+%% Elsevier CRC generally uses a numbered reference style
+%% For this, the conventions of elsarticle-template-num.tex should be followed (included below)
+%% If using BibTeX, use the style file elsarticle-num.bst
+
+%% End of ecrc-specific commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+\usepackage{amsthm}
+%\usepackage{amsrefs}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+\biboptions{sort&compress}
+
+% if you have landscape tables
+\usepackage[figuresright]{rotating}
+
+% put your own definitions here:
+%   \newcommand{\cZ}{\cal{Z}}
+%   \newtheorem{def}{Definition}[section]
+%   ...
+
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+
+% declarations for front matter
+
+\usepackage{fancyvrb}
+\usepackage{color}
+ 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+% Sin and Cos with auto-parentheses 
+\newcommand{\sinp}[1]{\sin{\left( #1\right)}}
+\newcommand{\cosp}[1]{\cos{\left( #1\right)}}
+\newcommand{\expp}[1]{\exp{\left( #1\right)}}
+\newcommand{\sinhp}[1]{\sinh{\left( #1\right)}}
+\newcommand{\lnp}[1]{\ln{\left( #1\right)}}
+\newcommand{\pp}[1]{\left( #1\right)}
+\newcommand{\sci}[2]{ #1 \cdot 10^{#2}\ }
+\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+
+\newcommand{\textred}[1]{\textcolor{red}{ #1}}
+\newcommand{\redactedit}[1]{\textcolor{blue}{ \sout{#1}}}
+
+
+\newcommand{\colornote}[1]{\textcolor{red}{ COMMENT\large\footnote{\textcolor{red}{#1}}}}
+
+\newcommand{\comment}[1]{\todo[color=blue!20!white,inline]{ASV: #1}} 
+
+% Tweak sim for better inline text tilde
+\newcommand{\mytilde}{\raisebox{0.5ex}{\texttildelow}}
+% \newcommand{\mytilde}{\raise.17ex\hbox{$\scriptstyle‌​\sim$}}
+
+% \sisetup{separate-uncertainty=true,table-space-text-post = *}
+
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+
+
+\newcommand{\subfigimg}[4][,]{%
+  \setbox1=\hbox{\includegraphics[#1]{#3}}% Store image in box
+  \leavevmode\rlap{\usebox1}% Print image
+  \rlap{\hspace*{#4pt}\raisebox{\dimexpr\ht1-2\baselineskip}{#2}}% Print label
+  \phantom{\usebox1}% Insert appropriate spcing
+}
+% Old version of macro
+% \newcommand{\subfigimg}[3][,]{%
+%   \setbox1=\hbox{\includegraphics[#1]{#3}}% Store image in box
+%   \leavevmode\rlap{\usebox1}% Print image
+%   \rlap{\hspace*{50pt}\raisebox{\dimexpr\ht1-2\baselineskip}{#2}}% Print label
+%   \phantom{\usebox1}% Insert appropriate spcing
+% }
+\usepackage{subfig}
+% Remove a), b), etc labels from subfigs
+\captionsetup[subfigure]{labelformat=empty}
+
+
+
+\makeatletter
+% Make common definition of mean
+\newcommand*\mean[1]{\overline{#1\raisebox{3mm}{}}}
+
+\makeatother
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+\title{Your Title Here}
+
+
+% \dochead{Short}
+%% Use \dochead if there is an article header, e.g. \dochead{Short communication}
+
+
+
+\author[uio]{Your Name}
+
+\author[ucb]{Andrew S. Voyles \corref{cor1}}
+\ead{andrew.voyles@berkeley.edu}
+
+
+\author[ucb,lbl]{Lee A. Bernstein}
+
+\author[uio]{Sunniva Siem}
+
+
+
+
+
+
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\cortext[cor1]{Corresponding author}
+
+% \address[ucb]{Department of Nuclear Engineering, University of California, Berkeley, Etcheverry Hall, 2521 Hearst Ave, Berkeley, CA 94709}
+% \address[lbl]{Lawrence Berkeley National Laboratory,  1 Cyclotron Rd, Berkeley, CA 94720}
+% \address[llnl]{Lawrence Livermore National Laboratory, 7000 East Ave, Livermore, CA 94550}
+
+\address[uio]{Department of Physics, University of Oslo, N-0316 Oslo, Norway}
+\address[ucb]{Department of Nuclear Engineering, University of California, Berkeley, Berkeley CA, 94720 USA}
+\address[lbl]{Lawrence Berkeley National Laboratory,  Berkeley CA, 94720 USA}
+
+
+
+
+\begin{abstract}
+
+
+\input{./abstract_text}
+
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Update \sep Your \sep Keywords \sep Here
+
+
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+% \listoftodos
+
+
+%% main text 
+\input{./body_text}
+
+ 
+
+
+ 
+ \section{Acknowledgements}
+ 
+ List your acknowledgements here...
+
+ 
+
+
+% 
+%     
+% \pagebreak
+% 
+% \onecolumn
+% 
+% %% The Appendices part is started with the command \appendix;
+% %% appendix sections are then done as normal sections
+% %% \appendix
+% 
+% %% \section{}
+% %% \label{}
+% 
+% %% References
+% %%
+% %% Following citation commands can be used in the body text:
+% %% Usage of \cite is as follows:
+% %%   \cite{key}         ==>>  [#]
+% %%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+% \twocolumn
+
+
+
+
+
+%% References with BibTeX database:
+
+
+% ``Overfull \hbox in .bbl'' message fixed by commenting out ''write.url'' in /usr/share/texlive/texmf-dist/bibtex/bst/elsarticle/elsarticle-num.bst for affected entry types (likely, 'article' and 'book', all but 'phdthesis')
+
+
+% Note: replace '../../library' with the path to the library.bib file that Mendeley generates for you!
+
+\IfFileExists{../../library.bib}{\bibliography{../../library}}{\bibliography{library}}
+% \thispagestyle{fancyTOC}
+\bibliographystyle{elsarticle-num}
+
+
+
+\end{document}
+
+%%
+%% End of file `ari_template.tex'. 

@@ -33,3 +33,4 @@
 \contentsline {section}{\numberline {6.1}TALYS}{29}{section.6.1}
 \contentsline {chapter}{\numberline {7}Summary and outlook}{31}{chapter.7}
 \contentsline {section}{\numberline {7.1}Future work}{31}{section.7.1}
+\contentsline {chapter}{Bibliography}{33}{chapter*.5}
