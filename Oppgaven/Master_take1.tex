@@ -8,6 +8,8 @@
 \usepackage{enumitem} %to reduce vertical spacing in enumerate
 \usepackage{tabu} % to set tables to page width
 %\usepackage{aas_macros}
+\usepackage{subcaption}
+\usepackage{float}
 
 \usepackage[sort&compress,square,comma,numbers]{natbib} %to use \citet, now mixed with [nr]
 \usepackage[nottoc]{tocbibind}
@@ -189,7 +191,15 @@ Thank you grandmother, for being my safe place, even now.
 \paragraph{A short introduction to nuclear medicine} \mbox{}
 %\paragraph{A short astronomical history lesson} \mbox{}
 
-
+\noindent
+The usage of medical radionuclides can be traced back as long as late 1890s when Henry Becquerel discoverd radioactivity when he was studying a sulfate of uranium and Marie Curie together with her husband, Pierre Currie, forund activity in the ore where they had extracted uranium from. Since then, many studies on animal and humans have been done which led to development of radionuclides used in therapy and imaging with radiotracers.
+\\ 
+\\
+Therapeutic application involves using radioisotopes together with a molecule or proteins to e.g. irradiate cancer cells. The advantage of this treatment method is that the biological molecules are being produced for one purpose only, to find a specific area in the body and irradiates it from the inside unlike external beam therapy. This approach is also used in diagnostics. A PET-scan makes an image of the activity in vivo, this imaging technique is commonly used to detect cancer, heart problems and brain disorders with the usage of different molecules.
+\\
+\\
+In this report, medical isotopes are being discussed. The usage of radiopharmaceuticals in both therapy and diagnostics are used more and more in hospitals to treat and detect illnesses. The characteristics of a medical isotope and why those are important aspects is described in the first part of this report. The second part gives an introduction to different production methods of medical isotopes and the final part of this report is the usage of these radiopharmaceuticals.  
+\\
 
 
 % ----------------------------------------------------------------------------------------------------------------------
@@ -205,11 +215,18 @@ Thank you grandmother, for being my safe place, even now.
 \section{Background of Nuclear medicine}
 \label{sec:Background}
 
-- why does it work \\
-- how how we been doing nuclear medicine	\\
-- what isotopes are we currently using in clinics\\
-- problems with is\\
-- my work\\
+According to the National cancer institute \cite{history_medicine} there were 1.735.350 people diagnosed with cancer in 2018 in the United States alone. The amount of deaths caused by cancer worldwide is approximate 9.6 million people \cite{WHO}. If we did not have modern medicine like chemotherapy and internal and external radiation, the number of deaths would be much higher. 
+\\
+\\
+From when radioactivity were discovered in the 1890s there were a lot of new findings done in the medicine field, such as x-rays by Roentgen in 1895. Not long after, the biological foundation of nuclear medicine followed \cite{Cherry2012_chap1}. The tracer approach was developed in 1913 by Georg de Hevesy \cite{Hevesy2014} when he was investigating the absorbtion of radioactive led in plants. Not much later, in 1927, Blumgart and Weiss \cite{Blumgart1927} used aqueous solution of radon to study the pulmonary circulation \footnote{Pulmonary circulation is the portion of the circulatory system that carries deoxygenated blood from the right side of the heart to the lungs, where the blood oxygenates and returns to the left side of the heart.} in a man. Then, a cyclotron was build. Ernest Lawrence build the first cyclotron in Berkeley with the intention of accelerating particles to a high enough energy so they can be used to produce new particles \cite{E.Lawrence}. From a German article written by Winder$\ddot{o}$e on multiple acceleration on a positive ion Lawrence got the idea that he could make the particle reach a high enough energy by using a magnetic field such that the particle would bend and go around in a circle, and for each round in the circle the particle would increase its energy. It was his brother however, John, who realized that this can be used in medical applications. John was a medical doctor and was interested in the usage of radioisotope to treat cancer and in 1935 he came to Berkeley to do some testing on mice witch had a positive outcome. In 1937 John moved to Berkeley and performed his first treatment on a human using radioisotope, in fact Ernest and Johns mother got diagnosed with cancer in her uterus with a few month to live. John and Ernest got her to a special clinic that treated her with radiation and she lived for another 15 years \cite{E.Lawrence}. 
+\\
+\\
+In the 1950s,  positron emitters and their usage in imaging tequnics were described by Frank R. Wrenn, Myron L. Good and Philip Handler \cite{Wrenn1951}. This opened up to the posibility to use radioactive isotopes together with a discover and diagnose different diseases. The mainly used radionuclide that was used before the discovery of $^{99m}Tc$ in 1964 \cite{harper_tc99m} was $^{131}I$ and was used to study and diagnose thyroid dissorders \cite{Cherry2012_chap1}. After Paul Harper and his colleagues used $^{99m}Tc$ for brain scanning \cite{harper_tc99m},  because of its flexibility for labeling, $^{99m}Tc$ was being used to study varies of organs in the body. The gamma property of $^{99m}Tc$ was proven to be good for imaging, and the fact that it could be produced in a long-lived generator made it attractive for usage in hospitals \cite{harper_tc99m}. One other big developent was the mathematics to produce an image of a body based on angular views around the patient \cite{Cherry2012_chap1}. This technique was important for the evolution of nuclear imaging, and are the basis for imaging procedure that is being used today like SPECT, CT, MRI and PET.
+\\
+\\
+Today, nuclear medicine is used for both diagnostics and treatment of a patient. PET and SPECT is two imaging techniques that are most used in diagnostics. $^{18}F$ is the most used radionuclide in PET scans. Attached to a sugar molecule it will find cacerous cells in the body. In SPECT scans, $^{99m}Tc$ is often used to diagnose Coronary artery diseases and storke. These two illnesses are the number one killer worldwide and $^{99m}Tc$ is therefore the moste widely used radioisotope. Near 80 $\%$ of all procedures are using $^{99m}Tc$. In therapy, the radioisotope that is being used depends on the illness to the patient. What type of radionuclide that is being used in both diagnostics and therapy depends on the characteristics of the isotope.   
+\\
+\\
 
 \section{Characteristics of medical radionuclides}
 \noindent
@@ -220,8 +237,10 @@ The physical characteristics include physical half-life, energy of the radiation
 \\\\
 In this section, a book by Krane\cite{Krane} is used to describe the general nuclear reactions.\\
 
+
+
 \subsection{Half-life}
-The physical half-life, $t_{1/2}$, of a radioactive substance is the time it takes for a given amount to be reduced by half as a consequence of its decay and is described by the formula $$N(t) = N_0e^{-\lambda} t$$ 
+The physical half-life, $t_{1/2}$, of a radioactive substance is the time it takes for a given amount to be reduced by half as a consequence of its decay and is described by the formula $$N(t) = N_0e^{-\lambda t} $$ 
 where $N_0$ is the amount of initial substance, N(t) is then how much there is left after time, t, and $\lambda$ is the decay constant. This equation can be solved and the half-life of the decaying quantity is then given as $$t_{1/2} = \frac{ln2}{\lambda}$$ \\
 \\
 When a radioactive pharmaceutical gets injected into a human body, the biological half-life is important. It is the time it takes for a living body to reduce a biological substance by half through its biological processes. Therefore, when a radiopharmaceutical is produced to be used in a patients body, this is something that has to be considered carefully. It should be long enough to do a procedure, but short enough to not damage unnecessary healthy tissue. \\
@@ -235,28 +254,9 @@ It depends on the uptake mechanism, type of tumor and method of administration\c
 \\
 Travel time is also a factor when choosing an isotope. Based on the physical half-life, some hospitals can produce some radioisotopes themselves. If they have a cyclotron in the hospital they can produce some isotopes, such as $^{18}F$ with half-life of 109 minutes, that is used in PET scans. In those cases the half-life can be shorter than if it has to be transported to another part of the county. \\
 \\
+
 \subsection{Stopping power}
-When a charged particle penetrates an absorbing medium it will slowly slow down due to energy loss, the parameter that describes that is called stopping power. There are two known cases of stopping power\cite{Nuclear_medicine}, collision, $S_{col}$, and radiative, $S_{rad}$, stopping power. $S_{col}$ is a result from charged particles interaction with orbital electron of the material while $S_{rad}$ is when the charged particle interact with the nuclei in the material. The total stopping power is $S_{tot} = S_{col} + S_{rad}$ \\
-\\
-When a heavy charged particle looses its energy it is mainly by ionization where the mean energy loss is often described by Bethe-Block equation\cite{nuclearchem}.
-\begin{equation}
-    \frac{dE}{dX} = kz^2 \frac{Z}{A} \frac{1}{\beta^2} \left[ \frac{1}{2}ln \frac{2m_e c^2 \beta^2 \gamma^2 T_{max}}{I^2} - \beta^2 - \frac{\delta}{2} - \frac{C}{Z} \right]
-\end{equation}
-\begin{tabular}{l|l}
-     K = constant & z = particle charge  \\
-     Z = Atomic number & A = Mass number \\
-     $\beta$ = v/c = Relative speed of the incident particle & $m_e c^2$ = Electron rest mass x $c^2$ \\
-     $\gamma$ = Relativistic factor & $T_{max}$ = max kinetic energy given to a electron \\
-     I = Mean excitation energy & $\delta$ = Density effect correction \\
-     C/Z = shell correction & c = speed of light\\
-\end{tabular}
-\\
-\\
-The Bethe-Block equation can look different for different energies, electrons and secondary electrons. It reproduces the data experimentally in the energy region between a few MeV up to a few GeV\cite{nuclearchem} \\
-\textcolor{red}{ The energy loss for electrons alters logarithmic with ionization loss and Z varies linearly, but the radiation loss increases linearly with the energy and almost quadratically with Z. Therefore, the stopping power for electron is most important for low energy electrons}\cite{nuclearchem}.\\
-\\
-For heavy charged particle with high energy there will be radiation losses that must be taken into account. The atomic shell-effect is something that happens at low energies.\cite{nuclearchem}\\
-For intermediate energies, the Bethe-Block can be simplified to a point where the stopping power only is dependent by the charge and velocity of the incoming particle, the atomic mass number of the medium and the ionization potential\cite{nuclearchem}.\\
+When a charged particle penetrates an absorbing medium it will slowly slow down due to energy loss, the parameter that describes this is called stopping power. There are two known cases of stopping power\cite{Nuclear_medicine}, collision, $S_{col}$, and radiative, $S_{rad}$, stopping power. $S_{col}$ is a result from charged particles interaction with orbital electron of the material while $S_{rad}$ is when the charged particle interact with the nuclei in the material. The total stopping power is $S_{tot} = S_{col} + S_{rad}$ \\
 \\
 Electrons can lose energy by Bremsstrahlung and by ionization. At high energies where a particle travels faster than the speed of light in a medium, Cherenkov radiation happens. This is an important phenomena but the energy loss in this process is small\cite{nuclearchem}.\\
 \\
@@ -275,37 +275,31 @@ Photons will also interact with a medium through photoelectric effect, Compton s
 \noindent
 \textbf{LET}\\
 For therapy, the biological effect depends on how the isotopes decay, and how it distributes its energy to the surrounding medium. High linear energy transfer (LET) will concentrate the deposited energy to a small area near its tracks, as a result the biological damage is grater and there will be more damage to the DNA and other cellular structure. LET is closely related to the linear energy loss $\frac{dE}{dx}$ except that LET does not include radiative losses of energy. \\
-%\begin{figure}[h]
-   % \centering
-    %\includegraphics[scale=.5]{highLET.jpeg}
-    %\caption{An illustration from \cite{highvslowlet} of low LET vs high LET}
-   % \label{fig:higvslowLET}
-%\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.4]{low_vs_high_LET.PNG}
+    \caption{An illustration from \cite{Zeman2015_chap1} of low LET vs high LET}
+    \label{fig:higvslowLET}
+\end{figure}
 \\
-As shown in figure \ref{fig:higvslowLET}, high LET will do more damage in a smaller area and the therapeutic effect is significantly better than for low LET. \\
-Low LET, as figure 1 shows, is when the particle distribute little ionization throughout the medium, which results in little to no damage on the cells along the way. In diagnostic, we want to use isotopes that decays with particles who follows low LET and the opposite for therapy.\\
+As shown in figure \ref{fig:higvslowLET}, high LET will do more damage in a smaller area and the therapeutic effect is significantly better than for low LET. $\alpha$ is a nuclei with high LET. \\
+Low LET, as figure \ref{fig:higvslowLET} shows, is when the particle distribute little ionization throughout the medium, which results in little to no damage on the cells along the way. In diagnostic, we want to use isotopes that decays with particles who follows low LET and the opposite for therapy.\\
 \\
 Since the ionization of a material increases when the energy decreases for particles\cite{Nuclear_medicine}, the radiation will be more significant at the end of its tracks. Figure \ref{fig:braggcurve} shows how the ionization alters as the particle goes through a medium. The peak at the end is the bragg-peak and is correlated with high LET where most of the ionization happens at the end of its range. 
 
-%\begin{figure}[h!]
-    %\centering
-    %\includegraphics[scale=.25]{bragg.png}
-    %\caption{Illustration of the bragg curve for charged particles. Picture from \cite{inbook}}
-    %\label{fig:braggcurve}
-%\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.25]{bragg.png}
+    \caption{Illustration of the bragg curve for charged particles. Picture from \cite{inbook}}
+    \label{fig:braggcurve}
+\end{figure}
 
 
-
-\section{Radioactive decay}
-\label{sec:Radioactivedecay}
-
-- what is it
  
 \section{Decay modes}
 \label{sec:decaymodes}
 
--why are these usefull for nuclear medicine (therapy and diagnstics)
-
+When a patient have to go trough diagnostic and therapy with radioisotopes, the isotopes that is being used have do undergo decay that gives the wanted radiation. For therapy, decay modes  that gives a $\gamma$ or $e^{+}$ is important. In therapy, the wanted decay mode gives off an $e*{-}$, $\alpha$ and smetimes $\gamma$.
 
 \subsection{$\beta$-decay}
 
@@ -385,12 +379,12 @@ Competing with $\gamma$-ray emission, internal conversion (IC) is a way for the 
 X-rays, as $\gamma$-rays, are electromagnetic radiation. The difference is that X-rays has its origin outside of the nucleus. When X-rays and $\gamma$ penetrates a medium it can create different effects in the body by ionization.
 Photoelectric effect, Compton effect and pair production. \\
 \\
-\%begin{figure}[h!]
-   % \centering
-    %\includegraphics[width=190]{photoelectric_cross.png}
-    %\caption{Cross section for photoelectric effect, Compton scattering and pair production. Taken from \cite{photoelectric_cross}}
-    %\label{fig:photo-compton-pair}
-%\end{figure}
+\begin{figure}[h!]
+    \centering
+     \includegraphics[scale=0.4]{pcp_cross.png}
+     \caption{Cross section for photoelectric effect, Compton scattering and pair production. Taken from \cite{photoelectric_cross} }
+    \label{fig:photo-compton-pair}
+\end{figure}
 \\
 The photoelectric effect happens when a nucleus absorbs the incoming photon. The energy absorbed will be used to ejected an orbiting electron from the atom. This electron is called a photoelectron\cite{nuclearchem}. The electron cannot be emitted if the incoming photon energy is lower than the binding energy of the shell to the electron. The energy of the electron emitted is then $E_e = hv - E_b$. The probability of photoelectric effect happens is measured as the cross section 
 $$\sigma = constant \cdot \frac{Z^n}{E^3}$$
@@ -405,10 +399,60 @@ The cross section of pair is production is dependent on $Z^2$ .
 \\
 \\
 Figure \ref{fig:photo-compton-pair} shows how the three main interaction of a photon is dependent on energy. For lower energies it is clear that the photoelectric effect is dominant, pair production is more probable to happen in higher energies.\\
+\\
+\\
+\textbf{$\gamma$ decay}
+\\
+\\
+When a nucleus is being exited, either by the cration of a compaound nucleus, with a direct reaction or if a nucleus decays with one of the decay modes described in \ref{sec:decaymodes}, the nucleus will decay into its groundstate by emitting a $\gamma$-ray. This is illustrated in \textcolor{red}{FIGURE}. 
+\\
+\\
+\section{Production of medical isotopes}
+\subsection{Production rates and cross-sections}
+\noindent
+\textbf{Production rate}\\
+\\
+When there is a nucleon-nucleon interaction in a nuclei there will be change in the tribe of the nucleus and therefore the production of different nuclei can happen. This can happen by exciting a nuclei, exchange of nucleons or fusion. \cite{nuclearchem}\\
+If a nucleus ends up in an excited state after a collision before it decays into a new nuclei, the states are described as \begin{equation}
+    a + A \rightarrow C^* \rightarrow b + B 
+\end{equation} \cite{nuclearchem}
+where A is the target, a is the projectile, b is the light product and B is the new heavy product. If however, the nucleus doesn't get excited and decays into a new product, the general equation for a nuclear reaction is
+\begin{equation}
+    a + A \rightarrow b + B + Q 
+\end{equation}
+where Q is the reaction energy. The nuclear reaction is often written as $$A(a,b)B$$\\
+\\
+Equation 6 describes the creation of a compound nucleus, $C^*$. With low energies and a direct hit on the center of the nucleus gives the highest probability of creating a compound nucleus. When a direct reaction happens with higher energies and often at the edge of the nucleus, equation 7 defines this process\cite{Nuclear_medicine}. The production of radionuclides can therefore a mixture of these two reactions.
+\\
+\\
+There are many ways as to which radionuclides can be produced. Neutron induced reaction, charged particle induced nuclear reaction, fission, selective separation and gamma induced are the most important ones\cite{Nuclear_medicine}.\\
+\\
+The neutron induced nuclear reaction can happen with a thermal neutron, where fission and (n,$\gamma$) is the production route, and with fast neutrons, where we can get (n,n'), (n,2n'), .., (n,p), .., (n,$\alpha$), and fission reactions. One advantage of using neutrons as a beam is that it can penetrate the target with quite low energies, in some cases it only needs an energy of 0.0025 eV to penetrate a nucleus\cite{Nuclear_medicine}. Charge particles however, needs to overcome the coulomb barrier to enter the nucleus. 
+\\
+\textcolor{red}{BILDE HER AV CROSS SECTIONS}
+\\
+\\
+Charged particles can give rise to elastic-, inelastic- as well as other reactions. Elastic reaction is where the product before the collision is the same as the product after the collision, a (p,p) reaction. The masses, momentum and the kinetic energy before and after the interaction are identical\cite{Nuclear_medicine}.\\
+Inelastic reaction, (p,p'), happens when energy is transferred to the product and the difference in kinetic energy is saved as excitation energy in the nucleus.
+%\begin{center}
+    %\begin{figure}[h!]
+    %\centering
+    %\includegraphics[scale=0.3]{production_cross_section.jpg}
+    %\caption{The cross section of different nuclear reactons when $^{133}Cs$ is being irradiated with a neutron beam. Taken from \cite{neutron_reactions}}
+    %\label{fig:nuclear-reactions}
+%\end{figure}
+%\end{center}
+\noindent
+Depending on the beam and energy, figure \ref{fig:nuclear-reactions} shows that there are different nuclear reaction channels that can happen. With higher energies, the outgoing particle can be heavier or more in number. 
+\\
+\\
 
+\section{The deuterium}
+\label{sec:deuterium}
 
-\section{Theranostic}
-\label{sec:theranostic}
+\section{Germanium detector}
+\label{sec:ge-detector}
+
 
 
 
@@ -419,8 +463,7 @@ Figure \ref{fig:photo-compton-pair} shows how the three main interaction of a ph
 \chapter{Cu64,67} 
 \label{ch: mywork}
 
-\epigraph{\itshape ``- The idea that everyone is supposed to buy into stuff without questioning it, is the reason why we are 51 year old 16 year olds.\\ 
-- Dude, I agree. "}{--- \textup{Joe Rogan and Duncan Trussel}}
+\epigraph{\itshape QUOTE `}{--- \textup{BY}}
 
 
 \section{what can we do to make the nuclear medicine better?}
@@ -450,6 +493,8 @@ Figure \ref{fig:photo-compton-pair} shows how the three main interaction of a ph
 -- how we are doing it\\
 
 
+\section{Theranostic}
+\label{sec:theranostic}
 % ----------------------------------------------------------------------------------------------------------------------
 
 % ----------------------------------------------------------------------------------------------------------------------
@@ -464,28 +509,62 @@ In the following chapter, the experiment in itself is being discussed. Sections 
 \section{The experimental setup}
 \label{sec: setup}
 
-The experiment was preformed on August 2018 at the Lawrence Berkeley National Laboratory where six targets were irradiated with a neutron beam. The beam had to be tuned such that it didn't have a lot of angular distribution before it hits the targets. 
+The experiment was preformed on August 2018 at the Lawrence Berkeley National Laboratory where a deuterium beam with an energy of 16 and 33 MeV was used. The deuterium was used in the purpose to hit a berillium target, creating a neutron beam. Five targets, zinc, zirconium, indium, yttrium and aluminum were then irradiated with the neutrons, for illustration see fig \ref{fig:D_to_n}. For the 16 MeV run, the targets were irradiated for 7 hours and 57 minutes, and 1 hour and 52 minutes for the 33 MeV run. The length of the irradiation is different since the energies are different. A higher energy beam and a longer irradiation time will increase the dose and open up for other production rates. Since the germanium detector that was used to count the foils after irradiation have a couple of nS of deadtime, there will be a lot of information lost if the 33 MeV run was longer than 1.52 hours. The activity would have been much higher and the detector would not had been able to cach all the activity.\\ When 33 MeV is used, we know from section \ref{sec: D_breakup} that the number of neutrons that are being produced in the prosses is two to three times higher than for 16 MeV. This is also a reason for the shorter irradiation time for 33 MeV.
 
-\textcolor{red}{Incert pic of the foils here!}
-\\
-\\
-The targets were placed in a metallic box, see figure \ref{fig:target_stack}, and then placed in a tube that were sealed with vacuum. 
-
-\begin{figure} [h]
+\begin{figure} [H]
    \centering
-   \includegraphics[scale=1.2]{88-inch_cyclotrone.jpg}
+   \includegraphics[height=.6\textheight, angle=90]{Control-Room-Map.pdf}
    \caption{Map over the 88-inch cyclotorne at Lawrence Berkeley National Laboratory\textcolor{red}{FROM?}}
-   \label{fig:88-inc_cyclotron}
+   \label{fig:Control-Room-Map}
 \end{figure}
+\noindent
+The irradiation took place in cave 0, see figure \ref{fig:Control-Room-Map}. In figure \ref{fig:Control-Room-Map} there is a green line, which is the beam line. For the beam to get to cave 0 it has to go throug two bending magnets where the deuterions with the highest and lowest energies will be lost when the beam are being bend to the right beamline. Cave 0 has good shielding and when high energy beam enters the cave there will be more x-rays in the room. Shielding is therefore one of the main reasons to why high energy experiments are being done in cave 0.
 
-- tuning of beam
 
-\subsection{Cyclotron}
+The beam had to be tuned such that it didn't have a lot of angular distribution before it hits the targets. The neutrons gets emitted from the beryllium target with an angular distribution and the targets are based on the energy the neutrons hitts the target with. The angle should be about zero degrees and the targets are therefore placed 10 cm back from the be disk. The targets will not be activated with the full beam energy and the intensity of the neutrons will decrease with distance-squared, x$^2$. \textcolor{red}{reference to where you talk about solid angle}
+
+\begin{figure} [H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{16MeV_front.jpeg}
+  \caption{A subfigure}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{16MeV_back.jpeg}
+  \caption{A subfigure}
+  \label{fig:sub2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{33MeV_front.jpeg}
+  \caption{A subfigure}
+  \label{fig:sub3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{33MeV_back.jpeg}
+  \caption{A subfigure}
+  \label{fig:sub4}
+\end{subfigure}
+\caption{Pictures of the beam shape. (a) and (b) shows the beam during the 16 MeV run, and (c) and (d) shows the beam for the 33MeV run.}
+\label{fig:test}
+\end{figure}
+\noindent
+After the the tuning, the targets were placed in a metallic box, see figure \ref{fig:target_stack}, and then placed in a tube that were sealed with vacuum. The vacuume were there to decrease the amount of interactions between the air prticles and the charge particle inside the targetholder. 
+\\
+\\
+When the irradiation was done, the targets were removed to the counting room where they were placed in a gernanium detector \textcolor{red}{see section???}. 
+
+\subsection{The 88-Inch cyclotron}
 \label{sec: cyclotron}
 
-Being one of the first cyclotrons used to produce medical isotopes, the Berkeley lab is still used to produce radionuclides that are a part of the research in the medical industry. Lawrence national laboratory is located in the hills, directly over the university of California at Berkeley overlooking San Francisco bay.\\
+Being one of the first cyclotrons used to produce medical isotopes \cite{E.Lawrence}, the Berkeley lab is still used to produce radionuclides that are a part of the research in the medical industry. Lawrence national laboratory is located in the hills, directly over the university of California at Berkeley overlooking San Francisco bay.\\
 \\
-The 88-Inch cyclotron is used in research on varies of fields including astrophysics and nuclear structure. The accelerator is a 300-ton, K = 140 sector-focused cyclotron with the ability to run with both heavy- and light-ions. The facility of the cyclotron is shown in figure \ref{fig:88-inc_cyclotron}, it mainly has five experimental caves where cave 0 is the one used for neutron beams and isotope production. The cyclotron can accelerate ions up to 70??? MeV  ...
+The 88-Inch cyclotron is used in research on varies of fields including astrophysics and nuclear structure. The accelerator is a 300-ton, K = 140 sector-focused cyclotron with the ability to run with both heavy and light ions. The K-value represents the kinetic energy a particle can reach in the cycotron and can be used to rescale the energy reach for protons to other charge-to-mass ratio $E_k = A K (\frac{Q}{A})^2 $. Where A is the change in atomic mass, Q is the amount of energy released in a reaction and $E_k$ is the kinetic energy to a proton.\\
+The facility of the cyclotron is shown in figure \ref{fig:Control-Room-Map}, it mainly has five experimental caves where cave 0 is the one used for neutron beams and isotope production. \textcolor{red}{The cyclotron can accelerate ions up to 70 MeV}  ...
 \\
 \\
 - k-value (descuss energies for hospital cyclotrons and what energies for Cu64,67), what is it, how does it work\\
@@ -494,19 +573,57 @@ The 88-Inch cyclotron is used in research on varies of fields including astrophy
 \subsection{Deuterium breakup prosess}
 \label{sec: D_breakup}
 
-Deuterium break up can be done on any material, but natural beryllium a dense medium that has the quality as a good conductor of heat, it is stable and it is impossible to produce a radioactive activation product using deuterium. There is no excited states in deuterium [https://www.nndc.bnl.gov/ensdf/EnsdfDispatcherServlet] and if we give it energy it will break up into a neutron and a proton.
+Since a neutron beam has to be created, the usage of deuterium to make neutrons was done by  thick target deuterium breakup. This prosess has been studied by Meulders \cite{Meulders} and Saltmarsh \cite{Saltmarsh1977} and it involves splitting up deuterium into a proton and a neutron using a thick target of beryllium.
 \\
 \\
-- and how it is usefull for creating neutrons (brought energy spectrum that we can tune in terms of energy, inntense neutron source (makes a lot of neutrons) focused beam of neutrons \\
-- moulders paper and other
+Deuterium break up can be done on any material but natural beryllium is a dense medium that has the quality as a good conductor of heat, it is stable and it is impossible to produce a radioactive activation product using deuterium. Be has a low Z wich means that the atom dencity is lower and as a result, the breakup yield will increas.  There is no excited states in deuterium \cite{deuterium_decay} and because of the low binding energy of 2.22 MeV it will easly split into one proton and one neutron when it hits the beryllium target with energy greater than the bindng energy of the deuterium.
+
+\begin{figure} [h!]
+   \centering
+   \includegraphics[width=1\linewidth]{D_to_n}
+   \caption{Illustration of the deuterium breakup and how the neutron beam is dependen on the angle it gets emittet by.}
+   \label{fig:D_to_n}
+\end{figure}
+\noindent
+Deuterium breakup reaction can happen in two ways: direct process and excitation of the deuterium. The first one happens at higher energy where a proton interacts with an atom or the  electron cloud in the be target and strips off the proton, allows the neutron to pass through the beryllium disk.  At lower energies there are a probability to excite the deuterium. If the deuterium is being excited above the binding energy, there will be a coumpound nucleus and it will decay by sending out a proton or a neutron. The energy distribution of the neutron beam is visulized in fig \ref{fig:meulders_energydistribution} where the neutron flux increases with materials that have lower atmoic number. This is one of the main reasons to why beryllium was used in this experiment.
+
+\begin{figure} [h!]
+   \centering
+   \includegraphics[width=.6\linewidth ]{zero_degrees_moulder.png}
+   \caption{angles}
+   \label{fig:angles_moulder}
+\end{figure}
+\noindent
+\\
+Fig \ref{fig:angles_moulder} shows how the energy varies with the angle of the neutron that is being emitted in the Be(d,n) reaction. When the angles of the neureons get bigger, the neutron flux decreases \cite{Meulders}. Even going from zero to ten degrees decreases the neutron flux by a factor if two. In this experiment the angles of the neutron flux were aimed to be zero degrees since the energy drops with the angle \cite{Meulders}. The assumption that the neuron flux spectra for 33 MeV and 16 MeV as fig \ref{fig:angles_moulder} is made with the knowlage that the energy will shif down. The expectation of an neutron flux energy of 16MeV deuterium beam is approximate 6.5 MeV and approximate 16 MeV for the 33 MeV beam. This is shown in fig \ref{fig:meulders_energydistribution}.
+
+\begin{figure} [h!]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+  		\centering
+  		\includegraphics[width=.9\linewidth]{meulders_16.png}
+  		\caption{A subfigure}
+  		\label{fig:energy_16}
+	\end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+  	\includegraphics[width=.95\linewidth]{meulders_33.png}
+  		\caption{A subfigure}
+  		\label{fig:energy_33}
+	\end{subfigure}
+ \caption{Neutron energy spectra produced with 16 MeV in (a) and 33 MeV in (b) that were produced in the (d,n) reaction. Taken from \citep{Meulders}}
+ \label{fig:meulders_energydistribution}
+\end{figure}
+\noindent
+
 
 
 
 \subsection{Stack design}
 \label{sec: stack_design}
 
-A specific design of the targets were used to make sure that the cross section for each target could be measured for the different energies we radiated the targets with. Five different targets, Al, In, Y, Zn, and Zr, were made into small “packings” using kapton tape to tightly seal them( see figure \ref{fig:target_design}), \textcolor{red}{ bruker dette også til å hinde contamination siden targetset kan være sjør og unngå spredning av løst radiaktivt stoff. }
-\begin{figure} [h]
+A specific design of the targets were used to make sure that the cross section for each target could be measured for the different energies we iradiated the targets with. Five different targets, Al, In, Y, Zn, and Zr, were made into small “packings” using kapton tape to tightly seal them( see figure \ref{fig:target_design}), \textcolor{red}{ bruker dette også til å hinde contamination siden targetset kan være sjør og unngå spredning av løst radiaktivt stoff. }
+\begin{figure} [h!]
    \centering
    \includegraphics[scale=.2]{packs-1.JPG}
    \caption{Picture of how the targets were sealed before irradiation}
@@ -535,8 +652,7 @@ The metallic box was then placed in the beamline by inserting it into a vacuumou
 \section{Radiation}
 \label{sec:radiation}
 
-- how long time\\
-- beam current\\
+
 - beam monitor to meassure the  \\
 -- plot the beam current  as a function of time to justefy thet we can make the math that we do
 
@@ -565,7 +681,6 @@ The metallic box was then placed in the beamline by inserting it into a vacuumou
 - detectror efficincy\\
 - curves at different position
 
-
 % ----------------------------------------------------------------------------------------------------------------------
 % ----------------------------------------------------------------------------------------------------------------------
 
@@ -579,6 +694,9 @@ The metallic box was then placed in the beamline by inserting it into a vacuumou
 \section{Fitz peak}
 \label{sec:fitz_peak}
 
+FitzPeaks Gamma Analysis and Calibration Software is a program that  is being used for gamma spectroscopy analysis and calibration. The program uses linear least square routine \textcolor{red}{DESCRIBED WHERE?} and tries to fit the data to a gaussian function. 
+\\
+ \\
 - Data to activity ( the math). Peak counts to activity\\
 - i - Aktivity to A$\_$EOB\\
 - Production physics (Analyse eller Resultater?) - how we calculate cross-sectrtion, the work with john to use the monitor data to neutron fluxes that I’m going to use for calculate the cross section for my isotopes
@@ -587,11 +705,32 @@ The metallic box was then placed in the beamline by inserting it into a vacuumou
 
 \subsection{Regression prosess}
 
+$\chi^2$- distribution is a set of distibution depending on how many sets you have 
+\\
+- non linear regression
 
-\section{Priduction physics}
+\section{Production physics}
 \label{sec: prod_physics}
 
+Activity is written as $$A(t) = A_0 e^{-\lambda \Delta t_{decay}}$$
+And that deca0ys with $$\Delta D = \int_{t_{live}}^{t1} A_0 e^{-\lambda t} dt = \frac{A_0}{\lambda} (1- e^{-\lambda \Delta t_{live}})$$
+Efficiency is then $$\epsilon_{eff} = \frac{N_c}{\Delta D I_{\gamma}}$$ where $N_c$ is the number of counts.
+The efficiency then becomes $$\epsilon_{eff} = \frac{\lambda N_c}{A_0 I_{\gamma} (1 - e^{-\lambda \Delta t_{live}}) (e^{-\lambda \Delta t_{decay}})}$$
 
+
+$A_0$: $$A_0 = N_T \cdot (1-e^{-\lambda t}) \cdot \int \sigma(E) \frac{d\phi}{dE} dE$$
+\\
+Average cross section: $$\sigma_{avg} = \frac{A_0}{N_T (1-e^{-\lambda t}) \cdot \phi_{avg}} $$
+\\
+\
+From deuterium to neutron energy:
+\\
+$$E_{avg} = \frac{\int E \cdot d\phi(E)}{\int d\phi ( E)} $$ 
+where $d\phi dE$  is the energy dependent neutron flux.
+\\
+\\
+To find the errorbars in the neutron energy a calculation of FWHM of $\frac{d\phi}{dE}$ form the meulders paper\cite{Meulders}. A list of energies and a list of the $d\phi dE$ is being plotted where the maximum value of the neutron flux is collected. \textcolor{red}{INCERT FIGURE OF MEULDERS} The half of the maximum value is being used to find the intersection between $E_n$ and $d\phi dE$ wich gives two energy values, $x_1$ and $x_2$. To find the errorbars $\delta E$ of the neutron flux these equations are ben gused.
+$$E_{x_1} = E_{avg} - \delta E_{lower}\hspace{.5cm} , \hspace{.5cm} E_{x_2} = E_{avg} + \delta E_{upper}$$ where $\delta E_{lower} \neq \delta E_{upper}$ because $\frac{d\phi}{dE}$ is not symmetric, as shown in fig\ref{}
 
 % ----------------------------------------------------------------------------------------------------------------------% ----------------------------------------------------------------------------------------------------------------------
 
@@ -609,7 +748,11 @@ The metallic box was then placed in the beamline by inserting it into a vacuumou
 - Verdien av dette i fremtiden?\\
 - how can we  desien target for å kunne produsere mer Cu67. hvilke cyclotrons can we use for that? 
 
+\section{ALICE}
+\label{sec: alice}
 
+\section{EXFOR}
+\label{sec: exfor}
 
 
 % ----------------------------------------------------------------------------------------------------------------------% ----------------------------------------------------------------------------------------------------------------------
@@ -619,7 +762,6 @@ The metallic box was then placed in the beamline by inserting it into a vacuumou
 
 \chapter{Summary and outlook}
 \label{sum_and_outlook}
-\citep{Prasad1971a}
 \section{Future work}
 \label{sec: future_work}
 

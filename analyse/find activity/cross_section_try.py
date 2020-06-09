@@ -61,7 +61,7 @@ def ALICE(foil, A, Z):
         #print("E: ",E_new)
         #print("CS: ", CS_new)
         #plt.plot(E_new, xaxis, label='ALICE')
-        plt.plot(E_new, CS_new, label='ALICE')
+        plt.plot(E_new, CS_new, color='y', label='ALICE')
         #plt.show()
         return E, CS
 
@@ -85,7 +85,7 @@ def TALYS(foil, Z, A, file_ending='.tot'):
     #print('TALYS CS: ', CS)
     #print(E)
 
-    plt.plot(E, CS, 'r', label='TALYS')
+    plt.plot(E, CS, color='g', label='TALYS')
 
     #plt.show()
     return E, CS
@@ -221,7 +221,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         print(len(CS))
         print('...........................')
         #plt.plot(E, xaxis, 'y--', label='TENDL')
-        plt.plot(E, CS, 'y--', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL')
 
         #plt.plot(E_191Ir,CS_191Ir, label='191Ir')
         #plt.plot(E_193Ir,CS_193Ir, label='193Ir')
@@ -329,7 +329,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
 
         #plt.plot(E, xaxis, 'y--', label='TENDL')
 
-        plt.plot(E, CS, 'y--', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL')
         #plt.plot(E_61Ni,CS_61Ni, label='61Ni', linewidth=0.5)
 
         return E, CS
@@ -357,7 +357,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         E = E_89Y*abund_89Y
         CS = CS_89Y*abund_89Y
 
-        plt.plot(E, CS, 'y--', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL')
 
         return E, CS
 
@@ -396,7 +396,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         E = E_113Y*abund_113Y + E_115Y*abund_115Y
         CS = CS_113Y*abund_113Y + CS_115Y*abund_115Y
 
-        plt.plot(E, CS, 'y--', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL')
 
         return E, CS
 
@@ -425,7 +425,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
 
         #plt.plot(E, xaxis, 'y--', label='TENDL')
 
-        plt.plot(E, CS, 'y--', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL')
 
         return E, CS
 
@@ -433,7 +433,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
 
 
 
-def EMPIRECOH(foil, A, Z, filename_CS):
+def CoH(foil, A, Z, filename_CS):
 
     #print("foil: ",foil )
     #print("Z: ", Z )
@@ -445,26 +445,92 @@ def EMPIRECOH(foil, A, Z, filename_CS):
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
         v_64Zn = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-0' + filename_CS + '_coh' + '.txt'
+        #v_64Zn_emire = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-' + 'Cu-64' + '_empire' + '.txt'
+        v_67Zn = path + '/../EMPIRECOH2/' + foil + '/67Zn/' +  Z + '-0' + filename_CS + '_coh' + '.txt'        #f_67Zn = path + '/../EMPIRECOH2/' + foil + '/rp030067_' + Z +A + file_ending + '.txt'
+        #f_68Zn = path + '/../EMPIRECOH2/' + foil + '/rp030068_' + Z +A + file_ending + '.txt'
+        #f_70Zn = path + '/../EMPIRECOH2/' + foil + '/rp030070_' + Z +A + file_ending + '.txt'
+
+
+        #print("Zn 64 file: ",v_64Zn)
+        #print("Ir 191 file: ",f_191Ir)
+        if os.path.isfile(v_64Zn):
+            #print("Ir 191 file: ",f_191Ir)
+            print("v_64Zn exists")
+            CS_64Zn_Coh = np.genfromtxt(v_64Zn, delimiter='	', usecols=[1])
+            E_64Zn_Coh = np.genfromtxt(v_64Zn, delimiter='	', usecols=[0])
+        else:
+            print("64 Zn file does not exist")
+            CS_64Zn_Coh = 0
+            E_64Zn_Coh =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+        #print('!!!!!!!!!!!!!!!!!!!!!!!!!')
+        #print(E_64Zn_Coh)
+        plt.plot(E_64Zn_Coh, CS_64Zn_Coh, color='c', label='CoH')
+
+
+        if os.path.isfile(v_67Zn):
+            #print("Ir 191 file: ",f_191Ir)
+            print("v_64Zn exists")
+            CS_67Zn_Coh = np.genfromtxt(v_67Zn, delimiter='	', usecols=[1])
+            E_67Zn_Coh = np.genfromtxt(v_67Zn, delimiter='	', usecols=[0])
+        else:
+            print("64 Zn file does not exist")
+            CS_67Zn_Coh = 0
+            E_67Zn_Coh =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+        #print('!!!!!!!!!!!!!!!!!!!!!!!!!')
+        #print(E_67Zn_Coh)
+        #plt.plot(E_67Zn_Coh, CS_67Zn_Coh, color='c', label='CoH')
+
+
+def EMPIRE(foil, A, Z, filename_CS):
+
+    #print("foil: ",foil )
+    #print("Z: ", Z )
+    #print("A: ", A  )
+
+    if foil == 'Zn':
+        #A = ['191', '193'] # stable iridium isotopes
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.061;
+        #file_ending =
+        #endre f_191I til de stabile isotopene i zink osv
+        #v_64Zn = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-0' + filename_CS + '_coh' + '.txt'
+        u_64Zn_emire = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-' + 'Cu-64' + '_empire' + '.txt'
+        u_68Zn_emire = path + '/../EMPIRECOH2/' + foil + '/68Zn/' +  Z + '-' + 'Cu-67' + '_empire' + '.txt'
+
         #f_66Zn = path + '/../EMPIRECOH2/' + foil + '/rp030066_' + Z +A + '_empire' + '.txt'
         #f_67Zn = path + '/../EMPIRECOH2/' + foil + '/rp030067_' + Z +A + file_ending + '.txt'
         #f_68Zn = path + '/../EMPIRECOH2/' + foil + '/rp030068_' + Z +A + file_ending + '.txt'
         #f_70Zn = path + '/../EMPIRECOH2/' + foil + '/rp030070_' + Z +A + file_ending + '.txt'
 
 
-        print("Zn 64 file: ",v_64Zn)
+        print("Zn 64 file: ",u_64Zn_emire)
         #print("Ir 191 file: ",f_191Ir)
-        if os.path.isfile(v_64Zn):
+        if os.path.isfile(u_64Zn_emire):
             #print("Ir 191 file: ",f_191Ir)
             print("v_64Zn exists")
-            CS_64Zn_E = np.genfromtxt(v_64Zn, delimiter='	', usecols=[1])
-            E_64Zn_E = np.genfromtxt(v_64Zn, delimiter='	', usecols=[0])
+            CS_64Zn_E = np.genfromtxt(u_64Zn_emire, delimiter='	', usecols=[1])
+            E_64Zn_E = np.genfromtxt(u_64Zn_emire, delimiter='	', usecols=[0])
         else:
             print("64 Zn file does not exist")
             CS_64Zn_E = 0
             E_64Zn_E =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!')
-        print(E_64Zn_E)
-        plt.plot(E_64Zn_E, CS_64Zn_E, label='CoH')
+        #print('!!!!!!!!!!!!!!!!!!!!!!!!!')
+        #print(E_64Zn_E)
+        plt.plot(E_64Zn_E, CS_64Zn_E, color='m', label='EMPIRE')
+
+
+        if os.path.isfile(u_68Zn_emire):
+            #print("Ir 191 file: ",f_191Ir)
+            print("u_8Zn exists")
+            CS_68Zn_E = np.genfromtxt(u_68Zn_emire, delimiter='	', usecols=[1])
+            E_68Zn_E = np.genfromtxt(u_68Zn_emire, delimiter='	', usecols=[0])
+        else:
+            print("68 Zn file does not exist")
+            CS_68Zn_E = 0
+            E_68Zn_E =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+        #print('!!!!!!!!!!!!!!!!!!!!!!!!!')
+        #print(E_68Zn_E)
+        #plt.plot(E_68Zn_E, CS_68Zn_E, color='m', label='EMPIRE')
+
 
 
         # if os.path.isfile(f_66Zn):
@@ -524,11 +590,6 @@ def EMPIRECOH(foil, A, Z, filename_CS):
 
 
 
-
-
-
-
-
 def mydata(filename_CS, foil):
     import os
     #print(os.getcwd())
@@ -542,7 +603,7 @@ def mydata(filename_CS, foil):
     with open(file_33) as p:
         begin2 = p.readlines()[1:]
         #print(begin2)
-        E_33 = []; dPhidE_33 = []
+        E_33 = []; dPhidE_33 = []; x_values_33 = [6.753406008583691, 21.685666141732284]#dE_33 = [5.9795033493567011, 8.9527567837918909]
         for line2 in begin2:
             lines2 = line2.split(',')
             #print(lines2)
@@ -556,13 +617,15 @@ def mydata(filename_CS, foil):
         # Multiplying two lists
         res_list_33 = [E_33[i] * dPhidE_33[i] for i in range(len(E_33))]
         E_33_average = np.trapz(res_list_33, E_33) / np.trapz(dPhidE_33, E_33)
+        dEl_33 = E_33_average-x_values_33[0]
+        dEr_33 = x_values_33[1]-E_33_average   #left and right uncertainty in energy
         print('E_33MeV_average:', E_33_average)
 
 
     with open(file_16) as p:
         begin3 = p.readlines()[1:]
                 #print(begin2)
-        E_16 = []; dPhidE_16 = []
+        E_16 = []; dPhidE_16 = []; x_values_16 = [2.5311, 11.76469534883721]#dE_16 = [3.4329052022917228, 5.8006901465454863]
         for line3 in begin3:
             lines3 = line3.split(',')
             #print(lines3)
@@ -572,18 +635,23 @@ def mydata(filename_CS, foil):
                 #dPhidE_33_avarage = np.trapz(dPhidE_33, E_33)
         res_list_16 = [E_16[i] * dPhidE_16[i] for i in range(len(E_16))]
         E_16_average = np.trapz(res_list_16, E_16) / np.trapz(dPhidE_16, E_16)
+        dEl_16 = E_16_average-x_values_16[0]
+        dEr_16 = x_values_16[1]-E_16_average
         print('E_16MeV_average:', E_16_average)
+
 
         #print(E[i])
         #print(dE_)
         #print('dE:', dE)
         #print(len(dE), dE)
         CS_energi = [E_16_average, E_33_average]
+        print(CS_energi)
+
 
     with open(file) as f:
         begin = f.readlines()[1:]
         #CS_energi = [];
-        CS_zn = []; dCS = [];
+        CS_zn = []; dCS = []; dE = []
         for line in begin:
             lines = line.split(',')
             #print(lines)
@@ -596,15 +664,18 @@ def mydata(filename_CS, foil):
             #print('dE :', dE)
             #print('--------------')
             #print('CS :', CS_zn_64Cu)
-            dE = 0
+            dE = np.array(([dEl_16, dEr_16], [dEl_33, dEr_33]))
 
     #print(CS_energi)
         print('E :', CS_energi)
         print('CS :', CS_zn)
+        print('dE :', dE)
         #plt.plot(CS_energi, xaxis, 'g.', label='THIS WORK')
-        plt.plot(CS_energi, CS_zn, 'g.', label='This Work')
+        #plt.plot(CS_energi, CS_zn, 'k.', label='This Work')
+        #plt.errorbar(CS_energi, CS_zn, marker='P', color='darkred',linewidth=0.0001, yerr=dCS, elinewidth=1.0, capthick=1.0, capsize=3.0, label='This Work')
+        plt.errorbar(CS_energi, CS_zn, marker='.', linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label='This Work' )
+        #plt.errorbar(CS_energi[1], CS_zn[1], marker='.', linewidth=0.001, xerr=dE[1], yerr=dCS[1], elinewidth=0.5, capthick=0.5, capsize=3.0, label='This Work' )
         #plt.errorbar(CS_energi, CS_zn, marker='.', linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0 )
-        plt.errorbar(CS_energi, CS_zn, marker='.', linewidth=0.001, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0 )
 
     #plt.show()
 
@@ -624,7 +695,9 @@ def Cross_section(foil, A, Z, reaction, filename_CS, file_ending='.tot'):
     #no EXFOR for :
     # natZn(n,x)67Cu
     Tendl(foil, A, Z)
-    EMPIRECOH(foil, A, Z, filename_CS, )
+    CoH(foil, A, Z, filename_CS)
+    EMPIRE(foil, A, Z, filename_CS)
+
     mydata(filename_CS, foil)
 
     plt.legend()
