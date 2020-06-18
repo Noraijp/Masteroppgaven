@@ -9,8 +9,8 @@
 \contentsline {subsection}{\numberline {2.3.1}$\beta $-decay}{18}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Electron capture, Internal convention and Auger electrons}{19}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}$\gamma $-decay and X-rays}{20}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Production of medical isotopes}{23}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Production rates and cross-sections}{23}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.4}Production of medical isotopes}{22}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Production rates and cross-sections}{22}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}High purity Germanium detector}{24}{section.2.5}
 \contentsline {section}{\numberline {2.6}PET-scans}{26}{section.2.6}
 \contentsline {chapter}{\numberline {3}Cu64,67}{29}{chapter.3}

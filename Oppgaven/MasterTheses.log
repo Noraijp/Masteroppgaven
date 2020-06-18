@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  18 JUN 2020 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  18 JUN 2020 11:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**MASTER.tex
-(./MASTER.tex
+**MasterTheses.tex
+(./MasterTheses.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (./uiofysmaster/uiofysmaster.cls
@@ -790,8 +790,8 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 \epigraphwidth=\skip107
 \epigraphrule=\skip108
 )
-(./MASTER.aux)
-\openout1 = `MASTER.aux'.
+(./MasterTheses.aux)
+\openout1 = `MasterTheses.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
 LaTeX Font Info:    ... okay on input line 123.
@@ -837,9 +837,9 @@ LaTeX Info: Redefining \ref on input line 123.
 LaTeX Info: Redefining \pageref on input line 123.
 LaTeX Info: Redefining \nameref on input line 123.
 
-(./MASTER.out) (./MASTER.out)
+(./MasterTheses.out) (./MasterTheses.out)
 \@outlinefile=\write6
-\openout6 = `MASTER.out'.
+\openout6 = `MasterTheses.out'.
 
 
 *geometry* driver: auto-detecting
@@ -928,7 +928,7 @@ ABD: EveryShipout initializing macros
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=167, 14
+<uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf, id=163, 14
 0.94772pt x 140.95068pt>
 File: uiofysmaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf Graphi
 c file (type pdf)
@@ -962,9 +962,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 [7] [8
 
 
-] (./MASTER.toc [9])
+] (./MasterTheses.toc [9])
 \tf@toc=\write7
-\openout7 = `MASTER.toc'.
+\openout7 = `MasterTheses.toc'.
 
  [10]
 Chapter 1.
@@ -989,6 +989,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 192--201
 
 ]
 Chapter 2.
+
+Package natbib Warning: Citation `history_medicine' on page 13 undefined on inp
+ut line 216.
+
+
+Package natbib Warning: Citation `WHO' on page 13 undefined on input line 216.
+
+
+Package natbib Warning: Citation `Cherry2012_chap1' on page 13 undefined on inp
+ut line 219.
+
+
+Package natbib Warning: Citation `Hevesy2014' on page 13 undefined on input lin
+e 219.
+
+
+Package natbib Warning: Citation `Blumgart1927' on page 13 undefined on input l
+ine 219.
+
+
+Package natbib Warning: Citation `E.Lawrence' on page 13 undefined on input lin
+e 219.
+
+
+Package natbib Warning: Citation `E.Lawrence' on page 13 undefined on input lin
+e 219.
+
+
+Package natbib Warning: Citation `Wrenn1951' on page 13 undefined on input line
+ 222.
+
+
+Package natbib Warning: Citation `harper_tc99m' on page 13 undefined on input l
+ine 222.
+
+
+Package natbib Warning: Citation `Cherry2012_chap1' on page 13 undefined on inp
+ut line 222.
+
+
+Package natbib Warning: Citation `harper_tc99m' on page 13 undefined on input l
+ine 222.
+
+
+Package natbib Warning: Citation `harper_tc99m' on page 13 undefined on input l
+ine 222.
+
+
+Package natbib Warning: Citation `Cherry2012_chap1' on page 13 undefined on inp
+ut line 222.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 216--228
 
@@ -1015,6 +1066,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--228
  []
 
 [13]
+
+Package natbib Warning: Citation `invivo' on page 14 undefined on input line 23
+2.
+
+
+Package natbib Warning: Citation `Yeong' on page 14 undefined on input line 233
+.
+
+
+Package natbib Warning: Citation `Yeong' on page 14 undefined on input line 234
+.
+
+
+Package natbib Warning: Citation `Krane' on page 14 undefined on input line 236
+.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 230--237
 
  []
@@ -1030,6 +1098,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 230--237
  []
 
 [14]
+
+Package natbib Warning: Citation `Yeong' on page 15 undefined on input line 249
+.
+
+
+Package natbib Warning: Citation `Yeong' on page 15 undefined on input line 249
+.
+
+
+Package natbib Warning: Citation `Yeong' on page 15 undefined on input line 250
+.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 242--255
 
  []
@@ -1042,12 +1123,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--255
 
 Underfull \hbox (badness 10000) in paragraph at lines 242--255
 
- []
-
-
-Overfull \hbox (17.85469pt too wide) in paragraph at lines 242--255
-\OT1/cmr/m/n/12 It de-pends on the up-take mech-a-nism, type of tu-mor and meth
-od of administration[[]]
  []
 
 
@@ -1066,6 +1141,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--255
  []
 
 [15]
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 16 undefined on inp
+ut line 257.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 16 undefined on input li
+ne 259.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 257--264
 
  []
@@ -1080,7 +1164,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 257--264
 
  []
 
-<low_vs_high_LET.PNG, id=323, 1044.90375pt x 277.035pt>
+
+Underfull \vbox (badness 3323) has occurred while \output is active []
+
+ [16]
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 17 undefined on inp
+ut line 268.
+
+<low_vs_high_LET.PNG, id=288, 1044.90375pt x 277.035pt>
 File: low_vs_high_LET.PNG Graphic file (type png)
 
 <use low_vs_high_LET.PNG>
@@ -1092,6 +1184,23 @@ Overfull \hbox (6.81186pt too wide) in paragraph at lines 278--279
  []
 
 
+Package natbib Warning: Citation `Zeman2015_chap1' on page 17 undefined on inpu
+t line 279.
+
+
+Package natbib Warning: Citation `Zeman2015_chap1' on page 17 undefined on inpu
+t line 279.
+
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 17 undefined on inp
+ut line 286.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--287
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 266--287
 
  []
@@ -1106,30 +1215,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--287
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--287
-
- []
-
-
-Overfull \hbox (19.03384pt too wide) in paragraph at lines 266--287
-\OT1/cmr/m/n/12 Since the ion-iza-tion of a ma-te-rial in-creases when the en-e
-rgy de-creases for particles[[]],
- []
-
-[16] <bragg.png, id=339, 797.98125pt x 516.93124pt>
+[17 <./low_vs_high_LET.PNG>] <bragg.png, id=302, 797.98125pt x 516.93124pt>
 File: bragg.png Graphic file (type png)
- <use bragg.png>
+
+<use bragg.png>
 Package pdftex.def Info: bragg.png used on input line 290.
 (pdftex.def)             Requested size: 199.49481pt x 129.23248pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package natbib Warning: Citation `inbook' on page 18 undefined on input line 29
+1.
 
 
-Underfull \vbox (badness 2221) has occurred while \output is active []
+Package natbib Warning: Citation `inbook' on page 18 undefined on input line 29
+1.
 
- [17 <./low_vs_high_LET.PNG>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 302.
@@ -1175,6 +1275,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 327--335
  []
 
 
+Package natbib Warning: Citation `medical' on page 19 undefined on input line 3
+38.
+
+
+Package natbib Warning: Citation `augerelectrons' on page 19 undefined on input
+ line 338.
+
+
 LaTeX Warning: Reference `fig:auger' on page 19 undefined on input line 338.
 
 
@@ -1206,6 +1314,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 363.
 
 
+Package natbib Warning: Citation `nuclearchem' on page 20 undefined on input li
+ne 368.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 365--368
 
  []
@@ -1215,12 +1327,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 368--371
 
  []
 
-<pcp_cross.png, id=372, 638.385pt x 587.19376pt>
+
+Package natbib Warning: Citation `nuclearchem' on page 20 undefined on input li
+ne 372.
+
+
+Package natbib Warning: Citation `toxicology' on page 20 undefined on input lin
+e 374.
+
+<pcp_cross.png, id=316, 638.385pt x 587.19376pt>
 File: pcp_cross.png Graphic file (type png)
  <use pcp_cross.png>
 Package pdftex.def Info: pcp_cross.png used on input line 382.
 (pdftex.def)             Requested size: 255.34947pt x 234.87334pt.
 
+
+Package natbib Warning: Citation `photoelectric_cross' on page 20 undefined on 
+input line 383.
+
+
+Package natbib Warning: Citation `photoelectric_cross' on page 20 undefined on 
+input line 383.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 20 undefined on input li
+ne 387.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--388
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 371--388
 
  []
@@ -1234,32 +1372,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--388
 Underfull \hbox (badness 10000) in paragraph at lines 371--388
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--388
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [20]
+
+Package natbib Warning: Citation `Radiological_physics' on page 21 undefined on
+ input line 389.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 388--392
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3417) has occurred while \output is active []
 
  [21 <./pcp_cross.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
-
- []
+Package natbib Warning: Citation `nuclearchem' on page 22 undefined on input li
+ne 393.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 393--406
@@ -1276,15 +1406,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 393--406
 
  []
 
-<67Cu_decay.PNG, id=396, 979.66pt x 546.04pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--406
+
+ []
+
+<67Cu_decay.PNG, id=331, 979.66pt x 546.04pt>
 File: 67Cu_decay.PNG Graphic file (type png)
  <use 67Cu_decay.PNG>
 Package pdftex.def Info: 67Cu_decay.PNG used on input line 409.
 (pdftex.def)             Requested size: 391.85706pt x 218.41212pt.
- [22 <./67Cu_decay.PNG>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `nuclearchem' on page 22 undefined on input li
+ne 424.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 421--425
 
  []
+
+[22]
+
+Package natbib Warning: Citation `nuclearchem' on page 23 undefined on input li
+ne 427.
+
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 23 undefined on inp
+ut line 434.
+
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 23 undefined on inp
+ut line 437.
+
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 23 undefined on inp
+ut line 439.
+
+
+Package natbib Warning: Citation `Nuclear_medicine' on page 23 undefined on inp
+ut line 444.
 
 
 LaTeX Warning: Reference `fig:nuclear-reactions' on page 23 undefined on input 
@@ -1320,7 +1489,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 432--458
 
  []
 
-[23] <semiconductor.png, id=418, 984.67876pt x 593.21625pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./67Cu_decay.PNG>] <semiconductor.png, id=349, 984.67876pt x 593.21625pt>
 File: semiconductor.png Graphic file (type png)
 
 <use semiconductor.png>
@@ -1368,14 +1540,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 461--481
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24]
+Underfull \vbox (badness 4024) has occurred while \output is active []
+
+ [25 <./semiconductor.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 482--484
 
  []
 
 
-Underfull \vbox (badness 1189) has occurred while \output is active []
+Package natbib Warning: Citation `molecular_imaging' on page 26 undefined on in
+put line 488.
 
- [25 <./semiconductor.png>]
+
+Package natbib Warning: Citation `physics_in_medicine' on page 26 undefined on 
+input line 489.
+
+
+Package natbib Warning: Citation `physics_in_medicine' on page 26 undefined on 
+input line 489.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 488--491
 
  []
@@ -1385,30 +1569,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 488--491
 
  []
 
-<petscan.png, id=434, 626.34pt x 345.29pt>
+<petscan.png, id=362, 626.34pt x 345.29pt>
 File: petscan.png Graphic file (type png)
  <use petscan.png>
 Package pdftex.def Info: petscan.png used on input line 496.
 (pdftex.def)             Requested size: 143.89915pt x 79.32545pt.
 
-<TOF_PET.png, id=435, 253.94875pt x 234.8775pt>
+<TOF_PET.png, id=363, 253.94875pt x 234.8775pt>
 File: TOF_PET.png Graphic file (type png)
  <use TOF_PET.png>
 Package pdftex.def Info: TOF_PET.png used on input line 502.
 (pdftex.def)             Requested size: 143.89915pt x 133.09668pt.
 
-<PET_breastcancer.png, id=440, 188.705pt x 357.335pt>
+
+Package natbib Warning: Citation `physics_in_medicine' on page 26 undefined on 
+input line 506.
+
+
+Package natbib Warning: Citation `physics_in_medicine' on page 26 undefined on 
+input line 506.
+
+
+Package natbib Warning: Citation `physics_in_medicine' on page 26 undefined on 
+input line 512.
+
+<PET_breastcancer.png, id=365, 188.705pt x 357.335pt>
 File: PET_breastcancer.png Graphic file (type png)
 
 <use PET_breastcancer.png>
 Package pdftex.def Info: PET_breastcancer.png used on input line 518.
 (pdftex.def)             Requested size: 82.22719pt x 155.70663pt.
 
-<PET_alziemer.png, id=443, 347.2975pt x 280.04625pt>
+
+Package natbib Warning: Citation `PET_breastcanser' on page 26 undefined on inp
+ut line 519.
+
+
+Package natbib Warning: Citation `PET_breastcanser' on page 26 undefined on inp
+ut line 519.
+
+<PET_alziemer.png, id=366, 347.2975pt x 280.04625pt>
 File: PET_alziemer.png Graphic file (type png)
  <use PET_alziemer.png>
 Package pdftex.def Info: PET_alziemer.png used on input line 524.
 (pdftex.def)             Requested size: 154.17833pt x 124.32747pt.
+
+
+Package natbib Warning: Citation `PET_alzimer' on page 26 undefined on input li
+ne 525.
+
+
+Package natbib Warning: Citation `PET_alzimer' on page 26 undefined on input li
+ne 525.
+
+
+Package natbib Warning: Citation `18F_alzimer' on page 26 undefined on input li
+ne 533.
+
+
+Package natbib Warning: Citation `physics_in_medicine' on page 26 undefined on 
+input line 533.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 509--536
 
@@ -1423,6 +1644,10 @@ Chapter 3.
 Overfull \hbox (6.41753pt too wide) in paragraph at lines 543--543
 []\OT1/cmr/bx/n/17.28 what can we do to make the nu-clear medicine
  []
+
+
+Package natbib Warning: Citation `Ahmedova2018' on page 29 undefined on input l
+ine 547.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 546--552
@@ -1456,7 +1681,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 583--586
 
 [30]
 Chapter 4.
-<Control-Room-Map.pdf, id=485, 4865.42719pt x 2570.10187pt>
+<Control-Room-Map.pdf, id=396, 4865.42719pt x 2570.10187pt>
 File: Control-Room-Map.pdf Graphic file (type pdf)
 
 <use Control-Room-Map.pdf>
@@ -1472,25 +1697,25 @@ Overfull \vbox (121.0495pt too high) has occurred while \output is active []
 
 
 [32 <./Control-Room-Map.pdf>]
-<16MeV_front.jpeg, id=801, 671.50874pt x 514.92375pt>
+<16MeV_front.jpeg, id=712, 671.50874pt x 514.92375pt>
 File: 16MeV_front.jpeg Graphic file (type jpg)
  <use 16MeV_front.jpeg>
 Package pdftex.def Info: 16MeV_front.jpeg used on input line 622.
 (pdftex.def)             Requested size: 205.57112pt x 157.63686pt.
 
-<16MeV_back.jpeg, id=802, 673.51625pt x 525.965pt>
+<16MeV_back.jpeg, id=713, 673.51625pt x 525.965pt>
 File: 16MeV_back.jpeg Graphic file (type jpg)
  <use 16MeV_back.jpeg>
 Package pdftex.def Info: 16MeV_back.jpeg used on input line 628.
 (pdftex.def)             Requested size: 205.57112pt x 160.53545pt.
 
-<33MeV_front.jpeg, id=803, 842.14626pt x 644.4075pt>
+<33MeV_front.jpeg, id=714, 842.14626pt x 644.4075pt>
 File: 33MeV_front.jpeg Graphic file (type jpg)
  <use 33MeV_front.jpeg>
 Package pdftex.def Info: 33MeV_front.jpeg used on input line 634.
 (pdftex.def)             Requested size: 205.57112pt x 157.29616pt.
 
-<33MeV_back.jpeg, id=804, 962.59625pt x 735.74875pt>
+<33MeV_back.jpeg, id=715, 962.59625pt x 735.74875pt>
 File: 33MeV_back.jpeg Graphic file (type jpg)
  <use 33MeV_back.jpeg>
 Package pdftex.def Info: 33MeV_back.jpeg used on input line 640.
@@ -1502,6 +1727,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--652
 
 [33 <./16MeV_front.jpeg> <./16MeV_back.jpeg> <./33MeV_front.jpeg> <./33MeV_back
 .jpeg>]
+
+Package natbib Warning: Citation `E.Lawrence' on page 34 undefined on input lin
+e 656.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 656--664
 
  []
@@ -1510,19 +1740,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 656--664
 Underfull \hbox (badness 10000) in paragraph at lines 656--664
 
  []
+
+
+Package natbib Warning: Citation `Meulders' on page 34 undefined on input line 
+668.
+
+
+Package natbib Warning: Citation `Saltmarsh1977' on page 34 undefined on input 
+line 668.
+
+
+Package natbib Warning: Citation `deuterium_decay' on page 34 undefined on inpu
+t line 671.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 668--672
 
  []
 
-[34] <D_to_n.png, id=824, 940.51375pt x 388.45125pt>
+[34] <D_to_n.png, id=728, 940.51375pt x 388.45125pt>
 File: D_to_n.png Graphic file (type png)
  <use D_to_n.png>
 Package pdftex.def Info: D_to_n.png used on input line 675.
 (pdftex.def)             Requested size: 411.14224pt x 169.81067pt.
 
-<zero_degrees_moulder.png, id=826, 370.38374pt x 473.77pt>
+<zero_degrees_moulder.png, id=730, 370.38374pt x 473.77pt>
 File: zero_degrees_moulder.png Graphic file (type png)
 
 <use zero_degrees_moulder.png>
@@ -1532,17 +1774,33 @@ Package pdftex.def Info: zero_degrees_moulder.png used on input line 684.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<meulders_16.png, id=832, 265.99374pt x 375.4025pt>
+
+Package natbib Warning: Citation `Meulders' on page 35 undefined on input line 
+690.
+
+
+Package natbib Warning: Citation `Meulders' on page 35 undefined on input line 
+690.
+
+<meulders_16.png, id=734, 265.99374pt x 375.4025pt>
 File: meulders_16.png Graphic file (type png)
  <use meulders_16.png>
 Package pdftex.def Info: meulders_16.png used on input line 696.
 (pdftex.def)             Requested size: 185.01274pt x 261.11879pt.
 
-<meulders_33.png, id=833, 290.08376pt x 394.47375pt>
+<meulders_33.png, id=735, 290.08376pt x 394.47375pt>
 File: meulders_33.png Graphic file (type png)
  <use meulders_33.png>
 Package pdftex.def Info: meulders_33.png used on input line 702.
 (pdftex.def)             Requested size: 195.29193pt x 265.5721pt.
+
+
+Package natbib Warning: Citation `Meulders' on page 35 undefined on input line 
+706.
+
+
+Package natbib Warning: Citation `Meulders' on page 35 undefined on input line 
+706.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1565,17 +1823,22 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-<packs-1.JPG, id=837, 1214.136pt x 910.602pt>
+<packs-1.JPG, id=737, 1214.136pt x 910.602pt>
 File: packs-1.JPG Graphic file (type jpg)
  <use packs-1.JPG>
 Package pdftex.def Info: packs-1.JPG used on input line 720.
 (pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
 
-<target_stack-1.JPG, id=838, 1214.136pt x 910.602pt>
+<target_stack-1.JPG, id=738, 1214.136pt x 910.602pt>
 File: target_stack-1.JPG Graphic file (type jpg)
  <use target_stack-1.JPG>
 Package pdftex.def Info: target_stack-1.JPG used on input line 729.
 (pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
+
+
+Package natbib Warning: Citation `E.Lawrence' on page 35 undefined on input lin
+e 736.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1623,6 +1886,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 815--820
  []
 
 
+Package natbib Warning: Citation `Meulders' on page 40 undefined on input line 
+824.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 820--825
 
  []
@@ -1640,7 +1907,7 @@ Missing character: There is no ¥ in font cmr12!
 
 ]
 Chapter 7.
-(./MASTER.bbl [43] [44
+(./MasterTheses.bbl [43] [44
 
 ]
 Missing character: There is no â in font cmti12!
@@ -1704,28 +1971,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--187
 71bdbd9e2https :
  []
 
-) [47]
+)
+
+Package natbib Warning: There were undefined citations.
+
+[47]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 889.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 889.
- (./MASTER.aux)
+ (./MasterTheses.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 889.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 889.
-Package rerunfilecheck Info: File `MASTER.out' has not changed.
-(rerunfilecheck)             Checksum: 86861EA238AB3D81B1C1DAD59D31B1F5;2579.
 
+
+Package rerunfilecheck Warning: File `MasterTheses.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `MasterTheses.out':
+(rerunfilecheck)             Before: 2C4666A86E047E32AF6EC972F1A8BB24;2529
+(rerunfilecheck)             After:  86861EA238AB3D81B1C1DAD59D31B1F5;2579.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 889.
  ) 
 Here is how much of TeX's memory you used:
- 20510 strings out of 493089
- 365140 string characters out of 6134843
- 483243 words of memory out of 5000000
- 23471 multiletter control sequences out of 15000+600000
+ 20509 strings out of 493089
+ 365229 string characters out of 6134843
+ 483800 words of memory out of 5000000
+ 23470 multiletter control sequences out of 15000+600000
  15049 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,12n,73p,1938b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,12n,73p,1944b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1744,10 +2026,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on MASTER.pdf (47 pages, 3685691 bytes).
+Output written on MasterTheses.pdf (47 pages, 3683600 bytes).
 PDF statistics:
- 1015 PDF objects out of 1200 (max. 8388607)
- 801 compressed objects within 9 object streams
+ 943 PDF objects out of 1000 (max. 8388607)
+ 737 compressed objects within 8 object streams
  138 named destinations out of 1000 (max. 500000)
- 438 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

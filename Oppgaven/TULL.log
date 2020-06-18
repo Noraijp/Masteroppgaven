@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  18 JUN 2020 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  18 JUN 2020 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**MASTER.tex
-(./MASTER.tex
+**TULL.tex
+(./TULL.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (./uiofysmaster/uiofysmaster.cls
@@ -790,8 +790,8 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 \epigraphwidth=\skip107
 \epigraphrule=\skip108
 )
-(./MASTER.aux)
-\openout1 = `MASTER.aux'.
+(./TULL.aux)
+\openout1 = `TULL.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
 LaTeX Font Info:    ... okay on input line 123.
@@ -808,8 +808,7 @@ LaTeX Font Info:    ... okay on input line 123.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
 LaTeX Font Info:    ... okay on input line 123.
 \c@lstlisting=\count176
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count177
 \scratchdimen=\dimen190
@@ -837,9 +836,9 @@ LaTeX Info: Redefining \ref on input line 123.
 LaTeX Info: Redefining \pageref on input line 123.
 LaTeX Info: Redefining \nameref on input line 123.
 
-(./MASTER.out) (./MASTER.out)
+(./TULL.out) (./TULL.out)
 \@outlinefile=\write6
-\openout6 = `MASTER.out'.
+\openout6 = `TULL.out'.
 
 
 *geometry* driver: auto-detecting
@@ -954,594 +953,213 @@ smaster/figures/apollonseglet/Apollonseglet/UiO_Segl_cmyk.pdf>] [2
 ] [5] [6
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-
- []
-
-[7] [8
+] [7] [8
 
 
-] (./MASTER.toc [9])
+] (./TULL.toc [9])
 \tf@toc=\write7
-\openout7 = `MASTER.toc'.
+\openout7 = `TULL.toc'.
 
  [10]
 Chapter 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--201
-
- []
-
 [11
 
 ] [12
 
 ]
 Chapter 2.
+Missing character: There is no Æ in font cmr12!
+Missing character: There is no ’ in font cmr12!
+[13] [14]
+Underfull \vbox (badness 2073) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--228
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 230--237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--237
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 242--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--255
-
- []
-
-
-Overfull \hbox (17.85469pt too wide) in paragraph at lines 242--255
-\OT1/cmr/m/n/12 It de-pends on the up-take mech-a-nism, type of tu-mor and meth
-od of administration[[]]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--255
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 257--264
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--264
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--264
-
- []
-
-<low_vs_high_LET.PNG, id=323, 1044.90375pt x 277.035pt>
+ [15]
+<low_vs_high_LET.PNG, id=325, 1044.90375pt x 277.035pt>
 File: low_vs_high_LET.PNG Graphic file (type png)
 
 <use low_vs_high_LET.PNG>
-Package pdftex.def Info: low_vs_high_LET.PNG used on input line 278.
+Package pdftex.def Info: low_vs_high_LET.PNG used on input line 286.
 (pdftex.def)             Requested size: 417.9541pt x 110.81203pt.
 
-Overfull \hbox (6.81186pt too wide) in paragraph at lines 278--279
+Overfull \hbox (6.81186pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--287
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--287
-
- []
-
-
-Overfull \hbox (19.03384pt too wide) in paragraph at lines 266--287
-\OT1/cmr/m/n/12 Since the ion-iza-tion of a ma-te-rial in-creases when the en-e
-rgy de-creases for particles[[]],
- []
-
-[16] <bragg.png, id=339, 797.98125pt x 516.93124pt>
+[16] <bragg.png, id=343, 797.98125pt x 516.93124pt>
 File: bragg.png Graphic file (type png)
  <use bragg.png>
-Package pdftex.def Info: bragg.png used on input line 290.
+Package pdftex.def Info: bragg.png used on input line 298.
 (pdftex.def)             Requested size: 199.49481pt x 129.23248pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 2221) has occurred while \output is active []
-
- [17 <./low_vs_high_LET.PNG>]
-
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 302.
+(hyperref)                removing `math shift' on input line 310.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 302.
+(hyperref)                removing `\beta' on input line 310.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 302.
+(hyperref)                removing `math shift' on input line 310.
 
 
-Overfull \hbox (1.21356pt too wide) in paragraph at lines 312--319
+Overfull \hbox (1.21356pt too wide) in paragraph at lines 320--322
 \OT1/cmr/m/n/12 For ther-apy, $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 will trave
 l longer in a medium than $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 (will an-ni-hi
 -late fast).[]WHY?[]
  []
 
+[17 <./low_vs_high_LET.PNG> <./bragg.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--319
+LaTeX Warning: Reference `fig:auger' on page 18 undefined on input line 346.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--319
-
- []
-
-[18 <./bragg.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 327--335
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--335
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--335
-
- []
-
-
-LaTeX Warning: Reference `fig:auger' on page 19 undefined on input line 338.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--361
-
- []
-
-[19]
+[18]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 363.
+(hyperref)                removing `math shift' on input line 371.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 363.
+(hyperref)                removing `\gamma' on input line 371.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 363.
+(hyperref)                removing `math shift' on input line 371.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--368
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--371
-
- []
-
-<pcp_cross.png, id=372, 638.385pt x 587.19376pt>
+<pcp_cross.png, id=368, 638.385pt x 587.19376pt>
 File: pcp_cross.png Graphic file (type png)
  <use pcp_cross.png>
-Package pdftex.def Info: pcp_cross.png used on input line 382.
+Package pdftex.def Info: pcp_cross.png used on input line 394.
 (pdftex.def)             Requested size: 255.34947pt x 234.87334pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--388
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--388
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--388
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--388
-
- []
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 388--392
 
- []
+Underfull \vbox (badness 1675) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21 <./pcp_cross.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--406
-
- []
-
-<67Cu_decay.PNG, id=396, 979.66pt x 546.04pt>
+ [19]
+[20 <./pcp_cross.png>] <67Cu_decay.PNG, id=398, 979.66pt x 546.04pt>
 File: 67Cu_decay.PNG Graphic file (type png)
- <use 67Cu_decay.PNG>
-Package pdftex.def Info: 67Cu_decay.PNG used on input line 409.
+
+<use 67Cu_decay.PNG>
+Package pdftex.def Info: 67Cu_decay.PNG used on input line 427.
 (pdftex.def)             Requested size: 391.85706pt x 218.41212pt.
- [22 <./67Cu_decay.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 421--425
+ [21 <./67Cu_decay.PNG>]
 
- []
+LaTeX Warning: Reference `fig:nuclear-reactions' on page 22 undefined on input 
+line 476.
 
-
-LaTeX Warning: Reference `fig:nuclear-reactions' on page 23 undefined on input 
-line 455.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--458
-
- []
-
-[23] <semiconductor.png, id=418, 984.67876pt x 593.21625pt>
+<semiconductor.png, id=414, 984.67876pt x 593.21625pt>
 File: semiconductor.png Graphic file (type png)
-
-<use semiconductor.png>
-Package pdftex.def Info: semiconductor.png used on input line 464.
+ <use semiconductor.png>
+Package pdftex.def Info: semiconductor.png used on input line 485.
 (pdftex.def)             Requested size: 295.4059pt x 177.96625pt.
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--481
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 482--484
-
- []
-
 
 Underfull \vbox (badness 1189) has occurred while \output is active []
 
- [25 <./semiconductor.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 488--491
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 488--491
-
- []
-
-<petscan.png, id=434, 626.34pt x 345.29pt>
-File: petscan.png Graphic file (type png)
- <use petscan.png>
-Package pdftex.def Info: petscan.png used on input line 496.
-(pdftex.def)             Requested size: 143.89915pt x 79.32545pt.
-
-<TOF_PET.png, id=435, 253.94875pt x 234.8775pt>
-File: TOF_PET.png Graphic file (type png)
- <use TOF_PET.png>
-Package pdftex.def Info: TOF_PET.png used on input line 502.
-(pdftex.def)             Requested size: 143.89915pt x 133.09668pt.
-
-<PET_breastcancer.png, id=440, 188.705pt x 357.335pt>
-File: PET_breastcancer.png Graphic file (type png)
-
-<use PET_breastcancer.png>
-Package pdftex.def Info: PET_breastcancer.png used on input line 518.
-(pdftex.def)             Requested size: 82.22719pt x 155.70663pt.
-
-<PET_alziemer.png, id=443, 347.2975pt x 280.04625pt>
-File: PET_alziemer.png Graphic file (type png)
- <use PET_alziemer.png>
-Package pdftex.def Info: PET_alziemer.png used on input line 524.
-(pdftex.def)             Requested size: 154.17833pt x 124.32747pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 509--536
-
- []
-
-[26 <./petscan.png> <./TOF_PET.png>] [27 <./PET_breastcancer.png> <./PET_alziem
-er.png>] [28
+ [22]
+[23 <./semiconductor.png>] [24
 
 ]
 Chapter 3.
 
-Overfull \hbox (6.41753pt too wide) in paragraph at lines 543--543
+Overfull \hbox (6.41753pt too wide) in paragraph at lines 502--502
 []\OT1/cmr/bx/n/17.28 what can we do to make the nu-clear medicine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--552
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 558--558
+Underfull \hbox (badness 10000) in paragraph at lines 517--517
 []|\OT1/cmr/m/n/12 Diagnostic:
  []
 
 
-Overfull \hbox (93.27388pt too wide) in paragraph at lines 554--571
+Overfull \hbox (93.27388pt too wide) in paragraph at lines 513--521
 [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--571
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--571
-
- []
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 583--586
-
- []
-
-[30]
+[25] [26]
 Chapter 4.
-<Control-Room-Map.pdf, id=485, 4865.42719pt x 2570.10187pt>
+<Control-Room-Map.pdf, id=445, 4865.42719pt x 2570.10187pt>
 File: Control-Room-Map.pdf Graphic file (type pdf)
 
 <use Control-Room-Map.pdf>
-Package pdftex.def Info: Control-Room-Map.pdf used on input line 608.
+Package pdftex.def Info: Control-Room-Map.pdf used on input line 567.
 (pdftex.def)             Requested size: 701.2743pt x 370.45865pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
+ [27
 
 ]
 Overfull \vbox (121.0495pt too high) has occurred while \output is active []
 
 
-[32 <./Control-Room-Map.pdf>]
-<16MeV_front.jpeg, id=801, 671.50874pt x 514.92375pt>
+[28 <./Control-Room-Map.pdf>]
+<16MeV_front.jpeg, id=761, 671.50874pt x 514.92375pt>
 File: 16MeV_front.jpeg Graphic file (type jpg)
  <use 16MeV_front.jpeg>
-Package pdftex.def Info: 16MeV_front.jpeg used on input line 622.
+Package pdftex.def Info: 16MeV_front.jpeg used on input line 581.
 (pdftex.def)             Requested size: 205.57112pt x 157.63686pt.
 
-<16MeV_back.jpeg, id=802, 673.51625pt x 525.965pt>
+<16MeV_back.jpeg, id=762, 673.51625pt x 525.965pt>
 File: 16MeV_back.jpeg Graphic file (type jpg)
  <use 16MeV_back.jpeg>
-Package pdftex.def Info: 16MeV_back.jpeg used on input line 628.
+Package pdftex.def Info: 16MeV_back.jpeg used on input line 587.
 (pdftex.def)             Requested size: 205.57112pt x 160.53545pt.
 
-<33MeV_front.jpeg, id=803, 842.14626pt x 644.4075pt>
+<33MeV_front.jpeg, id=763, 842.14626pt x 644.4075pt>
 File: 33MeV_front.jpeg Graphic file (type jpg)
  <use 33MeV_front.jpeg>
-Package pdftex.def Info: 33MeV_front.jpeg used on input line 634.
+Package pdftex.def Info: 33MeV_front.jpeg used on input line 593.
 (pdftex.def)             Requested size: 205.57112pt x 157.29616pt.
 
-<33MeV_back.jpeg, id=804, 962.59625pt x 735.74875pt>
+<33MeV_back.jpeg, id=764, 962.59625pt x 735.74875pt>
 File: 33MeV_back.jpeg Graphic file (type jpg)
  <use 33MeV_back.jpeg>
-Package pdftex.def Info: 33MeV_back.jpeg used on input line 640.
+Package pdftex.def Info: 33MeV_back.jpeg used on input line 599.
 (pdftex.def)             Requested size: 205.57112pt x 157.11636pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--652
-
- []
-
-[33 <./16MeV_front.jpeg> <./16MeV_back.jpeg> <./33MeV_front.jpeg> <./33MeV_back
+[29 <./16MeV_front.jpeg> <./16MeV_back.jpeg> <./33MeV_front.jpeg> <./33MeV_back
 .jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 656--664
-
+Overfull \hbox (13.28946pt too wide) in paragraph at lines 621--623
+[]\OT1/cmr/m/n/12 - k-value (de-s-cuss en-er-gies for hos-pi-tal cy-clotrons an
+d what en-er-gies for Cu64,67),
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 656--664
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--672
-
- []
-
-[34] <D_to_n.png, id=824, 940.51375pt x 388.45125pt>
+<D_to_n.png, id=777, 940.51375pt x 388.45125pt>
 File: D_to_n.png Graphic file (type png)
  <use D_to_n.png>
-Package pdftex.def Info: D_to_n.png used on input line 675.
+Package pdftex.def Info: D_to_n.png used on input line 634.
 (pdftex.def)             Requested size: 411.14224pt x 169.81067pt.
 
-<zero_degrees_moulder.png, id=826, 370.38374pt x 473.77pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30] <zero_degrees_moulder.png, id=787, 370.38374pt x 473.77pt>
 File: zero_degrees_moulder.png Graphic file (type png)
 
 <use zero_degrees_moulder.png>
-Package pdftex.def Info: zero_degrees_moulder.png used on input line 684.
+Package pdftex.def Info: zero_degrees_moulder.png used on input line 643.
 (pdftex.def)             Requested size: 246.68785pt x 315.55191pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<meulders_16.png, id=832, 265.99374pt x 375.4025pt>
+<meulders_16.png, id=793, 265.99374pt x 375.4025pt>
 File: meulders_16.png Graphic file (type png)
  <use meulders_16.png>
-Package pdftex.def Info: meulders_16.png used on input line 696.
+Package pdftex.def Info: meulders_16.png used on input line 655.
 (pdftex.def)             Requested size: 185.01274pt x 261.11879pt.
 
-<meulders_33.png, id=833, 290.08376pt x 394.47375pt>
+<meulders_33.png, id=794, 290.08376pt x 394.47375pt>
 File: meulders_33.png Graphic file (type png)
  <use meulders_33.png>
-Package pdftex.def Info: meulders_33.png used on input line 702.
+Package pdftex.def Info: meulders_33.png used on input line 661.
 (pdftex.def)             Requested size: 195.29193pt x 265.5721pt.
 
 
@@ -1565,88 +1183,61 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-<packs-1.JPG, id=837, 1214.136pt x 910.602pt>
+<packs-1.JPG, id=798, 1214.136pt x 910.602pt>
 File: packs-1.JPG Graphic file (type jpg)
  <use packs-1.JPG>
-Package pdftex.def Info: packs-1.JPG used on input line 720.
+Package pdftex.def Info: packs-1.JPG used on input line 679.
 (pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
 
-<target_stack-1.JPG, id=838, 1214.136pt x 910.602pt>
-File: target_stack-1.JPG Graphic file (type jpg)
- <use target_stack-1.JPG>
-Package pdftex.def Info: target_stack-1.JPG used on input line 729.
-(pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35 <./D_to_n.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<target_stack-1.JPG, id=799, 1214.136pt x 910.602pt>
+File: target_stack-1.JPG Graphic file (type jpg)
+ <use target_stack-1.JPG>
+Package pdftex.def Info: target_stack-1.JPG used on input line 688.
+(pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
+
+[31 <./D_to_n.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[36 <./zero_degrees_moulder.png>] [37 <./meulders_16.png> <./meulders_33.png> <
-./packs-1.JPG>]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
+[32 <./zero_degrees_moulder.png>]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 761--763
-
- []
-
-[38 <./target_stack-1.JPG>]
+ [33 <./meulders_16.png> <./meulders_33.png> <./packs-1.JPG>] [34 <./target_sta
+ck-1.JPG>]
 Chapter 5.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 789--795
-
- []
-
-
-Overfull \hbox (4.35994pt too wide) in paragraph at lines 789--795
-\OT1/cmr/m/n/12 - Pro-duc-tion physics (Anal-yse eller Re-sul-tater?) - how we 
-cal-cu-late cross-sectrtion,
- []
-
-[39
+[35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 815--820
 
- []
+LaTeX Warning: Reference `' on page 36 undefined on input line 808.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 820--825
-
- []
-
-
-LaTeX Warning: Reference `' on page 40 undefined on input line 825.
-
-[40]
+[36]
 Chapter 6.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
-[41
+[37
 
-] [42
+] [38
 
 ]
 Chapter 7.
-(./MASTER.bbl [43] [44
+(./TULL.bbl [39] [40
 
 ]
 Missing character: There is no â in font cmti12!
 Missing character: There is no € in font cmti12!
 Missing character: There is no “ in font cmti12!
- [45] [46]
+ [41] [42]
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -1704,50 +1295,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--187
 71bdbd9e2https :
  []
 
-) [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 889.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 889.
- (./MASTER.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 889.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 889.
-Package rerunfilecheck Info: File `MASTER.out' has not changed.
-(rerunfilecheck)             Checksum: 86861EA238AB3D81B1C1DAD59D31B1F5;2579.
+) [43]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 872.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 872.
+ (./TULL.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 872.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 872.
 
+
+Package rerunfilecheck Warning: File `TULL.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TULL.out':
+(rerunfilecheck)             Before: 86861EA238AB3D81B1C1DAD59D31B1F5;2579
+(rerunfilecheck)             After:  E9B4A2ABAE5D7D9B5896478EDC6222F2;2523.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 889.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 872.
  ) 
 Here is how much of TeX's memory you used:
- 20510 strings out of 493089
- 365140 string characters out of 6134843
- 483243 words of memory out of 5000000
- 23471 multiletter control sequences out of 15000+600000
+ 20502 strings out of 493089
+ 364936 string characters out of 6134843
+ 482239 words of memory out of 5000000
+ 23455 multiletter control sequences out of 15000+600000
  15049 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,12n,73p,1938b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on MASTER.pdf (47 pages, 3685691 bytes).
+ 54i,12n,73p,1938b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{figure.caption.14} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.15} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter*.16} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on TULL.pdf (43 pages, 3307102 bytes).
 PDF statistics:
- 1015 PDF objects out of 1200 (max. 8388607)
- 801 compressed objects within 9 object streams
- 138 named destinations out of 1000 (max. 500000)
- 438 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 994 PDF objects out of 1000 (max. 8388607)
+ 796 compressed objects within 8 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 418 words of extra memory for PDF output out of 10000 (max. 10000000)
 
