@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  18 JUN 2020 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.4)  18 JUN 2020 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -979,10 +979,10 @@ Underfull \vbox (badness 2073) has occurred while \output is active []
 File: low_vs_high_LET.PNG Graphic file (type png)
 
 <use low_vs_high_LET.PNG>
-Package pdftex.def Info: low_vs_high_LET.PNG used on input line 286.
+Package pdftex.def Info: low_vs_high_LET.PNG used on input line 283.
 (pdftex.def)             Requested size: 417.9541pt x 110.81203pt.
 
-Overfull \hbox (6.81186pt too wide) in paragraph at lines 286--287
+Overfull \hbox (6.81186pt too wide) in paragraph at lines 283--284
  [][] 
  []
 
@@ -992,23 +992,23 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [16] <bragg.png, id=338, 797.98125pt x 516.93124pt>
 File: bragg.png Graphic file (type png)
  <use bragg.png>
-Package pdftex.def Info: bragg.png used on input line 298.
+Package pdftex.def Info: bragg.png used on input line 295.
 (pdftex.def)             Requested size: 199.49481pt x 129.23248pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 310.
+(hyperref)                removing `math shift' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 310.
+(hyperref)                removing `\beta' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 310.
+(hyperref)                removing `math shift' on input line 307.
 
 
-Overfull \hbox (1.21356pt too wide) in paragraph at lines 320--322
+Overfull \hbox (1.21356pt too wide) in paragraph at lines 317--319
 \OT1/cmr/m/n/12 For ther-apy, $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 will trave
 l longer in a medium than $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 (will an-ni-hi
 -late fast).[]WHY?[]
@@ -1016,25 +1016,25 @@ l longer in a medium than $\OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 (will an-ni-hi
 
 [17 <./low_vs_high_LET.PNG> <./bragg.png>]
 
-LaTeX Warning: Reference `fig:auger' on page 18 undefined on input line 346.
+LaTeX Warning: Reference `fig:auger' on page 18 undefined on input line 343.
 
 [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `math shift' on input line 368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 371.
+(hyperref)                removing `\gamma' on input line 368.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `math shift' on input line 368.
 
 <pcp_cross.png, id=363, 638.385pt x 587.19376pt>
 File: pcp_cross.png Graphic file (type png)
  <use pcp_cross.png>
-Package pdftex.def Info: pcp_cross.png used on input line 394.
+Package pdftex.def Info: pcp_cross.png used on input line 391.
 (pdftex.def)             Requested size: 255.34947pt x 234.87334pt.
 
 
@@ -1048,17 +1048,17 @@ Underfull \vbox (badness 1675) has occurred while \output is active []
 File: 67Cu_decay.PNG Graphic file (type png)
 
 <use 67Cu_decay.PNG>
-Package pdftex.def Info: 67Cu_decay.PNG used on input line 427.
+Package pdftex.def Info: 67Cu_decay.PNG used on input line 424.
 (pdftex.def)             Requested size: 391.85706pt x 218.41212pt.
  [21 <./67Cu_decay.PNG>]
 
 LaTeX Warning: Reference `fig:nuclear-reactions' on page 22 undefined on input 
-line 476.
+line 473.
 
 <semiconductor.png, id=409, 984.67876pt x 593.21625pt>
 File: semiconductor.png Graphic file (type png)
  <use semiconductor.png>
-Package pdftex.def Info: semiconductor.png used on input line 485.
+Package pdftex.def Info: semiconductor.png used on input line 482.
 (pdftex.def)             Requested size: 295.4059pt x 177.96625pt.
 
 Underfull \vbox (badness 1189) has occurred while \output is active []
@@ -1069,17 +1069,17 @@ Underfull \vbox (badness 1189) has occurred while \output is active []
 ]
 Chapter 3.
 
-Overfull \hbox (6.41753pt too wide) in paragraph at lines 502--502
+Overfull \hbox (6.41753pt too wide) in paragraph at lines 499--499
 []\OT1/cmr/bx/n/17.28 what can we do to make the nu-clear medicine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--517
+Underfull \hbox (badness 10000) in paragraph at lines 514--514
 []|\OT1/cmr/m/n/12 Diagnostic:
  []
 
 
-Overfull \hbox (93.27388pt too wide) in paragraph at lines 513--521
+Overfull \hbox (93.27388pt too wide) in paragraph at lines 510--518
 [][] 
  []
 
@@ -1089,7 +1089,7 @@ Chapter 4.
 File: Control-Room-Map.pdf Graphic file (type pdf)
 
 <use Control-Room-Map.pdf>
-Package pdftex.def Info: Control-Room-Map.pdf used on input line 567.
+Package pdftex.def Info: Control-Room-Map.pdf used on input line 564.
 (pdftex.def)             Requested size: 701.2743pt x 370.45865pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1104,30 +1104,30 @@ Overfull \vbox (121.0495pt too high) has occurred while \output is active []
 <16MeV_front.jpeg, id=756, 671.50874pt x 514.92375pt>
 File: 16MeV_front.jpeg Graphic file (type jpg)
  <use 16MeV_front.jpeg>
-Package pdftex.def Info: 16MeV_front.jpeg used on input line 581.
+Package pdftex.def Info: 16MeV_front.jpeg used on input line 578.
 (pdftex.def)             Requested size: 205.57112pt x 157.63686pt.
 
 <16MeV_back.jpeg, id=757, 673.51625pt x 525.965pt>
 File: 16MeV_back.jpeg Graphic file (type jpg)
  <use 16MeV_back.jpeg>
-Package pdftex.def Info: 16MeV_back.jpeg used on input line 587.
+Package pdftex.def Info: 16MeV_back.jpeg used on input line 584.
 (pdftex.def)             Requested size: 205.57112pt x 160.53545pt.
 
 <33MeV_front.jpeg, id=758, 842.14626pt x 644.4075pt>
 File: 33MeV_front.jpeg Graphic file (type jpg)
  <use 33MeV_front.jpeg>
-Package pdftex.def Info: 33MeV_front.jpeg used on input line 593.
+Package pdftex.def Info: 33MeV_front.jpeg used on input line 590.
 (pdftex.def)             Requested size: 205.57112pt x 157.29616pt.
 
 <33MeV_back.jpeg, id=759, 962.59625pt x 735.74875pt>
 File: 33MeV_back.jpeg Graphic file (type jpg)
  <use 33MeV_back.jpeg>
-Package pdftex.def Info: 33MeV_back.jpeg used on input line 599.
+Package pdftex.def Info: 33MeV_back.jpeg used on input line 596.
 (pdftex.def)             Requested size: 205.57112pt x 157.11636pt.
 
 [29 <./16MeV_front.jpeg> <./16MeV_back.jpeg> <./33MeV_front.jpeg> <./33MeV_back
 .jpeg>]
-Overfull \hbox (13.28946pt too wide) in paragraph at lines 621--623
+Overfull \hbox (13.28946pt too wide) in paragraph at lines 618--620
 []\OT1/cmr/m/n/12 - k-value (de-s-cuss en-er-gies for hos-pi-tal cy-clotrons an
 d what en-er-gies for Cu64,67),
  []
@@ -1135,7 +1135,7 @@ d what en-er-gies for Cu64,67),
 <D_to_n.png, id=771, 940.51375pt x 388.45125pt>
 File: D_to_n.png Graphic file (type png)
  <use D_to_n.png>
-Package pdftex.def Info: D_to_n.png used on input line 634.
+Package pdftex.def Info: D_to_n.png used on input line 631.
 (pdftex.def)             Requested size: 411.14224pt x 169.81067pt.
 
 
@@ -1145,7 +1145,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: zero_degrees_moulder.png Graphic file (type png)
 
 <use zero_degrees_moulder.png>
-Package pdftex.def Info: zero_degrees_moulder.png used on input line 643.
+Package pdftex.def Info: zero_degrees_moulder.png used on input line 640.
 (pdftex.def)             Requested size: 246.68785pt x 315.55191pt.
 
 
@@ -1154,13 +1154,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <meulders_16.png, id=787, 265.99374pt x 375.4025pt>
 File: meulders_16.png Graphic file (type png)
  <use meulders_16.png>
-Package pdftex.def Info: meulders_16.png used on input line 655.
+Package pdftex.def Info: meulders_16.png used on input line 652.
 (pdftex.def)             Requested size: 185.01274pt x 261.11879pt.
 
 <meulders_33.png, id=788, 290.08376pt x 394.47375pt>
 File: meulders_33.png Graphic file (type png)
  <use meulders_33.png>
-Package pdftex.def Info: meulders_33.png used on input line 661.
+Package pdftex.def Info: meulders_33.png used on input line 658.
 (pdftex.def)             Requested size: 195.29193pt x 265.5721pt.
 
 
@@ -1187,7 +1187,7 @@ Missing character: There is no ¸ in font cmr12!
 <packs-1.JPG, id=792, 1214.136pt x 910.602pt>
 File: packs-1.JPG Graphic file (type jpg)
  <use packs-1.JPG>
-Package pdftex.def Info: packs-1.JPG used on input line 679.
+Package pdftex.def Info: packs-1.JPG used on input line 676.
 (pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
 
 
@@ -1196,7 +1196,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <target_stack-1.JPG, id=793, 1214.136pt x 910.602pt>
 File: target_stack-1.JPG Graphic file (type jpg)
  <use target_stack-1.JPG>
-Package pdftex.def Info: target_stack-1.JPG used on input line 688.
+Package pdftex.def Info: target_stack-1.JPG used on input line 685.
 (pdftex.def)             Requested size: 242.82289pt x 182.11717pt.
 
 [31 <./D_to_n.png>]
@@ -1220,7 +1220,7 @@ Missing character: There is no ™ in font cmr12!
 
 ]
 
-LaTeX Warning: Reference `' on page 36 undefined on input line 808.
+LaTeX Warning: Reference `' on page 36 undefined on input line 805.
 
 [36]
 Chapter 6.
@@ -1297,18 +1297,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--187
  []
 
 ) [43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 872.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 872.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 869.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 869.
  (./Master_take1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 872.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 872.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 869.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 869.
 Package rerunfilecheck Info: File `Master_take1.out' has not changed.
 (rerunfilecheck)             Checksum: E9B4A2ABAE5D7D9B5896478EDC6222F2;2523.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 872.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 869.
  ) 
 Here is how much of TeX's memory you used:
  20486 strings out of 493089
@@ -1336,7 +1336,7 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Master_take1.pdf (43 pages, 3307092 bytes).
+Output written on Master_take1.pdf (43 pages, 3307086 bytes).
 PDF statistics:
  986 PDF objects out of 1000 (max. 8388607)
  788 compressed objects within 8 object streams
