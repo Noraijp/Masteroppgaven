@@ -139,8 +139,9 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 		csv_save_array = np.vstack((E, CS, dCS)).T
 		print(csv_save_array)
 
-		#path_to_cs_csv = os.getcwd() + '/CrossSections/CrossSections_csv/'
-        #np.savetxt(path_to_cs_csv  + reaction, csv_save_array, delimiter=',', header='E, dE, CS, dCS', fmt="%s"  )#, %.6f, %.6f")
+		path_to_cs_csv = os.getcwd() + '/CrossSections/CrossSections_csv/'
+		print(path_to_cs_csv)
+        np.savetxt(path_to_cs_csv  + reaction, csv_save_array, delimiter=',', header='E, dE, CS, dCS', fmt="%s"  )#, %.6f, %.6f")
 
 		#gaar inn i moulders
 		xs_array_33MeV.append(xs_33MeV)
@@ -170,36 +171,36 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 
 
 
-# ### zink
+# # ### zink
+#
+# product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
+# target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
+# csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
+#             'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
+# mass_33MeV = 0.8427 #g
+# unc_mass_33MeV = 0.0006
+# mass_16MeV = 0.8463 #g
+# unc_mass_16MeV = 0.0015
+#
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
 
-product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
-target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
-csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
-            'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
-mass_33MeV = 0.8427 #g
-unc_mass_33MeV = 0.0006
-mass_16MeV = 0.8463 #g
-unc_mass_16MeV = 0.0015
+#
+#
+
+### Zirconium
+
+product_name = ['90Ym', '91Ym', '91SR', '92Y', '93Y', '95NB', '95ZR', '97NB_33', '97NB', '97ZR', '98ZR','89ZR']
+target_name = ['natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR']
+csv_list = ['Zr_90mY.csv', 'Zr_91mY.csv', 'Zr_91Sr.csv', 'Zr_92Y.csv', 'Zr_93Y.csv', 'Zr_95Nb.csv' ,
+            'Zr_95Zr.csv', 'Zr_97Nb_33.csv', 'Zr_97Nb.csv', 'Zr_97Zr.csv', 'Zr_98Zr.csv', 'Zr_89Zr.csv']
+mass_33MeV = 0.7557 #g
+unc_mass_33MeV = 0.0012  #g
+mass_16MeV = 0.7560 #g
+unc_mass_16MeV = 0.0010 #g
 
 zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
 
-#
-#
-#
-# ### Zirconium
-#
-# product_name = ['90Ym', '91Ym', '91SR', '92Y', '93Y', '95NB', '95ZR', '97NB', '97NB', '97ZR', '98ZR']
-# target_name = ['natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR']
-# csv_list = ['Zr_90mY.csv', 'Zr_91mY.csv', 'Zr_91Sr.csv', 'Zr_92Y.csv', 'Zr_93Y.csv', 'Zr_95Nb.csv',
-#             'Zr_95Zr.csv', 'Zr_97Nb_33.csv', 'Zr_97Nb.csv', 'Zr_97Zr.csv', 'Zr_98Zr.csv']
-# mass_33MeV = 0.7557 #g
-# unc_mass_33MeV = 0.0012  #g
-# mass_16MeV = 0.7560 #g
-# unc_mass_16MeV = 0.0010 #g
-#
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
-#
-#
+
 #
 # # ### for indium
 #

@@ -20,6 +20,7 @@ path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/'
 #xaxis = np.linspace(0,40,1000)
 
 def ALICE(foil, A, Z):
+    print('------------------ ALICE ----------------')
     filename = path + '/../Alice/plot_{}'.format(foil)
 
     with open(filename) as f:
@@ -33,11 +34,20 @@ def ALICE(foil, A, Z):
         #print(content_full[ind_begin])
         #print("ind_begin: ", ind_begin)
         #print("ind_end: ", ind_end)
+        use_cols = 5
 
+        print('ALICE A : ', A)
+        print('ALICE Z : ', Z)
         if foil == 'Zn':
             num_header_line = 59
+            if A == '69' and Z == '30':
+                use_cols = 7
         elif foil == 'Zr':
             num_header_line = 59
+            if A == '90' and Z == '39':
+                use_cols = 7
+            elif A == '91' and Z == '39':
+                use_cols = 7
         elif foil == 'Al':
             num_header_line = 51
         elif foil == 'Y':
@@ -45,11 +55,13 @@ def ALICE(foil, A, Z):
         elif foil == 'In':
             num_header_line = 56
 
+        print('use_cols : ', use_cols)
+
         E  = np.genfromtxt(filename, delimiter=' ', usecols=[0], skip_header=num_header_line, skip_footer=(len(content_full)-len(content)))
         #Z_  = np.genfromtxt(filename, delimiter=' ', usecols=[1], skip_header=56, skip_footer=(len(content_full)-len(content)))
         #A_  = np.genfromtxt(filename, delimiter=' ', usecols=[2], skip_header=56, skip_footer=(len(content_full)-len(content)))
         #print(E)
-        CS = np.genfromtxt(filename, delimiter=' ', usecols=[5], skip_header=num_header_line, skip_footer=(len(content_full)-len(content)))
+        CS = np.genfromtxt(filename, delimiter=' ', usecols=[use_cols], skip_header=num_header_line, skip_footer=(len(content_full)-len(content)))
         #print(CS)
         E_new = []; CS_new = []
         Z = ' ' + Z + ' '
@@ -82,7 +94,7 @@ def ALICE(foil, A, Z):
 
 
 
-        plt.plot(E, CS, color='m', label='ALICE')
+        plt.plot(E, CS, color='m', label='ALICE-2017')
         #plt.show()
         return E, CS, tck
 
@@ -114,17 +126,120 @@ def TALYS(foil, A, Z, file_ending='.tot'):
     # Y
         filename = path + '../Talys/' +foil+ '/rp'+ Z + A + file_ending + '.089' #'.tot
 
+    #Zr
     elif foil == 'Zr':
-    # Zr
-        filename = path + '../Talys/' +foil+ '/rp'+ Z + A + file_ending #'.tot
+        if Z == '039' and A == '090':
+
+        #finn abundance til hvert isotop fra nndc
+            abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280 ;
+
+            print('TALYS Y90m : ')
+            f_90Zr = path + '../Tendl/' + foil + '/rp' + Z + A + '.L02' + '.090'
+            f_91Zr = path + '../Talys/' + foil + '/rp' + Z  + A + '.L02' + '.091'
+            f_92Zr = path + '../Talys/' + foil + '/rp' + Z  + A + '.L02' + '.092'
+            f_94Zr = path + '../Talys/' + foil + '/rp' + Z  + A + '.L02' + '.094'
+            f_96Zr = path + '../Talys/' + foil + '/rp' + Z  + A + '.L02' + '.096'
+
+            #print(f_90Zr)
+            #print(f_61Ni)
+            #print(f_62Ni)
+            #print(f_64Ni)
+            #E = []; CS = []
 
 
+            if os.path.isfile(f_90Zr):
+                #print("Ir 191 file: ",f_191Ir)
+                print("f_90Zr exists")
+                CS_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_90Zr
+                E_Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
+                print(len(E_90Zr))
+            else:
+                print("90Zr file does not exist")
+                CS_90Zr = 0
+                E_90Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
 
-    print('TALYS filename :', filename)
+            if os.path.isfile(f_91Zr):
+                #print("Ir 191 file: ",f_191Ir)
+                print("f_91Zr exists")
+                CS_91Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_91Zr
+                E_Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[0],skip_header=5)
+            else:
+                print("91Zr file does not exist")
+                CS_91Zr = 0
+                E_91Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+            if os.path.isfile(f_92Zr):
+                #print("Ir 191 file: ",f_191Ir)
+                print("f_92Zr exists")
+                CS_92Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_92Zr
+                E_Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[0],skip_header=5)
+            else:
+                print("92Zr file does not exist")
+                CS_92Zr = 0
+                E_92Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+            if os.path.isfile(f_94Zr):
+                #print("Ir 191 file: ",f_191Ir)
+                print("f_94Zr exists")
+                CS_94Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_94Zr
+                E_Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[0],skip_header=5)
+            else:
+                print("94Zr file does not exist")
+                CS_94Zr = 0
+                E_94Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+            if os.path.isfile(f_96Zr):
+                #print("Ir 191 file: ",f_191Ir)
+                print("f_96Zr exists")
+                CS_96Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_96Zr
+                E_Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[0],skip_header=5)
+            else:
+                print("96Zr file does not exist")
+                CS_96Zr = 0
+                E_96Zr =  0 #np.genfromtxt(f_191Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+            #print(E_58Ni)
+            #CS_193Ir = np.genfromtxt(f_193Ir, delimiter=' ', usecols=[1],skip_header=5)
+            #E_193Ir = np.genfromtxt(f_193Ir, delimiter=' ', usecols=[0],skip_header=5)
+
+            Ee = E_Zr
+            #CS = CS_90Zr*abund_90Zr + CS_91Zr*abund_91Zr + CS_92Zr*abund_92Zr + CS_94Zr*abund_94Zr + CS_96Zr*abund_96Zr
+            CSs = CS_90Zr + CS_91Zr + CS_92Zr + CS_94Zr + CS_96Zr
+
+            #print('E_zr :', len(E))
+            #print('CS_zr :', len(CS))
+            #CS = CS_191Ir*abund_191Ir + CS_193Ir*abund_193Ir
+
+            #plt.plot(E, xaxis, 'y--', label='TENDL')
+
+            # tck = interpolate.splrep(E_, CS_, s=0)
+            # E = np.linspace(0, 40, 1000)
+            # CS = interpolate.splev(E, tck, der=0)
+            # plt.plot(E, CS, color='r', label='TENDL-2019')
+            # #plt.plot(E_61Ni,CS_61Ni, label='61Ni', linewidth=0.5)
+            #
+            # return E, CS, tck
+
+        elif Z == '039' and A == '091':
+            filename = path + '../Talys/' +foil+ '/rp' + Z  + A + '.L01'
+
+            Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+            CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+
+            print('TALYS filename :', filename)
+
+        else:
+            filename = path + '../Talys/' +foil+ '/rp'+ Z + A + file_ending #'.tot
+
+            Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+            CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+
+            print('TALYS filename :', filename)
 
     #filename = self.path + '/../Talys/' +foil+ '/rp'+Z+A+'.L02'
-    Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
-    CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+    #Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+    #CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+
 
     #print(CS)
     print('TALYS CS: ', CSs)
@@ -133,7 +248,7 @@ def TALYS(foil, A, Z, file_ending='.tot'):
     tck = interpolate.splrep(Ee, CSs, s=0)
     E = np.linspace(0, 40, 1000)
     CS = interpolate.splev(E, tck, der=0)
-    plt.plot(E, CS, color='g', label='TALYS')
+    plt.plot(E, CS, color='g', label='TALYS-1.9')
 
     #plt.show()
     return E, CS, tck
@@ -205,6 +320,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         #endre f_191I til de stabile isotopene i zink osv
 
         if Z == '030' and A == '069':
+            print('TENDL zn69m')
             f_64Zn = path + '/../Tendl/' + foil + '/rp030064_' + Z + A + '.L01' + '.txt'
             f_66Zn = path + '/../Tendl/' + foil + '/rp030066_' + Z + A + '.L01' + '.txt'
             f_67Zn = path + '/../Tendl/' + foil + '/rp030067_' + Z + A + '.L01' + '.txt'
@@ -294,7 +410,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         tck = interpolate.splrep(En_Zn, CS_Zn, s=0)
         E = np.linspace(1, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='r', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL-2019')
 
         #plt.plot(E_191Ir,CS_191Ir, label='191Ir')
         #plt.plot(E_193Ir,CS_193Ir, label='193Ir')
@@ -309,13 +425,31 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         #finn abundance til hvert isotop fra nndc
         abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280 ;
 
+        if Z == '039' and A == '090':
+            print('TENDL Y90m : ')
+            f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z + A + '.L02' + '.txt'
+            f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + '.L02' + '.txt'
+            f_92Zr = path + '/../Tendl/' + foil + '/rp040092_' + Z  + A + '.L02' + '.txt'
+            f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + '.L02' + '.txt'
+            f_96Zr = path + '/../Tendl/' + foil + '/rp040096_' + Z  + A + '.L02' + '.txt'
 
+        if Z == '039' and A == '091':
+            print('TENDL Y91m : ')
+            f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z + A + '.L01' + '.txt'
+            f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + '.L01' + '.txt'
+            f_92Zr = path + '/../Tendl/' + foil + '/rp040092_' + Z  + A + '.L01' + '.txt'
+            f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + '.L01' + '.txt'
+            f_96Zr = path + '/../Tendl/' + foil + '/rp040096_' + Z  + A + '.L01' + '.txt'
+
+        else:
         #f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z  + A + file_ending + '.txt'
-        f_90Zr = path + '/../Tendl/' + foil + '/rp040090_0' + Z + '0' + A + '.L02.ave' + '.txt'
-        f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + file_ending + '.txt'
-        f_92Zr = path + '/../Tendl/' + foil + '/rp040092_' + Z  + A + file_ending + '.txt'
-        f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + file_ending + '.txt'
-        f_96Zr = path + '/../Tendl/' + foil + '/rp040096_' + Z  + A + file_ending + '.txt'
+            f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z + A + file_ending + '.txt'
+            f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + file_ending + '.txt'
+            f_92Zr = path + '/../Tendl/' + foil + '/rp040092_' + Z  + A + file_ending + '.txt'
+            f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + file_ending + '.txt'
+            f_96Zr = path + '/../Tendl/' + foil + '/rp040096_' + Z  + A + file_ending + '.txt'
+
+
 
 
         #print(f_90Zr)
@@ -330,7 +464,8 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             print("f_90Zr exists")
             CS_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_90Zr
             E_Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
-            print(len(E_90Zr))
+            print('CS_90Zr : ', len(CS_90Zr))
+
         else:
             print("90Zr file does not exist")
             CS_90Zr = 0
@@ -341,6 +476,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             print("f_91Zr exists")
             CS_91Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_91Zr
             E_Zr = np.genfromtxt(f_91Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print('CS_91Zr : ', len(CS_91Zr))
         else:
             print("91Zr file does not exist")
             CS_91Zr = 0
@@ -351,6 +487,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             print("f_92Zr exists")
             CS_92Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_92Zr
             E_Zr = np.genfromtxt(f_92Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print('CS_92Zr : ', len(CS_92Zr))
         else:
             print("92Zr file does not exist")
             CS_92Zr = 0
@@ -361,6 +498,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             print("f_94Zr exists")
             CS_94Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_94Zr
             E_Zr = np.genfromtxt(f_94Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print('CS_94Zr : ', len(CS_94Zr))
         else:
             print("94Zr file does not exist")
             CS_94Zr = 0
@@ -371,6 +509,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             print("f_96Zr exists")
             CS_96Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_96Zr
             E_Zr = np.genfromtxt(f_96Zr, delimiter=' ', usecols=[0],skip_header=5)
+            print('CS_96Zr : ', len(CS_96Zr))
         else:
             print("96Zr file does not exist")
             CS_96Zr = 0
@@ -393,7 +532,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         tck = interpolate.splrep(E_, CS_, s=0)
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='r', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL-2019')
         #plt.plot(E_61Ni,CS_61Ni, label='61Ni', linewidth=0.5)
 
         return E, CS, tck
@@ -424,7 +563,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         tck = interpolate.splrep(E_, CS_, s=0)
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='r', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL-2019')
 
         return E, CS, tck
 
@@ -465,7 +604,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         tck = interpolate.splrep(E_In, CS_, s=0)
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='r', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL-2019')
 
 
         return E, CS, tck
@@ -498,7 +637,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         tck = interpolate.splrep(E_, CS_, s=0)
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='r', label='TENDL')
+        plt.plot(E, CS, color='r', label='TENDL-2019')
 
         return E, CS, tck
 
@@ -594,7 +733,7 @@ def CoH(foil, A, Z, filename_CS_me):
         tck = interpolate.splrep(E_Zn, CS_Zn, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='c', label='CoH')
+        plt.plot(E, CS, color='c', label='CoH-3.5.3')
 
         return E, CS, tck
 
@@ -621,7 +760,7 @@ def CoH(foil, A, Z, filename_CS_me):
         tck = interpolate.splrep(E_27Al, CS_Al, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='c', label='CoH')
+        plt.plot(E, CS, color='c', label='CoH-3.5.3')
 
         return E, CS, tck
 
@@ -662,7 +801,7 @@ def CoH(foil, A, Z, filename_CS_me):
         tck = interpolate.splrep(E_In_Coh, CS_In, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='c', label='CoH')
+        plt.plot(E, CS, color='c', label='CoH-3.5.3')
 
         return E, CS, tck
 
@@ -695,7 +834,7 @@ def CoH(foil, A, Z, filename_CS_me):
         tck = interpolate.splrep(E_Y, CS_Y, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='c', label='CoH')
+        plt.plot(E, CS, color='c', label='CoH-3.5.3')
         return E, CS, tck
 
 
@@ -785,7 +924,7 @@ def CoH(foil, A, Z, filename_CS_me):
         tck = interpolate.splrep(E_Zr_Coh, CS_Zr, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, color='c', label='CoH')
+        plt.plot(E, CS, color='c', label='CoH-3.5.3')
 
         return E, CS, tck
 
@@ -910,7 +1049,7 @@ def EMPIRE(foil, A, Z, filename_CS):
         #print(len(CS))
         print('...........................')
         #plt.plot(E, xaxis, 'y--', label='TENDL')
-        plt.plot(E, CS, 'y', label='EMPIRE')
+        plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
         #plt.plot(E_67Cu, CS_67Cu, 'y--', label='EMPIRE')
 
         return E, CS, tck
@@ -943,7 +1082,7 @@ def EMPIRE(foil, A, Z, filename_CS):
         tck = interpolate.splrep(E_27Al, CS_Al, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, 'y', label='EMPIRE')
+        plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
 
         return E, CS, tck
 
@@ -994,7 +1133,7 @@ def EMPIRE(foil, A, Z, filename_CS):
         tck = interpolate.splrep(E_In, CS_In, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, 'y', label='EMPIRE')
+        plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
 
         return E, CS, tck
 
@@ -1028,7 +1167,7 @@ def EMPIRE(foil, A, Z, filename_CS):
         tck = interpolate.splrep(E_Y, CS_Y, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
         E = np.linspace(0, 40, 1000)
         CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, 'y', label='EMPIRE')
+        plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
 
         return E, CS, tck
 
@@ -1049,6 +1188,7 @@ def EMPIRE(foil, A, Z, filename_CS):
         u_94Zr_empire = path + '/../EMPIRECOH2/' + foil + '/94Zr/' +  Z + '-' + filename_CS + '_empire' + '.txt'
         u_96Zr_empire = path + '/../EMPIRECOH2/' + foil + '/96Zr/' +  Z + '-' + filename_CS + '_empire' + '.txt'
 
+        E_Zr = 0.0
 
         if os.path.isfile(u_90Zr_empire):
             #print("Ir 191 file: ",f_191Ir)
@@ -1118,14 +1258,75 @@ def EMPIRE(foil, A, Z, filename_CS):
 
 
         CS_Zr = CS_90Zr*abund_90Zr + CS_91Zr*abund_91Zr + CS_92Zr*abund_92Zr + CS_94Zr*abund_94Zr + CS_96Zr*abund_96Zr
+        print('length E_ZR :', len(E_Zr))
+        print('CS_Zr :', CS_Zr)
 
-        tck = interpolate.splrep(E_Zr, CS_Zr, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
-        E = np.linspace(0, 40, 1000)
-        CS = interpolate.splev(E, tck, der=0)
-        plt.plot(E, CS, 'y', label='EMPIRE')
+        if len(E_Zr) > 1:
+            tck = interpolate.splrep(E_Zr, CS_Zr, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
+            E = np.linspace(0, 40, 1000)
+            CS = interpolate.splev(E, tck, der=0)
+            plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
+            return E, CS, tck
+        else:
+            tck = interpolate.splrep(np.linspace(0, 40), np.zeros(len(np.linspace(0,40))) , s=0)
+            return E_Zr, CS_Zr, tck
 
-        return E, CS, tck
 
+def IRDFF(foil, filename_CS_me):
+    print('------------------- IRDFF--------------')
+    if foil == 'Zr':
+        irdff = path + '/../IRDFF/' + '/Zr/' + filename_CS_me + '.txt'
+
+    elif foil == 'Y':
+        irdff  = path + '/../IRDFF/' + '/Y/' + filename_CS_me + '.txt'
+
+    elif foil == 'Al':
+        irdff  = path + '/../IRDFF/' + '/Al/' + filename_CS_me + '.txt'
+
+    print(irdff)
+    if os.path.isfile(irdff):
+
+        with open(irdff) as f:
+            begin =   'EXFOR-ID'
+            end   =   '//'
+            content_full = f.readlines()
+            #print(content_full)
+            ind_begin = [line for line in range(len(content_full)) if begin in content_full[line]][0]+1  # only one element but want it as integer
+            ind_end   = [line for line in range(len(content_full)) if end   in content_full[line]][0]  # list of different, only want the first element
+            #print(ind_begin)
+            #print(content_full[ind_begin])
+            #print(content_full[ind_end])
+            #print(ind_end)
+            #print(content_full[ind_end])
+            content = content_full[ind_begin:ind_end]
+            #print(content)
+
+            #str1 = content[0]
+
+            #x = str1.lstrip()
+            #print(x.split())
+            E = []; dE=[]; CS = []; dCS=[]; author=[]
+
+            for ind in range(len(content)):
+                string= content[ind]
+                string = (string.lstrip()).split()
+                E.append(float(string[0]))
+                #dE.append(float(string[1]))
+                CS.append(float(string[1])*1e3) # in mb
+                dCS.append(float(string[2])*1e3) # in mb
+                #author.append(string[5]) #index 4 is equal to #
+
+            #print('EXFOR CS: ', CS)
+            #plt.plot(E, CS)
+                #plt.show()
+                #plt.errorbar(E[ind], CS[ind], marker='.', linewidth=0.001, xerr=dE[ind], yerr=dCS[ind], elinewidth=0.5, capthick=0.5, capsize=3.0, label=author[ind] )
+            plt.plot(E, CS, label='Recommended CS (IRDFF-II)')
+            plt.fill_between(E, np.array(CS)+np.array(dCS), np.array(CS)-np.array(dCS), color='blue', alpha=0.1)
+            #plt.errorbar(E, CS, marker='.', markersize=4, linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label=author[0] )
+            #plt.legend()
+            #plt.show()
+
+            return E, CS, dCS
 
 
 
@@ -1215,13 +1416,19 @@ def mydata(filename_CS, foil, plot_flag):
             #plt.plot(CS_energi, xaxis, 'g.', label='THIS WORK')
             #plt.plot(CS_energi, CS_zn, 'k.', label='This Work')
             #plt.errorbar(CS_energi, CS_zn, marker='P', color='darkred',linewidth=0.0001, yerr=dCS, elinewidth=1.0, capthick=1.0, capsize=3.0, label='This Work')
-            plt.errorbar(CS_energi, CS_zn, color='k', marker='.', markersize=8 ,linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label='This Work' )
+            plt.errorbar(CS_energi, zero_to_nan(CS_zn), color='k', marker='.', markersize=8 ,linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label='This Work' )
             #plt.errorbar(CS_energi[1], CS_zn[1], marker='.', linewidth=0.001, xerr=dE[1], yerr=dCS[1], elinewidth=0.5, capthick=0.5, capsize=3.0, label='This Work' )
             #plt.errorbar(CS_energi, CS_zn, marker='.', linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0 )
 
     #plt.show()
 
     return CS_energi, CS_zn, dCS, dE
+
+
+def zero_to_nan(values):
+    """Replace every 0 with 'nan' and return a copy."""
+    return [float('nan') if x==0 else x for x in values]
+
 
 
 def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None, file_ending='.tot'):
@@ -1253,6 +1460,9 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
     #print('Foil, A, Z, filename :', foil, A, Z, filename_CS_me)
     E_CoH, CS_CoH, tck_CoH = CoH(foil, A, Z, filename_CS_me)
     E_EMPIRE, CS_EMPIRE, tck_EMPIRE = EMPIRE(foil, A, Z, filename_CS)
+
+    if filename_CS_me == '89Zr' or filename_CS_me == '24Na' or filename_CS_me == '88Y':
+        E_IRDFF, CS_IRDFF, dEC_IRDFF = IRDFF(foil, filename_CS_me)
 
 # integral for each of the codes
 
@@ -1288,7 +1498,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
     CS_energi_mydata, CS_zn_mydata, dCS_mydata, dE_mydata = mydata(filename_CS_me, foil, plot_flag=True)
 
-    plt.legend()
+    plt.legend(loc='upper left')
     plt.title(reaction)
     plt.xlim(0,40)
     plt.ylim(ymin=0)
@@ -1316,10 +1526,12 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 #Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN', 'Zn-62', y_max=30)
 #Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN', 'Zn-63')
-#Cross_section('Zn', '64', '29', 'nat-Zn(n,x)64Cu', '64CU', 'Cu-64')
+#Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64')
 #Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI', 'Ni-65', y_max=8)
 #Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65')
-######## Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66') #NOT REPORT
+
+# NOT REPORT 66Cu - not enough info due to half-life and the time we counted
+####### Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66')
 #Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67')
 ######## Cross_section('Zn', '66', '28', 'Zn(n,x)66Ni', '66NI', 'Ni-66') #NOT REPORT
 #Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M')
@@ -1328,19 +1540,16 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 ### Zirconium ###
 
 #Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90Ym', 'Y-90M')
-#Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90YM', 'Y-90M')
-#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91')
+#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=6)
 #Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
-#Cross_section('Zr', '91', '39', 'zr(n,x)91mY', '91YM', 'Y-91M')
 #Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
-#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93') !!!!!!
-Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95')
+#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')  DO THIS LATER!!!!!!!!!!!!!!!!!!!!
 #Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95')
-#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97')
+#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=6)
+#Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
+Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '95NB', 'Nb-95') #INGEN EXFOR ELLER TENDL
+#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '97NB', 'Nb-97') #INGEN EXFOR ELLER TENDL
 
-#Cross_section('Zr', '93', '39', '94Zr(n,x)93Y', '95NB') INGEN EXFOR ELLER TENDL
-#Cross_section('Zr', '93', '39', '94Zr(n,x)93Y', '97NB') INGEN EXFOR ELLER TENDL
-#Cross_section('Zr', '98', '40', '96Zr(n,g)97Zr', '98Zr') INGEN EXFOR ELLER TENDL
 
 
 ### Indium ###
