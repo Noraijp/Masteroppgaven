@@ -306,20 +306,20 @@ zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16M
 
 print('\n************************************************\n')
 
-### for ZINK
-
-csv_list      = ['Zn_64Cu.csv']
-reaction_list = ['natZN(n,x)64CU']
-target_list   = ['natZN']
-product_list  = ['64CU']
-mass_33MeV = 0.8427 #g
-unc_mass_33MeV = 0.0006  #g
-mass_16MeV = 0.8463 #g
-unc_mass_16MeV = 0.0015 #g
-R_sample_zn_16MeV = 0.637 #cm
-R_sample_zn_33MeV = 0.644
-dist_to_zn_16MeV = 10.1 #cm
-dist_to_zn_33MeV = 10.1
+# ### for ZINK
+#
+# csv_list      = ['Zn_64Cu.csv']
+# reaction_list = ['natZN(n,x)64CU']
+# target_list   = ['natZN']
+# product_list  = ['64CU']
+# mass_33MeV = 0.8427 #g
+# unc_mass_33MeV = 0.0006  #g
+# mass_16MeV = 0.8463 #g
+# unc_mass_16MeV = 0.0015 #g
+# R_sample_zn_16MeV = 0.637 #cm
+# R_sample_zn_33MeV = 0.644
+# dist_to_zn_16MeV = 10.1 #cm
+# dist_to_zn_33MeV = 10.1
 
  # ## Search the IRDFF neutron library for reactions
 # # lb = Library('IRDFF')
@@ -327,13 +327,11 @@ dist_to_zn_33MeV = 10.1
 # # print(lb.search(product='89Zr'))
 # # # print(lb.search(target='113IN',product='114INm1'))
 #
-zn_avg_flux_33MeV, zn_unc_avg_flux_33MeV, zn_avg_flux_16MeV, zn_unc_avg_flux_16MeV, zn_production_rate, zn_number_of_atoms, zn_flux_avg_cross_section, zn_unc_production_rate, zn_unc_number_of_atoms, zn_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_zn_16MeV, R_sample_zn_33MeV, dist_to_zn_16MeV, dist_to_zn_33MeV)
-print('Zn flux at 33MeV  (64Cu)         : ', zr_avg_flux_33MeV)
-print('Zn flux uncertinty_33MeV  (64Cu) : ', zr_unc_avg_flux_33MeV)
-print('Zn flux at 16MeV    (64Cu)       : ', zr_avg_flux_16MeV)
-print('Zn flux uncertinty_16MeV (64Cu)  : ', zr_unc_avg_flux_16MeV)
-
-print('\n************************************************\n')
+# zn_avg_flux_33MeV, zn_unc_avg_flux_33MeV, zn_avg_flux_16MeV, zn_unc_avg_flux_16MeV, zn_production_rate, zn_number_of_atoms, zn_flux_avg_cross_section, zn_unc_production_rate, zn_unc_number_of_atoms, zn_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_zn_16MeV, R_sample_zn_33MeV, dist_to_zn_16MeV, dist_to_zn_33MeV)
+# print('Zn flux at 33MeV  (64Cu)         : ', zr_avg_flux_33MeV)
+# print('Zn flux uncertinty_33MeV  (64Cu) : ', zr_unc_avg_flux_33MeV)
+# print('Zn flux at 16MeV    (64Cu)       : ', zr_avg_flux_16MeV)
+# print('Zn flux uncertinty_16MeV (64Cu)  : ', zr_unc_avg_flux_16MeV)
 
 
 
