@@ -54,9 +54,25 @@ approximate_average_flux_33MeV = neutron_flux_33MeV[1]
 unc_approximate_average_flux_16MeV = neutron_flux_16MeV[2]
 unc_approximate_average_flux_33MeV = neutron_flux_33MeV[2]
 
+def calc_SA(R_beam=0.5, R_sample=0.05, dist=5.0, N=1E6):
+	#### Solid angle between two concentric circles
+	N = int(N)
+	r = np.sqrt(np.random.uniform(size=N))*R_beam
+	ang = np.pi*2.0*np.random.uniform(size=N)
+
+	x0 = r*np.cos(ang)
+	y0 = r*np.sin(ang)
+
+	tht = np.arccos(2.0*np.random.uniform(size=N)-1.0)
+	phi = 2.0*np.pi*np.random.uniform(size=N)
+
+	xf = x0 + dist*np.tan(tht)*np.cos(phi)
+	yf = y0 + dist*np.tan(tht)*np.sin(phi)
+
+	return 2.0*np.pi*float(len(np.where(np.sqrt(xf**2+yf**2)<=R_sample)[0]))/float(N)
 
 # def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV):
-def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV):
+def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, R_sample_16MeV, R_sample_33MeV, dist_16MeV, dist_33MeV):
 
 	### for zinc
 	# product_name='67CU'
@@ -116,9 +132,18 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 		n_atoms_33MeV = (ab*mass_33MeV*6.022E-1)/isotope_mass
 		n_atoms_16MeV = (ab*mass_16MeV*6.022E-1)/isotope_mass
 
+		R_beam_16MeV = .5 #apporox
+		R_beam_33MeV = .75 #approx
 
+
+		calc_solid_angle_16MeV = calc_SA(R_beam_16MeV, R_sample_16MeV, dist_16MeV)
+		calc_solid_angle_33MeV = calc_SA(R_beam_33MeV, R_sample_33MeV, dist_33MeV)
+
+		#xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV*calc_solid_angle_33MeV)
+		#xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV*calc_solid_angle_16MeV)
 		xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV)
 		xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV)
+
 		# print('% uncertainty in activity; ',100*product_activity_33MeV[1]/product_activity_33MeV[0])
 		# print('% uncertainty in flux; ',(100*unc_approximate_average_flux_33MeV/approximate_average_flux_33MeV))
 		unc_xs_33MeV = xs_33MeV*np.sqrt(  (product_activity_33MeV[1]/product_activity_33MeV[0])**2  + (unc_approximate_average_flux_33MeV/approximate_average_flux_33MeV)**2 + (unc_mass_33MeV/mass_33MeV)**2   )
@@ -172,7 +197,7 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 
 
 # ### zink
-
+#
 # product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
 # target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
 # csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
@@ -188,17 +213,17 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 #
 #
 ### Zirconium
-
-product_name = ['90Ym', '91Ym', '91SR', '92Y', '93Y', '95NB', '95ZR', '97NB_33', '97NB', '97ZR', '98ZR', '89ZR']
-target_name = ['natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR']
-csv_list = ['Zr_90mY.csv', 'Zr_91mY.csv', 'Zr_91Sr.csv', 'Zr_92Y.csv', 'Zr_93Y.csv', 'Zr_95Nb.csv',
-            'Zr_95Zr.csv', 'Zr_97Nb_33.csv', 'Zr_97Nb.csv', 'Zr_97Zr.csv', 'Zr_98Zr.csv', 'Zr_89Zr.csv']
-mass_33MeV = 0.7557 #g
-unc_mass_33MeV = 0.0012  #g
-mass_16MeV = 0.7560 #g
-unc_mass_16MeV = 0.0010 #g
-
-zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+#
+# product_name = ['90Ym', '91Ym', '91SR', '92Y', '93Y', '95NB', '95ZR', '97NB_33', '97NB', '97ZR', '98ZR', '89ZR']
+# target_name = ['natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR', 'natZR']
+# csv_list = ['Zr_90mY.csv', 'Zr_91mY.csv', 'Zr_91Sr.csv', 'Zr_92Y.csv', 'Zr_93Y.csv', 'Zr_95Nb.csv',
+#             'Zr_95Zr.csv', 'Zr_97Nb_33.csv', 'Zr_97Nb.csv', 'Zr_97Zr.csv', 'Zr_98Zr.csv', 'Zr_89Zr.csv']
+# mass_33MeV = 0.7557 #g
+# unc_mass_33MeV = 0.0012  #g
+# mass_16MeV = 0.7560 #g
+# unc_mass_16MeV = 0.0010 #g
+#
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
 
 #
 #
@@ -217,16 +242,20 @@ zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mas
 #
 #
 # # ## for yttrium
-# product_name = ['87SRm', '87Ym', '87Y', '90Ym']
-# target_name = ['natY', 'natY', 'natY', 'natY']
-# csv_list = ['Y_87mSr.csv', 'Y_87mY.csv', 'Y_87Y.csv', 'Y_90mY.csv']
-# mass_33MeV = 0.4657 #g
-# mass_16MeV = 0.5053
-# unc_mass_33MeV = 0.0006  #g
-# unc_mass_16MeV = 0.0021
+product_name = ['87SRm', '87Ym', '87Y', '90Ym', '88Y']
+target_name = ['natY', 'natY', 'natY', 'natY', 'natY']
+csv_list = ['Y_87mSr.csv', 'Y_87mY.csv', 'Y_87Y.csv', 'Y_90mY.csv', 'Y_88Y.csv']
+mass_33MeV = 0.4657 #g
+mass_16MeV = 0.5053
+unc_mass_33MeV = 0.0006  #g
+unc_mass_16MeV = 0.0021
+R_sample_y_16MeV = 0.633 #cm
+R_sample_y_33MeV = 0.590
+dist_to_y_16MeV = 10.7 #cm
+dist_to_y_33MeV = 11.1
 #
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
-#
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, R_sample_y_16MeV, R_sample_y_33MeV, dist_to_y_16MeV, dist_to_y_33MeV)
+
 #
 
 ### Aluminum

@@ -266,7 +266,7 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 
 #single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
 
-#single_decay_data(Zn_65Zn(), 'Zn_65Zn', 1, Save_csv=True)
+single_decay_data(Zn_65Zn(), 'Zn_65Zn', 2, Save_csv=True)
 
 
 ### Zirconium ###
@@ -309,7 +309,7 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 
 #single_decay_data(Y_87mY(), "Y_87mY", 1, Save_csv=True)
 
-two_step_kp_data(Y_87mY(), Y_87Y(), "Y_87Y", 1, Save_csv=True)
+#two_step_kp_data(Y_87mY(), Y_87Y(), "Y_87Y", 1, Save_csv=True)
 
 #single_decay_data(Y_88Y(), "Y_88Y", 2, Save_csv=True)
 

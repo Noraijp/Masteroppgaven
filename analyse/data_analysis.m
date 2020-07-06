@@ -43,17 +43,17 @@ unc_al_rhodrs = [0.00055 0.00160];
 clc; 
 
 % Choose files for analysis
-fitzpeaks_reports = y_fn;
-key_energies = y_key_energies;
-glines = y_glines;
+fitzpeaks_reports = zn_fn;
+key_energies = zn_key_energies;
+glines = zn_glines;
 % EoB Time
 % 16 MeV
 %EoB_Time = '12-Aug-2018 11:00:00';
 % 33 MeV
 EoB_Time = '14-Aug-2018 19:46:00';
-rhodrs = y_rhodrs;
-mu_attenuation = load('../y_xcom.txt');
-unc_rhodrs = unc_y_rhodrs;
+rhodrs = zn_rhodrs;
+mu_attenuation = load('../zn_xcom.txt');
+unc_rhodrs = unc_zn_rhodrs;
 
 
 % Test new fitzpeaks_parser wrapper function
@@ -111,6 +111,7 @@ data = output;
 % rows_69mZn_zn33 = [10];
 % rows_63Zn_zn33 = [11, 14, 15, 20];
 % rows_66Cu_zn33 = [16];
+  rows_65zn_zn33 = [23];
 % rows_64Cu_zn33 = [18];
 % rowa_24Na_zn33 = [19, 22];
 
@@ -169,8 +170,8 @@ rows_24Na_y33 = [8];
 
 % Select rows to plot
 % varToStr = @(x) inputname(1);
-rows = rows_87Y_y33;
-outName = '../csv/87Y_y33MeV';
+rows = rows_65zn_zn33;
+outName = '../csv/65Zn_zn33MeV';
 % rows = 12;
 % Find rows for the desired decay product
 selected_rows = data(rows,:);
@@ -189,9 +190,9 @@ selected_rows = data(rows,:);
 % for energy = 140:100:140   % Just Zirconium 16 MeV
 % for energy = 240:100:240   % Just Zirconium 33 MeV
 % for energy = 130:100:130   % Just Zinc 16 MeV
-% for energy = 230:100:230   % Just Zinc 33 MeV
+for energy = 230:100:230   % Just Zinc 33 MeV
 % for energy = 139:100:139   % Just Yttrium 16 MeV
- for energy = 239:100:239   % Just Yttrium 33 MeV
+% for energy = 239:100:239   % Just Yttrium 33 MeV
 % for energy = 113:100:113   % Just Aluminum 16 MeV
 % for energy = 213:100:213   % Just Aluminum 33 MeV
 % for energy = 149:100:149   % Just Indium 16 MeV

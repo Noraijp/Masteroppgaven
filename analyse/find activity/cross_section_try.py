@@ -19,7 +19,7 @@ path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/'
 
 #xaxis = np.linspace(0,40,1000)
 
-def ALICE(foil, A, Z):
+def ALICE(foil, A, Z, isomer=False):
     print('------------------ ALICE ----------------')
     filename = path + '/../Alice/plot_{}'.format(foil)
 
@@ -52,8 +52,16 @@ def ALICE(foil, A, Z):
             num_header_line = 51
         elif foil == 'Y':
             num_header_line = 51
+            if A == '87' and Z == '38':
+                use_cols = 7
+            elif A == '90' and Z == '39':
+                use_cols = 7
+            elif A == '87' and Z == '39' and isomer==True:
+                use_cols = 7
         elif foil == 'In':
             num_header_line = 56
+            if A == '112' and Z == '49':
+                use_cols = 4
 
         print('use_cols : ', use_cols)
 
@@ -167,7 +175,7 @@ def TALYS(foil, A, Z, file_ending='.tot'):
                 print("f_90Zr exists")
                 CS_90Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[1],skip_header=5) * abund_90Zr
                 E_Zr = np.genfromtxt(f_90Zr, delimiter=' ', usecols=[0],skip_header=5)
-                print(len(E_90Zr))
+                #print(len(E_90Zr))
             else:
                 print("90Zr file does not exist")
                 CS_90Zr = 0
@@ -239,14 +247,16 @@ def TALYS(foil, A, Z, file_ending='.tot'):
 
             print('TALYS filename :', filename)
 
+    Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+    CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
 
-
+    print('TALYS filename :', filename)
 
 
 
     #print(CS)
-    print('TALYS CS: ', CSs)
-    print(Ee)
+    #print('TALYS CS: ', CSs)
+    #print(Ee)
 
     tck = interpolate.splrep(Ee, CSs, s=0)
     E = np.linspace(0, 40, 1000)
@@ -309,7 +319,7 @@ def EXFOR(foil, reaction):
         #     return 0, 0, 0, 0, '0'
 
 
-def Tendl(foil, A, Z, file_ending='.tot'):
+def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
     print('------------------- TENDL ------------------')
     print("foil: ",foil )
     print("Z: ", Z )
@@ -435,7 +445,7 @@ def Tendl(foil, A, Z, file_ending='.tot'):
             f_94Zr = path + '/../Tendl/' + foil + '/rp040094_' + Z  + A + '.L02' + '.txt'
             f_96Zr = path + '/../Tendl/' + foil + '/rp040096_' + Z  + A + '.L02' + '.txt'
 
-        if Z == '039' and A == '091':
+        elif Z == '039' and A == '091':
             print('TENDL Y91m : ')
             f_90Zr = path + '/../Tendl/' + foil + '/rp040090_' + Z + A + '.L01' + '.txt'
             f_91Zr = path + '/../Tendl/' + foil + '/rp040091_' + Z  + A + '.L01' + '.txt'
@@ -574,9 +584,16 @@ def Tendl(foil, A, Z, file_ending='.tot'):
         #finn abundance til hvert isotop fra nndc
         abund_113In = 0.429;  abund_115In = 0.9571;
 
+        print('Isomer', isomer)
+        if Z == '049' and A == '112' and isomer==True:
+            print('TENDL Y91m : ')
+            f_113In = path + '/../Tendl/' + foil + '/rp049113_' + Z + A + '.L01' + '.txt'
+            f_115In = path + '/../Tendl/' + foil + '/rp049115_' + Z  + A + '.L01' + '.txt'
+        else:
+            f_113In = path + '/../Tendl/' + foil + '/rp049113_' + Z + A + file_ending + '.txt'
+            f_115In = path + '/../Tendl/' + foil + '/rp049115_' + Z + A + file_ending + '.txt'
 
-        f_113In = path + '/../Tendl/' + foil + '/rp049113_' + Z + A + file_ending + '.txt'
-        f_115In = path + '/../Tendl/' + foil + '/rp049115_' + Z + A + file_ending + '.txt'
+
 
         print("In 113 file: ",f_113In)
         if os.path.isfile(f_113In):
@@ -849,10 +866,8 @@ def CoH(foil, A, Z, filename_CS_me):
 
         else:
             print("89Y file does not exist")
-            #T = 0
             CS_89Y_Coh = 0
             E_89Y_Coh =  0 #np.genfromtxt(f_191Ir, delimiter='\t', usecols=[0],skip_header=5)
-            #return E_89Y_Coh, CS_89Y_Coh, T
 
 
 
@@ -1179,10 +1194,10 @@ def EMPIRE(foil, A, Z, filename_CS):
         u_89Y_empire = path + '/../EMPIRECOH2/' + foil + '/89Y/' +  Z + '-' + filename_CS + '_empire' + '.txt'
 
 
-
+        print('89Y_emire filename: ', u_89Y_empire)
         if os.path.isfile(u_89Y_empire): # Y-87
             #print("Ir 191 file: ",f_191Ir)
-            #print("u_89Y exists")
+            print("u_89Y exists")
             CS_89Y = np.genfromtxt(u_89Y_empire, delimiter='	', usecols=[1])
             E_Y = np.genfromtxt(u_89Y_empire, delimiter='	', usecols=[0])
             #CS_Y = CS_89Y*abund_89Y
@@ -1194,21 +1209,21 @@ def EMPIRE(foil, A, Z, filename_CS):
 
             #return E, CS, tck
         else:
-            #print("89Y file does not exist")
+            print("89Y file does not exist")
             CS_89Y = 0
             E_89Y =  0
             #T = 0
             #return CS_89Y, E_89Y, T
 
 
-         CS_Y = CS_89Y*abund_89Y
-        
-         tck = interpolate.splrep(E_Y, CS_Y, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
-         E = np.linspace(0, 40, 1000)
-         CS = interpolate.splev(E, tck, der=0)
-         plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
+        CS_Y = CS_89Y*abund_89Y
 
-         return E, CS, tck
+        tck = interpolate.splrep(E_Y, CS_Y, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
+        E = np.linspace(0, 40, 1000)
+        CS = interpolate.splev(E, tck, der=0)
+        plt.plot(E, CS, 'y', label='EMPIRE-3.2.3')
+
+        return E, CS, tck
 
 #------------------------- Zr -----------------------------
 
@@ -1229,54 +1244,55 @@ def EMPIRE(foil, A, Z, filename_CS):
 
         E_Zr = 0.0
 
+        print("Zr 90 file: ",u_90Zr_empire)
         if os.path.isfile(u_90Zr_empire):
             #print("Ir 191 file: ",f_191Ir)
-            #print("u_90Zr exists")
+            print("u_90Zr exists")
             CS_90Zr = np.genfromtxt(u_90Zr_empire, delimiter='	', usecols=[1])
             E_Zr = np.genfromtxt(u_90Zr_empire, delimiter='	', usecols=[0])
         else:
-            #print("90Zr file does not exist")
+            print("90Zr file does not exist")
             CS_90Zr = 0
             E_90Zr =  0
 
 
 ######################### 91 Zr ############################
 
-
+        print("Zr 91 file: ",u_91Zr_empire)
         if os.path.isfile(u_91Zr_empire):
             #print("Ir 191 file: ",f_191Ir)
-            #print("u_91Zr exists")
+            print("u_91Zr exists")
             CS_91Zr = np.genfromtxt(u_91Zr_empire, delimiter='	', usecols=[1])
             E_Zr = np.genfromtxt(u_91Zr_empire, delimiter='	', usecols=[0])
         else:
-            #print("91Zr file does not exist")
+            print("91Zr file does not exist")
             CS_91Zr = 0
             E_91Z1 =  0
 
 ######################### 92 Zr ############################
 
-
+        print("Zr 92 file: ",u_92Zr_empire)
         if os.path.isfile(u_92Zr_empire): # Y-90
             #print("Ir 191 file: ",f_191Ir)
-            #print("u_92Zr exists")
+            print("u_92Zr exists")
             CS_92Zr = np.genfromtxt(u_92Zr_empire, delimiter='	', usecols=[1])
             E_Zr = np.genfromtxt(u_92Zr_empire, delimiter='	', usecols=[0])
         else:
-            #print("92Zr file does not exist")
+            print("92Zr file does not exist")
             CS_92Zr = 0
             E_92Zr =  0
 
 
 ######################### 94 Zr ############################
 
-
+        print("Zr 94 file: ",u_94Zr_empire)
         if os.path.isfile(u_94Zr_empire):
             #print("Ir 191 file: ",f_191Ir)
-            #print("u_94Zr exists")
+            print("u_94Zr exists")
             CS_94Zr = np.genfromtxt(u_94Zr_empire, delimiter='	', usecols=[1])
             E_Zr = np.genfromtxt(u_94Zr_empire, delimiter='	', usecols=[0])
         else:
-            #print("94Zr file does not exist")
+            print("94Zr file does not exist")
             CS_94Zr = 0
             E_94Zr =  0
 
@@ -1284,23 +1300,23 @@ def EMPIRE(foil, A, Z, filename_CS):
 
 ######################### 96 Zr ############################
 
-
+        print("Zr 96 file: ",u_96Zr_empire)
         if os.path.isfile(u_96Zr_empire):
             #print("Ir 191 file: ",f_191Ir)
-            #print("u_96Zr exists")
+            print("u_96Zr exists")
             CS_96Zr = np.genfromtxt(u_96Zr_empire, delimiter='	', usecols=[1])
             E_Zr = np.genfromtxt(u_96Zr_empire, delimiter='	', usecols=[0])
         else:
-            #print("96Zr file does not exist")
+            print("96Zr file does not exist")
             CS_96Zr = 0
             E_96Zr =  0
 
 
         CS_Zr = CS_90Zr*abund_90Zr + CS_91Zr*abund_91Zr + CS_92Zr*abund_92Zr + CS_94Zr*abund_94Zr + CS_96Zr*abund_96Zr
-        print('length E_ZR :', len(E_Zr))
+        #print('length E_ZR :', len(E_Zr))
         print('CS_Zr :', CS_Zr)
 
-        if len(E_Zr) > 1:
+        if type(E_Zr) != float:
             tck = interpolate.splrep(E_Zr, CS_Zr, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
             E = np.linspace(0, 40, 1000)
             CS = interpolate.splev(E, tck, der=0)
@@ -1475,7 +1491,7 @@ def zero_to_nan(values):
 
 
 
-def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None, file_ending='.tot'):
+def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None, legend_loc='upper left' ,file_ending='.tot'):
 
     with open('../../Jon code/meulders_33MeV.csv') as f:
     	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
@@ -1488,19 +1504,26 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
     dPhidE_16 = meulders_16MeV[:,1]
     dPhidE_33 = meulders_33MeV[:,1]
 
-
-    E_ALICE, CS_ALICE, tck_ALICE = ALICE(foil, A, Z)
+    if filename_CS_me == '87Ym' or filename_CS_me == '112INm':
+        E_ALICE, CS_ALICE, tck_ALICE = ALICE(foil, A, Z, isomer=True)
+    else:
+        E_ALICE, CS_ALICE, tck_ALICE = ALICE(foil, A, Z, isomer=False)
     if len(A) == 2:
-       A = '0' + A
+        A = '0' + A
     if len(Z) == 2:
-       Z = '0' + Z
+        Z = '0' + Z
+
 
 
     E_TALYS, CS_TALYS, tck_TALYS = TALYS(foil, A, Z)
     EXFOR(foil, reaction)
     #no EXFOR for :
     # natZn(n,x)67Cu
-    E_TENDL, CS_TENDL, tck_TENDL = Tendl(foil, A, Z)
+    if filename_CS_me == '112INm' or '87Ym':
+        E_TENDL, CS_TENDL, tck_TENDL = Tendl(foil, A, Z, isomer=True)
+    else:
+        E_TENDL, CS_TENDL, tck_TENDL = Tendl(foil, A, Z, isomer=False)
+
     #print('Foil, A, Z, filename :', foil, A, Z, filename_CS_me)
     E_CoH, CS_CoH, tck_CoH = CoH(foil, A, Z, filename_CS_me)
     E_EMPIRE, CS_EMPIRE, tck_EMPIRE = EMPIRE(foil, A, Z, filename_CS)
@@ -1544,9 +1567,9 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
     if filename_CS_me == '89Zr' or filename_CS_me == '24Na' or filename_CS_me == '88Y':
         handles, labels = plt.gca().get_legend_handles_labels()
-        plt.legend(handles=handles[:-1] + [(p2[0], p1[0]), ] + handles[-1:],labels=labels[:-1] + ['IRDFF-II'] + labels[-1:], loc='upper left')
+        plt.legend(handles=handles[:-1] + [(p2[0], p1[0]), ] + handles[-1:],labels=labels[:-1] + ['IRDFF-II'] + labels[-1:], loc=legend_loc)
     else:
-        plt.legend(loc='upper left')
+        plt.legend(loc=legend_loc)
     plt.title(reaction)
     plt.xlim(0,40)
     plt.ylim(ymin=0)
@@ -1580,7 +1603,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 # NOT REPORT 66Cu - not enough info due to half-life and the time we counted
 ####### Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66')
-#Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67')
+#Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67', legend_loc='upper right')
 ######## Cross_section('Zn', '66', '28', 'Zn(n,x)66Ni', '66NI', 'Ni-66') #NOT REPORT
 #Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M')
 
@@ -1591,12 +1614,10 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 #Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=6)
 #Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
 #Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
-#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')  #DO THIS LATER!!!!!!!!!!!!!!!!!!!!
+#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')
 #Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95')
-#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=6)
+#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=6, legend_loc='upper right') #no empire
 #Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
-#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '95NB', 'Nb-95') #INGEN EXFOR ELLER TENDL, no data in coh and emire vent paa andrew
-#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '97NB', 'Nb-97') #INGEN EXFOR ELLER TENDL, no data in coh and emire vent paa andrew
 
 
 
@@ -1609,11 +1630,12 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 ###  Aluminum ###
 
-#Cross_section('Al', '24', '11', '27Al(n,x)24Na', '24Na', 'Na-24')
+#Cross_section('Al', '24', '11', '27Al(n,x)24Na', '24Na', 'Na-24', legend_loc='upper right')
 
 ### Yttrium ###
 
 #Cross_section('Y', '87', '39', 'Y(n,x)87Y', '87Y', 'Y-87')
-Cross_section('Y', '87', '39', 'Y(n,x)8Ym', '87Ym', 'Y-87M') # no Coh or empire, wait for andrew
-#Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M') # no alice or cog and empire
-#Cross_section('Y', '87', '38', 'Y(n,x)87Sr', '87SRm', 'Sr-87M') # no coh and empire
+Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
+#Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=10) # no coh and empire
+#Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M') # no coh and empire
+#Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)

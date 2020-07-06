@@ -6,8 +6,8 @@
                        P E A K     F I T     R E P O R T
                        _________________________________
 
- Spectrum file Analysed: AI081618_10cm_Zn02.Chn           
- Sample Title : Cs137                                            
+ Spectrum file Analysed: AI081618_10cm_Zn02.Chn
+ Sample Title : Cs137
 
  Spectrum saved on 25-Oct-2018 at  8:30    Collected on 16-Aug-2018 at 14:38
  Sample  Taken  on 16-Aug-2018 at 14:38    Decayed      0 Days,     0 mins.
@@ -18,12 +18,12 @@
 
 
    Datetime:  16-Aug-2018 14:38
-   Live:      8551.00 
+   Live:      8551.00
    Mass:      230
    Shelf:     10
 
-   Reported Activity values were rounded     
-   FitzPeaks Version: 3.71 23rd January 2014           
+   Reported Activity values were rounded
+   FitzPeaks Version: 3.71 23rd January 2014
 
  Peak   Centre   FW@HM         Goodness   Peak      %      Gammas       %      2 Sigma
 Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Background
@@ -41,7 +41,7 @@ Energy  Channel  (KeV)  Signif  of Fit    Area   Uncert.  per sec.   Uncert. Bac
   508.8  2709.5   1.44     8.6    4.09       670   44.7   7.8337e-02   44.7     1062
   512.2  2727.8   2.90    21.4    4.09     43428    1.7   5.0787e+00    1.7     2047
   598.0  3185.2   1.56     3.8    1.03       108   29.0   1.2632e-02   29.0       51
- 1117.8  5953.4   2.13    11.0    1.20      1272    5.8   1.4871e-01    5.8       42
+ 1115.8  5953.4   2.13    11.0    1.20      1272    5.8   1.4871e-01    5.8       42
  1348.3  7181.3   2.44     5.8    0.97       245   14.5   2.8635e-02   14.5       12
  1371.3  7304.0   2.47     9.0    0.80       738    7.2   8.6295e-02    7.2       14
  1734.9  9240.6   2.90     3.6    0.65        39   55.3   4.5561e-03   55.3       15

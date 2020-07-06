@@ -115,7 +115,8 @@ def Zn_40K():
 #FEIL?????,
 def Zn_65Zn():
     foil1 = path + '65Zn_zn16MeV_130.dat'
-    list = [foil1]
+    foil2 = path + '65Zn_zn33MeV_230.dat'
+    list = [foil1, foil2]
     lambda_ = np.log(2)/(243.93*d)
     return list, lambda_
 
