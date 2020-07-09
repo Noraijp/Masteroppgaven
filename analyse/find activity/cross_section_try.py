@@ -131,7 +131,7 @@ def TALYS(foil, A, Z, file_ending='.tot'):
 
     elif  foil == 'In':
         if Z == '049' and A == '112':
-            abund_113In = 0.439; abund_115In = .9571
+            abund_113In = 0.0429; abund_115In = .9571
 
             filename = path + '../Talys/' +foil+ '/rp'+ Z + A + '.L01'  #'.tot
             Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
@@ -154,7 +154,7 @@ def TALYS(foil, A, Z, file_ending='.tot'):
         if Z == '039' and A == '090':
 
         #finn abundance til hvert isotop fra nndc
-            abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280 ;
+            abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.0280 ;
 
             #print('TALYS Y90m : ')
             f_90Zr = path + '../Talys/' + foil + '/rp' + Z + A + '.L02' + '.090'
@@ -327,7 +327,7 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
 
     if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.061;
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
 
@@ -435,7 +435,7 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
 
     elif foil == 'Zr':
         #finn abundance til hvert isotop fra nndc
-        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280 ;
+        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.0280 ;
 
         if Z == '039' and A == '090':
             print('TENDL Y90m : ')
@@ -582,7 +582,7 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
 
     elif foil == 'In':
         #finn abundance til hvert isotop fra nndc
-        abund_113In = 0.429;  abund_115In = 0.9571;
+        abund_113In = 0.0429;  abund_115In = 0.9571;
 
         print('Isomer', isomer)
         if Z == '049' and A == '112' and isomer==True:
@@ -672,7 +672,7 @@ def CoH(foil, A, Z, filename_CS_me):
 
     if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.061;
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
         u_64Zn_Coh = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-0' + filename_CS_me + '_coh' + '.txt'
@@ -800,7 +800,7 @@ def CoH(foil, A, Z, filename_CS_me):
 #----------------------------- In ------------------------
 
     if foil == 'In':
-        abund_113In = 0.429 ; abund_115In = 0.9571
+        abund_113In = 0.0429 ; abund_115In = 0.9571
 
         v_113In_Coh = path + '/../EMPIRECOH2/' + foil + '/113In/' +  Z + '-' + filename_CS_me + '_coh' + '.txt'
         v_115In_Coh = path + '/../EMPIRECOH2/' + foil + '/115In/' +  Z + '-' + filename_CS_me + '_coh' + '.txt'
@@ -888,7 +888,7 @@ def CoH(foil, A, Z, filename_CS_me):
 
     if foil == 'Zr':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280
+        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.0280
 
         v_90Zr_Coh = path + '/../EMPIRECOH2/' + foil + '/90Zr/' +  Z + '-0' + filename_CS_me + '_coh' + '.txt'
         v_91Zr_Coh = path + '/../EMPIRECOH2/' + foil + '/91Zr/' +  Z + '-0' + filename_CS_me + '_coh' + '.txt'
@@ -983,7 +983,7 @@ def EMPIRE(foil, A, Z, filename_CS):
 
     if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.061;
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
         #v_64Zn = path + '/../EMPIRECOH2/' + foil + '/folder/' +  Z + '-0' + filename_CS + '_coh' + '.txt'
@@ -1134,7 +1134,7 @@ def EMPIRE(foil, A, Z, filename_CS):
 
     if foil == 'In':
     #A = ['191', '193'] # stable iridium isotopes
-        abund_113In = 0.429 ; abund_115In = 0.9571
+        abund_113In = 0.0429 ; abund_115In = 0.9571
     #file_ending =
     #endre f_191I til de stabile isotopene i zink osv
     #v_64Zn = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-0' + filename_CS + '_coh' + '.txt'
@@ -1230,7 +1230,7 @@ def EMPIRE(foil, A, Z, filename_CS):
 
     if foil == 'Zr':
     #A = ['191', '193'] # stable iridium isotopes
-        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.280
+        abund_90Zr = 0.5145 ; abund_91Zr = 0.1122 ; abund_92Zr = 0.1715 ; abund_94Zr = 0.1738 ; abund_96Zr = 0.0280
     #file_ending =
     #endre f_191I til de stabile isotopene i zink osv
     #v_64Zn = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-0' + filename_CS + '_coh' + '.txt'
@@ -1615,8 +1615,8 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 #Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
 #Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
 #Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')
-#Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95')
-#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=6, legend_loc='upper right') #no empire
+#Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95', y_max=60)
+#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=2, legend_loc='upper right') #no empire
 #Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
 
 
@@ -1635,7 +1635,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 ### Yttrium ###
 
 #Cross_section('Y', '87', '39', 'Y(n,x)87Y', '87Y', 'Y-87')
-Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
+#Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
 #Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=10) # no coh and empire
 #Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M') # no coh and empire
-#Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)
+Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)
