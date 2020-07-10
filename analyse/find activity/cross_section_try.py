@@ -112,7 +112,7 @@ def ALICE(foil, A, Z, isomer=False):
 path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/'
 
 
-def TALYS(foil, A, Z, file_ending='.tot'):
+def TALYS(foil, A, Z, file_ending='.tot', isomer=False):
     print('--------------------- TALYS -----------------')
     # Z = 0XX, A=0XX
 
@@ -142,12 +142,27 @@ def TALYS(foil, A, Z, file_ending='.tot'):
             CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
 
 
-
+############## Y #############
     elif foil == 'Y':
-    # Y
-        filename = path + '../Talys/' +foil+ '/rp'+ Z + A + file_ending + '.089' #'.tot
-        Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
-        CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+        if Z == '038' and A == '087' and isomer==True:
+            filename = path + '../Talys/' +foil+ '/rp'+ Z + A + '.L01' + '.089' #'.tot
+            Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+            CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+
+        elif Z == '039' and A == '087' and isomer==True:
+            filename = path + '../Talys/' +foil+ '/rp'+ Z + A + '.L01' + '.089' #'.tot
+            Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+            CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+
+        elif Z == '039' and A == '090' and isomer==True:
+            filename = path + '../Talys/' +foil+ '/rp'+ Z + A + '.L02' + '.089' #'.tot
+            Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+            CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
+
+        else:
+            filename = path + '../Talys/' +foil+ '/rp'+ Z + A + file_ending + '.089' #'.tot
+            Ee  = np.genfromtxt(filename, delimiter=' ', usecols=[0],skip_header=5)
+            CSs = np.genfromtxt(filename, delimiter=' ', usecols=[1],skip_header=5)
 
     #Zr
     elif foil == 'Zr':
@@ -327,7 +342,7 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
 
     if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.0404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
 
@@ -555,8 +570,17 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
         #finn abundance til hvert isotop fra nndc
         abund_89Y = 1.00;
 
+        if Z == '038' and A == '087' and isomer==True:
+            f_89Y = path + '/../Tendl/' + foil + '/rp039089_' + Z + A + '.L01' + '.txt'
 
-        f_89Y = path + '/../Tendl/' + foil + '/rp039089_' + Z + A + file_ending + '.txt'
+        elif Z == '039' and A == '087' and isomer==True:
+            f_89Y = path + '/../Tendl/' + foil + '/rp039089_' + Z + A + '.L01' + '.txt'
+
+        elif Z == '039' and A == '090' and isomer==True:
+            f_89Y = path + '/../Tendl/' + foil + '/rp039089_' + Z + A + '.L02' + '.txt'
+
+        else:
+            f_89Y = path + '/../Tendl/' + foil + '/rp039089_' + Z + A + file_ending + '.txt'
 
         print("Y 89 file: ",f_89Y)
         if os.path.isfile(f_89Y):
@@ -672,7 +696,7 @@ def CoH(foil, A, Z, filename_CS_me):
 
     if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.0404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
         u_64Zn_Coh = path + '/../EMPIRECOH2/' + foil + '/64Zn/' +  Z + '-0' + filename_CS_me + '_coh' + '.txt'
@@ -983,7 +1007,7 @@ def EMPIRE(foil, A, Z, filename_CS):
 
     if foil == 'Zn':
         #A = ['191', '193'] # stable iridium isotopes
-        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
+        abund_64Zn = 0.4917 ; abund_66Zn = 0.2773 ; abund_67Zn = 0.0404 ; abund_68Zn = 0.1845 ; abund_70Zn = 0.0061;
         #file_ending =
         #endre f_191I til de stabile isotopene i zink osv
         #v_64Zn = path + '/../EMPIRECOH2/' + foil + '/folder/' +  Z + '-0' + filename_CS + '_coh' + '.txt'
@@ -1514,12 +1538,16 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
         Z = '0' + Z
 
 
+    if filename_CS_me == '87SRm' or  filename_CS_me == '90Ym' or filename_CS_me == '87Ym':
+        E_TALYS, CS_TALYS, tck_TALYS = TALYS(foil, A, Z, isomer=True)
+    else:
+        E_TALYS, CS_TALYS, tck_TALYS = TALYS(foil, A, Z, isomer=False)
 
-    E_TALYS, CS_TALYS, tck_TALYS = TALYS(foil, A, Z)
+
     EXFOR(foil, reaction)
     #no EXFOR for :
     # natZn(n,x)67Cu
-    if filename_CS_me == '112INm' or '87Ym':
+    if filename_CS_me == '112INm' or  filename_CS_me == '87Ym' or  filename_CS_me == '90Ym' or filename_CS_me == '87SRm':
         E_TENDL, CS_TENDL, tck_TENDL = Tendl(foil, A, Z, isomer=True)
     else:
         E_TENDL, CS_TENDL, tck_TENDL = Tendl(foil, A, Z, isomer=False)
@@ -1595,15 +1623,15 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 ### ZINK ###
 
-#Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN', 'Zn-62', y_max=30)
+#Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN', 'Zn-62', y_max=20)
 #Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN', 'Zn-63')
-#Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64')
-#Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI', 'Ni-65', y_max=8)
-#Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65')
+#Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64', legend_loc='upper right')
+#Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI', 'Ni-65', y_max=6, legend_loc='upper right')
+#Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65', legend_loc='upper right')
 
 # NOT REPORT 66Cu - not enough info due to half-life and the time we counted
 ####### Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66')
-#Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67', legend_loc='upper right')
+#Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67')
 ######## Cross_section('Zn', '66', '28', 'Zn(n,x)66Ni', '66NI', 'Ni-66') #NOT REPORT
 #Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M')
 
@@ -1611,11 +1639,11 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 ### Zirconium ###
 
 #Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90Ym', 'Y-90M')
-#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=6)
+#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=4)
 #Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
 #Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
 #Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')
-#Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95', y_max=60)
+#Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95', y_max=50, legend_loc='upper right')
 #Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=2, legend_loc='upper right') #no empire
 #Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
 
@@ -1623,7 +1651,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 ### Indium ###
 
-#Cross_section('In', '111', '49', 'In(n,x)111In', '111In', 'In-111')
+#Cross_section('In', '111', '49', 'In(n,x)111In', '111In', 'In-111', y_max=150)
 #Cross_section('In', '112', '49', 'In(n,x)112In', '112IN', 'In-112')
 #Cross_section('In', '112', '49', 'In(n,x)112mIn', '112INm', 'In-112M')
 
@@ -1636,6 +1664,6 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 #Cross_section('Y', '87', '39', 'Y(n,x)87Y', '87Y', 'Y-87')
 #Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
-#Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=10) # no coh and empire
+#Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=2, legend_loc='upper right') # no coh and empire
 #Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M') # no coh and empire
 Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)
