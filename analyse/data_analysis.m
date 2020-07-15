@@ -43,17 +43,17 @@ unc_al_rhodrs = [0.00055 0.00160];
 clc; 
 
 % Choose files for analysis
-fitzpeaks_reports = zn_fn;
-key_energies = zn_key_energies;
-glines = zn_glines;
+fitzpeaks_reports = al_fn;
+key_energies = al_key_energies;
+glines = al_glines;
 % EoB Time
 % 16 MeV
-%EoB_Time = '12-Aug-2018 11:00:00';
+EoB_Time = '12-Aug-2018 11:00:00';
 % 33 MeV
-EoB_Time = '14-Aug-2018 19:46:00';
-rhodrs = zn_rhodrs;
-mu_attenuation = load('../zn_xcom.txt');
-unc_rhodrs = unc_zn_rhodrs;
+%EoB_Time = '14-Aug-2018 19:46:00';
+rhodrs = al_rhodrs;
+mu_attenuation = load('../al_xcom.txt');
+unc_rhodrs = unc_al_rhodrs;
 
 
 % Test new fitzpeaks_parser wrapper function
@@ -138,11 +138,11 @@ data = output;
 % rows_88Y_Y16 = [1, 2]%, 3];
 % 
 % % 33MeV Yttrium foils:
-rows_90mY_y33 = [1, 3];
-rows_87mY_y33 = [2];
-rows_87Y_y33 = [4];
-rows_88Y_y33 = [5, 6]; %7
-rows_24Na_y33 = [8];
+%rows_90mY_y33 = [1, 3];
+%rows_87mY_y33 = [2];
+%rows_87Y_y33 = [4];
+%rows_88Y_y33 = [5, 6]; %7
+%rows_24Na_y33 = [8];
 
 % % 16MeV Indium foils:
 % rows_116mIn_in16 = [1,3, 5, 6, 9, 10, 11, 12, 13, 14];
@@ -161,7 +161,7 @@ rows_24Na_y33 = [8];
 % rows_24Na_In33 = [24, 28];
 
 % % 16MeV Aluminum foils:
-% rows_24Na_al16 = [1, 2];
+ rows_24Na_al16 = [1, 2];
 % 
 % % 33MeV Aluminum foils:
 % rows_24Na_al33 = [1, 2];
@@ -170,8 +170,8 @@ rows_24Na_y33 = [8];
 
 % Select rows to plot
 % varToStr = @(x) inputname(1);
-rows = rows_65zn_zn33;
-outName = '../csv/65Zn_zn33MeV';
+rows = rows_24Na_al16;
+outName = '../csv/24Na_al16MeV';
 % rows = 12;
 % Find rows for the desired decay product
 selected_rows = data(rows,:);
@@ -190,10 +190,10 @@ selected_rows = data(rows,:);
 % for energy = 140:100:140   % Just Zirconium 16 MeV
 % for energy = 240:100:240   % Just Zirconium 33 MeV
 % for energy = 130:100:130   % Just Zinc 16 MeV
-for energy = 230:100:230   % Just Zinc 33 MeV
+%for energy = 230:100:230   % Just Zinc 33 MeV
 % for energy = 139:100:139   % Just Yttrium 16 MeV
-% for energy = 239:100:239   % Just Yttrium 33 MeV
-% for energy = 113:100:113   % Just Aluminum 16 MeV
+%for energy = 239:100:239   % Just Yttrium 33 MeV
+ for energy = 113:100:113   % Just Aluminum 16 MeV
 % for energy = 213:100:213   % Just Aluminum 33 MeV
 % for energy = 149:100:149   % Just Indium 16 MeV
 % for energy = 349:100:349   % Just Indium 33 MeV
@@ -225,5 +225,5 @@ for energy = 230:100:230   % Just Zinc 33 MeV
     
     % Dump to csv for python / gnuplot
     % Turn this line on to write files out!
-     csvwrite([outName '_' num2str(energy) '.dat'],outfile);
+    % csvwrite([outName '_' num2str(energy) '.dat'],outfile);
 end

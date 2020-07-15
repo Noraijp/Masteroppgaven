@@ -68,6 +68,7 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 	unc_production_rate =  np.zeros((2,len(reaction_list)))
 	unc_number_of_atoms =  np.zeros((2,len(reaction_list)))
 	unc_flux_avg_cross_section =  np.zeros((2,len(reaction_list)))
+	solid_angle = np.zeros((2,len(reaction_list)))
 
 
 	for i in range(len(reaction_list)):
@@ -183,11 +184,12 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 		unc_production_rate[:,i] = np.array((unc_R_16MeV, unc_R_33MeV))
 		unc_number_of_atoms[:,i] = np.array((n_atoms_16MeV*(unc_mass_16MeV/mass_16MeV), n_atoms_33MeV*(unc_mass_33MeV/mass_33MeV)))
 		unc_flux_avg_cross_section[:,i] = np.array((unc_xs_avg_16MeV, unc_xs_avg_33MeV))
+		solid_angle[:,i] = np.array((calc_solid_angle_16MeV, calc_solid_angle_33MeV))
 
 
 
 	# print('\n************************************************\n')
-	return flux_array_33MeV, unc_flux_array_33MeV, flux_array_16MeV, unc_flux_array_16MeV, production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section
+	return flux_array_33MeV, unc_flux_array_33MeV, flux_array_16MeV, unc_flux_array_16MeV, production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, solid_angle
 
 
 
@@ -206,7 +208,7 @@ R_sample_y_33MeV = 0.590
 dist_to_y_16MeV = 10.7 #cm
 dist_to_y_33MeV = 11.1
 
-y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, y_production_rate, y_number_of_atoms, y_flux_avg_cross_section, y_unc_production_rate, y_unc_number_of_atoms, y_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_y_16MeV, R_sample_y_33MeV, dist_to_y_16MeV, dist_to_y_33MeV)
+y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, y_production_rate, y_number_of_atoms, y_flux_avg_cross_section, y_unc_production_rate, y_unc_number_of_atoms, y_unc_flux_avg_cross_section, y_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_y_16MeV, R_sample_y_33MeV, dist_to_y_16MeV, dist_to_y_33MeV)
 # print('Y flux at 33MeV           : ', y_avg_flux_33MeV)
 # print('Y flux uncertinty_33MeV : ', y_unc_avg_flux_33MeV)
 # print('Y flux at 16MeV           : ', y_avg_flux_16MeV)
@@ -267,7 +269,7 @@ dist_to_al_33MeV = 10.5
 # print(lb.search(product='24Na'))
 # # print(lb.search(target='113IN',product='114INm1'))
 
-al_avg_flux_33MeV, al_unc_avg_flux_33MeV, al_avg_flux_16MeV, al_unc_avg_flux_16MeV, al_production_rate, al_number_of_atoms, al_flux_avg_cross_section, al_unc_production_rate, al_unc_number_of_atoms, al_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_al_16MeV, R_sample_al_33MeV, dist_to_al_16MeV, dist_to_al_33MeV)
+al_avg_flux_33MeV, al_unc_avg_flux_33MeV, al_avg_flux_16MeV, al_unc_avg_flux_16MeV, al_production_rate, al_number_of_atoms, al_flux_avg_cross_section, al_unc_production_rate, al_unc_number_of_atoms, al_unc_flux_avg_cross_section, al_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_al_16MeV, R_sample_al_33MeV, dist_to_al_16MeV, dist_to_al_33MeV)
 # print('Al flux at 33MeV           : ', al_avg_flux_33MeV)
 # print('Al flux uncertinty_33MeV : ', al_unc_avg_flux_33MeV)
 # print('Al flux at 16MeV           : ', al_avg_flux_16MeV)
@@ -297,7 +299,7 @@ dist_to_zr_33MeV = 10.8
 # print(lb.search(product='89Zr'))
 # # print(lb.search(target='113IN',product='114INm1'))
 
-zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16MeV, zr_production_rate, zr_number_of_atoms, zr_flux_avg_cross_section, zr_unc_production_rate, zr_unc_number_of_atoms, zr_unc_flux_avg_cross_section = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_zr_16MeV, R_sample_zr_33MeV, dist_to_zr_16MeV, dist_to_zr_33MeV)
+zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16MeV, zr_production_rate, zr_number_of_atoms, zr_flux_avg_cross_section, zr_unc_production_rate, zr_unc_number_of_atoms, zr_unc_flux_avg_cross_section, zr_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_zr_16MeV, R_sample_zr_33MeV, dist_to_zr_16MeV, dist_to_zr_33MeV)
 # print('Zr flux at 33MeV           : ', zr_avg_flux_33MeV)
 # print('Zr flux uncertinty_33MeV : ', zr_unc_avg_flux_33MeV)
 # print('Zr flux at 16MeV           : ', zr_avg_flux_16MeV)
@@ -389,6 +391,8 @@ flux_avg_cross_section = np.hstack((y_flux_avg_cross_section, al_flux_avg_cross_
 unc_production_rate = np.hstack((y_unc_production_rate, al_unc_production_rate, zr_unc_production_rate))
 unc_number_of_atoms = np.hstack((y_unc_number_of_atoms, al_unc_number_of_atoms, zr_unc_number_of_atoms))
 unc_flux_avg_cross_section = np.hstack((y_unc_flux_avg_cross_section, al_unc_flux_avg_cross_section, zr_unc_flux_avg_cross_section))
+solid_angle = np.hstack((y_solid_angle, al_solid_angle, zr_solid_angle))
+
 
 
 print('production_rate',production_rate)
@@ -397,6 +401,7 @@ print('flux_avg_cross_section',flux_avg_cross_section)
 print('unc_production_rate',unc_production_rate)
 print('unc_number_of_atoms',unc_number_of_atoms)
 print('unc_flux_avg_cross_section',unc_flux_avg_cross_section)
+print('solid_angle :', solid_angle)
 
 # print(len(number_of_atoms))
 # plt.errorbar(x_index_33MeV, all_fluxes_33MeV, yerr=all_unc_fluxes_33MeV, marker='.', linestyle='')
@@ -406,7 +411,32 @@ print('unc_flux_avg_cross_section',unc_flux_avg_cross_section)
 # plt.plot(x_index_16MeV, approximate_average_flux_16MeV*np.ones(len(x_index_16MeV)), color='red')
 # plt.show()
 
-output_flux, output_unc_flux = Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, csv_filename='averaged_fluxes.csv')
+output_flux, output_unc_flux = Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, solid_angle, csv_filename='averaged_fluxes.csv')
+
+
+stand_div_16MeV = np.std(all_fluxes_16MeV)
+stand_div_33MeV = np.std(all_fluxes_33MeV)
+
+print('stand_div_16MeV :', stand_div_16MeV)
+print('stand_div_33MeV :', stand_div_33MeV)
+
+
+unc_16MeV = np.sqrt((output_unc_flux[0])**2 + (stand_div_16MeV)**2)
+unc_33MeV = np.sqrt((output_unc_flux[1])**2 + (stand_div_33MeV)**2)
+
+
+
+output_foil_index = np.array([0,1])
+#output_flux = output_flux
+output_unc_flux_new = np.array([unc_16MeV, unc_33MeV])
+output_percent_unc_new = np.array([(unc_16MeV/output_flux[0])*100, (unc_33MeV/output_flux[1])*100])
+
+outfile = np.stack((np.transpose(output_foil_index),np.transpose(output_flux),np.transpose(output_unc_flux_new),np.transpose(output_percent_unc_new)), axis=-1)
+#import os
+#path = os.getcwd()
+csv_filename = 'averaged_fluxes.csv'
+np.savetxt("./{}".format(csv_filename), outfile, delimiter=",", header="Foil Index, Average Neutron Flux (a.u.), Uncertainty in Average Neutron Flux (a.u.), % Uncertainty")
+
 
 print('all_fluxes_16MeV',all_fluxes_16MeV)
 print('all_fluxes_33MeV',all_fluxes_33MeV)

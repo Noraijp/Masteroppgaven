@@ -20,7 +20,7 @@ monitor_reactions_per_foil = np.array([1, 2, 2])
 
 ### Read in numbers of decays from csv file
 
-def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, csv_filename='averaged_currents.csv'):
+def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, solid_angle, csv_filename='averaged_currents.csv'):
 
 
     def decomment(csvfile):
@@ -38,20 +38,20 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
         return np.asarray(results, dtype=float)
 
 
-    def neutron_flux(R, N_atoms, flux_avg_xs):
-        return (R) / (N_atoms * flux_avg_xs)
+    def neutron_flux(R, N_atoms, flux_avg_xs, solid_angle):
+        return (R) / (N_atoms * flux_avg_xs * solid_angle)
 
 
 	# Numerical partial derivatives
     def dIR(R, N_atoms, flux_avg_xs):
         delta_x = 1E-8 * R
-        return ((neutron_flux(R + (delta_x/2), N_atoms, flux_avg_xs) - neutron_flux(R - (delta_x/2), N_atoms, flux_avg_xs)) / delta_x)
+        return ((neutron_flux(R + (delta_x/2), N_atoms, flux_avg_xs, solid_angle) - neutron_flux(R - (delta_x/2), N_atoms, flux_avg_xs, solid_angle )) / delta_x)
     def dIdN_atoms(R, N_atoms, flux_avg_xs):
         delta_x = 1E-8 * N_atoms
-        return ((neutron_flux(R, N_atoms + (delta_x/2), flux_avg_xs) - neutron_flux(R, N_atoms - (delta_x/2), flux_avg_xs)) / delta_x)
+        return ((neutron_flux(R, N_atoms + (delta_x/2), flux_avg_xs, solid_angle) - neutron_flux(R, N_atoms - (delta_x/2), flux_avg_xs, solid_angle)) / delta_x)
     def dIdXS(R, N_atoms, flux_avg_xs):
         delta_x = 1E-8 * flux_avg_xs
-        return ((neutron_flux(R, N_atoms, flux_avg_xs + (delta_x/2)) - neutron_flux(R, N_atoms, flux_avg_xs - (delta_x/2))) / delta_x)
+        return ((neutron_flux(R, N_atoms, flux_avg_xs + (delta_x/2), solid_angle) - neutron_flux(R, N_atoms, flux_avg_xs - (delta_x/2), solid_angle)) / delta_x)
 
 
 	# Approximate uncertainties in neutron flux
@@ -243,7 +243,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
 
         # print('neutron_flux inputs: ', A0, ad, loop_lambdas[i_energy,:], delta_t, rxn_int)
         # neutron_flux(R, N_atoms, flux_avg_xs)
-        temp_fluxes =  neutron_flux(loop_R, loop_N_atoms, loop_flux_avg_xs)
+        temp_fluxes =  neutron_flux(loop_R, loop_N_atoms, loop_flux_avg_xs, solid_angle)
         fluxes[i_energy, :] =  temp_fluxes
         # print('temp_currents: ', temp_currents)
         # sigma_flux_approximate(R, N_atoms, flux_avg_xs, unc_R, unc_N_atoms, unc_flux_avg_xs):

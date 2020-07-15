@@ -2,6 +2,7 @@ label='TENDL'
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import npat
 #import sympy  as sy
 #import integrate
 
@@ -359,7 +360,11 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
             f_67Zn = path + '/../Tendl/' + foil + '/rp030067_' + Z + A + file_ending + '.txt'
             f_68Zn = path + '/../Tendl/' + foil + '/rp030068_' + Z + A + file_ending + '.txt'
             f_70Zn = path + '/../Tendl/' + foil + '/rp030070_' + Z + A + file_ending + '.txt'
-        print('Filename TENDL: ', f_70Zn)
+        print('f_64Zn Filename TENDL: ', f_64Zn)
+        print('f_66Zn Filename TENDL: ', f_66Zn)
+        print('f_67Zn Filename TENDL: ', f_67Zn)
+        print('f_68Zn Filename TENDL: ', f_68Zn)
+        print('f_70Zn Filename TENDL: ', f_70Zn)
 
 
         #print("Ir 193 file: ",f_193Ir)
@@ -377,7 +382,7 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
 
         if os.path.isfile(f_66Zn):
             #print("Ir 191 file: ",f_191Ir)
-            #print("f_191Ir exists")
+            print("f_66Zn exists")
             CS_66Zn = np.genfromtxt(f_66Zn, delimiter=' ', usecols=[1],skip_header=5)
             E_Zn = np.genfromtxt(f_66Zn, delimiter=' ', usecols=[0],skip_header=5)
         else:
@@ -417,7 +422,7 @@ def Tendl(foil, A, Z, file_ending='.tot', isomer=False):
             print("f_70Zn exists")
             CS_70Zn = np.genfromtxt(f_70Zn, delimiter=' ', usecols=[1],skip_header=5)
             E_Zn = np.genfromtxt(f_70Zn, delimiter=' ', usecols=[0],skip_header=5)
-            print(f_70Zn)
+            #print(f_70Zn)
         else:
             print("f_70Zn file does not exist")
             CS_70Zn = 0
@@ -1395,6 +1400,8 @@ def IRDFF(foil, filename_CS_me):
                 dCS.append(float(string[2])*1e3) # in mb
                 #author.append(string[5]) #index 4 is equal to #
 
+            tck = interpolate.splrep(E, CS, s=0) #interpalation - give it raw data of energy array and cross section array that we have calculated
+
             #print('EXFOR CS: ', CS)
             #plt.plot(E, CS)
                 #plt.show()
@@ -1404,13 +1411,17 @@ def IRDFF(foil, filename_CS_me):
             #plt.errorbar(E, CS, marker='.', markersize=4, linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label=author[0] )
             #plt.legend()
             #plt.show()
+
             h  = plt.fill_between(E, np.array(CS)+np.array(dCS), np.array(CS)-np.array(dCS), color='blue', alpha=0.1)
             p1 = plt.plot(E, CS, color='blue')#, label='Recommended CS (IRDFF-II)')
             p2 = plt.fill(np.NaN, np.NaN, 'b', alpha=0.1, linewidth=1.5, edgecolor='b')
+            E = np.linspace(1, 40, 1000)
+            CS = interpolate.splev(E, tck, der=0)
+            #plt.plot(E, CS, color='black')
 
 
 
-            return E, CS, dCS, p1, p2
+            return E, CS, dCS, p1, p2, tck
 
 
 
@@ -1557,7 +1568,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
     E_EMPIRE, CS_EMPIRE, tck_EMPIRE = EMPIRE(foil, A, Z, filename_CS)
 
     if filename_CS_me == '89Zr' or filename_CS_me == '24Na' or filename_CS_me == '88Y':
-        E_IRDFF, CS_IRDFF, dEC_IRDFF, p1, p2 = IRDFF(foil, filename_CS_me)
+        E_IRDFF, CS_IRDFF, dEC_IRDFF, p1, p2, tck_IRDFF = IRDFF(foil, filename_CS_me)
 
 # integral for each of the codes
 
@@ -1571,7 +1582,9 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
     flux_avg_CS_TENDL = [np.trapz(interpolate.splev(E_16, tck_TENDL, der=0)*dPhidE_16, E_16) / np.trapz(dPhidE_16, E_16), np.trapz(interpolate.splev(E_33, tck_TENDL, der=0)*dPhidE_33, E_33) / np.trapz(dPhidE_33, E_33)]
     flux_avg_CS_CoH = [np.trapz(interpolate.splev(E_16, tck_CoH, der=0)*dPhidE_16, E_16) / np.trapz(dPhidE_16, E_16), np.trapz(interpolate.splev(E_33, tck_CoH, der=0)*dPhidE_33, E_33) / np.trapz(dPhidE_33, E_33)]
     flux_avg_CS_EMPIRE = [np.trapz(interpolate.splev(E_16, tck_EMPIRE, der=0)*dPhidE_16, E_16) / np.trapz(dPhidE_16, E_16), np.trapz(interpolate.splev(E_33, tck_EMPIRE, der=0)*dPhidE_33, E_33) / np.trapz(dPhidE_33, E_33)]
-
+    if filename_CS_me == '89Zr' or filename_CS_me == '24Na' or filename_CS_me == '88Y':
+        flux_avg_CS_IRDFF = [np.trapz(interpolate.splev(E_16, tck_IRDFF, der=0)*dPhidE_16, E_16) / np.trapz(dPhidE_16, E_16), np.trapz(interpolate.splev(E_33, tck_IRDFF, der=0)*dPhidE_33, E_33) / np.trapz(dPhidE_33, E_33)]
+        print('flux_avg_CS_IRDFF :', flux_avg_CS_IRDFF)
 
 
 
@@ -1590,6 +1603,9 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
     plt.errorbar(CS_energi_mydata, flux_avg_CS_TENDL, color='r', marker='.', linewidth=0.001, xerr=dE_mydata, elinewidth=0.5, capthick=0.5, capsize=3.0 )
     plt.errorbar(CS_energi_mydata, flux_avg_CS_CoH, color='c', marker='.', linewidth=0.001, xerr=dE_mydata, elinewidth=0.5, capthick=0.5, capsize=3.0 )
     plt.errorbar(CS_energi_mydata, flux_avg_CS_EMPIRE, color='y', marker='.', linewidth=0.001, xerr=dE_mydata, elinewidth=0.5, capthick=0.5, capsize=3.0 )
+    if filename_CS_me == '89Zr' or filename_CS_me == '24Na' or filename_CS_me == '88Y':
+        plt.errorbar(CS_energi_mydata, flux_avg_CS_IRDFF, color='b', marker='.', linewidth=0.001, xerr=dE_mydata, elinewidth=0.5, capthick=0.5, capsize=3.0 )
+
 
     CS_energi_mydata, CS_zn_mydata, dCS_mydata, dE_mydata = mydata(filename_CS_me, foil, plot_flag=True)
 
@@ -1627,19 +1643,19 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 #Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN', 'Zn-63')
 #Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64', legend_loc='upper right')
 #Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI', 'Ni-65', y_max=6, legend_loc='upper right')
-#Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65', legend_loc='upper right')
+Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65', legend_loc='upper right')
 
 # NOT REPORT 66Cu - not enough info due to half-life and the time we counted
 ####### Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66')
 #Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67')
 ######## Cross_section('Zn', '66', '28', 'Zn(n,x)66Ni', '66NI', 'Ni-66') #NOT REPORT
-#Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M')
+#Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M', legend_loc='upper right')
 
 
 ### Zirconium ###
 
 #Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90Ym', 'Y-90M')
-#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=4)
+#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=3)
 #Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
 #Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
 #Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')
@@ -1665,5 +1681,5 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 #Cross_section('Y', '87', '39', 'Y(n,x)87Y', '87Y', 'Y-87')
 #Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
 #Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=2, legend_loc='upper right') # no coh and empire
-#Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M') # no coh and empire
-Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)
+#Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M', y_max=45) # no coh and empire
+#Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)

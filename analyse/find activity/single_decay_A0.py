@@ -232,7 +232,7 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 
 
 
-#single_decay_data(Cu_62Zn(), "Cu_62Zn", 10, Save_csv=True)
+single_decay_data(Cu_62Zn(), "Cu_62Zn", 10, Save_csv=True)
 #single_decay_data(Cu_63Zn(), "Cu_63Zn", 10, Save_csv=True)
 #single_decay_data(Cu_65Zn(), "Cu_65Zn", 10, Save_csv=True)
 #single_decay_data(Ni_57Co(), "Ni_57Co", 10, Save_csv=True)
@@ -266,7 +266,7 @@ def two_step_up_data(func, reaction_parent, reaction_daughter, n, Save_csv=False
 
 #single_decay_data(Zn_67Cu(), "Zn_67Cu", 2, Save_csv=True)
 
-single_decay_data(Zn_65Zn(), 'Zn_65Zn', 2, Save_csv=True)
+#single_decay_data(Zn_65Zn(), 'Zn_65Zn', 2, Save_csv=True)
 
 
 ### Zirconium ###
@@ -338,4 +338,4 @@ single_decay_data(Zn_65Zn(), 'Zn_65Zn', 2, Save_csv=True)
 
 ### Aluminum ###
 
-#single_decay_data(Al_24Na(), "Al_24Na", 2, Save_csv=True)
+single_decay_data(Al_24Na(), "Al_24Na", 2, Save_csv=True)
