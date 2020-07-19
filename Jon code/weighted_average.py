@@ -12,7 +12,7 @@ from scipy.constants import elementary_charge
 
 # Nora:
 number_of_monitor_foils = 3
-monitor_reactions_per_foil = np.array([1, 2, 2])
+monitor_reactions_per_foil = np.array([1, 1, 2])
 # Me:
 # number_of_monitor_foils = 2
 #monitor_reactions_per_foil = np.array([2, 2])
@@ -43,22 +43,26 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
 
 
 	# Numerical partial derivatives
-    def dIR(R, N_atoms, flux_avg_xs):
+    def dIR(R, N_atoms, flux_avg_xs, solid_angle):
         delta_x = 1E-8 * R
         return ((neutron_flux(R + (delta_x/2), N_atoms, flux_avg_xs, solid_angle) - neutron_flux(R - (delta_x/2), N_atoms, flux_avg_xs, solid_angle )) / delta_x)
-    def dIdN_atoms(R, N_atoms, flux_avg_xs):
+    def dIdN_atoms(R, N_atoms, flux_avg_xs, solid_angle):
         delta_x = 1E-8 * N_atoms
         return ((neutron_flux(R, N_atoms + (delta_x/2), flux_avg_xs, solid_angle) - neutron_flux(R, N_atoms - (delta_x/2), flux_avg_xs, solid_angle)) / delta_x)
-    def dIdXS(R, N_atoms, flux_avg_xs):
+    def dIdXS(R, N_atoms, flux_avg_xs, solid_angle):
         delta_x = 1E-8 * flux_avg_xs
         return ((neutron_flux(R, N_atoms, flux_avg_xs + (delta_x/2), solid_angle) - neutron_flux(R, N_atoms, flux_avg_xs - (delta_x/2), solid_angle)) / delta_x)
+    def dIdSA(R, N_atoms, flux_avg_xs, solid_angle):
+        delta_x = 1E-8 * solid_angle
+        return ((neutron_flux(R, N_atoms, flux_avg_xs + (delta_x/2), solid_angle) - neutron_flux(R, N_atoms, flux_avg_xs - (delta_x/2), solid_angle)) / delta_x)    
 
 
 	# Approximate uncertainties in neutron flux
-    def sigma_flux_approximate(R, N_atoms, flux_avg_xs, unc_R, unc_N_atoms, unc_flux_avg_xs):
-        approx_error = np.sqrt(np.power(dIR(R, N_atoms, flux_avg_xs) * unc_R,2) +
-        np.power(dIdN_atoms(R, N_atoms, flux_avg_xs) * unc_N_atoms,2) +
-        np.power(dIdXS(R, N_atoms, flux_avg_xs) * unc_flux_avg_xs,2))
+    def sigma_flux_approximate(R, N_atoms, flux_avg_xs, unc_R, unc_N_atoms, unc_flux_avg_xs, SA):
+        approx_error = np.sqrt(np.power(dIR(R, N_atoms, flux_avg_xs, SA) * unc_R,2) +
+        np.power(dIdN_atoms(R, N_atoms, flux_avg_xs, SA) * unc_N_atoms,2) +
+        np.power(dIdXS(R, N_atoms, flux_avg_xs, SA) * unc_flux_avg_xs,2) +
+        np.power(dIdSA(R, N_atoms, flux_avg_xs, SA) * 0.01*SA,2))
 		# approx_error = 0
 		# approx_error = np.power(dIdA0(A0, rho_dr, lambdas, t_irradiation, reaction_integral),2)
         return approx_error
@@ -92,6 +96,8 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
     #unc_rxn_integral = uncertainty_integral #rxn_int * 	percent_rn_uncertainties      #rxn = reactions
     unc_flux_avg_xs = unc_flux_avg_cross_section#rxn_int * 	percent_rn_uncertainties      #rxn = reactions
 
+    SA = solid_angle
+
 
 
     for i in range(0, number_of_monitor_foils):
@@ -110,12 +116,15 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
     corr_flux_avg_xs = 0.3 * np.ones((number_of_monitor_reactions,number_of_monitor_reactions))
 	# production rates are partially uncorrelated (similar subset of efficiencies)
     corr_R = 0.3 * np.ones((number_of_monitor_reactions,number_of_monitor_reactions))    #just set to 0.3 since we do not have MC simulations
+    # solid angle is completely uncorrelated, except within one foil's submatrix
+    corr_SA = np.zeros((number_of_monitor_reactions,number_of_monitor_reactions))
 
 
 	# Set up lists to hold output data
     output_foil_index = []
     output_flux = []
     output_unc_flux = []
+    output_total_unc_flux = []
     output_percent_unc = []
 
 
@@ -123,6 +132,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
     for i in range(0, number_of_monitor_foils): # Monitor reactions per foil [3,3,1]
         submatrix = np.ones((monitor_reactions_per_foil[i], monitor_reactions_per_foil[i]))
         corr_N_atoms[submatrix_lower_indices[i]:submatrix_upper_indices[i], submatrix_lower_indices[i]:submatrix_upper_indices[i]] = submatrix
+        corr_SA[submatrix_lower_indices[i]:submatrix_upper_indices[i], submatrix_lower_indices[i]:submatrix_upper_indices[i]] = submatrix
         # corr_reaction_integral[submatrix_lower_indices[i]:submatrix_upper_indices[i], submatrix_lower_indices[i]:submatrix_upper_indices[i]] = 0.3*submatrix
 
 
@@ -130,6 +140,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
     np.fill_diagonal(corr_N_atoms,1)
     np.fill_diagonal(corr_R,1)
     np.fill_diagonal(corr_flux_avg_xs,1)
+    np.fill_diagonal(corr_SA,1)
 
 	# print("corr_lambda")
 	# print(corr_lambda)
@@ -153,7 +164,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
     fluxes = np.zeros((number_of_energies,number_of_monitor_reactions))
     unc_fluxes = np.zeros((number_of_energies,number_of_monitor_reactions))
 	# function_dictionary = {'dIdA0':dIdA0, 'dIdRhoDr':dIdRhoDr, 'dIdLambda':dIdLambda, 'dIdTIrradiation':dIdTIrradiation, 'dIdIntegral':dIdIntegral}
-    function_dictionary = {'0':dIR, '1':dIdN_atoms, '2':dIdXS}
+    function_dictionary = {'0':dIR, '1':dIdN_atoms, '2':dIdXS, '3':dIdSA}
 
 
     # print('ad: ',areal_density)
@@ -177,6 +188,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
         loop_unc_R = unc_R[i_energy,:]
         loop_flux_avg_xs = flux_avg_xs[i_energy,:]
         loop_unc_flux_avg_xs = unc_flux_avg_xs[i_energy,:]
+        loop_SA = SA[i_energy,:]
         # # delta_t = t_irradiation[i_energy]
         # unc_delta_t = np.ones(number_of_monitor_reactions) *uncertainty_t_irradiation[i_energy]
         # # unc_delta_t = uncertainty_t_irradiation[i_energy]
@@ -204,6 +216,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
             loop_corr_N_atoms = corr_N_atoms
             loop_corr_flux_avg_xs = corr_flux_avg_xs
             loop_corr_R = corr_R
+            loop_corr_SA = corr_SA
             # loop_corr_t_irradiation = corr_t_irradiation
             # loop_corr_EoB_activities = corr_EoB_activities
 
@@ -224,6 +237,8 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
                 loop_corr_flux_avg_xs = np.delete(loop_corr_flux_avg_xs,np.array(disjoint_indices),1)
                 loop_corr_R = np.delete(corr_R,np.array(disjoint_indices),0)
                 loop_corr_R = np.delete(loop_corr_R,np.array(disjoint_indices),1)
+                loop_corr_SA = np.delete(corr_SA,np.array(disjoint_indices),0)
+                loop_corr_SA = np.delete(loop_corr_SA,np.array(disjoint_indices),1)
                 # loop_corr_t_irradiation = np.delete(corr_t_irradiation,np.array(disjoint_indices),0)
                 # loop_corr_t_irradiation = np.delete(loop_corr_t_irradiation,np.array(disjoint_indices),1)
                 # loop_corr_EoB_activities = np.delete(corr_EoB_activities,np.array(disjoint_indices),0)
@@ -236,6 +251,8 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
                     loop_corr_flux_avg_xs = np.delete(loop_corr_flux_avg_xs,disjoint_index,1)
                     loop_corr_R = np.delete(corr_R,disjoint_index,0)
                     loop_corr_R = np.delete(loop_corr_R,disjoint_index,1)
+                    loop_corr_SA = np.delete(corr_SA,disjoint_index,0)
+                    loop_corr_SA = np.delete(loop_corr_SA,disjoint_index,1)
                     # loop_corr_t_irradiation = np.delete(corr_t_irradiation,disjoint_index,0)
                     # loop_corr_t_irradiation = np.delete(loop_corr_t_irradiation,disjoint_index,1)
                     # loop_corr_EoB_activities = np.delete(corr_EoB_activities,disjoint_index,0)
@@ -243,16 +260,19 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
 
         # print('neutron_flux inputs: ', A0, ad, loop_lambdas[i_energy,:], delta_t, rxn_int)
         # neutron_flux(R, N_atoms, flux_avg_xs)
-        temp_fluxes =  neutron_flux(loop_R, loop_N_atoms, loop_flux_avg_xs, solid_angle)
+        temp_fluxes =  neutron_flux(loop_R, loop_N_atoms, loop_flux_avg_xs, loop_SA)
         fluxes[i_energy, :] =  temp_fluxes
         # print('temp_currents: ', temp_currents)
         # sigma_flux_approximate(R, N_atoms, flux_avg_xs, unc_R, unc_N_atoms, unc_flux_avg_xs):
-        unc_temp_fluxes = sigma_flux_approximate(loop_R, loop_N_atoms, loop_flux_avg_xs, loop_unc_R, loop_unc_N_atoms, loop_unc_flux_avg_xs)
+        unc_temp_fluxes = sigma_flux_approximate(loop_R, loop_N_atoms, loop_flux_avg_xs, loop_unc_R, loop_unc_N_atoms, loop_unc_flux_avg_xs, loop_SA)
         unc_fluxes[i_energy,:] = unc_temp_fluxes
 
-        value_array = np.array([loop_R, loop_N_atoms, loop_flux_avg_xs])
-        uncertainty_array = np.array([loop_unc_R, loop_unc_N_atoms, loop_unc_flux_avg_xs])
-        correlation_array = np.array([loop_corr_R, loop_corr_N_atoms, loop_corr_flux_avg_xs])
+        std_dev = np.std(temp_fluxes)
+
+
+        value_array = np.array([loop_R, loop_N_atoms, loop_flux_avg_xs, loop_SA])
+        uncertainty_array = np.array([loop_unc_R, loop_unc_N_atoms, loop_unc_flux_avg_xs, 0.015*loop_SA])
+        correlation_array = np.array([loop_corr_R, loop_corr_N_atoms, loop_corr_flux_avg_xs, loop_corr_SA])
 
 
 		# Set up covariance matrix for current energy position
@@ -269,8 +289,8 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
                     # print("dict_value: ",function_dictionary[dict_key])
                     # print(type(dict_key))
                     # print(A0[i_element], ad[i_element], loop_lambdas[0,i_element], delta_t[i_element], rxn_int[i_element])
-                    dIdxi = function_dictionary[dict_key](loop_R[i_element], loop_N_atoms[i_element], loop_flux_avg_xs[i_element])
-                    dIdxj = function_dictionary[dict_key](loop_R[j_element], loop_N_atoms[j_element], loop_flux_avg_xs[j_element])
+                    dIdxi = function_dictionary[dict_key](loop_R[i_element], loop_N_atoms[i_element], loop_flux_avg_xs[i_element], loop_SA[i_element])
+                    dIdxj = function_dictionary[dict_key](loop_R[j_element], loop_N_atoms[j_element], loop_flux_avg_xs[j_element], loop_SA[j_element])
 					# print("dIdx_i: ",dIdxi)
 					# print("dIdx_j: ",dIdxj)
 					# print("unc_xi: ",uncertainty_array[dict_index,i_element])
@@ -290,15 +310,19 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
 
         weighted_average_flux = numerator/denominator
         uncertainty_weighted_average_flux = np.sqrt(1.0/denominator)
+        total_uncertainty_weighted_average_flux = np.sqrt(uncertainty_weighted_average_flux**2 + std_dev**2)
 
 
-        print("weighted_average_flux: ",weighted_average_flux, " +/- ",uncertainty_weighted_average_flux, " nA     (", 100*uncertainty_weighted_average_flux/weighted_average_flux ," %)")
+        print("weighted_average_flux: ",weighted_average_flux, " +/- ",total_uncertainty_weighted_average_flux, " nA     (", 100*total_uncertainty_weighted_average_flux/weighted_average_flux ," %)")
+        print('Flux Systematic Uncertainty: {0}  ({1}%)'.format(std_dev, 100*std_dev/weighted_average_flux))
+        print('Flux Statistical Uncertainty: {0}  ({1}%)'.format(uncertainty_weighted_average_flux, 100*uncertainty_weighted_average_flux/weighted_average_flux))
 
     	# Append values for current energy
         output_foil_index.append(i_energy)
         output_flux.append(weighted_average_flux)
-        output_unc_flux.append(uncertainty_weighted_average_flux)
-        output_percent_unc.append(100*uncertainty_weighted_average_flux/weighted_average_flux)
+        output_unc_flux.append(total_uncertainty_weighted_average_flux)
+        output_total_unc_flux.append(total_uncertainty_weighted_average_flux)
+        output_percent_unc.append(100*total_uncertainty_weighted_average_flux/weighted_average_flux)
         print("********************************************************************\n")
         print("Raw currents: \n",fluxes)
         # print("Raw unc_currents: \n",unc_currents)
@@ -308,7 +332,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
 	#matlab_unc_avg_currents = np.array([3.3891,    2.9333,    3.3763,    3.4887,     3.3309,     3.2648,     3.8734,     2.8113,     2.8976,     3.3152,     3.6999,     2.3559,     2.6791,     0.2861])
 
 	# Save final results to csv
-    outfile = np.stack((np.transpose(output_foil_index),np.transpose(output_flux),np.transpose(output_unc_flux),np.transpose(output_percent_unc)), axis=-1)
+    outfile = np.stack((np.transpose(output_foil_index),np.transpose(output_flux),np.transpose(output_total_unc_flux),np.transpose(output_percent_unc)), axis=-1)
     #import os
     #path = os.getcwd()
     np.savetxt("./{}".format(csv_filename), outfile, delimiter=",", header="Foil Index, Average Neutron Flux (a.u.), Uncertainty in Average Neutron Flux (a.u.), % Uncertainty")
@@ -324,6 +348,7 @@ def Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_sectio
 
     plt.gca()
     plt.errorbar(output_foil_index, output_flux, yerr=output_unc_flux, capsize=10.0, markersize=4.0,  marker='s', ls=' ', color='black', capthick=1.5, linewidth=3.0)
+    # plt.errorbar(output_foil_index, output_flux, yerr=output_total_unc_flux, capsize=10.0, markersize=4.0,  marker='s', ls=' ', color='blue', capthick=1.5, linewidth=3.0)
 	# plt.errorbar(output_foil_index2, matlab_avg_currents, yerr=matlab_unc_avg_currents, capsize=10.0, capthick=2.0, markersize=8.0,  marker='.', ls=' ',  linewidth=2.0)
     for i in range(len(output_foil_index)):
         plt.errorbar(np.ones(len(fluxes[i,:]))*(0.2+output_foil_index[i]), fluxes[i,:], markersize=4.0,  yerr=unc_fluxes[i,:], capsize=5.0,  marker='.', ls=' ',linewidth=0.5, capthick=0.5, color='red')

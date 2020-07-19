@@ -6,7 +6,7 @@ import npat
 #import sympy  as sy
 #import integrate
 
-# LINE 22 - ALICE
+# LINE 23 - ALICE
 # LINE 77 - TALYS
 # LINE 100 - EXFOR
 # LINE 150 - TENDL
@@ -16,7 +16,7 @@ import npat
 
 from foil_info import *
 
-path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/'
+path_ = os.getcwd() +'/'
 
 #xaxis = np.linspace(0,40,1000)
 
@@ -110,7 +110,7 @@ def ALICE(foil, A, Z, isomer=False):
 
 
 
-path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/analyse/'
+path =  os.getcwd() +'/'
 
 
 def TALYS(foil, A, Z, file_ending='.tot', isomer=False):
@@ -325,7 +325,7 @@ def EXFOR(foil, reaction):
             #plt.plot(E, CS)
                 #plt.show()
                 #plt.errorbar(E[ind], CS[ind], marker='.', linewidth=0.001, xerr=dE[ind], yerr=dCS[ind], elinewidth=0.5, capthick=0.5, capsize=3.0, label=author[ind] )
-            plt.errorbar(E, CS, marker='.', markersize=4, linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label=author[0] )
+            plt.errorbar(E, CS, marker='.', color='darkorange', markersize=4, linewidth=0.001, xerr=dE, yerr=dCS, elinewidth=0.5, capthick=0.5, capsize=3.0, label=author[0] )
             #plt.legend()
             #plt.show()
 
@@ -1430,15 +1430,15 @@ def mydata(filename_CS, foil, plot_flag):
     #print(os.getcwd())
     print('****************')
     file =  './Cross_sections_csv/' + foil + '/' + filename_CS  #'.tot'
-    file_33 = path + '../../Jon code/meulders_33MeV.csv'
-    file_16 = path + '../../Jon code/meulders_16MeV.csv'
+    file_33 = path + '../../Jon code/E33_flux_estimate.csv'
+    file_16 = path + '../../Jon code/E16_Harrig_flux.csv'
     print(file_33)
 
 
     with open(file_33) as p:
         begin2 = p.readlines()[1:]
         #print(begin2)
-        E_33 = []; dPhidE_33 = []; x_values_33 = [6.753406008583691, 21.685666141732284]#dE_33 = [5.9795033493567011, 8.9527567837918909]
+        E_33 = []; dPhidE_33 = []; x_values_33 = [6.753406008583691, 19.35096997526541]#dE_33 = [5.9795033493567011, 8.9527567837918909]
         for line2 in begin2:
             lines2 = line2.split(',')
             #print(lines2)
@@ -1528,11 +1528,13 @@ def zero_to_nan(values):
 
 def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None, legend_loc='upper left' ,file_ending='.tot'):
 
-    with open('../../Jon code/meulders_33MeV.csv') as f:
-    	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
+    # with open('meulders_33MeV.csv') as f:
+    with open('E33_flux_estimate.csv') as f:
+    	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-    with open('../../Jon code/meulders_16MeV.csv') as f:
-    	meulders_16MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
+    # with open('meulders_16MeV.csv') as f:
+    with open('E16_Harrig_flux.csv') as f:
+    	meulders_16MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
     E_16 = meulders_16MeV[:,0]
     E_33 = meulders_33MeV[:,0]
@@ -1639,47 +1641,47 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 ### ZINK ###
 
-#Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN', 'Zn-62', y_max=20)
-#Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN', 'Zn-63')
-#Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64', legend_loc='upper right')
-#Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI', 'Ni-65', y_max=6, legend_loc='upper right')
-Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65', legend_loc='upper right')
-
-# NOT REPORT 66Cu - not enough info due to half-life and the time we counted
-####### Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66')
-#Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67')
-######## Cross_section('Zn', '66', '28', 'Zn(n,x)66Ni', '66NI', 'Ni-66') #NOT REPORT
-#Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M', legend_loc='upper right')
+# Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN', 'Zn-62', y_max=20)
+# Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN', 'Zn-63')
+# Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64', legend_loc='upper right')
+# Cross_section('Zn', '65', '28', 'Zn(n,x)65Ni', '65NI', 'Ni-65', y_max=6, legend_loc='upper right')
+# Cross_section('Zn', '65', '30', 'Zn(n,x)65Zn', '65ZN', 'Zn-65', legend_loc='upper right')
+#
+# # NOT REPORT 66Cu - not enough info due to half-life and the time we counted
+# ####### Cross_section('Zn', '66', '29', 'Zn(n,x)66Cu', '66CU', 'Cu-66')
+# Cross_section('Zn', '67', '29', 'Zn(n,x)67Cu', '67CU', 'Cu-67')
+# ######## Cross_section('Zn', '66', '28', 'Zn(n,x)66Ni', '66NI', 'Ni-66') #NOT REPORT
+# Cross_section('Zn', '69', '30', 'Zn(n,x)69mZn', '69ZNm', 'Zn-69M', legend_loc='upper right')
 
 
 ### Zirconium ###
 
-#Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90Ym', 'Y-90M')
-#Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=3)
-#Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
-#Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
-#Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')
-#Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95', y_max=50, legend_loc='upper right')
-#Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=2, legend_loc='upper right') #no empire
-#Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
+# Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90Ym', 'Y-90M')
+# Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=3)
+# Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
+# Cross_section('Zr', '92', '39', 'Zr(n,x)92Y', '92Y', 'Y-92')
+# Cross_section('Zr', '93', '39', 'Zr(n,x)93Y', '93Y', 'Y-93')
+# Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95', y_max=50, legend_loc='upper right')
+# Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=2, legend_loc='upper right') #no empire
+# Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
 
 
 
 ### Indium ###
-
-#Cross_section('In', '111', '49', 'In(n,x)111In', '111In', 'In-111', y_max=150)
-#Cross_section('In', '112', '49', 'In(n,x)112In', '112IN', 'In-112')
-#Cross_section('In', '112', '49', 'In(n,x)112mIn', '112INm', 'In-112M')
+#
+# Cross_section('In', '111', '49', 'In(n,x)111In', '111In', 'In-111', y_max=150)
+# Cross_section('In', '112', '49', 'In(n,x)112In', '112IN', 'In-112')
+# Cross_section('In', '112', '49', 'In(n,x)112mIn', '112INm', 'In-112M')
 
 
 ###  Aluminum ###
 
-#Cross_section('Al', '24', '11', '27Al(n,x)24Na', '24Na', 'Na-24', legend_loc='upper right')
+Cross_section('Al', '24', '11', '27Al(n,x)24Na', '24Na', 'Na-24', legend_loc='upper right')
 
 ### Yttrium ###
 
-#Cross_section('Y', '87', '39', 'Y(n,x)87Y', '87Y', 'Y-87')
-#Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
-#Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=2, legend_loc='upper right') # no coh and empire
-#Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M', y_max=45) # no coh and empire
-#Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)
+Cross_section('Y', '87', '39', 'Y(n,x)87Y', '87Y', 'Y-87')
+Cross_section('Y', '87', '39', 'Y(n,x)87Ym', '87Ym', 'Y-87M') # no Coh or empire
+Cross_section('Y', '90', '39', 'Y(n,x)90mY', '90Ym', 'Y-90M', y_max=2, legend_loc='upper right') # no coh and empire
+Cross_section('Y', '87', '38', 'Y(n,x)87mSr', '87SRm', 'Sr-87M', y_max=45) # no coh and empire
+Cross_section('Y', '88', '39', 'Y(n,x)88Y', '88Y', 'Y-88', y_max=1400)

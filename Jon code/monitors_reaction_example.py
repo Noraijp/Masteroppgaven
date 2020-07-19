@@ -7,16 +7,18 @@ from npat import *
 
 from weighted_average import *
 
-from solid_angle import calc_SA
+# from solid_angle import calc_SA
 
 
-with open('meulders_33MeV.csv') as f:
-	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
+# with open('meulders_33MeV.csv') as f:
+with open('E33_flux_estimate.csv') as f:
+	spectrum_33MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-with open('meulders_16MeV.csv') as f:
-	meulders_16MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
+# with open('meulders_16MeV.csv') as f:
+with open('E16_Harrig_flux.csv') as f:
+	spectrum_16MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-# plt.plot(meulders_33MeV[:,0],meulders_33MeV[:,1])
+# plt.plot(spectrum_33MeV[:,0],spectrum_33MeV[:,1])
 # plt.show()
 
 
@@ -37,7 +39,16 @@ def read_csv(name_of_csv_file):
 
 	return np.asarray(results, dtype=float)
 
-def calc_SA(R_beam=0.5, R_sample=0.05, dist=5.0, N=1E6):
+def read_flux_csv(name_of_csv_file):
+	results = []
+	with open(name_of_csv_file) as csvfile:
+	    reader = csv.reader(decomment(csvfile))
+	    for row in reader:
+	        results.append(row)
+
+	return np.asarray(results, dtype=float)
+
+def calc_SA(R_beam=0.5, R_sample=0.05, dist=5.0, N=2E6):
 	#### Solid angle between two concentric circles
 	N = int(N)
 	r = np.sqrt(np.random.uniform(size=N))*R_beam
@@ -57,7 +68,7 @@ def calc_SA(R_beam=0.5, R_sample=0.05, dist=5.0, N=1E6):
 
 
 
-def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_16MeV, R_sample_33MeV, dist_16MeV, dist_33MeV):
+def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, solid_angle_file):
 	flux_array_33MeV  =  []
 	unc_flux_array_33MeV  =  []
 	flux_array_16MeV  =  []
@@ -89,11 +100,11 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 
 		# rx_33MeV.plot(scale='loglog')
 
-		xs_avg_33MeV, unc_xs_avg_33MeV = rx_33MeV.average(meulders_33MeV[:,0], meulders_33MeV[:,1], unc=True)
+		xs_avg_33MeV, unc_xs_avg_33MeV = rx_33MeV.average(spectrum_33MeV[:,0], spectrum_33MeV[:,1], unc=True)
 		#xs_avg_33MeV *= 1E-3  ## convert mb to b
 		# print('Meulders 33 MeV averaged XS (mb):', xs_avg_33MeV)
 
-		xs_avg_16MeV, unc_xs_avg_16MeV = rx_16MeV.average(meulders_16MeV[:,0], meulders_16MeV[:,1], unc=True)
+		xs_avg_16MeV, unc_xs_avg_16MeV = rx_16MeV.average(spectrum_16MeV[:,0], spectrum_16MeV[:,1], unc=True)
 		#xs_avg_33MeV *= 1E-3  ## convert mb to b
 		# print('Meulders 16 MeV averaged XS (mb):', xs_avg_16MeV)
 
@@ -149,12 +160,19 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 
 		#REDIGER det skal være radiusen til beamen som ble kjørt før eksperimentet
 		#the radius (in cm) of the deuteron beam, which we know teh size of from your gafchromic films
-		R_beam_16MeV = .5 #apporox
-		R_beam_33MeV = .75 #approx
+		# R_beam_16MeV = .5 #apporox
+		# R_beam_33MeV = .75 #approx
 
 
-		calc_solid_angle_16MeV = calc_SA(R_beam_16MeV, R_sample_16MeV, dist_16MeV)
-		calc_solid_angle_33MeV = calc_SA(R_beam_33MeV, R_sample_33MeV, dist_33MeV)
+
+
+		solid_angles =  read_flux_csv(solid_angle_file)
+		# print('solid angles: ',solid_angles)
+		calc_solid_angle_16MeV = solid_angles[0,1]
+		calc_solid_angle_33MeV = solid_angles[1,1]
+
+		# calc_solid_angle_16MeV = 1
+		# calc_solid_angle_33MeV = 1
 
 		avg_flux_33MeV = R_33MeV/(n_atoms_33MeV*xs_avg_33MeV*calc_solid_angle_33MeV)
 		avg_flux_16MeV = R_16MeV/(n_atoms_16MeV*xs_avg_16MeV*calc_solid_angle_16MeV)
@@ -193,6 +211,9 @@ def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16Me
 
 
 
+output_foil_index = np.array([0,1])
+
+
 ## for yttrium
 
 csv_list      = ['Y_88Y.csv']
@@ -208,11 +229,13 @@ R_sample_y_33MeV = 0.590
 dist_to_y_16MeV = 10.7 #cm
 dist_to_y_33MeV = 11.1
 
-y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, y_production_rate, y_number_of_atoms, y_flux_avg_cross_section, y_unc_production_rate, y_unc_number_of_atoms, y_unc_flux_avg_cross_section, y_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_y_16MeV, R_sample_y_33MeV, dist_to_y_16MeV, dist_to_y_33MeV)
+y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, y_production_rate, y_number_of_atoms, y_flux_avg_cross_section, y_unc_production_rate, y_unc_number_of_atoms, y_unc_flux_avg_cross_section, y_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, './y_solid_angle.csv')
 # print('Y flux at 33MeV           : ', y_avg_flux_33MeV)
 # print('Y flux uncertinty_33MeV : ', y_unc_avg_flux_33MeV)
 # print('Y flux at 16MeV           : ', y_avg_flux_16MeV)
 # print('Y flux uncertinty_16MeV : ', y_unc_avg_flux_16MeV)
+# outfile = np.stack((np.transpose(output_foil_index),np.transpose(y_solid_angle[:,0])), axis=-1)
+# np.savetxt("./{}".format('y_solid_angle.csv'), outfile, delimiter=",", header="Foil Index, Solid Angle")
 
 
 
@@ -250,10 +273,10 @@ y_avg_flux_33MeV, y_unc_avg_flux_33MeV, y_avg_flux_16MeV, y_unc_avg_flux_16MeV, 
 
 ### for Aluminum
 
-csv_list      = ['Al_24Na.csv', 'Al_24Na.csv']
-reaction_list = ['27AL(n,x)24NA', '27AL(n,a)24NA']
-target_list   = ['27AL', '27AL']
-product_list  = ['24NA', '24NA']
+csv_list      = ['Al_24Na.csv']#, 'Al_24Na.csv']
+reaction_list = ['27AL(n,x)24NA']#, '27AL(n,a)24NA']
+target_list   = ['27AL']#, '27AL']
+product_list  = ['24NA']#, '24NA']
 mass_33MeV = 0.2563 #g
 unc_mass_33MeV = 0.0015  #g
 mass_16MeV = 0.2573 #g
@@ -269,11 +292,13 @@ dist_to_al_33MeV = 10.5
 # print(lb.search(product='24Na'))
 # # print(lb.search(target='113IN',product='114INm1'))
 
-al_avg_flux_33MeV, al_unc_avg_flux_33MeV, al_avg_flux_16MeV, al_unc_avg_flux_16MeV, al_production_rate, al_number_of_atoms, al_flux_avg_cross_section, al_unc_production_rate, al_unc_number_of_atoms, al_unc_flux_avg_cross_section, al_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_al_16MeV, R_sample_al_33MeV, dist_to_al_16MeV, dist_to_al_33MeV)
+al_avg_flux_33MeV, al_unc_avg_flux_33MeV, al_avg_flux_16MeV, al_unc_avg_flux_16MeV, al_production_rate, al_number_of_atoms, al_flux_avg_cross_section, al_unc_production_rate, al_unc_number_of_atoms, al_unc_flux_avg_cross_section, al_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, './al_solid_angle.csv')
 # print('Al flux at 33MeV           : ', al_avg_flux_33MeV)
 # print('Al flux uncertinty_33MeV : ', al_unc_avg_flux_33MeV)
 # print('Al flux at 16MeV           : ', al_avg_flux_16MeV)
 # print('Al flux uncertinty_16MeV : ', al_unc_avg_flux_16MeV)
+# outfile = np.stack((np.transpose(output_foil_index),np.transpose(al_solid_angle[:,0])), axis=-1)
+# np.savetxt("./{}".format('al_solid_angle.csv'), outfile, delimiter=",", header="Foil Index, Solid Angle")
 
 
 
@@ -299,11 +324,14 @@ dist_to_zr_33MeV = 10.8
 # print(lb.search(product='89Zr'))
 # # print(lb.search(target='113IN',product='114INm1'))
 
-zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16MeV, zr_production_rate, zr_number_of_atoms, zr_flux_avg_cross_section, zr_unc_production_rate, zr_unc_number_of_atoms, zr_unc_flux_avg_cross_section, zr_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, R_sample_zr_16MeV, R_sample_zr_33MeV, dist_to_zr_16MeV, dist_to_zr_33MeV)
+zr_avg_flux_33MeV, zr_unc_avg_flux_33MeV, zr_avg_flux_16MeV, zr_unc_avg_flux_16MeV, zr_production_rate, zr_number_of_atoms, zr_flux_avg_cross_section, zr_unc_production_rate, zr_unc_number_of_atoms, zr_unc_flux_avg_cross_section, zr_solid_angle = calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV, './zr_solid_angle.csv')
 # print('Zr flux at 33MeV           : ', zr_avg_flux_33MeV)
 # print('Zr flux uncertinty_33MeV : ', zr_unc_avg_flux_33MeV)
 # print('Zr flux at 16MeV           : ', zr_avg_flux_16MeV)
 # print('Zr flux uncertinty_16MeV : ', zr_unc_avg_flux_16MeV)
+# outfile = np.stack((np.transpose(output_foil_index),np.transpose(zr_solid_angle[:,0])), axis=-1)
+# np.savetxt("./{}".format('zr_solid_angle.csv'), outfile, delimiter=",", header="Foil Index, Solid Angle")
+
 #
 
 print('\n************************************************\n')
@@ -395,13 +423,13 @@ solid_angle = np.hstack((y_solid_angle, al_solid_angle, zr_solid_angle))
 
 
 
-print('production_rate',production_rate)
-print('number_of_atoms',number_of_atoms)
-print('flux_avg_cross_section',flux_avg_cross_section)
-print('unc_production_rate',unc_production_rate)
-print('unc_number_of_atoms',unc_number_of_atoms)
-print('unc_flux_avg_cross_section',unc_flux_avg_cross_section)
-print('solid_angle :', solid_angle)
+#print('production_rate',production_rate)
+#print('number_of_atoms',number_of_atoms)
+#print('flux_avg_cross_section',flux_avg_cross_section)
+#print('unc_production_rate',unc_production_rate)
+#print('unc_number_of_atoms',unc_number_of_atoms)
+#print('unc_flux_avg_cross_section',unc_flux_avg_cross_section)
+#print('solid_angle :', solid_angle)
 
 # print(len(number_of_atoms))
 # plt.errorbar(x_index_33MeV, all_fluxes_33MeV, yerr=all_unc_fluxes_33MeV, marker='.', linestyle='')
@@ -414,28 +442,28 @@ print('solid_angle :', solid_angle)
 output_flux, output_unc_flux = Average_Neutron_Flux(production_rate, number_of_atoms, flux_avg_cross_section, unc_production_rate, unc_number_of_atoms, unc_flux_avg_cross_section, solid_angle, csv_filename='averaged_fluxes.csv')
 
 
-stand_div_16MeV = np.std(all_fluxes_16MeV)
-stand_div_33MeV = np.std(all_fluxes_33MeV)
+#stand_div_16MeV = np.std(all_fluxes_16MeV)
+#stand_div_33MeV = np.std(all_fluxes_33MeV)
 
-print('stand_div_16MeV :', stand_div_16MeV)
-print('stand_div_33MeV :', stand_div_33MeV)
-
-
-unc_16MeV = np.sqrt((output_unc_flux[0])**2 + (stand_div_16MeV)**2)
-unc_33MeV = np.sqrt((output_unc_flux[1])**2 + (stand_div_33MeV)**2)
+#print('stand_div_16MeV :', stand_div_16MeV)
+#print('stand_div_33MeV :', stand_div_33MeV)
 
 
+#unc_16MeV = np.sqrt((output_unc_flux[0])**2 + (stand_div_16MeV)**2)
+#unc_33MeV = np.sqrt((output_unc_flux[1])**2 + (stand_div_33MeV)**2)
 
-output_foil_index = np.array([0,1])
+
+
+# output_foil_index = np.array([0,1])
 #output_flux = output_flux
-output_unc_flux_new = np.array([unc_16MeV, unc_33MeV])
-output_percent_unc_new = np.array([(unc_16MeV/output_flux[0])*100, (unc_33MeV/output_flux[1])*100])
+#output_unc_flux_new = np.array([unc_16MeV, unc_33MeV])
+#output_percent_unc_new = np.array([(unc_16MeV/output_flux[0])*100, (unc_33MeV/output_flux[1])*100])
 
-outfile = np.stack((np.transpose(output_foil_index),np.transpose(output_flux),np.transpose(output_unc_flux_new),np.transpose(output_percent_unc_new)), axis=-1)
-#import os
-#path = os.getcwd()
-csv_filename = 'averaged_fluxes.csv'
-np.savetxt("./{}".format(csv_filename), outfile, delimiter=",", header="Foil Index, Average Neutron Flux (a.u.), Uncertainty in Average Neutron Flux (a.u.), % Uncertainty")
+# outfile = np.stack((np.transpose(output_foil_index),np.transpose(output_flux),np.transpose(output_unc_flux_new),np.transpose(output_percent_unc_new)), axis=-1)
+# #import os
+# #path = os.getcwd()
+# csv_filename = 'averaged_fluxes.csv'
+# np.savetxt("./{}".format(csv_filename), outfile, delimiter=",", header="Foil Index, Average Neutron Flux (a.u.), Uncertainty in Average Neutron Flux (a.u.), % Uncertainty")
 
 
 print('all_fluxes_16MeV',all_fluxes_16MeV)

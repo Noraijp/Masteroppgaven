@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 path_ = '/Users/Nora/Documents/UiO/Masteroppgaven/'
 
 
-file_33 = path_ + './Jon code/meulders_33MeV.csv'
-file_16 = path_ + './Jon code/meulders_16MeV.csv'
+file_33 = os.getcwd() + '/E33_flux_estimate.csv'
+file_16 = os.getcwd() + '/E16_Harrig_flux.csv'
 
 with open(file_16) as f:
     begin = f.readlines()[1:]

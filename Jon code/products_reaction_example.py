@@ -7,13 +7,15 @@ import os
 from npat import *
 
 
-with open('meulders_33MeV.csv') as f:
-	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
+# with open('meulders_33MeV.csv') as f:
+with open('E33_flux_estimate.csv') as f:
+	spectrum_33MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-with open('meulders_16MeV.csv') as f:
-	meulders_16MeV = np.array([i.split(',') for i in f.read().split('\n')[:-1]], dtype=np.float64)
+# with open('meulders_16MeV.csv') as f:
+with open('E16_Harrig_flux.csv') as f:
+	spectrum_16MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-# plt.plot(meulders_33MeV[:,0],meulders_33MeV[:,1])
+# plt.plot(spectrum_33MeV[:,0],spectrum_33MeV[:,1])
 # plt.show()
 
 
@@ -72,7 +74,7 @@ def calc_SA(R_beam=0.5, R_sample=0.05, dist=5.0, N=1E6):
 	return 2.0*np.pi*float(len(np.where(np.sqrt(xf**2+yf**2)<=R_sample)[0]))/float(N)
 
 # def calculate_flux(csv_list, reaction_list, target_list, product_list, mass_16MeV, unc_mass_16MeV, mass_33MeV, unc_mass_33MeV):
-def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, R_sample_16MeV, R_sample_33MeV, dist_16MeV, dist_33MeV):
+def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, solid_angle_file):
 
 	### for zinc
 	# product_name='67CU'
@@ -136,13 +138,20 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 		R_beam_33MeV = .75 #approx
 
 
-		calc_solid_angle_16MeV = calc_SA(R_beam_16MeV, R_sample_16MeV, dist_16MeV)
-		calc_solid_angle_33MeV = calc_SA(R_beam_33MeV, R_sample_33MeV, dist_33MeV)
+		# calc_solid_angle_16MeV = calc_SA(R_beam_16MeV, R_sample_16MeV, dist_16MeV)
+		# calc_solid_angle_33MeV = calc_SA(R_beam_33MeV, R_sample_33MeV, dist_33MeV)
+
+
+		solid_angles =  read_flux_csv(solid_angle_file)
+		# print('solid angles: ',solid_angles)
+		solid_angle_16MeV = solid_angles[0,1]
+		solid_angle_33MeV = solid_angles[1,1]
+
 
 		#xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV*calc_solid_angle_33MeV)
 		#xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV*calc_solid_angle_16MeV)
-		xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV)
-		xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV)
+		xs_33MeV = R_33MeV/(n_atoms_33MeV*approximate_average_flux_33MeV*solid_angle_33MeV)
+		xs_16MeV = R_16MeV/(n_atoms_16MeV*approximate_average_flux_16MeV*solid_angle_16MeV)
 
 		# print('% uncertainty in activity; ',100*product_activity_33MeV[1]/product_activity_33MeV[0])
 		# print('% uncertainty in flux; ',(100*unc_approximate_average_flux_33MeV/approximate_average_flux_33MeV))
@@ -187,8 +196,8 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 					# we are looking at the correct reaction channel for IRDFF!
 
 					rx = npat.Reaction(rxn, library='IRDFF')
-					meulders_33MeV_xs_avg = rx.average(meulders_33MeV[:,0], meulders_33MeV[:,1])
-					meulders_16MeV_xs_avg = rx.average(meulders_16MeV[:,0], meulders_16MeV[:,1])
+					meulders_33MeV_xs_avg = rx.average(spectrum_33MeV[:,0], spectrum_33MeV[:,1])
+					meulders_16MeV_xs_avg = rx.average(spectrum_16MeV[:,0], spectrum_16MeV[:,1])
 					print('meulders_16MeV_xs_avg: {0:.2f} mb'.format(meulders_16MeV_xs_avg))
 					print('meulders_33MeV_xs_avg: {0:.2f} mb'.format(meulders_33MeV_xs_avg))
 
@@ -207,7 +216,7 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 # mass_16MeV = 0.8463 #g
 # unc_mass_16MeV = 0.0015
 #
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './zn_solid_angle.csv')
 
 #
 #
@@ -223,7 +232,7 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 # mass_16MeV = 0.7560 #g
 # unc_mass_16MeV = 0.0010 #g
 #
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+#zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './zr_solid_angle.csv')
 
 #
 #
@@ -237,35 +246,35 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 # mass_16MeV = 0.5530 #g
 # unc_mass_16MeV = 0.0035  #g
 #
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './in_solid_angle.csv')
 #
 #
 #
 # # ## for yttrium
-product_name = ['87SRm', '87Ym', '87Y', '90Ym', '88Y']
-target_name = ['natY', 'natY', 'natY', 'natY', 'natY']
-csv_list = ['Y_87mSr.csv', 'Y_87mY.csv', 'Y_87Y.csv', 'Y_90mY.csv', 'Y_88Y.csv']
-mass_33MeV = 0.4657 #g
-mass_16MeV = 0.5053
-unc_mass_33MeV = 0.0006  #g
-unc_mass_16MeV = 0.0021
-R_sample_y_16MeV = 0.633 #cm
-R_sample_y_33MeV = 0.590
-dist_to_y_16MeV = 10.7 #cm
-dist_to_y_33MeV = 11.1
-#
-zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, R_sample_y_16MeV, R_sample_y_33MeV, dist_to_y_16MeV, dist_to_y_33MeV)
+# product_name = ['87SRm', '87Ym', '87Y', '90Ym', '88Y']
+# target_name = ['natY', 'natY', 'natY', 'natY', 'natY']
+# csv_list = ['Y_87mSr.csv', 'Y_87mY.csv', 'Y_87Y.csv', 'Y_90mY.csv', 'Y_88Y.csv']
+# mass_33MeV = 0.4657 #g
+# mass_16MeV = 0.5053
+# unc_mass_33MeV = 0.0006  #g
+# unc_mass_16MeV = 0.0021
+# R_sample_y_16MeV = 0.633 #cm
+# R_sample_y_33MeV = 0.590
+# dist_to_y_16MeV = 10.7 #cm
+# dist_to_y_33MeV = 11.1
+# #
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './y_solid_angle.csv')
 
 #
 
 ### Aluminum
 #
-# product_name = ['24NA', '24NA']
-# target_name = ['27AL', '27AL']
-# csv_list = ['Al_24Na.csv', 'Al_24Na.csv']
-# mass_33MeV = 0.2563 #g
-# unc_mass_33MeV = 0.0015  #g
-# mass_16MeV = 0.2573 #g
-# unc_mass_16MeV = 0.0006 #g
-#
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV)
+product_name = ['24NA', '24NA']
+target_name = ['27AL', '27AL']
+csv_list = ['Al_24Na.csv', 'Al_24Na.csv']
+mass_33MeV = 0.2563 #g
+unc_mass_33MeV = 0.0015  #g
+mass_16MeV = 0.2573 #g
+unc_mass_16MeV = 0.0006 #g
+
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './al_solid_angle.csv')
