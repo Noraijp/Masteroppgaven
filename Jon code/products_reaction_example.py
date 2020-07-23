@@ -7,12 +7,12 @@ import os
 from npat import *
 
 
-# with open('meulders_33MeV.csv') as f:
-with open('E33_flux_estimate.csv') as f:
+with open('meulders_33MeV.csv') as f:
+#with open('E33_flux_estimate.csv') as f:
 	spectrum_33MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-# with open('meulders_16MeV.csv') as f:
-with open('E16_Harrig_flux.csv') as f:
+with open('meulders_16MeV.csv') as f:
+#with open('E16_Harrig_flux.csv') as f:
 	spectrum_16MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
 # plt.plot(spectrum_33MeV[:,0],spectrum_33MeV[:,1])
@@ -207,16 +207,16 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 
 # ### zink
 #
-# product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
-# target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
-# csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
-#             'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
-# mass_33MeV = 0.8427 #g
-# unc_mass_33MeV = 0.0006
-# mass_16MeV = 0.8463 #g
-# unc_mass_16MeV = 0.0015
-#
-# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './zn_solid_angle.csv')
+product_name  = ['67CU', '64CU', '62ZN', '63ZN', '65NI', '65ZN', '66CU', '66NI', '69ZNm']
+target_name  = ['natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN', 'natZN']
+csv_list = ['Zn_67Cu.csv', 'Zn_64Cu.csv', 'Zn_62Zn.csv', 'Zn_63Zn.csv',
+            'Zn_65Ni.csv','Zn_65Zn.csv', 'Zn_66Cu.csv', 'Zn_66Ni.csv', 'Zn_69mZn.csv']
+mass_33MeV = 0.8427 #g
+unc_mass_33MeV = 0.0006
+mass_16MeV = 0.8463 #g
+unc_mass_16MeV = 0.0015
+
+zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './zn_solid_angle.csv')
 
 #
 #
@@ -232,7 +232,7 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 # mass_16MeV = 0.7560 #g
 # unc_mass_16MeV = 0.0010 #g
 #
-#zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './zr_solid_angle.csv')
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './zr_solid_angle.csv')
 
 #
 #
@@ -268,13 +268,13 @@ def calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, un
 #
 
 ### Aluminum
+# #
+# product_name = ['24NA', '24NA']
+# target_name = ['27AL', '27AL']
+# csv_list = ['Al_24Na.csv', 'Al_24Na.csv']
+# mass_33MeV = 0.2563 #g
+# unc_mass_33MeV = 0.0015  #g
+# mass_16MeV = 0.2573 #g
+# unc_mass_16MeV = 0.0006 #g
 #
-product_name = ['24NA', '24NA']
-target_name = ['27AL', '27AL']
-csv_list = ['Al_24Na.csv', 'Al_24Na.csv']
-mass_33MeV = 0.2563 #g
-unc_mass_33MeV = 0.0015  #g
-mass_16MeV = 0.2573 #g
-unc_mass_16MeV = 0.0006 #g
-
-zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './al_solid_angle.csv')
+# zn_xs_16MeV, zn_xs_33MeV = calculate_xs(product_name, target_name, csv_list, mass_16MeV, mass_33MeV, unc_mass_16MeV, unc_mass_33MeV, './al_solid_angle.csv')

@@ -10,12 +10,12 @@ from weighted_average import *
 # from solid_angle import calc_SA
 
 
-# with open('meulders_33MeV.csv') as f:
-with open('E33_flux_estimate.csv') as f:
+with open('meulders_33MeV.csv') as f:
+#with open('E33_flux_estimate.csv') as f:
 	spectrum_33MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-# with open('meulders_16MeV.csv') as f:
-with open('E16_Harrig_flux.csv') as f:
+with open('meulders_16MeV.csv') as f:
+#with open('E16_Harrig_flux.csv') as f:
 	spectrum_16MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
 # plt.plot(spectrum_33MeV[:,0],spectrum_33MeV[:,1])

@@ -1,4 +1,4 @@
-label='TENDL'
+mylabel='TENDL'
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1430,8 +1430,11 @@ def mydata(filename_CS, foil, plot_flag):
     #print(os.getcwd())
     print('****************')
     file =  './Cross_sections_csv/' + foil + '/' + filename_CS  #'.tot'
-    file_33 = path + '../../Jon code/E33_flux_estimate.csv'
-    file_16 = path + '../../Jon code/E16_Harrig_flux.csv'
+    file_33 = path + '../../Jon code/meulders_33MeV.csv'
+    file_16 = path + '../../Jon code/meulders_16MeV.csv'
+
+    #file_33 = path + '../../Jon code/E33_flux_estimate.csv'
+    #file_16 = path + '../../Jon code/E16_Harrig_flux.csv'
     print(file_33)
 
 
@@ -1528,12 +1531,12 @@ def zero_to_nan(values):
 
 def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None, legend_loc='upper left' ,file_ending='.tot'):
 
-    # with open('meulders_33MeV.csv') as f:
-    with open('E33_flux_estimate.csv') as f:
+    with open('meulders_33MeV.csv') as f:
+    #with open('E33_flux_estimate.csv') as f:
     	meulders_33MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
-    # with open('meulders_16MeV.csv') as f:
-    with open('E16_Harrig_flux.csv') as f:
+    with open('meulders_16MeV.csv') as f:
+    #with open('E16_Harrig_flux.csv') as f:
     	meulders_16MeV = np.array([i.split(',') for i in f.read().split('\n')[1:-1]], dtype=np.float64)
 
     E_16 = meulders_16MeV[:,0]
@@ -1640,7 +1643,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 #Cross_section('foil', 'A', 'Z', 'reaction', 'filename_CS_me', filename_CS)
 
 ### ZINK ###
-
+#
 # Cross_section('Zn', '62', '30', 'Zn(n,x)62Zn', '62ZN', 'Zn-62', y_max=20)
 # Cross_section('Zn', '63', '30', 'Zn(n,x)63Zn', '63ZN', 'Zn-63')
 # Cross_section('Zn', '64', '29', 'Zn(n,x)64Cu', '64CU', 'Cu-64', legend_loc='upper right')
@@ -1655,7 +1658,7 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 
 
 ### Zirconium ###
-
+#
 # Cross_section('Zr', '90', '39', 'Zr(n,x)90mY', '90Ym', 'Y-90M')
 # Cross_section('Zr', '91', '38', 'Zr(n,x)91Sr', '91SR', 'Sr-91', y_max=3)
 # Cross_section('Zr', '91', '39', 'Zr(n,x)91mY', '91YM', 'Y-91M')
@@ -1664,11 +1667,11 @@ def Cross_section(foil, A, Z, reaction, filename_CS_me, filename_CS, y_max=None,
 # Cross_section('Zr', '95', '40', 'Zr(n,x)95Zr', '95Zr', 'Zr-95', y_max=50, legend_loc='upper right')
 # Cross_section('Zr', '97', '40', 'Zr(n,x)97Zr', '97Zr', 'Zr-97', y_max=2, legend_loc='upper right') #no empire
 # Cross_section('Zr', '89', '40', 'Zr(n,x)89Zr', '89Zr', 'Zr-89')
-
+#
 
 
 ### Indium ###
-#
+# #
 # Cross_section('In', '111', '49', 'In(n,x)111In', '111In', 'In-111', y_max=150)
 # Cross_section('In', '112', '49', 'In(n,x)112In', '112IN', 'In-112')
 # Cross_section('In', '112', '49', 'In(n,x)112mIn', '112INm', 'In-112M')
